@@ -1,6 +1,8 @@
 from datetime import datetime
 from typing import List, Optional, Dict, Any
 
+from app.models.concejal import Concejal
+
 
 class Sesion:
     """
@@ -17,16 +19,17 @@ class Sesion:
     """
 
     def __init__(self, numero_sesion: int) -> None:
-        # Atributos principales
         self.numero_sesion: int = numero_sesion
         self.abierta: bool = True
         self.hora_inicio: datetime = datetime.now()
         self.hora_fin: Optional[datetime] = None
 
-        # Listas de trabajo (por ahora dicts, después pueden ser objetos)
+        # Por ahora las dejamos como listas vacías
         self.votaciones: List[Dict[str, Any]] = []
         self.debates: List[Dict[str, Any]] = []
-        self.concejales: List[Dict[str, Any]] = []
+
+        # Ahora sí: lista de objetos Concejal
+        self.concejales: List[Concejal] = []
 
     def cerrar(self) -> None:
         """
@@ -46,5 +49,6 @@ class Sesion:
             "hora_fin": self.hora_fin.isoformat() if self.hora_fin else None,
             "votaciones": self.votaciones,
             "debates": self.debates,
-            "concejales": self.concejales,
+            # Serializamos los concejales llamando a to_dict() de cada uno
+            "concejales": [c.to_dict() for c in self.concejales],
         }

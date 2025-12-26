@@ -1,0 +1,16 @@
+dni,nombre,apellido,bloque,presente,banca,dispositivo_votacion
+10000001,Robert,Downey Jr,Arriba Chubut,true,1,dev01
+10000002,Scarlett,Johansson,Arriba Chubut,true,2,dev02
+10000003,Leonardo,DiCaprio,Arriba Chubut,true,3,dev03
+10000004,Natalie,Portman,Arriba Chubut,true,4,dev04
+10000005,Tom,Hanks,Arriba Chubut,true,5,dev05
+10000006,Meryl,Streep,Arriba Chubut,true,6,dev06
+
+10000007,Denzel,Washington,Despierta Chubut,true,7,dev07
+10000008,Emma,Stone,Despierta Chubut,true,8,dev08
+10000009,Brad,Pitt,Despierta Chubut,true,9,dev09
+10000010,Cate,Blanchett,Despierta Chubut,true,10,dev10
+
+10000011,Keanu,Reeves,Unidos y Organizados,true,11,dev11
+
+10000012,Jennifer,Lawrence,PLICH,true,12,dev12

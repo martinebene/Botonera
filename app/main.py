@@ -1,20 +1,11 @@
 from fastapi import FastAPI
 
-from app.api.routes import sesiones
+from app.api.routes import sesiones, entradas
 
-app = FastAPI(
-    title="API Concejo Deliberante (memoria, sin DB)",
-    version="0.1.0",
-)
+app = FastAPI(title="API Concejo Deliberante")
 
+# Rutas de sesiones
+app.include_router(sesiones.router)
 
-@app.get("/")
-def root():
-    """
-    Endpoint simple de prueba.
-    """
-    return {"mensaje": "API Concejo funcionando (memoria, sin DB)"}
-
-
-# Registramos el router de sesiones
-app.include_router(sesiones.router, prefix="/sesiones", tags=["Sesiones"])
+# Rutas de entradas desde los dispositivos físicos
+app.include_router(entradas.router)

@@ -1,10 +1,10 @@
-from .sesion_service import abrir_sesion, cerrar_sesion, obtener_sesion_actual
-from .concejal_service import cargar_concejales_desde_archivo
+"""
+Paquete de servicios de dominio.
 
-__all__ = [
-    "abrir_sesion",
-    "cerrar_sesion",
-    "obtener_sesion_actual",
-    "cargar_concejales_desde_archivo",
-]
+No realizamos imports aquí para evitar dependencias circulares
+y acoplamiento innecesario. Los servicios se importan directamente
+desde sus módulos, por ejemplo:
 
+    from app.services.sesion_service import sesion_service, SesionService
+    from app.services.concejal_service import cargar_concejales_desde_archivo
+"""

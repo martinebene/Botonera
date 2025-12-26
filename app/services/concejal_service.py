@@ -6,29 +6,37 @@ from app.models.concejal import Concejal
 
 def cargar_concejales_desde_archivo(ruta: str) -> List[Concejal]:
     """
-    Lee el archivo CSV de concejales y devuelve una lista de objetos Concejal.
+    Carga concejales desde un archivo CSV.
 
-    Se espera un CSV con encabezados:
+    Formato esperado:
     dni,nombre,apellido,bloque,presente,banca,dispositivo_votacion
     """
+
     concejales: List[Concejal] = []
 
-    with open(ruta, "r", encoding="utf-8", newline="") as f:
+    with open(ruta, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        for row in reader:
-            presente_str = (row.get("presente") or "").strip().lower()
-            presente = presente_str in ("true", "1", "si", "sí", "y", "yes")
+        for fila in reader:
+            if not fila.get("dni"):
+                continue
 
-            banca = int(row["banca"]) if row.get("banca") not in (None, "") else 0
+            presente_str = (fila.get("presente") or "").strip().lower()
+            presente = presente_str in ("true", "1", "si", "sí", "yes")
+
+            banca_str = (fila.get("banca") or "0").strip()
+            try:
+                banca = int(banca_str)
+            except ValueError:
+                banca = 0
 
             concejal = Concejal(
-                dni=row["dni"],
-                nombre=row["nombre"],
-                apellido=row["apellido"],
-                bloque=row.get("bloque", ""),
+                dni=fila.get("dni", "").strip(),
+                nombre=fila.get("nombre", "").strip(),
+                apellido=fila.get("apellido", "").strip(),
+                bloque=fila.get("bloque", "").strip(),
                 presente=presente,
                 banca=banca,
-                dispositivo_votacion=row.get("dispositivo_votacion") or None,
+                dispositivo_votacion=(fila.get("dispositivo_votacion") or "").strip(),
             )
             concejales.append(concejal)
 

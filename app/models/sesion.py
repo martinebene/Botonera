@@ -1,15 +1,12 @@
-from dataclasses import dataclass, field
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 
 
-@dataclass
 class Sesion:
     """
     Clase de dominio pura, sin base de datos.
 
     Sesion:
-    + id: Integer
     + numeroSesion: Integer
     + abierta: Boolean
     + horaInicio: TimeStamp
@@ -19,25 +16,30 @@ class Sesion:
     + listaDeConcejales[ ]: List Concejal
     """
 
-    id: int
-    numero_sesion: int
-    abierta: bool = True
-    hora_inicio: datetime = field(default_factory=datetime.now)
-    hora_fin: Optional[datetime] = None
+    def __init__(self, numero_sesion: int) -> None:
+        # Atributos principales
+        self.numero_sesion: int = numero_sesion
+        self.abierta: bool = True
+        self.hora_inicio: datetime = datetime.now()
+        self.hora_fin: Optional[datetime] = None
 
-    votaciones: List[dict] = field(default_factory=list)
-    debates: List[dict] = field(default_factory=list)
-    concejales: List[dict] = field(default_factory=list)
+        # Listas de trabajo (por ahora dicts, después pueden ser objetos)
+        self.votaciones: List[Dict[str, Any]] = []
+        self.debates: List[Dict[str, Any]] = []
+        self.concejales: List[Dict[str, Any]] = []
 
     def cerrar(self) -> None:
-        """Marca la sesión como cerrada y registra la hora de fin."""
+        """
+        Marca la sesión como cerrada y registra la hora de fin.
+        """
         self.abierta = False
         self.hora_fin = datetime.now()
 
     def to_dict(self) -> dict:
-        """Convierte la sesión a un diccionario simple (para JSON)."""
+        """
+        Convierte la sesión a un diccionario simple (para JSON).
+        """
         return {
-            "id": self.id,
             "numero_sesion": self.numero_sesion,
             "abierta": self.abierta,
             "hora_inicio": self.hora_inicio.isoformat() if self.hora_inicio else None,

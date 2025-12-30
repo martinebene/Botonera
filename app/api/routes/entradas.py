@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Body
+from fastapi import APIRouter, Body
 
 from app.services.input_service import procesar_pulsacion
 
@@ -9,32 +9,17 @@ router = APIRouter(
 
 
 @router.post("/tecla")
-def recibir_pulsacion(payload: dict = Body(...)):
+def recibir_tecla(
+    dispositivo: str = Body(..., embed=True),
+    tecla: str = Body(..., embed=True),
+):
     """
-    Endpoint para recibir pulsaciones de teclas desde el cliente de botonera.
+    Recibe una pulsación desde un dispositivo físico (teclado).
 
-    Espera un JSON:
+    Body esperado:
     {
-      "dispositivo": "ruta_del_dispositivo_en_linux",
+      "dispositivo": "ruta_o_id_del_dispositivo",
       "tecla": "1"
     }
     """
-
-    dispositivo = payload.get("dispositivo")
-    tecla = payload.get("tecla")
-
-    if not dispositivo or tecla is None:
-        raise HTTPException(
-            status_code=400,
-            detail="Se requieren los campos 'dispositivo' y 'tecla'.",
-        )
-
-    resultado = procesar_pulsacion(dispositivo=dispositivo, tecla=str(tecla))
-
-    if not resultado.get("aceptada", False):
-        raise HTTPException(
-            status_code=400,
-            detail=resultado.get("motivo", "pulsacion_rechazada"),
-        )
-
-    return resultado
+    return procesar_pulsacion(dispositivo, tecla)

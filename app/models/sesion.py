@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime
 from typing import List, Optional
+from collections import deque
 
 from app.models.concejal import Concejal
 from app.models.votacion import Votacion
@@ -16,6 +17,8 @@ class Sesion:
     - hora_inicio / hora_fin: timestamps.
     - concejales: lista de concejales asociados.
     - votaciones: lista de votaciones realizadas en la sesión.
+    - en_uso_de_palabra: concejal en uso de la palabra si lo hubiese
+    - pedidos_de_uso_de_palabra: cola de concejales que pisieron la palabra
     """
 
     def __init__(self, numero_sesion: int) -> None:
@@ -26,6 +29,10 @@ class Sesion:
 
         self.concejales: List[Concejal] = []
         self.votaciones: List[Votacion] = []
+        self.pedidos_uso_de_palabra = deque()   # deque[Concejal]
+
+        self.en_uso_de_palabra: Optional[Concejal] = None 
+
 
     def cerrar(self) -> None:
         """Cierra la sesión y fija la hora de fin."""
@@ -42,4 +49,5 @@ class Sesion:
             "hora_fin": self.hora_fin.isoformat() if self.hora_fin else None,
             "concejales": [c.to_dict() for c in self.concejales],
             "votaciones": [v.to_dict() for v in self.votaciones],
+            "pedidos_uso_de_palabra":[p.to_dict() for p in self.pedidos_uso_de_palabra],
         }

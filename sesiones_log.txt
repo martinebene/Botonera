@@ -1,93 +1,311 @@
-se abrio sesion nro 31, a la hora 2025-12-26 11:07:41, y se cerro a la hora 2025-12-26 11:07:50
-se abrio sesion nro 14, a la hora 2025-12-26 11:07:58, y se cerro a la hora 2025-12-26 11:08:02
-se abrio sesion nro 11, a la hora 2025-12-26 11:08:13, y se cerro a la hora 2025-12-26 11:08:25
-se abrio sesion nro 14, a la hora 2025-12-26 15:02:49, y se cerro a la hora 2025-12-26 15:05:30
-se abrio sesion nro 198, a la hora 2025-12-29 10:42:45, y se cerro a la hora 2025-12-29 10:43:48
-[2025-12-29 11:08:57] PULSACION_RAW; dispositivo=dev12; tecla=1
-[2025-12-29 11:08:57] PULSACION rechazada; dispositivo=dev12; tecla=1; concejal=N/A; motivo=no_hay_sesion_abierta
-[2025-12-29 11:10:29] PULSACION_RAW; dispositivo=dev12; tecla=1
-[2025-12-29 11:10:29] PULSACION aceptada; dispositivo=dev12; tecla=1; concejal=Lawrence, Jennifer (dni=10000012); motivo=
-se abrio sesion nro 143, a la hora 2025-12-29 11:10:21, y se cerro a la hora 2025-12-29 11:10:42
-[2025-12-29 11:21:22] SESION_APERTURA_OK; numero_sesion=23; hora_inicio=2025-12-29 11:21:22
-[2025-12-29 11:22:17] PULSACION_RAW; dispositivo=dev7; tecla=1
-[2025-12-29 11:22:17] PULSACION rechazada; dispositivo=dev7; tecla=1; concejal=N/A; motivo=dispositivo_no_asignado
-[2025-12-29 11:22:33] PULSACION_RAW; dispositivo=dev07; tecla=1
-[2025-12-29 11:22:33] PULSACION aceptada; dispositivo=dev07; tecla=1; concejal=Washington, Denzel (dni=10000007); motivo=
-[2025-12-29 11:22:45] SESION_CIERRE_OK; numero_sesion=23; hora_inicio=2025-12-29 11:21:22; hora_fin=2025-12-29 11:22:45
-[2025-12-29 14:35:50] SESION_APERTURA_OK; numero_sesion=78; hora_inicio=2025-12-29 14:35:50
-[2025-12-29 14:37:26] VOTACION_APERTURA_OK; numero_sesion=78; numero_votacion=1; tipo=defensa; tema=presupuesto; hora_inicio=2025-12-29 14:37:26
-[2025-12-29 14:39:02] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Downey Jr, Robert (dni=10000001); valor_voto=SI; auto_cierre=NO
-[2025-12-29 14:39:16] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Johansson, Scarlett (dni=10000002); valor_voto=SI; auto_cierre=NO
-[2025-12-29 14:39:30] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=DiCaprio, Leonardo (dni=10000003); valor_voto=NO; auto_cierre=NO
-[2025-12-29 14:39:39] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Portman, Natalie (dni=10000004); valor_voto=NO; auto_cierre=NO
-[2025-12-29 14:39:43] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Hanks, Tom (dni=10000005); valor_voto=NO; auto_cierre=NO
-[2025-12-29 14:39:55] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Streep, Meryl (dni=10000006); valor_voto=SI; auto_cierre=NO
-[2025-12-29 14:40:13] VOTO_RECHAZADO; numero_sesion=78; numero_votacion=1; concejal_dni=10000006; motivo=concejal_ya_voto
-[2025-12-29 14:55:07] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Washington, Denzel (dni=10000007); valor_voto=SI; auto_cierre=NO
-[2025-12-29 14:55:11] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Stone, Emma (dni=10000008); valor_voto=SI; auto_cierre=NO
-[2025-12-29 14:55:17] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Pitt, Brad (dni=10000009); valor_voto=SI; auto_cierre=NO
-[2025-12-29 14:57:16] VOTO_RECHAZADO; numero_sesion=78; numero_votacion=1; concejal_dni=100000010; motivo=concejal_no_encontrado_o_no_presente
-[2025-12-29 14:57:20] VOTO_RECHAZADO; numero_sesion=78; numero_votacion=1; concejal_dni=100000011; motivo=concejal_no_encontrado_o_no_presente
-[2025-12-29 14:57:22] VOTO_RECHAZADO; numero_sesion=78; numero_votacion=1; concejal_dni=100000011; motivo=concejal_no_encontrado_o_no_presente
-[2025-12-29 14:57:47] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Reeves, Keanu (dni=10000011); valor_voto=SI; auto_cierre=NO
-[2025-12-29 14:58:00] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Blanchett, Cate (dni=10000010); valor_voto=SI; auto_cierre=NO
-[2025-12-29 15:00:20] VOTACION_CIERRE_AUTOMATICO; numero_sesion=78; numero_votacion=1; hora_inicio=2025-12-29 14:37:26; hora_fin=2025-12-29 15:00:20
-[2025-12-29 15:00:20] VOTO_RECIBIDO_OK; numero_sesion=78; numero_votacion=1; concejal=Lawrence, Jennifer (dni=10000012); valor_voto=SI; auto_cierre=SI
-[2025-12-30 13:11:37] SESION_APERTURA_OK; numero_sesion=93; hora_inicio=2025-12-30 13:11:37
-[2025-12-30 13:12:45] VOTACION_APERTURA_OK; numero_sesion=93; numero_votacion=19; tipo=despacho; tema=tarifaria; hora_inicio=2025-12-30 13:12:45
-[2025-12-30 13:13:26] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Lawrence, Jennifer (dni=10000012); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:13:30] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Reeves, Keanu (dni=10000011); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:13:38] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Blanchett, Cate (dni=10000010); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:13:46] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Pitt, Brad (dni=10000009); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:13:51] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Stone, Emma (dni=10000008); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:13:56] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Washington, Denzel (dni=10000007); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:14:02] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Streep, Meryl (dni=10000006); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:14:06] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Hanks, Tom (dni=10000005); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:14:10] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Portman, Natalie (dni=10000004); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:14:15] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=DiCaprio, Leonardo (dni=10000003); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:14:22] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Johansson, Scarlett (dni=10000002); valor_voto=SI; auto_cierre=NO
-[2025-12-30 13:14:46] VOTO_RECHAZADO; numero_sesion=93; numero_votacion=19; concejal_dni=10000002; motivo=concejal_ya_voto
-[2025-12-30 13:14:52] VOTO_RECIBIDO_OK; numero_sesion=93; numero_votacion=19; concejal=Downey Jr, Robert (dni=10000001); valor_voto=SI; auto_cierre=SI
-[2025-12-30 13:14:52] VOTACION_CIERRE_AUTOMATICO; numero_sesion=93; numero_votacion=19; hora_inicio=2025-12-30 13:12:45; hora_fin=2025-12-30 13:14:52
-[2025-12-30 14:22:54] SESION_APERTURA_OK; numero_sesion=359; hora_inicio=2025-12-30 14:22:54
-[2025-12-30 14:23:46] VOTACION_APERTURA_OK; numero_sesion=359; numero_votacion=78; tipo=mocion; tema=OD; hora_inicio=2025-12-30 14:23:46
-[2025-12-30 14:37:13] PULSACION_RAW; dispositivo=dev01; tecla=1
-[2025-12-30 14:37:13] VOTO_RECIBIDO_OK; numero_sesion=359; numero_votacion=78; concejal=Downey Jr, Robert (dni=10000001); valor_voto=SI; auto_cierre=NO
-[2025-12-30 14:37:13] PULSACION aceptada; dispositivo=dev01; tecla=1; concejal=Downey Jr, Robert (dni=10000001); motivo=voto_registrado
-[2025-12-30 14:37:19] PULSACION_RAW; dispositivo=dev02; tecla=1
-[2025-12-30 14:37:19] VOTO_RECIBIDO_OK; numero_sesion=359; numero_votacion=78; concejal=Johansson, Scarlett (dni=10000002); valor_voto=SI; auto_cierre=NO
-[2025-12-30 14:37:19] PULSACION aceptada; dispositivo=dev02; tecla=1; concejal=Johansson, Scarlett (dni=10000002); motivo=voto_registrado
-[2025-12-30 14:38:10] PULSACION_RAW; dispositivo=dev03; tecla=1
-[2025-12-30 14:38:10] VOTO_RECIBIDO_OK; numero_sesion=359; numero_votacion=78; concejal=DiCaprio, Leonardo (dni=10000003); valor_voto=SI; auto_cierre=NO
-[2025-12-30 14:38:10] PULSACION aceptada; dispositivo=dev03; tecla=1; concejal=DiCaprio, Leonardo (dni=10000003); motivo=voto_registrado
-[2025-12-30 14:38:14] PULSACION_RAW; dispositivo=dev04; tecla=1
-[2025-12-30 14:38:14] VOTO_RECIBIDO_OK; numero_sesion=359; numero_votacion=78; concejal=Portman, Natalie (dni=10000004); valor_voto=SI; auto_cierre=NO
-[2025-12-30 14:38:14] PULSACION aceptada; dispositivo=dev04; tecla=1; concejal=Portman, Natalie (dni=10000004); motivo=voto_registrado
-[2025-12-30 14:38:19] PULSACION_RAW; dispositivo=dev05; tecla=1
-[2025-12-30 14:38:19] VOTO_RECIBIDO_OK; numero_sesion=359; numero_votacion=78; concejal=Hanks, Tom (dni=10000005); valor_voto=SI; auto_cierre=NO
-[2025-12-30 14:38:19] PULSACION aceptada; dispositivo=dev05; tecla=1; concejal=Hanks, Tom (dni=10000005); motivo=voto_registrado
-[2025-12-30 14:38:24] PULSACION_RAW; dispositivo=dev06; tecla=1
-[2025-12-30 14:38:24] VOTO_RECIBIDO_OK; numero_sesion=359; numero_votacion=78; concejal=Streep, Meryl (dni=10000006); valor_voto=SI; auto_cierre=NO
-[2025-12-30 14:38:24] PULSACION aceptada; dispositivo=dev06; tecla=1; concejal=Streep, Meryl (dni=10000006); motivo=voto_registrado
-[2025-12-30 14:38:54] PULSACION_RAW; dispositivo=dev07; tecla=75
-[2025-12-30 14:38:54] PULSACION rechazada; dispositivo=dev07; tecla=75; concejal=Washington, Denzel (dni=10000007); motivo=tecla_no_soportada
-[2025-12-30 14:39:02] PULSACION_RAW; dispositivo=dev07; tecla=7
-[2025-12-30 14:39:02] PULSACION aceptada; dispositivo=dev07; tecla=7; concejal=Washington, Denzel (dni=10000007); motivo=toggle_presente
-[2025-12-30 14:39:22] PULSACION_RAW; dispositivo=dev08; tecla=7
-[2025-12-30 14:39:22] PULSACION aceptada; dispositivo=dev08; tecla=7; concejal=Stone, Emma (dni=10000008); motivo=toggle_presente
-[2025-12-30 14:39:27] PULSACION_RAW; dispositivo=dev09; tecla=7
-[2025-12-30 14:39:27] PULSACION aceptada; dispositivo=dev09; tecla=7; concejal=Pitt, Brad (dni=10000009); motivo=toggle_presente
-[2025-12-30 14:39:32] PULSACION_RAW; dispositivo=dev10; tecla=7
-[2025-12-30 14:39:32] PULSACION aceptada; dispositivo=dev10; tecla=7; concejal=Blanchett, Cate (dni=10000010); motivo=toggle_presente
-[2025-12-30 14:39:37] PULSACION_RAW; dispositivo=dev11; tecla=7
-[2025-12-30 14:39:37] PULSACION aceptada; dispositivo=dev11; tecla=7; concejal=Reeves, Keanu (dni=10000011); motivo=toggle_presente
-[2025-12-30 14:39:42] PULSACION_RAW; dispositivo=dev12; tecla=7
-[2025-12-30 14:39:42] PULSACION aceptada; dispositivo=dev12; tecla=7; concejal=Lawrence, Jennifer (dni=10000012); motivo=toggle_presente
-[2025-12-30 14:46:36] PULSACION_RAW; dispositivo=dev12; tecla=7
-[2025-12-30 14:46:36] PULSACION aceptada; dispositivo=dev12; tecla=7; concejal=Lawrence, Jennifer (dni=10000012); motivo=toggle_presente
-[2025-12-30 14:46:42] PULSACION_RAW; dispositivo=dev12; tecla=2
-[2025-12-30 14:46:42] VOTO_RECIBIDO_OK; numero_sesion=359; numero_votacion=78; concejal=Lawrence, Jennifer (dni=10000012); valor_voto=ABSTENCION; auto_cierre=SI
-[2025-12-30 14:46:42] VOTACION_CIERRE_AUTOMATICO; numero_sesion=359; numero_votacion=78; hora_inicio=2025-12-30 14:23:46; hora_fin=2025-12-30 14:46:42
-[2025-12-30 14:46:42] PULSACION aceptada; dispositivo=dev12; tecla=2; concejal=Lawrence, Jennifer (dni=10000012); motivo=voto_registrado
-[2025-12-30 14:54:30] PULSACION_RAW; dispositivo=dev12; tecla=2
-[2025-12-30 14:54:30] PULSACION rechazada; dispositivo=dev12; tecla=2; concejal=Lawrence, Jennifer (dni=10000012); motivo=no_hay_votacion_abierta
+
+[2026-01-07 09:22:42] PULSACION aceptada; dispositivo=dev01; tecla=7; concejal=Downey Jr, Robert (dni=10000001); motivo=toggle_presente
+[2026-01-07 09:25:30] PULSACION_RAW; dispositivo=dev01; tecla=7
+[2026-01-07 09:25:30] PULSACION aceptada; dispositivo=dev01; tecla=7; concejal=Downey Jr, Robert (dni=10000001); motivo=toggle_presente
+[2026-01-07 09:59:42] SESION_APERTURA_OK; numero_sesion=368; hora_inicio=2026-01-07 09:59:42
+[2026-01-07 10:00:01] PULSACION_RAW; dispositivo=dev01; tecla=1
+[2026-01-07 10:00:01] PULSACION rechazada; dispositivo=dev01; tecla=1; concejal=Downey Jr, Robert (dni=10000001); motivo=no_hay_votacion_abierta
+[2026-01-07 10:00:05] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 10:00:05] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 10:00:28] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 10:00:28] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 10:00:32] PULSACION_RAW; dispositivo=dev01; tecla=7
+[2026-01-07 10:00:32] PULSACION aceptada; dispositivo=dev01; tecla=7; concejal=Downey Jr, Robert (dni=10000001); motivo=toggle_presente
+[2026-01-07 10:00:33] PULSACION_RAW; dispositivo=dev01; tecla=7
+[2026-01-07 10:00:33] PULSACION aceptada; dispositivo=dev01; tecla=7; concejal=Downey Jr, Robert (dni=10000001); motivo=toggle_presente
+[2026-01-07 10:00:34] PULSACION_RAW; dispositivo=dev01; tecla=7
+[2026-01-07 10:00:34] PULSACION aceptada; dispositivo=dev01; tecla=7; concejal=Downey Jr, Robert (dni=10000001); motivo=toggle_presente
+[2026-01-07 10:00:37] PULSACION_RAW; dispositivo=dev02; tecla=7
+[2026-01-07 10:00:37] PULSACION aceptada; dispositivo=dev02; tecla=7; concejal=Johansson, Scarlett (dni=10000002); motivo=toggle_presente
+[2026-01-07 10:01:22] VOTACION_APERTURA_OK; numero_sesion=368; numero_votacion=12; tipo=despacho; tema=presupuesto; hora_inicio=2026-01-07 10:01:22
+[2026-01-07 10:01:32] PULSACION_RAW; dispositivo=dev01; tecla=1
+[2026-01-07 10:01:32] PULSACION rechazada; dispositivo=dev01; tecla=1; concejal=Downey Jr, Robert (dni=10000001); motivo=concejal_ausente
+[2026-01-07 10:01:48] PULSACION_RAW; dispositivo=dev03; tecla=1
+[2026-01-07 10:01:48] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=DiCaprio, Leonardo (dni=10000003); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:01:48] PULSACION aceptada; dispositivo=dev03; tecla=1; concejal=DiCaprio, Leonardo (dni=10000003); motivo=voto_registrado
+[2026-01-07 10:02:02] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 10:02:02] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 10:02:04] PULSACION_RAW; dispositivo=dev01; tecla=7
+[2026-01-07 10:02:04] PULSACION aceptada; dispositivo=dev01; tecla=7; concejal=Downey Jr, Robert (dni=10000001); motivo=toggle_presente
+[2026-01-07 10:02:07] PULSACION_RAW; dispositivo=dev02; tecla=7
+[2026-01-07 10:02:07] PULSACION aceptada; dispositivo=dev02; tecla=7; concejal=Johansson, Scarlett (dni=10000002); motivo=toggle_presente
+[2026-01-07 10:02:17] PULSACION_RAW; dispositivo=dev01; tecla=1
+[2026-01-07 10:02:17] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Downey Jr, Robert (dni=10000001); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:02:17] PULSACION aceptada; dispositivo=dev01; tecla=1; concejal=Downey Jr, Robert (dni=10000001); motivo=voto_registrado
+[2026-01-07 10:02:20] PULSACION_RAW; dispositivo=dev02; tecla=1
+[2026-01-07 10:02:20] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Johansson, Scarlett (dni=10000002); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:02:20] PULSACION aceptada; dispositivo=dev02; tecla=1; concejal=Johansson, Scarlett (dni=10000002); motivo=voto_registrado
+[2026-01-07 10:02:37] PULSACION_RAW; dispositivo=dev03; tecla=1
+[2026-01-07 10:02:37] PULSACION rechazada; dispositivo=dev03; tecla=1; concejal=DiCaprio, Leonardo (dni=10000003); motivo=concejal_ya_voto
+[2026-01-07 10:02:39] PULSACION_RAW; dispositivo=dev03; tecla=1
+[2026-01-07 10:02:39] PULSACION rechazada; dispositivo=dev03; tecla=1; concejal=DiCaprio, Leonardo (dni=10000003); motivo=concejal_ya_voto
+[2026-01-07 10:02:42] PULSACION_RAW; dispositivo=dev04; tecla=1
+[2026-01-07 10:02:42] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Portman, Natalie (dni=10000004); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:02:42] PULSACION aceptada; dispositivo=dev04; tecla=1; concejal=Portman, Natalie (dni=10000004); motivo=voto_registrado
+[2026-01-07 10:02:45] PULSACION_RAW; dispositivo=dev05; tecla=1
+[2026-01-07 10:02:45] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Hanks, Tom (dni=10000005); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:02:45] PULSACION aceptada; dispositivo=dev05; tecla=1; concejal=Hanks, Tom (dni=10000005); motivo=voto_registrado
+[2026-01-07 10:02:47] PULSACION_RAW; dispositivo=dev06; tecla=1
+[2026-01-07 10:02:47] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Streep, Meryl (dni=10000006); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:02:47] PULSACION aceptada; dispositivo=dev06; tecla=1; concejal=Streep, Meryl (dni=10000006); motivo=voto_registrado
+[2026-01-07 10:02:49] PULSACION_RAW; dispositivo=dev07; tecla=3
+[2026-01-07 10:02:49] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Washington, Denzel (dni=10000007); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:02:49] PULSACION aceptada; dispositivo=dev07; tecla=3; concejal=Washington, Denzel (dni=10000007); motivo=voto_registrado
+[2026-01-07 10:02:50] PULSACION_RAW; dispositivo=dev08; tecla=2
+[2026-01-07 10:02:50] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Stone, Emma (dni=10000008); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:02:50] PULSACION aceptada; dispositivo=dev08; tecla=2; concejal=Stone, Emma (dni=10000008); motivo=voto_registrado
+[2026-01-07 10:02:54] PULSACION_RAW; dispositivo=dev09; tecla=3
+[2026-01-07 10:02:54] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Pitt, Brad (dni=10000009); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:02:54] PULSACION aceptada; dispositivo=dev09; tecla=3; concejal=Pitt, Brad (dni=10000009); motivo=voto_registrado
+[2026-01-07 10:02:55] PULSACION_RAW; dispositivo=dev010; tecla=2
+[2026-01-07 10:02:55] PULSACION rechazada; dispositivo=dev010; tecla=2; concejal=N/A; motivo=dispositivo_no_asignado
+[2026-01-07 10:02:56] PULSACION_RAW; dispositivo=dev011; tecla=1
+[2026-01-07 10:02:56] PULSACION rechazada; dispositivo=dev011; tecla=1; concejal=N/A; motivo=dispositivo_no_asignado
+[2026-01-07 10:02:59] PULSACION_RAW; dispositivo=dev012; tecla=3
+[2026-01-07 10:02:59] PULSACION rechazada; dispositivo=dev012; tecla=3; concejal=N/A; motivo=dispositivo_no_asignado
+[2026-01-07 10:03:16] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 10:03:16] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Reeves, Keanu (dni=10000011); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:03:16] PULSACION aceptada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=voto_registrado
+[2026-01-07 10:03:24] PULSACION_RAW; dispositivo=dev12; tecla=3
+[2026-01-07 10:03:24] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Lawrence, Jennifer (dni=10000012); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:03:24] PULSACION aceptada; dispositivo=dev12; tecla=3; concejal=Lawrence, Jennifer (dni=10000012); motivo=voto_registrado
+[2026-01-07 10:03:29] PULSACION_RAW; dispositivo=dev12; tecla=2
+[2026-01-07 10:03:29] PULSACION rechazada; dispositivo=dev12; tecla=2; concejal=Lawrence, Jennifer (dni=10000012); motivo=concejal_ya_voto
+[2026-01-07 10:03:30] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 10:03:30] PULSACION rechazada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 10:03:31] PULSACION_RAW; dispositivo=dev10; tecla=3
+[2026-01-07 10:03:31] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=12; concejal=Blanchett, Cate (dni=10000010); valor_voto=NO; auto_cierre=SI
+[2026-01-07 10:03:31] VOTACION_CIERRE_AUTOMATICO; numero_sesion=368; numero_votacion=12; hora_inicio=2026-01-07 10:01:22; hora_fin=2026-01-07 10:03:31
+[2026-01-07 10:03:31] PULSACION aceptada; dispositivo=dev10; tecla=3; concejal=Blanchett, Cate (dni=10000010); motivo=voto_registrado
+[2026-01-07 10:03:37] PULSACION_RAW; dispositivo=dev09; tecla=3
+[2026-01-07 10:03:37] PULSACION rechazada; dispositivo=dev09; tecla=3; concejal=Pitt, Brad (dni=10000009); motivo=no_hay_votacion_abierta
+[2026-01-07 10:04:04] VOTACION_APERTURA_OK; numero_sesion=368; numero_votacion=15; tipo=despacho; tema=tarifaria; hora_inicio=2026-01-07 10:04:04
+[2026-01-07 10:04:21] PULSACION_RAW; dispositivo=dev12; tecla=2
+[2026-01-07 10:04:21] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Lawrence, Jennifer (dni=10000012); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:04:21] PULSACION aceptada; dispositivo=dev12; tecla=2; concejal=Lawrence, Jennifer (dni=10000012); motivo=voto_registrado
+[2026-01-07 10:04:21] PULSACION_RAW; dispositivo=dev11; tecla=3
+[2026-01-07 10:04:21] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Reeves, Keanu (dni=10000011); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:04:21] PULSACION aceptada; dispositivo=dev11; tecla=3; concejal=Reeves, Keanu (dni=10000011); motivo=voto_registrado
+[2026-01-07 10:04:22] PULSACION_RAW; dispositivo=dev10; tecla=2
+[2026-01-07 10:04:22] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Blanchett, Cate (dni=10000010); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:04:22] PULSACION aceptada; dispositivo=dev10; tecla=2; concejal=Blanchett, Cate (dni=10000010); motivo=voto_registrado
+[2026-01-07 10:04:23] PULSACION_RAW; dispositivo=dev09; tecla=3
+[2026-01-07 10:04:23] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Pitt, Brad (dni=10000009); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:04:23] PULSACION aceptada; dispositivo=dev09; tecla=3; concejal=Pitt, Brad (dni=10000009); motivo=voto_registrado
+[2026-01-07 10:04:25] PULSACION_RAW; dispositivo=dev08; tecla=3
+[2026-01-07 10:04:25] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Stone, Emma (dni=10000008); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:04:25] PULSACION aceptada; dispositivo=dev08; tecla=3; concejal=Stone, Emma (dni=10000008); motivo=voto_registrado
+[2026-01-07 10:04:25] PULSACION_RAW; dispositivo=dev07; tecla=2
+[2026-01-07 10:04:25] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Washington, Denzel (dni=10000007); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:04:25] PULSACION aceptada; dispositivo=dev07; tecla=2; concejal=Washington, Denzel (dni=10000007); motivo=voto_registrado
+[2026-01-07 10:04:26] PULSACION_RAW; dispositivo=dev06; tecla=2
+[2026-01-07 10:04:26] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Streep, Meryl (dni=10000006); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:04:26] PULSACION aceptada; dispositivo=dev06; tecla=2; concejal=Streep, Meryl (dni=10000006); motivo=voto_registrado
+[2026-01-07 10:04:27] PULSACION_RAW; dispositivo=dev05; tecla=3
+[2026-01-07 10:04:27] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Hanks, Tom (dni=10000005); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:04:27] PULSACION aceptada; dispositivo=dev05; tecla=3; concejal=Hanks, Tom (dni=10000005); motivo=voto_registrado
+[2026-01-07 10:04:28] PULSACION_RAW; dispositivo=dev01; tecla=3
+[2026-01-07 10:04:28] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Downey Jr, Robert (dni=10000001); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:04:28] PULSACION aceptada; dispositivo=dev01; tecla=3; concejal=Downey Jr, Robert (dni=10000001); motivo=voto_registrado
+[2026-01-07 10:04:29] PULSACION_RAW; dispositivo=dev02; tecla=2
+[2026-01-07 10:04:29] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Johansson, Scarlett (dni=10000002); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:04:29] PULSACION aceptada; dispositivo=dev02; tecla=2; concejal=Johansson, Scarlett (dni=10000002); motivo=voto_registrado
+[2026-01-07 10:04:29] PULSACION_RAW; dispositivo=dev03; tecla=1
+[2026-01-07 10:04:29] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=DiCaprio, Leonardo (dni=10000003); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:04:29] PULSACION aceptada; dispositivo=dev03; tecla=1; concejal=DiCaprio, Leonardo (dni=10000003); motivo=voto_registrado
+[2026-01-07 10:04:31] PULSACION_RAW; dispositivo=dev04; tecla=1
+[2026-01-07 10:04:31] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=15; concejal=Portman, Natalie (dni=10000004); valor_voto=SI; auto_cierre=SI
+[2026-01-07 10:04:31] VOTACION_CIERRE_AUTOMATICO; numero_sesion=368; numero_votacion=15; hora_inicio=2026-01-07 10:04:04; hora_fin=2026-01-07 10:04:31
+[2026-01-07 10:04:31] PULSACION aceptada; dispositivo=dev04; tecla=1; concejal=Portman, Natalie (dni=10000004); motivo=voto_registrado
+[2026-01-07 10:05:21] VOTACION_APERTURA_OK; numero_sesion=368; numero_votacion=165; tipo=mocion; tema=cuarto intermedio; hora_inicio=2026-01-07 10:05:21
+[2026-01-07 10:05:30] PULSACION_RAW; dispositivo=dev01; tecla=1
+[2026-01-07 10:05:30] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Downey Jr, Robert (dni=10000001); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:05:30] PULSACION aceptada; dispositivo=dev01; tecla=1; concejal=Downey Jr, Robert (dni=10000001); motivo=voto_registrado
+[2026-01-07 10:05:33] PULSACION_RAW; dispositivo=dev02; tecla=2
+[2026-01-07 10:05:33] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Johansson, Scarlett (dni=10000002); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:05:33] PULSACION aceptada; dispositivo=dev02; tecla=2; concejal=Johansson, Scarlett (dni=10000002); motivo=voto_registrado
+[2026-01-07 10:05:36] PULSACION_RAW; dispositivo=dev03; tecla=3
+[2026-01-07 10:05:36] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=DiCaprio, Leonardo (dni=10000003); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:05:36] PULSACION aceptada; dispositivo=dev03; tecla=3; concejal=DiCaprio, Leonardo (dni=10000003); motivo=voto_registrado
+[2026-01-07 10:05:37] PULSACION_RAW; dispositivo=dev04; tecla=1
+[2026-01-07 10:05:37] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Portman, Natalie (dni=10000004); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:05:37] PULSACION aceptada; dispositivo=dev04; tecla=1; concejal=Portman, Natalie (dni=10000004); motivo=voto_registrado
+[2026-01-07 10:05:40] PULSACION_RAW; dispositivo=dev05; tecla=3
+[2026-01-07 10:05:40] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Hanks, Tom (dni=10000005); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:05:40] PULSACION aceptada; dispositivo=dev05; tecla=3; concejal=Hanks, Tom (dni=10000005); motivo=voto_registrado
+[2026-01-07 10:05:41] PULSACION_RAW; dispositivo=dev06; tecla=1
+[2026-01-07 10:05:41] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Streep, Meryl (dni=10000006); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:05:41] PULSACION aceptada; dispositivo=dev06; tecla=1; concejal=Streep, Meryl (dni=10000006); motivo=voto_registrado
+[2026-01-07 10:05:42] PULSACION_RAW; dispositivo=dev07; tecla=2
+[2026-01-07 10:05:42] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Washington, Denzel (dni=10000007); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:05:42] PULSACION aceptada; dispositivo=dev07; tecla=2; concejal=Washington, Denzel (dni=10000007); motivo=voto_registrado
+[2026-01-07 10:05:43] PULSACION_RAW; dispositivo=dev08; tecla=3
+[2026-01-07 10:05:43] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Stone, Emma (dni=10000008); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:05:43] PULSACION aceptada; dispositivo=dev08; tecla=3; concejal=Stone, Emma (dni=10000008); motivo=voto_registrado
+[2026-01-07 10:05:45] PULSACION_RAW; dispositivo=dev09; tecla=3
+[2026-01-07 10:05:45] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Pitt, Brad (dni=10000009); valor_voto=NO; auto_cierre=NO
+[2026-01-07 10:05:45] PULSACION aceptada; dispositivo=dev09; tecla=3; concejal=Pitt, Brad (dni=10000009); motivo=voto_registrado
+[2026-01-07 10:05:46] PULSACION_RAW; dispositivo=dev10; tecla=1
+[2026-01-07 10:05:46] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Blanchett, Cate (dni=10000010); valor_voto=SI; auto_cierre=NO
+[2026-01-07 10:05:46] PULSACION aceptada; dispositivo=dev10; tecla=1; concejal=Blanchett, Cate (dni=10000010); motivo=voto_registrado
+[2026-01-07 10:05:47] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 10:05:47] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Reeves, Keanu (dni=10000011); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 10:05:47] PULSACION aceptada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=voto_registrado
+[2026-01-07 10:05:51] PULSACION_RAW; dispositivo=dev12; tecla=1
+[2026-01-07 10:05:51] VOTO_RECIBIDO_OK; numero_sesion=368; numero_votacion=165; concejal=Lawrence, Jennifer (dni=10000012); valor_voto=SI; auto_cierre=SI
+[2026-01-07 10:05:51] VOTACION_CIERRE_AUTOMATICO; numero_sesion=368; numero_votacion=165; hora_inicio=2026-01-07 10:05:21; hora_fin=2026-01-07 10:05:51
+[2026-01-07 10:05:51] PULSACION aceptada; dispositivo=dev12; tecla=1; concejal=Lawrence, Jennifer (dni=10000012); motivo=voto_registrado
+[2026-01-07 11:06:42] SESION_APERTURA_OK; numero_sesion=47; hora_inicio=2026-01-07 11:06:42
+[2026-01-07 11:07:25] PULSACION_RAW; dispositivo=dev02; tecla=9
+[2026-01-07 11:07:25] PULSACION rechazada; dispositivo=dev02; tecla=9; concejal=Johansson, Scarlett (dni=10000002); motivo=tecla_no_soportada
+[2026-01-07 11:07:28] PULSACION_RAW; dispositivo=dev02; tecla=7
+[2026-01-07 11:07:28] PULSACION aceptada; dispositivo=dev02; tecla=7; concejal=Johansson, Scarlett (dni=10000002); motivo=toggle_presente
+[2026-01-07 11:07:29] PULSACION_RAW; dispositivo=dev02; tecla=7
+[2026-01-07 11:07:29] PULSACION aceptada; dispositivo=dev02; tecla=7; concejal=Johansson, Scarlett (dni=10000002); motivo=toggle_presente
+[2026-01-07 11:08:37] VOTACION_APERTURA_OK; numero_sesion=47; numero_votacion=13; tipo=despacho; tema=lotesocial; hora_inicio=2026-01-07 11:08:37
+[2026-01-07 11:08:51] PULSACION_RAW; dispositivo=dev01; tecla=2
+[2026-01-07 11:08:51] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Downey Jr, Robert (dni=10000001); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 11:08:51] PULSACION aceptada; dispositivo=dev01; tecla=2; concejal=Downey Jr, Robert (dni=10000001); motivo=voto_registrado
+[2026-01-07 11:08:53] PULSACION_RAW; dispositivo=dev02; tecla=3
+[2026-01-07 11:08:53] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Johansson, Scarlett (dni=10000002); valor_voto=NO; auto_cierre=NO
+[2026-01-07 11:08:53] PULSACION aceptada; dispositivo=dev02; tecla=3; concejal=Johansson, Scarlett (dni=10000002); motivo=voto_registrado
+[2026-01-07 11:08:53] PULSACION_RAW; dispositivo=dev03; tecla=1
+[2026-01-07 11:08:53] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=DiCaprio, Leonardo (dni=10000003); valor_voto=SI; auto_cierre=NO
+[2026-01-07 11:08:53] PULSACION aceptada; dispositivo=dev03; tecla=1; concejal=DiCaprio, Leonardo (dni=10000003); motivo=voto_registrado
+[2026-01-07 11:08:54] PULSACION_RAW; dispositivo=dev04; tecla=2
+[2026-01-07 11:08:54] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Portman, Natalie (dni=10000004); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 11:08:54] PULSACION aceptada; dispositivo=dev04; tecla=2; concejal=Portman, Natalie (dni=10000004); motivo=voto_registrado
+[2026-01-07 11:08:55] PULSACION_RAW; dispositivo=dev08; tecla=2
+[2026-01-07 11:08:55] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Stone, Emma (dni=10000008); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 11:08:55] PULSACION aceptada; dispositivo=dev08; tecla=2; concejal=Stone, Emma (dni=10000008); motivo=voto_registrado
+[2026-01-07 11:08:56] PULSACION_RAW; dispositivo=dev07; tecla=3
+[2026-01-07 11:08:56] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Washington, Denzel (dni=10000007); valor_voto=NO; auto_cierre=NO
+[2026-01-07 11:08:56] PULSACION aceptada; dispositivo=dev07; tecla=3; concejal=Washington, Denzel (dni=10000007); motivo=voto_registrado
+[2026-01-07 11:08:57] PULSACION_RAW; dispositivo=dev06; tecla=3
+[2026-01-07 11:08:57] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Streep, Meryl (dni=10000006); valor_voto=NO; auto_cierre=NO
+[2026-01-07 11:08:57] PULSACION aceptada; dispositivo=dev06; tecla=3; concejal=Streep, Meryl (dni=10000006); motivo=voto_registrado
+[2026-01-07 11:08:57] PULSACION_RAW; dispositivo=dev05; tecla=3
+[2026-01-07 11:08:57] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Hanks, Tom (dni=10000005); valor_voto=NO; auto_cierre=NO
+[2026-01-07 11:08:57] PULSACION aceptada; dispositivo=dev05; tecla=3; concejal=Hanks, Tom (dni=10000005); motivo=voto_registrado
+[2026-01-07 11:08:59] PULSACION_RAW; dispositivo=dev09; tecla=3
+[2026-01-07 11:08:59] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Pitt, Brad (dni=10000009); valor_voto=NO; auto_cierre=NO
+[2026-01-07 11:08:59] PULSACION aceptada; dispositivo=dev09; tecla=3; concejal=Pitt, Brad (dni=10000009); motivo=voto_registrado
+[2026-01-07 11:09:05] PULSACION_RAW; dispositivo=dev12; tecla=3
+[2026-01-07 11:09:05] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Lawrence, Jennifer (dni=10000012); valor_voto=NO; auto_cierre=NO
+[2026-01-07 11:09:05] PULSACION aceptada; dispositivo=dev12; tecla=3; concejal=Lawrence, Jennifer (dni=10000012); motivo=voto_registrado
+[2026-01-07 11:09:06] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 11:09:06] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Reeves, Keanu (dni=10000011); valor_voto=ABSTENCION; auto_cierre=NO
+[2026-01-07 11:09:06] PULSACION aceptada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=voto_registrado
+[2026-01-07 11:09:11] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 11:09:11] PULSACION rechazada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:15] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 11:09:15] PULSACION rechazada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:24] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 11:09:24] PULSACION rechazada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:26] PULSACION_RAW; dispositivo=dev11; tecla=3
+[2026-01-07 11:09:26] PULSACION rechazada; dispositivo=dev11; tecla=3; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:28] PULSACION_RAW; dispositivo=dev11; tecla=1
+[2026-01-07 11:09:28] PULSACION rechazada; dispositivo=dev11; tecla=1; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:29] PULSACION_RAW; dispositivo=dev11; tecla=3
+[2026-01-07 11:09:29] PULSACION rechazada; dispositivo=dev11; tecla=3; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:29] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 11:09:29] PULSACION rechazada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:30] PULSACION_RAW; dispositivo=dev11; tecla=1
+[2026-01-07 11:09:30] PULSACION rechazada; dispositivo=dev11; tecla=1; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:31] PULSACION_RAW; dispositivo=dev11; tecla=1
+[2026-01-07 11:09:31] PULSACION rechazada; dispositivo=dev11; tecla=1; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:31] PULSACION_RAW; dispositivo=dev11; tecla=1
+[2026-01-07 11:09:31] PULSACION rechazada; dispositivo=dev11; tecla=1; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:32] PULSACION_RAW; dispositivo=dev11; tecla=1
+[2026-01-07 11:09:32] PULSACION rechazada; dispositivo=dev11; tecla=1; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:33] PULSACION_RAW; dispositivo=dev11; tecla=3
+[2026-01-07 11:09:33] PULSACION rechazada; dispositivo=dev11; tecla=3; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:34] PULSACION_RAW; dispositivo=dev11; tecla=3
+[2026-01-07 11:09:34] PULSACION rechazada; dispositivo=dev11; tecla=3; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:47] PULSACION_RAW; dispositivo=dev11; tecla=2
+[2026-01-07 11:09:47] PULSACION rechazada; dispositivo=dev11; tecla=2; concejal=Reeves, Keanu (dni=10000011); motivo=concejal_ya_voto
+[2026-01-07 11:09:49] PULSACION_RAW; dispositivo=dev12; tecla=2
+[2026-01-07 11:09:49] PULSACION rechazada; dispositivo=dev12; tecla=2; concejal=Lawrence, Jennifer (dni=10000012); motivo=concejal_ya_voto
+[2026-01-07 11:09:51] PULSACION_RAW; dispositivo=dev10; tecla=2
+[2026-01-07 11:09:51] VOTO_RECIBIDO_OK; numero_sesion=47; numero_votacion=13; concejal=Blanchett, Cate (dni=10000010); valor_voto=ABSTENCION; auto_cierre=SI
+[2026-01-07 11:09:51] VOTACION_CIERRE_AUTOMATICO; numero_sesion=47; numero_votacion=13; hora_inicio=2026-01-07 11:08:37; hora_fin=2026-01-07 11:09:51
+[2026-01-07 11:09:51] PULSACION aceptada; dispositivo=dev10; tecla=2; concejal=Blanchett, Cate (dni=10000010); motivo=voto_registrado
+[2026-01-07 11:10:28] SESION_CIERRE_OK; numero_sesion=47; hora_inicio=2026-01-07 11:06:42; hora_fin=2026-01-07 11:10:28
+[2026-01-07 11:16:03] SESION_APERTURA_OK; numero_sesion=96; hora_inicio=2026-01-07 11:16:03
+[2026-01-07 13:37:09] SESION_APERTURA_OK; numero_sesion=896; hora_inicio=2026-01-07 13:37:09
+[2026-01-07 14:11:18] SESION_APERTURA_OK; numero_sesion=291; hora_inicio=2026-01-07 14:11:18
+[2026-01-07 14:11:30] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:11:56] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:15:21] SESION_APERTURA_OK; numero_sesion=291; hora_inicio=2026-01-07 14:15:21
+[2026-01-07 14:15:28] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:15:28] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 14:15:31] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:15:31] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 14:15:32] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:15:32] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 14:15:36] PULSACION_RAW; dispositivo=dev02; tecla=9
+[2026-01-07 14:15:36] PULSACION rechazada; dispositivo=dev02; tecla=9; concejal=Johansson, Scarlett (dni=10000002); motivo=tecla_no_soportada
+[2026-01-07 14:15:40] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:15:40] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 14:15:42] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:15:42] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 14:15:43] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 14:15:43] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 14:15:44] PULSACION_RAW; dispositivo=dev03; tecla=9
+[2026-01-07 14:15:44] PULSACION rechazada; dispositivo=dev03; tecla=9; concejal=DiCaprio, Leonardo (dni=10000003); motivo=tecla_no_soportada
+[2026-01-07 14:15:45] PULSACION_RAW; dispositivo=dev06; tecla=9
+[2026-01-07 14:15:45] PULSACION rechazada; dispositivo=dev06; tecla=9; concejal=Streep, Meryl (dni=10000006); motivo=tecla_no_soportada
+[2026-01-07 14:15:47] PULSACION_RAW; dispositivo=dev05; tecla=9
+[2026-01-07 14:15:47] PULSACION rechazada; dispositivo=dev05; tecla=9; concejal=Hanks, Tom (dni=10000005); motivo=tecla_no_soportada
+[2026-01-07 14:15:50] PULSACION_RAW; dispositivo=dev02; tecla=9
+[2026-01-07 14:15:50] PULSACION rechazada; dispositivo=dev02; tecla=9; concejal=Johansson, Scarlett (dni=10000002); motivo=tecla_no_soportada
+[2026-01-07 14:15:52] PULSACION_RAW; dispositivo=dev03; tecla=9
+[2026-01-07 14:15:52] PULSACION rechazada; dispositivo=dev03; tecla=9; concejal=DiCaprio, Leonardo (dni=10000003); motivo=tecla_no_soportada
+[2026-01-07 14:15:54] PULSACION_RAW; dispositivo=dev04; tecla=9
+[2026-01-07 14:15:54] PULSACION rechazada; dispositivo=dev04; tecla=9; concejal=Portman, Natalie (dni=10000004); motivo=tecla_no_soportada
+[2026-01-07 14:16:01] PULSACION_RAW; dispositivo=dev04; tecla=9
+[2026-01-07 14:16:01] PULSACION rechazada; dispositivo=dev04; tecla=9; concejal=Portman, Natalie (dni=10000004); motivo=tecla_no_soportada
+[2026-01-07 14:16:03] PULSACION_RAW; dispositivo=dev05; tecla=9
+[2026-01-07 14:16:03] PULSACION rechazada; dispositivo=dev05; tecla=9; concejal=Hanks, Tom (dni=10000005); motivo=tecla_no_soportada
+[2026-01-07 14:16:05] PULSACION_RAW; dispositivo=dev06; tecla=9
+[2026-01-07 14:16:05] PULSACION rechazada; dispositivo=dev06; tecla=9; concejal=Streep, Meryl (dni=10000006); motivo=tecla_no_soportada
+[2026-01-07 14:16:08] PULSACION_RAW; dispositivo=dev08; tecla=9
+[2026-01-07 14:16:08] PULSACION rechazada; dispositivo=dev08; tecla=9; concejal=Stone, Emma (dni=10000008); motivo=tecla_no_soportada
+[2026-01-07 14:16:09] PULSACION_RAW; dispositivo=dev08; tecla=9
+[2026-01-07 14:16:09] PULSACION rechazada; dispositivo=dev08; tecla=9; concejal=Stone, Emma (dni=10000008); motivo=tecla_no_soportada
+[2026-01-07 14:16:13] PULSACION_RAW; dispositivo=dev12; tecla=9
+[2026-01-07 14:16:13] PULSACION rechazada; dispositivo=dev12; tecla=9; concejal=Lawrence, Jennifer (dni=10000012); motivo=tecla_no_soportada
+[2026-01-07 14:16:17] PULSACION_RAW; dispositivo=dev10; tecla=9
+[2026-01-07 14:16:17] PULSACION rechazada; dispositivo=dev10; tecla=9; concejal=Blanchett, Cate (dni=10000010); motivo=tecla_no_soportada
+[2026-01-07 14:16:19] PULSACION_RAW; dispositivo=dev12; tecla=9
+[2026-01-07 14:16:19] PULSACION rechazada; dispositivo=dev12; tecla=9; concejal=Lawrence, Jennifer (dni=10000012); motivo=tecla_no_soportada
+[2026-01-07 15:21:43] SESION_APERTURA_OK; numero_sesion=281; hora_inicio=2026-01-07 15:21:43
+[2026-01-07 15:22:05] PULSACION_RAW; dispositivo=dev05; tecla=9
+[2026-01-07 15:22:21] PULSACION_RAW; dispositivo=dev05; tecla=9
+[2026-01-07 15:22:23] PULSACION_RAW; dispositivo=dev05; tecla=9
+[2026-01-07 15:22:25] PULSACION_RAW; dispositivo=dev06; tecla=9
+[2026-01-07 15:22:26] PULSACION_RAW; dispositivo=dev06; tecla=9
+[2026-01-07 15:22:33] PULSACION_RAW; dispositivo=dev05; tecla=9
+[2026-01-07 15:23:29] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:26:25] SESION_APERTURA_OK; numero_sesion=281; hora_inicio=2026-01-07 15:26:25
+[2026-01-07 15:26:34] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:26:47] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:26:49] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:26:50] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:29:23] SESION_APERTURA_OK; numero_sesion=281; hora_inicio=2026-01-07 15:29:23
+[2026-01-07 15:29:28] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:29:28] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 15:29:29] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:29:29] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 15:29:39] PULSACION_RAW; dispositivo=dev03; tecla=9
+[2026-01-07 15:29:39] PULSACION rechazada; dispositivo=dev03; tecla=9; concejal=DiCaprio, Leonardo (dni=10000003); motivo=tecla_no_soportada
+[2026-01-07 15:29:42] PULSACION_RAW; dispositivo=dev06; tecla=9
+[2026-01-07 15:29:42] PULSACION rechazada; dispositivo=dev06; tecla=9; concejal=Streep, Meryl (dni=10000006); motivo=tecla_no_soportada
+[2026-01-07 15:30:26] SESION_APERTURA_OK; numero_sesion=281; hora_inicio=2026-01-07 15:30:26
+[2026-01-07 15:30:32] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:30:32] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 15:30:36] PULSACION_RAW; dispositivo=dev05; tecla=9
+[2026-01-07 15:30:36] PULSACION rechazada; dispositivo=dev05; tecla=9; concejal=Hanks, Tom (dni=10000005); motivo=tecla_no_soportada
+[2026-01-07 15:30:39] PULSACION_RAW; dispositivo=dev01; tecla=9
+[2026-01-07 15:30:39] PULSACION rechazada; dispositivo=dev01; tecla=9; concejal=Downey Jr, Robert (dni=10000001); motivo=tecla_no_soportada
+[2026-01-07 15:30:57] SESION_CIERRE_OK; numero_sesion=281; hora_inicio=2026-01-07 15:30:26; hora_fin=2026-01-07 15:30:57

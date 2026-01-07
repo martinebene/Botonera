@@ -1,4 +1,5 @@
 {
   "concejales_file": "data/concejales.csv",
-  "log_file": "sesiones_log.txt"
+  "log_file": "sesiones_log.txt",
+  "log_dir": "logs/"
 }

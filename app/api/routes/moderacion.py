@@ -1,15 +1,52 @@
 from fastapi import APIRouter, HTTPException, Body
 
+from app.services.sesion_service import sesion_service
+from app.models.sesion import Sesion
+
 from app.services.votacion_service import votacion_service
 from app.models.votacion import Votacion
 
+
 router = APIRouter(
-    prefix="/votaciones",
-    tags=["votaciones"],
+    prefix="/moderacion",
+    tags=["moderacion"],
 )
 
 
-@router.post("/abrir")
+@router.post("/abrir_sesion")
+def abrir_sesion(
+    numero_sesion: int = Body(..., embed=True),
+):
+    """
+    Endpoint para ABRIR una sesión.
+
+    Body esperado:
+        { "numero_sesion": 52 }
+    """
+
+    try:
+        sesion: Sesion = sesion_service.abrir_sesion(numero_sesion)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return sesion.to_dict()
+
+
+@router.post("/cerrar_sesion")
+def cerrar_sesion():
+    """
+    Endpoint para CERRAR la sesión actual.
+    """
+
+    try:
+        sesion: Sesion = sesion_service.cerrar_sesion()
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return sesion.to_dict()
+
+
+@router.post("/abrir_votacion")
 def abrir_votacion(
     numero: int = Body(..., embed=True),
     tipo: str = Body(...),
@@ -33,7 +70,7 @@ def abrir_votacion(
     return votacion.to_dict()
 
 
-@router.post("/cerrar-forzado")
+@router.post("/cerrar_votacion")
 def cerrar_votacion_forzado():
     """
     Fuerza el cierre de la votación actual.
@@ -49,22 +86,4 @@ def cerrar_votacion_forzado():
     return {
         "votacion": votacion.to_dict(),
         "cerrada_forzada": True,
-    }
-
-
-@router.get("/actual")
-def obtener_votacion_actual():
-    """
-    Devuelve la votación actual, si existe.
-    """
-    votacion = votacion_service.obtener_votacion_actual()
-    if votacion is None:
-        return {
-            "hay_votacion": False,
-            "votacion": None,
-        }
-
-    return {
-        "hay_votacion": True,
-        "votacion": votacion.to_dict(),
     }

@@ -34,6 +34,13 @@ class Concejal:
         self.banca = banca
         self.dispositivo_votacion = dispositivo_votacion
 
+    def print_corto(self) -> str:
+        """
+        Convierte el concejal en un diccionario para JSON.
+        """
+        return self.nombre+" "+self.apellido+" (banca Nro:"+str(self.banca)+")"
+
+    
     def to_dict(self) -> Dict[str, Any]:
         """
         Convierte el concejal en un diccionario para JSON.

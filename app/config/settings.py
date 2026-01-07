@@ -26,6 +26,7 @@ class Settings:
         # Asignamos los atributos obligatorios
         self.concejales_file = self._raw["concejales_file"]
         self.log_file = self._raw["log_file"]
+        self.log_dir = self._raw["log_dir"]
 
     def load(self) -> None:
         """Carga estricta del archivo de configuración."""

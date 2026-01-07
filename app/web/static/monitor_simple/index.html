@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monitor Simple (Prueba)</title>
+  <style>
+    body{
+      margin:0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      background:#0b1020;
+      color:#eef2ff;
+    }
+    header{
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      padding: 10px 12px;
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      gap: 12px;
+    }
+    .muted{ color: #9fb0ff; }
+    pre{
+      margin: 0;
+      padding: 12px;
+      white-space: pre-wrap;   /* permite salto de línea */
+      word-break: break-word;  /* evita que strings largos rompan layout */
+      line-height: 1.35;
+    }
+    .err{ color: #fecaca; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div><b>Monitor Simple</b> <span class="muted">(GET /estado cada 250ms)</span></div>
+    <div id="clock">--/--/---- --:--:--</div>
+  </header>
+
+  <pre id="out">Cargando…</pre>
+
+  <script>
+    // ============================================================
+    // CONFIGURACIÓN
+    // ============================================================
+
+    // Si tu API y este HTML están servidos por el MISMO FastAPI,
+    // podés dejarlo vacío y usar ruta relativa.
+    const API_BASE_URL = "";         // Ej: "http://127.0.0.1:8000"
+
+    // Endpoint a consultar (ajustar si corresponde)
+    const ENDPOINT = "/estados/estado_global";    // <<< CAMBIAR si tu ruta es otra
+
+    // Polling cada 250 ms como pediste
+    const POLL_MS = 250;
+
+    // Timeout para evitar que se acumulen requests si el server se demora
+    const TIMEOUT_MS = 1500;
+
+    // ============================================================
+    // UI
+    // ============================================================
+    const out = document.getElementById("out");
+    const clock = document.getElementById("clock");
+
+    // Reloj en cabecera (hora local del navegador)
+    function updateClock(){
+      const now = new Date();
+      clock.textContent = now.toLocaleString("es-AR");
+    }
+    updateClock();
+    setInterval(updateClock, 250); // lo actualizamos “fluido” con el mismo ritmo
+
+    // Fetch JSON con timeout usando AbortController
+    async function fetchJsonWithTimeout(url, timeoutMs){
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      try{
+        const res = await fetch(url, {
+          method: "GET",
+          headers: { "Accept": "application/json" },
+          signal: controller.signal
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    // Polling: pide el estado y lo imprime en pantalla
+    async function poll(){
+      const url = API_BASE_URL + ENDPOINT;
+
+      try{
+        const data = await fetchJsonWithTimeout(url, TIMEOUT_MS);
+
+        // Mostrar el “diccionario” como JSON lindo
+        out.classList.remove("err");
+        out.textContent = JSON.stringify(data, null, 2);
+      } catch (err){
+        // Si falla, lo mostramos igual en pantalla para debug
+        out.classList.add("err");
+        out.textContent =
+          "ERROR consultando " + url + "\n" +
+          (err?.message || String(err)) + "\n\n" +
+          "Tip: si abriste este HTML como file:// y la API está en http://, puede ser CORS.\n" +
+          "Servilo desde FastAPI (como te indico) y se soluciona.";
+      }
+    }
+
+    // Arranque
+    poll();
+    setInterval(poll, POLL_MS);
+  </script>
+</body>
+</html>

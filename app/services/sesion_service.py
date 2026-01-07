@@ -5,6 +5,7 @@ from app.models.sesion import Sesion
 from app.models.concejal import Concejal
 from app.services.concejal_service import cargar_concejales_desde_archivo
 from app.config import settings
+from app.utils import logging
 
 
 def _log_sesion_apertura_ok(sesion: Sesion) -> None:
@@ -100,6 +101,7 @@ class SesionService:
         if self.sesion_actual is not None and self.sesion_actual.abierta:
             motivo = "ya_hay_sesion_abierta"
             _log_sesion_apertura_fallida(numero_sesion, motivo)
+            logging.log_internal("SESION",1, "Rechazo de apertura de sesion porque ya hay sesion abierta")
             raise ValueError("Ya hay una sesión abierta. Debe cerrarla antes de abrir otra.")
 
         # Cargamos concejales ANTES de crear la sesión
@@ -108,10 +110,12 @@ class SesionService:
         except FileNotFoundError:
             motivo = "archivo_concejales_no_encontrado"
             _log_sesion_apertura_fallida(numero_sesion, motivo)
+            logging.log_internal("SESION",1, "Rechazo de apertura de sesion porque no hay archivo de concejales")
             raise ValueError("No se encontró el archivo de concejales. No se puede abrir la sesión.")
 
         if not concejales:
             motivo = "lista_concejales_vacia"
+            logging.log_internal("SESION",1, "Rechazo de apertura de sesion porque no hay concejales en el archivo")
             _log_sesion_apertura_fallida(numero_sesion, motivo)
             raise ValueError("La lista de concejales está vacía. No se puede abrir la sesión.")
 
@@ -123,7 +127,7 @@ class SesionService:
 
         # Log de apertura exitosa
         _log_sesion_apertura_ok(sesion)
-
+        logging.log_internal("SESION",1, "Apertura de sesion")
         return sesion
 
     def cerrar_sesion(self) -> Sesion:
@@ -138,6 +142,7 @@ class SesionService:
 
         if self.sesion_actual is None:
             motivo = "no_hay_sesion_abierta"
+            logging.log_internal("SESION",1, "Cierre de sesion fallido porque no hay sesion abierta")
             _log_sesion_cierre_fallida(motivo)
             raise ValueError("No hay ninguna sesión abierta.")
 
@@ -145,6 +150,7 @@ class SesionService:
 
         if not sesion.abierta:
             motivo = "sesion_ya_cerrada"
+            logging.log_internal("SESION",1, "Cierre de sesion fallido porque no hay sesion abierta")
             _log_sesion_cierre_fallida(motivo)
             raise ValueError("La sesión ya está cerrada.")
 
@@ -152,6 +158,7 @@ class SesionService:
         sesion.cerrar()
 
         # Log de cierre exitoso
+        logging.log_internal("SESION",1, "Cierre de sesion")
         _log_sesion_cierre_ok(sesion)
 
         # Dejamos la referencia en None (si preferís, podríamos dejar la Sesion cerrada)
@@ -163,6 +170,24 @@ class SesionService:
         """Devuelve la sesión actual (o None si no hay)."""
         return self.sesion_actual
 
+
+    def encolar_uso_palabra(self, concejal: Concejal) -> None:
+        """Encola o Desencola un concejal"""
+        if concejal not in self.sesion_actual.pedidos_uso_de_palabra:
+            self.sesion_actual.pedidos_uso_de_palabra.append(concejal)
+            logging.log_internal("PALABRA",1, concejal.print_corto() + " pidio la palabra")
+        else:
+            self.sesion_actual.pedidos_uso_de_palabra.remove(concejal)
+            logging.log_internal("PALABRA",1, concejal.print_corto() + " retiro el pedido la palabra")
+
+    def otorgar_uso_palabra(self) -> None:
+        if self.sesion_actual.pedidos_uso_de_palabra:
+            self.sesion_actual.en_uso_de_palabra=self.sesion_actual.pedidos_uso_de_palabra.popleft()
+        else:
+            self.sesion_actual.en_uso_de_palabra=None
+
+    def quitar_uso_palabra(self) -> None:
+            self.sesion_actual.en_uso_de_palabra=None
 
 # Instancia única (singleton simple) a usar en toda la app
 sesion_service = SesionService()

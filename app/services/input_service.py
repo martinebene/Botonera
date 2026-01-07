@@ -154,7 +154,34 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
 
         return respuesta
 
-    # 5) Teclas de votación: 1 (SI), 2 (ABSTENCION), 3 (NO)
+
+    # 5) Tecla 9: pedido de palabra
+    if tecla == "9":
+        
+        # Concejal debe estar presente
+        if concejal.presente:
+            sesion_service.encolar_uso_palabra(concejal) #encoola y desencola
+        else:
+            motivo = "concejal_ausente"
+            _log_pulsacion_procesada(
+                aceptada=False,
+                motivo=motivo,
+                dispositivo=dispositivo,
+                tecla=tecla,
+                concejal_info=concejal_info,
+            )
+            return {
+                "aceptada": False,
+                "motivo": motivo,
+                "dispositivo": dispositivo,
+                "tecla": tecla,
+                "concejal": concejal.to_dict(),
+            }
+
+
+
+
+    # 6) Teclas de votación: 1 (SI), 2 (ABSTENCION), 3 (NO)
     if tecla in ("1", "2", "3"):
         # Debe haber votación abierta
         votacion = votacion_service.obtener_votacion_actual()

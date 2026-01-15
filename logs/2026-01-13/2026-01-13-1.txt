@@ -1,0 +1,74 @@
+13:42:28 | L1 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+13:42:37 | L1 | SESION | Apertura de sesion
+13:42:41 | L1 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+13:42:45 | L1 | SESION | Cierre de sesion
+13:42:53 | L1 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+13:42:56 | L1 | SESION | Apertura de sesion
+13:43:16 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº59 con tema: presupuesto
+13:43:25 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+13:43:58 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+13:43:59 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+13:44:01 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+13:44:06 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Negativo
+13:44:06 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+13:44:07 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+13:44:09 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+13:44:15 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+13:44:16 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+13:47:19 | L1 | SESION | Apertura de sesion
+13:47:24 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº34 con tema: caca
+13:47:32 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+13:47:32 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+13:47:34 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+13:48:12 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+13:48:13 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+13:48:14 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+13:48:14 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+13:48:18 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+13:48:19 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+13:48:20 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+13:48:25 | L1 | VOTACION | Votacion completada
+13:48:25 | L1 | VOTACION | Resultado: APROBADA - VOTOS: Votos votacion Nº34/S4: Leonardo DiCaprio (banca Nro:3) voto:Positivo - Robert Downey Jr (banca Nro:1) voto:Positivo - Tom Hanks (banca Nro:5) voto:Positivo - Scarlett Johansson (banca Nro:2) voto:Positivo - Meryl Streep (banca Nro:6) voto:Positivo - Cate Blanchett (banca Nro:10) voto:Abstencion - Brad Pitt (banca Nro:9) voto:Positivo - Emma Stone (banca Nro:8) voto:Positivo - Denzel Washington (banca Nro:7) voto:Positivo - Keanu Reeves (banca Nro:11) voto:Positivo
+13:48:25 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+13:49:16 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: caca
+13:49:51 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+13:49:52 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+13:49:53 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+13:49:55 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+13:49:56 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+13:49:57 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+13:49:58 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+13:50:00 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+13:50:01 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+13:50:02 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+13:50:02 | L1 | VOTACION | Votacion completada
+13:50:02 | L1 | VOTACION | Resultado: EMPATADA - Se espera voto de desempate
+13:50:02 | L1 | VOTACION | Votacion Nº97 completada
+14:25:09 | L1 | SESION | Apertura de sesion
+14:25:14 | L1 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+14:25:56 | L1 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:26:34 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: trtt
+14:26:40 | L1 | PALABRA | Meryl Streep (banca Nro:6) pidio la palabra
+14:27:20 | L1 | VOTACION | Votacion completada
+14:27:20 | L1 | VOTACION | Resultado: EMPATADA - Se espera voto de desempate
+14:28:49 | L1 | PALABRA | Brad Pitt (banca Nro:9) pidio la palabra
+14:29:39 | L1 | PALABRA | Brad Pitt (banca Nro:9) retiro el pedido la palabra
+14:29:41 | L1 | PALABRA | Cate Blanchett (banca Nro:10) pidio la palabra
+14:29:43 | L1 | PALABRA | Keanu Reeves (banca Nro:11) pidio la palabra
+14:29:45 | L1 | PALABRA | Jennifer Lawrence (banca Nro:12) pidio la palabra
+14:32:45 | L1 | SESION | Apertura de sesion
+14:34:15 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº7 con tema: o
+14:34:26 | L1 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+14:34:28 | L2 | VOTACION | Fallo apertura de votacion al ya haber una votacion activa
+14:34:44 | L1 | VOTACION | Cierre forzado [<app.models.concejal.Concejal object at 0x0000022A37960D70>, <app.models.concejal.Concejal object at 0x0000022A37984B90>, <app.models.concejal.Concejal object at 0x0000022A37984910>, <app.models.concejal.Concejal object at 0x0000022A3794D810>, <app.models.concejal.Concejal object at 0x0000022A3794C770>, <app.models.concejal.Concejal object at 0x0000022A378796D0>, <app.models.concejal.Concejal object at 0x0000022A37892F10>, <app.models.concejal.Concejal object at 0x0000022A37980F30>, <app.models.concejal.Concejal object at 0x0000022A378E2150>, <app.models.concejal.Concejal object at 0x0000022A378E1C50>, <app.models.concejal.Concejal object at 0x0000022A37991E50>, <app.models.concejal.Concejal object at 0x0000022A37992300>] sin votar
+14:35:00 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:04 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:04 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:05 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:11 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:12 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:36:53 | L1 | SESION | Cierre de sesion
+14:36:54 | L1 | SESION | Apertura de sesion
+14:36:58 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº7 con tema: o
+14:37:03 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+14:37:07 | L1 | VOTACION | Cierre forzado [<app.models.concejal.Concejal object at 0x0000022A37A04590>, <app.models.concejal.Concejal object at 0x0000022A37A04670>, <app.models.concejal.Concejal object at 0x0000022A378FFA00>, <app.models.concejal.Concejal object at 0x0000022A37988D10>, <app.models.concejal.Concejal object at 0x0000022A37989190>, <app.models.concejal.Concejal object at 0x0000022A379F7540>, <app.models.concejal.Concejal object at 0x0000022A379F75F0>, <app.models.concejal.Concejal object at 0x0000022A37910E10>, <app.models.concejal.Concejal object at 0x0000022A379229F0>, <app.models.concejal.Concejal object at 0x0000022A37A108D0>, <app.models.concejal.Concejal object at 0x0000022A37A10950>] sin votar

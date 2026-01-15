@@ -1,0 +1,287 @@
+09:42:33 | L1 | SESION | Apertura de sesion
+09:42:41 | L1 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+09:44:35 | L2 | VOTACION | Fallo apertura de votacion al no haber sesion activa
+09:45:38 | L1 | SESION | Apertura de sesion
+09:45:47 | L1 | VOTACION | Apertura de votacion de tipo string Nº3 con tema: string
+09:49:54 | L1 | SESION | Apertura de sesion
+09:50:36 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº9 con tema: presupuesto
+09:51:28 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+09:51:35 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Abstencion
+09:51:37 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+09:51:39 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+09:51:41 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Negativo
+09:51:42 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Abstencion
+09:51:43 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+09:51:44 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+09:51:46 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+09:51:47 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+09:51:49 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+09:51:51 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+09:56:44 | L1 | SESION | Apertura de sesion
+09:56:54 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+09:57:14 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+09:57:16 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+09:57:16 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+09:57:17 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+09:57:18 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+09:57:19 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+09:57:20 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+09:57:21 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+09:57:23 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+09:57:24 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+09:57:25 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+09:58:51 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+10:00:42 | L1 | SESION | Apertura de sesion
+10:00:55 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:01:01 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+10:01:01 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+10:01:02 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+10:01:03 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:01:03 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:01:04 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:01:05 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+10:01:05 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+10:01:06 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:01:07 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+10:01:08 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Abstencion
+10:01:09 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:01:09 | L1 | VOTACION | Votacion completada
+10:01:09 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+10:01:09 | L1 | VOTACION | Votacion Nº92 completada
+10:27:40 | L1 | SESION | Apertura de sesion
+10:29:09 | L1 | SESION | Apertura de sesion
+10:29:17 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:30:28 | L1 | SESION | Apertura de sesion
+10:30:32 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:33:04 | L1 | SESION | Apertura de sesion
+10:33:23 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:34:09 | L1 | SESION | Apertura de sesion
+10:34:14 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:34:17 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:34:20 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Abstencion
+10:34:21 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+10:34:30 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+10:34:31 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+10:34:31 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+10:34:32 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:34:33 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:34:34 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:34:38 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+10:34:39 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+10:34:41 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+10:42:09 | L1 | SESION | Apertura de sesion
+10:42:13 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:42:18 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:42:20 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:42:21 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+10:42:22 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:42:23 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:42:24 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Abstencion
+10:42:25 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+10:42:25 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+10:42:29 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:42:30 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+10:42:31 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+10:42:32 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Abstencion
+10:42:32 | L1 | VOTACION | Votacion completada
+10:44:14 | L1 | SESION | Apertura de sesion
+10:44:18 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:44:23 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+10:44:24 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+10:44:26 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+10:44:27 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:44:28 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+10:44:29 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+10:44:29 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:44:30 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:44:31 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:44:34 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+10:44:35 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:44:36 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Negativo
+10:44:36 | L1 | VOTACION | Votacion completada
+10:45:55 | L1 | SESION | Apertura de sesion
+10:45:59 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:46:02 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+10:46:03 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+10:46:03 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:46:04 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:46:05 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Abstencion
+10:46:07 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+10:46:08 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:46:10 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Abstencion
+10:46:16 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:46:18 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+10:46:18 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+10:46:19 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+10:46:19 | L1 | VOTACION | Votacion completada
+10:52:27 | L1 | SESION | Apertura de sesion
+10:52:32 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:52:38 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+10:52:39 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+10:52:39 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+10:52:40 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:52:41 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+10:52:41 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+10:52:42 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:52:43 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:52:45 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Abstencion
+10:52:46 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+10:52:50 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:52:52 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:52:52 | L1 | VOTACION | Votacion completada
+10:55:44 | L1 | SESION | Apertura de sesion
+10:55:48 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº92 con tema: presupuesto
+10:55:54 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:55:56 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:55:56 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+10:55:57 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:55:58 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:55:59 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:55:59 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+10:56:00 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+10:56:01 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:56:02 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+10:56:03 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+10:56:04 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+10:56:04 | L1 | VOTACION | Votacion completada
+10:56:04 | L1 | VOTACION | Resultado: APROBADA - VOTOS: Votos votacion Nº92/S7: Leonardo DiCaprio (banca Nro:3) voto:Positivo - Robert Downey Jr (banca Nro:1) voto:Positivo - Tom Hanks (banca Nro:5) voto:Positivo - Scarlett Johansson (banca Nro:2) voto:Positivo - Natalie Portman (banca Nro:4) voto:Positivo - Meryl Streep (banca Nro:6) voto:Positivo - Cate Blanchett (banca Nro:10) voto:Positivo - Brad Pitt (banca Nro:9) voto:Positivo - Emma Stone (banca Nro:8) voto:Positivo - Denzel Washington (banca Nro:7) voto:Positivo - Jennifer Lawrence (banca Nro:12) voto:Positivo - Keanu Reeves (banca Nro:11) voto:Positivo
+10:56:04 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+10:56:04 | L1 | VOTACION | Votacion Nº92 completada
+10:57:07 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº98 con tema: presupuesto
+10:57:12 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:57:13 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:57:14 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+10:57:14 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:57:16 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:57:17 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:57:19 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+10:57:20 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+10:57:22 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+10:57:23 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+10:57:24 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+10:57:27 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+10:57:27 | L1 | VOTACION | Votacion completada
+10:57:27 | L1 | VOTACION | Resultado: EMPATADA - VOTOS: Votos votacion Nº98/S7: Leonardo DiCaprio (banca Nro:3) voto:Positivo - Robert Downey Jr (banca Nro:1) voto:Positivo - Tom Hanks (banca Nro:5) voto:Positivo - Scarlett Johansson (banca Nro:2) voto:Positivo - Natalie Portman (banca Nro:4) voto:Positivo - Meryl Streep (banca Nro:6) voto:Positivo - Cate Blanchett (banca Nro:10) voto:Negativo - Brad Pitt (banca Nro:9) voto:Negativo - Emma Stone (banca Nro:8) voto:Negativo - Denzel Washington (banca Nro:7) voto:Negativo - Jennifer Lawrence (banca Nro:12) voto:Negativo - Keanu Reeves (banca Nro:11) voto:Negativo
+10:57:27 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+10:57:27 | L1 | VOTACION | Votacion Nº98 completada
+10:57:52 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº98 con tema: presupuesto
+11:13:12 | L1 | SESION | Apertura de sesion
+11:13:16 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº98 con tema: presupuesto
+11:13:19 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+11:13:19 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+11:13:20 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+11:13:21 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+11:13:21 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+11:13:22 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+11:13:23 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Negativo
+11:13:24 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Negativo
+11:13:25 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+11:13:26 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+11:13:27 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+11:13:28 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Negativo
+11:13:28 | L1 | VOTACION | Votacion completada
+11:13:28 | L1 | VOTACION | Resultado: EMPATADA - Se espera voto de desempate
+11:13:28 | L1 | VOTACION | Votacion Nº98 completada
+11:13:52 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion activa
+11:15:18 | L1 | SESION | Apertura de sesion
+11:15:21 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº98 con tema: presupuesto
+11:15:25 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+11:15:26 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+11:15:27 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+11:15:27 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+11:15:28 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+11:15:29 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+11:15:31 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+11:15:31 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+11:15:33 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+11:15:34 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+11:15:35 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+11:15:36 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+11:15:36 | L1 | VOTACION | Votacion completada
+11:15:36 | L1 | VOTACION | Resultado: EMPATADA - Se espera voto de desempate
+11:15:36 | L1 | VOTACION | Votacion Nº98 completada
+11:17:00 | L1 | SESION | Apertura de sesion
+11:17:05 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº98 con tema: presupuesto
+11:17:09 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+11:17:10 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+11:17:11 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+11:17:11 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+11:17:12 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+11:17:13 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+11:17:14 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+11:17:14 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+11:17:16 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+11:17:16 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+11:17:17 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+11:17:18 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+11:17:18 | L1 | VOTACION | Votacion completada
+11:17:18 | L1 | VOTACION | Resultado: EMPATADA - Se espera voto de desempate
+11:17:18 | L1 | VOTACION | Votacion Nº98 completada
+11:19:22 | L1 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+11:19:39 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº698 con tema: tarifaria
+11:20:05 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+11:20:10 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+11:20:12 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+11:20:13 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+11:20:14 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+11:20:15 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+11:20:21 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+11:20:22 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+11:20:24 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+11:20:25 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+11:20:26 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+11:20:32 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+11:20:32 | L1 | VOTACION | Votacion completada
+11:20:32 | L1 | VOTACION | Resultado: EMPATADA - Se espera voto de desempate
+11:20:32 | L1 | VOTACION | Votacion Nº698 completada
+13:45:42 | L1 | SESION | Apertura de sesion
+14:07:33 | L1 | SESION | Cierre de sesion
+14:08:11 | L1 | SESION | Apertura de sesion
+14:08:58 | L1 | VOTACION | Apertura de votacion de tipo ordin Nº8 con tema: Aprobación del presupuest
+14:09:08 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+14:09:09 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+14:09:10 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+14:09:10 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+14:09:11 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+14:09:12 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Abstencion
+14:09:13 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Negativo
+14:09:42 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Negativo
+14:09:43 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:09:44 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+14:09:44 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+14:09:54 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+14:09:54 | L1 | VOTACION | Votacion completada
+14:21:47 | L1 | SESION | Apertura de sesion
+14:23:00 | L1 | VOTACION | Apertura de votacion de tipo despacho Nº12 con tema: tarifaria
+14:23:09 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+14:23:13 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:23:14 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Abstencion
+14:23:16 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+14:23:17 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:23:19 | L1 | PALABRA | Cate Blanchett (banca Nro:10) pidio la palabra
+14:23:21 | L1 | PALABRA | Cate Blanchett (banca Nro:10) retiro el pedido la palabra
+14:23:29 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:23:30 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:23:32 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+14:23:35 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:23:38 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+14:23:38 | L1 | VOTACION | Votacion completada
+14:23:38 | L1 | VOTACION | Resultado: APROBADA - VOTOS: Votos votacion Nº12/S5: Leonardo DiCaprio (banca Nro:3) voto:Positivo - Tom Hanks (banca Nro:5) voto:Positivo - Scarlett Johansson (banca Nro:2) voto:Positivo - Natalie Portman (banca Nro:4) voto:Positivo - Meryl Streep (banca Nro:6) voto:Positivo - Brad Pitt (banca Nro:9) voto:Positivo - Emma Stone (banca Nro:8) voto:Positivo - Denzel Washington (banca Nro:7) voto:Abstencion - Jennifer Lawrence (banca Nro:12) voto:Positivo - Keanu Reeves (banca Nro:11) voto:Negativo
+14:23:38 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+14:23:38 | L1 | VOTACION | Votacion Nº12 completada
+14:43:29 | L1 | VOTACION | Apertura de votacion de tipo ordinaria Nº1 con tema: Aprobación del presupuesto
+14:43:43 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:43:50 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:43:53 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:43:54 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+14:43:56 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:43:57 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:44:00 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+14:44:01 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+14:44:04 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+14:44:09 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+14:44:10 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+14:44:12 | L1 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+14:44:12 | L1 | VOTACION | Votacion completada
+14:44:12 | L1 | VOTACION | Resultado: EMPATADA - Se espera voto de desempate
+14:44:12 | L1 | VOTACION | Votacion Nº1 completada

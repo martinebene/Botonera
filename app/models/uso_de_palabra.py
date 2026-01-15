@@ -22,8 +22,8 @@ class UsoDePalabra:
     ) -> None:
         # ID interno en memoria, auto-incremental si no se pasa
         if id is None:
-            self.id = Voto._next_id
-            Voto._next_id += 1
+            self.id = UsoDePalabra._next_id
+            UsoDePalabra._next_id += 1
         else:
             self.id = id
 

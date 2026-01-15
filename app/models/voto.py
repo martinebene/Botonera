@@ -2,9 +2,15 @@ from __future__ import annotations
 
 from datetime import datetime
 from typing import Optional
+from enum import Enum
 
 from app.models.concejal import Concejal
 
+
+class ValorVoto(Enum):
+    POSITIVO = "Positivo"
+    NEGATIVO = "Negativo"
+    ABSTENCION = "Abstencion"
 
 class Voto:
     """
@@ -15,8 +21,8 @@ class Voto:
 
     def __init__(
         self,
-        concejal: Concejal,
-        valor_voto: str,
+        concejal: Optional[Concejal],
+        valor_voto: ValorVoto,
         hora_emision: Optional[datetime] = None,
         id: Optional[int] = None,
     ) -> None:
@@ -28,13 +34,15 @@ class Voto:
             self.id = id
 
         self.concejal = concejal
+        if not isinstance(valor_voto, ValorVoto):
+            raise ValueError("valor_voto inválido")
         self.valor_voto = valor_voto
         self.hora_emision = hora_emision or datetime.now()
 
     def to_dict(self) -> dict:
         return {
             "id": self.id,
-            "concejal": self.concejal.to_dict(),
-            "valor_voto": self.valor_voto,
+            "concejal": self.concejal.to_dict() if self.concejal else None,
+            "valor_voto": self.valor_voto.value,
             "hora_emision": self.hora_emision.isoformat(),
         }

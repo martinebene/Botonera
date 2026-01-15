@@ -1,0 +1,1 @@
+10:14:49 | L2 | VOTACION | Cierre automatico por completar voto de los presentes

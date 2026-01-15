@@ -1,0 +1,6 @@
+09:44:35 | L2 | VOTACION | Fallo apertura de votacion al no haber sesion activa
+10:01:09 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+10:56:04 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+10:57:27 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+11:13:52 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion activa
+14:23:38 | L2 | VOTACION | Cierre automatico por completar voto de los presentes

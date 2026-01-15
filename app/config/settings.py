@@ -13,7 +13,9 @@ class Settings:
 
     REQUIRED_KEYS = [
         "concejales_file",
-        "log_file"
+        "log_file",
+        "log_dir",
+        "quorum"
     ]
 
     def __init__(self, config_path: str = "config.json") -> None:
@@ -27,6 +29,7 @@ class Settings:
         self.concejales_file = self._raw["concejales_file"]
         self.log_file = self._raw["log_file"]
         self.log_dir = self._raw["log_dir"]
+        self.quorum = self._raw["quorum"]
 
     def load(self) -> None:
         """Carga estricta del archivo de configuración."""

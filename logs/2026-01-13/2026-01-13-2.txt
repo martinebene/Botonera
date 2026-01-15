@@ -1,0 +1,8 @@
+13:48:25 | L2 | VOTACION | Cierre automatico por completar voto de los presentes
+14:34:28 | L2 | VOTACION | Fallo apertura de votacion al ya haber una votacion activa
+14:35:00 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:04 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:04 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:05 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:11 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:12 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar

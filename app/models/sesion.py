@@ -18,7 +18,7 @@ class Sesion:
     - concejales: lista de concejales asociados.
     - votaciones: lista de votaciones realizadas en la sesión.
     - en_uso_de_palabra: concejal en uso de la palabra si lo hubiese
-    - pedidos_de_uso_de_palabra: cola de concejales que pisieron la palabra
+    - pedidos_de_uso_de_palabra: cola de concejales que pidieron la palabra
     """
 
     def __init__(self, numero_sesion: int) -> None:
@@ -26,7 +26,8 @@ class Sesion:
         self.abierta: bool = True
         self.hora_inicio: datetime = datetime.now()
         self.hora_fin: Optional[datetime] = None
-
+        self.presentes: Optional[int]=None
+        self.quorum: Optional[int]=None
         self.concejales: List[Concejal] = []
         self.votaciones: List[Votacion] = []
         self.pedidos_uso_de_palabra = deque()   # deque[Concejal]
@@ -47,6 +48,9 @@ class Sesion:
             "abierta": self.abierta,
             "hora_inicio": self.hora_inicio.isoformat(),
             "hora_fin": self.hora_fin.isoformat() if self.hora_fin else None,
+            "cantidad_concejales": len(self.concejales),
+            "cantidad_presentes": self.presentes,
+            "quorum":self.quorum,
             "concejales": [c.to_dict() for c in self.concejales],
             "votaciones": [v.to_dict() for v in self.votaciones],
             "pedidos_uso_de_palabra":[p.to_dict() for p in self.pedidos_uso_de_palabra],

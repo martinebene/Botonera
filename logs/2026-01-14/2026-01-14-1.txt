@@ -1,0 +1,53 @@
+14:25:32 | L1 | SESION | Apertura de sesion
+14:26:04 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº65 con tema: rete
+14:29:11 | L1 | SESION | Apertura de sesion
+14:29:13 | L1 | SESION | Cierre de sesion
+14:29:28 | L1 | SESION | Apertura de sesion
+14:30:05 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: sdfsdf
+14:33:24 | L1 | SESION | Apertura de sesion
+14:33:35 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: hnvb
+14:33:43 | L1 | VOTACION | Cierre forzado [<app.models.concejal.Concejal object at 0x00000269C3480830>, <app.models.concejal.Concejal object at 0x00000269C33B6FD0>, <app.models.concejal.Concejal object at 0x00000269C33B6C10>, <app.models.concejal.Concejal object at 0x00000269C34688A0>, <app.models.concejal.Concejal object at 0x00000269C3469220>, <app.models.concejal.Concejal object at 0x00000269C3399EB0>, <app.models.concejal.Concejal object at 0x00000269C33B3240>, <app.models.concejal.Concejal object at 0x00000269C33B3460>, <app.models.concejal.Concejal object at 0x00000269C3402250>, <app.models.concejal.Concejal object at 0x00000269C3401D50>, <app.models.concejal.Concejal object at 0x00000269C3488140>, <app.models.concejal.Concejal object at 0x00000269C3488320>] sin votar
+14:33:52 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:34:00 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:34:01 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:35:09 | L1 | SESION | Apertura de sesion
+14:35:14 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: caca
+14:35:16 | L1 | VOTACION | Cierre forzado [<app.models.concejal.Concejal object at 0x000001DC2F400D70>, <app.models.concejal.Concejal object at 0x000001DC2F336FD0>, <app.models.concejal.Concejal object at 0x000001DC2F336C10>, <app.models.concejal.Concejal object at 0x000001DC2F3E88A0>, <app.models.concejal.Concejal object at 0x000001DC2F3E9220>, <app.models.concejal.Concejal object at 0x000001DC2F319EB0>, <app.models.concejal.Concejal object at 0x000001DC2F333240>, <app.models.concejal.Concejal object at 0x000001DC2F333460>, <app.models.concejal.Concejal object at 0x000001DC2F382450>, <app.models.concejal.Concejal object at 0x000001DC2F381C50>, <app.models.concejal.Concejal object at 0x000001DC2F408410>, <app.models.concejal.Concejal object at 0x000001DC2F408230>] sin votar
+14:35:33 | L1 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+14:35:38 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: caca
+14:35:46 | L1 | VOTACION | Cierre forzado [<app.models.concejal.Concejal object at 0x000001DC2F400D70>, <app.models.concejal.Concejal object at 0x000001DC2F336FD0>, <app.models.concejal.Concejal object at 0x000001DC2F336C10>, <app.models.concejal.Concejal object at 0x000001DC2F3E88A0>, <app.models.concejal.Concejal object at 0x000001DC2F3E9220>, <app.models.concejal.Concejal object at 0x000001DC2F319EB0>, <app.models.concejal.Concejal object at 0x000001DC2F333240>, <app.models.concejal.Concejal object at 0x000001DC2F333460>, <app.models.concejal.Concejal object at 0x000001DC2F382450>, <app.models.concejal.Concejal object at 0x000001DC2F381C50>, <app.models.concejal.Concejal object at 0x000001DC2F408410>, <app.models.concejal.Concejal object at 0x000001DC2F408230>] sin votar
+14:35:48 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: caca
+14:37:51 | L1 | SESION | Apertura de sesion
+14:37:57 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: trtt
+14:38:00 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:41:38 | L1 | SESION | Apertura de sesion
+14:41:43 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: trtt
+14:41:47 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:43:03 | L1 | SESION | Apertura de sesion
+14:43:12 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: caca
+14:43:18 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:43:22 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:43:22 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+14:43:23 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+14:43:27 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Negativo
+14:43:29 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:43:29 | L1 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+14:43:30 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+14:43:32 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+14:43:33 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+14:44:26 | L1 | SESION | Apertura de sesion
+14:44:33 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: lijkk
+14:44:39 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:44:40 | L1 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:44:41 | L1 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:44:42 | L1 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+14:44:43 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Negativo
+14:44:45 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Negativo
+14:45:14 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+14:45:15 | L1 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+14:45:16 | L1 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+14:46:00 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: lijkk
+14:46:02 | L1 | VOTACION | Cierre forzado [<app.models.concejal.Concejal object at 0x00000171FCE30C20>, <app.models.concejal.Concejal object at 0x00000171FCD66D50>, <app.models.concejal.Concejal object at 0x00000171FCD66E90>, <app.models.concejal.Concejal object at 0x00000171FCE189D0>, <app.models.concejal.Concejal object at 0x00000171FCE19350>, <app.models.concejal.Concejal object at 0x00000171FCD4AD50>, <app.models.concejal.Concejal object at 0x00000171FCDB2250>, <app.models.concejal.Concejal object at 0x00000171FCDB1D50>, <app.models.concejal.Concejal object at 0x00000171FCE495E0>] sin votar
+14:47:09 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: lijkk
+14:47:13 | L1 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:47:16 | L1 | SESION | Cierre de sesion

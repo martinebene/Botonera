@@ -3,7 +3,8 @@ from datetime import datetime
 
 from app.services.sesion_service import sesion_service
 from app.services.votacion_service import votacion_service
-from app.models.voto import Voto
+from app.models.votacion import EstadosVotacion
+from app.models.voto import Voto, ValorVoto
 from app.config import settings
 
 
@@ -117,6 +118,8 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
     # 4) Tecla 7: toggle presente/ausente
     if tecla == "7":
         concejal.presente = not concejal.presente
+        sesion.presentes = sesion_service.cantidad_concejales_presentes()
+
         motivo = "toggle_presente"
 
         # Log de la pulsación de toggle
@@ -128,31 +131,9 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
             concejal_info=concejal_info,
         )
 
-        auto_cierre = False
-        votacion_dict = None
+        votacion_service.recalcular_cierre_por_cambio_en_presencia()
 
-        # Si hay votación abierta, ver si este cambio de presencia dispara cierre automático
-        votacion_actual = votacion_service.obtener_votacion_actual()
-        if votacion_actual is not None and votacion_actual.abierta:
-            votacion_resultante, auto_cierre = votacion_service.recalcular_cierre_por_cambio_en_presencia()
-            if auto_cierre and votacion_resultante is not None:
-                votacion_dict = votacion_resultante.to_dict()
-
-        respuesta = {
-            "aceptada": True,
-            "motivo": "",
-            "accion": "toggle_presente",
-            "dispositivo": dispositivo,
-            "tecla": tecla,
-            "concejal": concejal.to_dict(),
-            "presente": concejal.presente,
-        }
-
-        if auto_cierre:
-            respuesta["auto_cierre_votacion"] = True
-            respuesta["votacion"] = votacion_dict
-
-        return respuesta
+        return 
 
 
     # 5) Tecla 9: pedido de palabra
@@ -161,6 +142,7 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
         # Concejal debe estar presente
         if concejal.presente:
             sesion_service.encolar_uso_palabra(concejal) #encoola y desencola
+            return
         else:
             motivo = "concejal_ausente"
             _log_pulsacion_procesada(
@@ -185,7 +167,7 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
     if tecla in ("1", "2", "3"):
         # Debe haber votación abierta
         votacion = votacion_service.obtener_votacion_actual()
-        if votacion is None or not votacion.abierta:
+        if votacion is None or (votacion.estado != EstadosVotacion.EN_CURSO):
             motivo = "no_hay_votacion_abierta"
             _log_pulsacion_procesada(
                 aceptada=False,
@@ -221,16 +203,16 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
             }
 
         mapa_voto = {
-            "1": "SI",
-            "2": "ABSTENCION",
-            "3": "NO",
+            "1": ValorVoto.POSITIVO,
+            "2": ValorVoto.ABSTENCION,
+            "3": ValorVoto.NEGATIVO,
         }
         valor_voto = mapa_voto[tecla]
 
         voto = Voto(concejal=concejal, valor_voto=valor_voto)
 
         try:
-            votacion_resultante, auto_cierre = votacion_service.registrar_voto(voto)
+            votacion_service.registrar_voto(voto)
         except ValueError as e:
             motivo = str(e)
             _log_pulsacion_procesada(
@@ -266,8 +248,6 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
             "tecla": tecla,
             "concejal": concejal.to_dict(),
             "valor_voto": valor_voto,
-            "auto_cierre": auto_cierre,
-            "votacion": votacion_resultante.to_dict(),
         }
 
     # 6) Cualquier otra tecla: de momento la ignoramos a nivel de negocio

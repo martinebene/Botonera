@@ -1,102 +1,13 @@
 from __future__ import annotations
 
-from datetime import datetime
-from typing import Optional, List, Tuple
+
+from typing import Optional, TYPE_CHECKING
 
 from app.services.sesion_service import sesion_service
-from app.models.votacion import Votacion
+from app.models.votacion import Votacion, EstadosVotacion
 from app.models.voto import Voto
-from app.models.concejal import Concejal
-from app.config import settings
 
-
-def _write_log(linea: str) -> None:
-    """Escribe una línea en el archivo de log."""
-    with open(settings.log_file, "a", encoding="utf-8") as f:
-        f.write(linea + "\n")
-
-
-def _log_votacion_apertura_ok(votacion: Votacion, numero_sesion: int) -> None:
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    hi = votacion.hora_inicio.strftime("%Y-%m-%d %H:%M:%S")
-    linea = (
-        f"[{ts}] VOTACION_APERTURA_OK; "
-        f"numero_sesion={numero_sesion}; "
-        f"numero_votacion={votacion.numero}; "
-        f"tipo={votacion.tipo}; "
-        f"tema={votacion.tema}; "
-        f"hora_inicio={hi}"
-    )
-    _write_log(linea)
-
-
-def _log_votacion_apertura_fallida(
-    numero_sesion: Optional[int],
-    numero_votacion: int,
-    motivo: str,
-) -> None:
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    sesion_str = str(numero_sesion) if numero_sesion is not None else "N/A"
-    linea = (
-        f"[{ts}] VOTACION_APERTURA_FALLIDA; "
-        f"numero_sesion={sesion_str}; "
-        f"numero_votacion={numero_votacion}; "
-        f"motivo={motivo}"
-    )
-    _write_log(linea)
-
-
-def _log_voto_recibido(
-    votacion: Votacion,
-    voto: Voto,
-    numero_sesion: int,
-    auto_cierre: bool,
-) -> None:
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    concejal_info = f"{voto.concejal.apellido}, {voto.concejal.nombre} (dni={voto.concejal.dni})"
-    auto_str = "SI" if auto_cierre else "NO"
-    linea = (
-        f"[{ts}] VOTO_RECIBIDO_OK; "
-        f"numero_sesion={numero_sesion}; "
-        f"numero_votacion={votacion.numero}; "
-        f"concejal={concejal_info}; "
-        f"valor_voto={voto.valor_voto}; "
-        f"auto_cierre={auto_str}"
-    )
-    _write_log(linea)
-
-
-def _log_votacion_cierre_ok(
-    votacion: Votacion,
-    numero_sesion: int,
-    cierre_forzado: bool,
-    concejales_sin_voto: Optional[List[Concejal]] = None,
-) -> None:
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    hi = votacion.hora_inicio.strftime("%Y-%m-%d %H:%M:%S")
-    hf = votacion.hora_fin.strftime("%Y-%m-%d %H:%M:%S") if votacion.hora_fin else "N/A"
-    tipo_cierre = "FORZADO" if cierre_forzado else "AUTOMATICO"
-
-    linea = (
-        f"[{ts}] VOTACION_CIERRE_{tipo_cierre}; "
-        f"numero_sesion={numero_sesion}; "
-        f"numero_votacion={votacion.numero}; "
-        f"hora_inicio={hi}; "
-        f"hora_fin={hf}"
-    )
-    _write_log(linea)
-
-    if cierre_forzado and concejales_sin_voto:
-        for c in concejales_sin_voto:
-            info_c = f"{c.apellido}, {c.nombre} (dni={c.dni})"
-            linea_no_voto = (
-                f"[{ts}] VOTACION_CIERRE_FORZADO_NO_VOTO; "
-                f"numero_sesion={numero_sesion}; "
-                f"numero_votacion={votacion.numero}; "
-                f"concejal={info_c}"
-            )
-            _write_log(linea_no_voto)
-
+from app.utils import logging
 
 class VotacionService:
     """
@@ -113,70 +24,68 @@ class VotacionService:
     # Métodos privados de apoyo
     # ------------------------------------------------------------------
 
-    def _calcular_auto_cierre(self, sesion, votacion) -> bool:
-        """
-        Devuelve True si, con el estado ACTUAL de presentes y votos,
-        corresponde cerrar automáticamente la votación.
+    # def _calcular_auto_cierre(self, sesion, votacion) -> bool:
+    # """
+    # Devuelve True si, con el estado ACTUAL de presentes y votos,
+    # corresponde cerrar automáticamente la votación.
 
-        Regla: todos los concejales presentes ya votaron.
-        """
-        presentes = [c for c in sesion.concejales if c.presente]
-        dnis_presentes = {c.dni for c in presentes}
-        dnis_que_votaron = {v.concejal.dni for v in votacion.votos}
+    # Regla: todos los concejales presentes ya votaron.
+    # """
+    # presentes = [c for c in sesion.concejales if c.presente]
+    # dnis_presentes = {c.dni for c in presentes}
+    # dnis_que_votaron = {v.concejal.dni for v in votacion.votos}
 
-        return dnis_presentes.issubset(dnis_que_votaron)
+    # return dnis_presentes.issubset(dnis_que_votaron)
 
-    def _cerrar_automaticamente(self, sesion, votacion) -> None:
-        """
-        Ejecuta el cierre automático de la votación:
-        - marca hora_fin
-        - loguea cierre automático
-        - borra votacion_actual
-        """
-        votacion.cerrar()
-        _log_votacion_cierre_ok(
-            votacion=votacion,
-            numero_sesion=sesion.numero_sesion,
-            cierre_forzado=False,
-            concejales_sin_voto=None,
-        )
-        self.votacion_actual = None
+    # def _cerrar_automaticamente(self, sesion, votacion) -> None:
+    #     """
+    #     Ejecuta el cierre automático de la votación:
+    #     - marca hora_fin
+    #     - loguea cierre automático
+    #     - borra votacion_actual
+    #     """
+    #     logging.log_internal("VOTACION",1,"Votacion completada")
+    #     votacion.cerrar()
+
+    #     if self.votacion_actual.estado != EstadosVotacion.EMPATADA:
+    #         logging.log_internal("VOTACION",1,"Resultado: "+ self.votacion_actual.estado.value+" - VOTOS: " + self.votacion_actual.to_linea_votos())
+    #         logging.log_internal("VOTACION",2,"Cierre automatico por completar voto de los presentes")
+    #         self.votacion_actual = None
+    #     else:
+    #         logging.log_internal("VOTACION",1,"Resultado: "+ self.votacion_actual.estado.value+" - Se espera voto de desempate")
 
     # ------------------------------------------------------------------
     # API pública del servicio
     # ------------------------------------------------------------------
 
-    def abrir_votacion(self, numero: int, tipo: str, tema: str) -> Votacion:
+    def abrir_votacion(self, numero: int, tipo: str, tema: str, computa_sobre_los_presentes: bool, factor_mayoria_especial: float) -> Votacion:
         """
         Abre una nueva votación en la sesión actual.
         """
 
+
         sesion = sesion_service.obtener_sesion_actual()
         if sesion is None or not sesion.abierta:
-            _log_votacion_apertura_fallida(
-                numero_sesion=None,
-                numero_votacion=numero,
-                motivo="no_hay_sesion_abierta",
-            )
-            raise ValueError("No hay sesión abierta. No se puede abrir una votación.")
+            logging.log_internal("VOTACION",2,"Fallo apertura de votacion al no haber sesion activa")
+            raise ValueError("No_hay_sesion_abierta")
 
-        if self.votacion_actual is not None and self.votacion_actual.abierta:
-            _log_votacion_apertura_fallida(
-                numero_sesion=sesion.numero_sesion,
-                numero_votacion=numero,
-                motivo="ya_hay_votacion_abierta",
-            )
-            raise ValueError("Ya hay una votación abierta. Debe cerrarla antes de abrir otra.")
+        if sesion_service.cantidad_concejales_presentes() < sesion.quorum:
+            logging.log_internal("VOTACION",2,"Falta quorum para abruir votacion")
+            raise ValueError("No_hay_quorum")
 
-        votacion = Votacion(numero=numero, tipo=tipo, tema=tema)
+        if self.votacion_actual is not None and (self.votacion_actual.estado == EstadosVotacion.EN_CURSO):
+            logging.log_internal("VOTACION",2,"Fallo apertura de votacion al ya haber una votacion activa")
+            raise ValueError("hay_una_votación_abierta")
+
+        votacion = Votacion(sesion_service=sesion_service ,numero=numero, tipo=tipo, tema=tema, computa_sobre_los_presentes=computa_sobre_los_presentes, factor_mayoria_especial=factor_mayoria_especial)
         sesion.votaciones.append(votacion)
         self.votacion_actual = votacion
 
-        _log_votacion_apertura_ok(votacion, sesion.numero_sesion)
+        logging.log_internal("VOTACION",1,"Apertura de votacion de tipo " + votacion.tipo + " Nº" + str(votacion.numero) +" con tema: " + votacion.tema)
 
         return votacion
 
-    def registrar_voto(self, voto: Voto) -> Tuple[Votacion, bool]:
+    def registrar_voto(self, voto: Voto):
         """
         Registra el voto de un concejal en la votación actual.
 
@@ -190,58 +99,40 @@ class VotacionService:
         Esas validaciones se hacen en la capa de entrada (input_service).
         """
 
+
         sesion = sesion_service.obtener_sesion_actual()
         if sesion is None or not sesion.abierta:
+            logging.log_internal("VOTO",2,"Fallo registro de voto al no haber sesion activa")
             raise ValueError("no_hay_sesion_abierta")
 
-        if self.votacion_actual is None or not self.votacion_actual.abierta:
+        if self.votacion_actual is None or (self.votacion_actual.estado != EstadosVotacion.EN_CURSO):
+            logging.log_internal("VOTO",2,"Fallo registro de voto al no haber votacion activa")
             raise ValueError("no_hay_votacion_abierta")
 
         votacion = self.votacion_actual
 
         # Puede levantar ValueError("votacion_cerrada" o "concejal_ya_voto")
         votacion.registrar_voto(voto)
+        logging.log_internal("VOTO",1,voto.concejal.print_corto() + " voto: "+voto.valor_voto.value)
 
-        # 1) calcular si corresponde cierre automático
-        auto_cierre = self._calcular_auto_cierre(sesion, votacion)
+        # Si corresponde, cerrar y loguear el cierre automático
+        if (votacion.estado is not EstadosVotacion.EN_CURSO) and (votacion.estado is not EstadosVotacion.EMPATADA) :
+            self.votacion_actual=None
+            logging.log_internal("VOTACION",1, "Votacion Nº"+str(votacion.numero)+" completada")
 
-        # 2) loguear SIEMPRE el voto recibido con info del auto_cierre
-        _log_voto_recibido(votacion, voto, sesion.numero_sesion, auto_cierre)
+        return
 
-        # 3) si corresponde, cerrar y loguear el cierre automático
-        if auto_cierre:
-            self._cerrar_automaticamente(sesion, votacion)
-
-        return votacion, auto_cierre
-
-    def recalcular_cierre_por_cambio_en_presencia(self) -> Tuple[Optional[Votacion], bool]:
+    def recalcular_cierre_por_cambio_en_presencia(self):
         """
         Se llama cuando cambia el estado presente/ausente de algún concejal
         (por ejemplo, con la tecla 7).
-
-        Si, después de ese cambio, el conjunto de concejales presentes queda
-        contenido en los que ya votaron, se cierra la votación automáticamente.
-
-        Devuelve: (votacion_resultante, auto_cerrada: bool)
         """
-
-        sesion = sesion_service.obtener_sesion_actual()
-        if sesion is None or not sesion.abierta:
-            return None, False
-
-        if self.votacion_actual is None or not self.votacion_actual.abierta:
-            return self.votacion_actual, False
+        if self.votacion_actual is None or (self.votacion_actual.estado != EstadosVotacion.EN_CURSO):
+            raise ValueError("No hay votación abierta.")
 
         votacion = self.votacion_actual
+        votacion.recalcular_estado_por_cambio_ausencias()
 
-        auto_cierre = self._calcular_auto_cierre(sesion, votacion)
-
-        if not auto_cierre:
-            return votacion, False
-
-        # Cerrar y loguear cierre automático reutilizando el mismo helper
-        self._cerrar_automaticamente(sesion, votacion)
-        return votacion, True
 
     def cierre_forzado(self) -> Votacion:
         """
@@ -252,7 +143,7 @@ class VotacionService:
         if sesion is None or not sesion.abierta:
             raise ValueError("No hay sesión abierta.")
 
-        if self.votacion_actual is None or not self.votacion_actual.abierta:
+        if self.votacion_actual is None or (self.votacion_actual.estado != EstadosVotacion.EN_CURSO):
             raise ValueError("No hay votación abierta.")
 
         votacion = self.votacion_actual
@@ -262,13 +153,7 @@ class VotacionService:
         concejales_sin_voto = [c for c in presentes if c.dni not in dnis_que_votaron]
 
         votacion.cerrar()
-
-        _log_votacion_cierre_ok(
-            votacion=votacion,
-            numero_sesion=sesion.numero_sesion,
-            cierre_forzado=True,
-            concejales_sin_voto=concejales_sin_voto,
-        )
+        logging.log_internal("VOTACION",1, "Cierre forzado "+str(concejales_sin_voto)+" sin votar")
 
         self.votacion_actual = None
 
@@ -277,6 +162,35 @@ class VotacionService:
     def obtener_votacion_actual(self) -> Optional[Votacion]:
         return self.votacion_actual
 
+
+    def voto_desempate(self, voto: Voto) -> Votacion:
+        """
+        Registra el voto desempate de la votación actual.
+
+        Devuelve: (votacion)
+
+        Se asume que:
+        - hay sesión abierta
+        - hay votación abierta
+
+        Esas validaciones se hacen en la capa de entrada (input_service).
+        """
+
+        sesion = sesion_service.obtener_sesion_actual()
+        if sesion is None or not sesion.abierta:
+            logging.log_internal("VOTO",2,"Desempate fallo registro de voto al no haber sesion activa")
+            raise ValueError("no_hay_sesion_abierta")
+
+        if self.votacion_actual is None or (self.votacion_actual.estado != EstadosVotacion.EMPATADA):
+            logging.log_internal("VOTO",2,"Desempate fallo registro de voto al no haber votacion a desempatar")
+            raise ValueError("no_hay_votacion_abierta")
+
+        votacion = self.votacion_actual
+
+        votacion.desempatar_y_cerrar(voto)
+        self.votacion_actual = None
+
+        return votacion
 
 # Instancia única del servicio a importar desde otras partes
 votacion_service = VotacionService()

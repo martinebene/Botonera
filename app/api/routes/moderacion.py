@@ -5,6 +5,7 @@ from app.models.sesion import Sesion
 
 from app.services.votacion_service import votacion_service
 from app.models.votacion import Votacion
+from app.models.voto import Voto, ValorVoto
 
 
 router = APIRouter(
@@ -48,22 +49,26 @@ def cerrar_sesion():
 
 @router.post("/abrir_votacion")
 def abrir_votacion(
-    numero: int = Body(..., embed=True),
+    numero: int = Body(...),
     tipo: str = Body(...),
     tema: str = Body(...),
+    computa_sobre_los_presentes: bool = Body(...),
+    factor_mayoria_especial: float = Body(...), #0 para mayoria simple
 ):
     """
-    Abre una nueva votación en la sesión actual.
+    Abre una nueva votación en la sesión en curso.
 
     Body esperado:
     {
       "numero": 1,
       "tipo": "ordinaria",
       "tema": "Aprobación del presupuesto"
+      "computa_sobre_los_presentes": true
+      "factor_mayoria_especial": 0.66
     }
     """
     try:
-        votacion: Votacion = votacion_service.abrir_votacion(numero=numero, tipo=tipo, tema=tema)
+        votacion: Votacion = votacion_service.abrir_votacion(numero=numero, tipo=tipo, tema=tema, computa_sobre_los_presentes=computa_sobre_los_presentes, factor_mayoria_especial=factor_mayoria_especial)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -86,4 +91,24 @@ def cerrar_votacion_forzado():
     return {
         "votacion": votacion.to_dict(),
         "cerrada_forzada": True,
+    }
+
+@router.post("/voto_desempate")
+def voto_desempate(valor_voto: bool = Body(...),):
+    """
+    si hay votacion abierta y empatada, procesa el voto de desempate
+    """
+    if valor_voto:
+        voto = Voto(concejal=None, valor_voto=ValorVoto.POSITIVO)
+    else:
+        voto = Voto(concejal=None, valor_voto=ValorVoto.NEGATIVO)
+
+    try:
+        votacion=votacion_service.voto_desempate(voto)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return {
+        "votacion": votacion.to_dict(),
+        "cerrada_desempate": True,
     }

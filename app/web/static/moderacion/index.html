@@ -1,0 +1,226 @@
+<!doctype html>
+<!--
+  index.html
+  ==========
+  Cambios en esta versión:
+  - En la fila de "Sesión" agregamos 2 columnas nuevas (read-only):
+      1) "Concejales" => muestra "x de y presentes"
+      2) "Quorum"     => muestra delta respecto al quorum (ej: +2 / -1 / 0)
+        * color verde si >=0
+        * color rojo si <0
+  - Estos valores NO los escribe el usuario: los actualiza la API vía polling.
+-->
+
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moderación - Panel de Control</title>
+  <link rel="stylesheet" href="./app.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar__left">
+      <div class="brand">Moderación</div>
+      <div class="muted" id="connText">Conectando…</div>
+    </div>
+    <div class="topbar__right">
+      <div class="muted" id="clock">--/--/---- --:--:--</div>
+    </div>
+  </header>
+
+  <main class="grid2x2">
+
+    <!-- Panel 1: Comandos -->
+    <section class="panel" id="panel-comandos">
+      <div class="panel__title">Comandos</div>
+
+      <div class="panel__body">
+
+        <!-- =========================
+             FILA 1 (Sesión)
+             ========================= -->
+        <div class="row row--tight">
+
+          <!-- Campo editable: número de sesión -->
+          <div class="field field--tight">
+            <div class="label">Sesión Nº</div>
+            <input id="inSesionNumero"
+                   class="input input--tight"
+                   type="text"
+                   inputmode="numeric"
+                   pattern="[0-9]*" />
+          </div>
+
+          <!-- Botones sesión -->
+          <button id="btnAbrirSesion" class="btn btn--tight btn--primary" type="button">
+            Abrir sesión
+          </button>
+
+          <button id="btnCerrarSesion" class="btn btn--tight" type="button">
+            Cerrar sesión
+          </button>
+
+          <!-- NUEVO BLOQUE 1: Concejales (solo lectura) -->
+          <div class="field field--tight">
+            <div class="label">Concejales</div>
+            <!--
+              Este bloque lo rellena app.js con:
+                "x de y presentes"
+              donde:
+                x = cantidad_presentes (API)
+                y = cantidad_concejales (API)
+            -->
+            <div id="txtConcejales" class="statbox">
+              -- de -- presentes
+            </div>
+          </div>
+
+          <!-- NUEVO BLOQUE 2: Quorum (delta, solo lectura) -->
+          <div class="field field--tight">
+            <div class="label">Quorum</div>
+            <!--
+              Este bloque lo rellena app.js con:
+                +n / -n / 0
+              donde:
+                delta = cantidad_presentes - quorum
+              Colores:
+                verde si delta >= 0
+                rojo si delta < 0
+            -->
+            <div id="txtQuorumDelta" class="statbox num-neutral">
+              --
+            </div>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- ==================================
+             SECCIÓN VOTACIÓN (modo normal)
+             ================================== -->
+        <div id="votacionNormal">
+
+          <!-- FILA 2: número + tipo + factor + respecto(toggle) -->
+          <div class="row row--tight">
+            <div class="field field--tight">
+              <div class="label">Votación Nº</div>
+              <input id="inVotNumero"
+                     class="input input--tight"
+                     type="text"
+                     inputmode="numeric"
+                     pattern="[0-9]*" />
+            </div>
+
+            <div class="field field--tight">
+              <div class="label">Tipo</div>
+              <select id="selVotTipo" class="input input--tight">
+                <option value="Despacho">Despacho</option>
+                <option value="Mocion">Mocion</option>
+                <option value="Sobre tabla">Sobre tabla</option>
+                <option value="Ratificacion">Ratificacion</option>
+              </select>
+            </div>
+
+            <div class="field field--tight">
+              <div class="label">Factor de mayoría</div>
+              <input id="inVotFactor"
+                     class="input input--tight"
+                     type="text"
+                     inputmode="decimal" />
+            </div>
+
+            <div class="field field--tight">
+              <div class="label">Respecto</div>
+              <div class="toggle">
+                <button id="togRespectoPresentes" type="button"
+                        class="toggle__btn toggle__btn--on">
+                  Presentes
+                </button>
+                <button id="togRespectoCuerpo" type="button"
+                        class="toggle__btn toggle__btn--off">
+                  Cuerpo
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- FILA 3: tema + abrir/cerrar -->
+          <div class="row row--tight">
+            <div class="field field--tight field--grow">
+              <div class="label">Tema</div>
+              <input id="inVotTema"
+                     class="input input--tight"
+                     type="text" />
+            </div>
+
+            <button id="btnAbrirVotacion" class="btn btn--tight btn--primary" type="button">
+              Abrir votación
+            </button>
+
+            <button id="btnCerrarVotacion" class="btn btn--tight" type="button">
+              Cerrar votación
+            </button>
+          </div>
+
+          <!-- Estado de la votación -->
+          <div class="statusbox">
+            <div class="label">Estado de votación</div>
+            <div id="votacionEstado" class="statusbox__text">
+              No hay votación en curso.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ==================================
+             SECCIÓN VOTO DESEMPATE (modo empate)
+             ================================== -->
+        <div id="votacionEmpate" style="display:none;">
+          <div class="label label--big">Voto desempata</div>
+
+          <div class="row row--big">
+            <button id="btnDesempatePositivo" class="btn btn--big btn--primary" type="button">
+              Positivo
+            </button>
+            <button id="btnDesempateNegativo" class="btn btn--big" type="button">
+              Negativo
+            </button>
+          </div>
+
+          <div class="statusbox">
+            <div class="label">Estado de votación</div>
+            <div id="votacionEstadoEmpate" class="statusbox__text">
+              Votación: Empatada.
+            </div>
+          </div>
+        </div>
+
+        <div id="toast" class="toast">Listo.</div>
+
+      </div>
+    </section>
+
+    <!-- Paneles vacíos por ahora -->
+    <section class="panel">
+      <div class="panel__title">Complementos de comando</div>
+      <div class="panel__body"><div class="hint">Vacío (por ahora).</div></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__title">Estado recinto</div>
+      <div class="panel__body"><div class="hint">Vacío (por ahora).</div></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__title">Complementos de estado</div>
+      <div class="panel__body"><div class="hint">Vacío (por ahora).</div></div>
+    </section>
+
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,5 +1,7 @@
 {
   "concejales_file": "data/concejales.csv",
   "log_file": "sesiones_log.txt",
-  "log_dir": "logs/"
+  "log_dir": "logs/",
+  "quorum": 6
+  
 }

@@ -1,0 +1,1 @@
+13:56:05 | L2 | VOTACION | Fallo apertura de votacion al no haber sesion activa

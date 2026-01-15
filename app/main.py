@@ -18,3 +18,10 @@ app.mount(
     StaticFiles(directory="app/web/static/monitor_simple", html=True),
     name="monitor-simple",
 )
+
+# Monta el moderacion en /moderacion
+app.mount(
+    "/moderacion",
+    StaticFiles(directory="app/web/static/moderacion", html=True),
+    name="moderacion",
+)

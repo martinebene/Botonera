@@ -19,8 +19,8 @@ import os
 from datetime import datetime
 from threading import Lock
 from typing import Final
+from collections import deque
 
-# Ajustar SOLO este import si tu settings vive en otro módulo
 from app.config import settings
 
 
@@ -28,11 +28,23 @@ from app.config import settings
 # Constantes
 # ---------------------------------------------------------------------------
 
+# Niveles permitidos
 LOG_MIN_LEVEL: Final[int] = 1
 LOG_MAX_LEVEL: Final[int] = 3
 
+# Tamaño del buffer circular en RAM para estados al frontend:
+LOG_RAM_MAXLEN: Final[int] = 20
+
 # Lock tipo mutex para escritura concurrente
 _lock = Lock()
+
+# Contador incremental de eventos (sirve para que el frontend no duplique líneas)
+_log_seq: int = 0
+
+# Buffer circular de últimos eventos en RAM
+# Cada elemento será un dict:
+#   {"seq": <int>, "line": <str>}
+_log_ram_tail = deque(maxlen=LOG_RAM_MAXLEN)
 
 
 # ---------------------------------------------------------------------------
@@ -88,12 +100,24 @@ def _format_line(tag: str, level: int, message: str) -> str:
     safe_tag = (tag or "").strip()
     safe_message = (message or "").rstrip("\n")
 
-    return f"{timestamp} | L{level} | {safe_tag} | {safe_message}\n"
+    return f"{timestamp} | L{level} | {safe_tag} | {safe_message}"
 
 
 # ---------------------------------------------------------------------------
-# FUNCIÓN PÚBLICA
+# FUNCIÓNES PÚBLICAS
 # ---------------------------------------------------------------------------
+
+def get_log_tail() -> list[dict]:
+    """
+    Devuelve una COPIA (lista) del buffer circular en RAM.
+
+    Se devuelve lista (no deque) porque:
+    - es JSON-friendly
+    - evita exponer la deque interna
+    """
+    with _lock:
+        return list(_log_ram_tail)
+
 
 def log_internal(tag: str, level: int, message: str) -> None:
     """
@@ -132,11 +156,22 @@ def log_internal(tag: str, level: int, message: str) -> None:
     _ensure_dir_exists(log_root_dir)
     _ensure_dir_exists(day_dir)
 
-    # Formatear la línea una sola vez
-    line = _format_line(tag, level, message)
+    # Formatear línea (sin '\n')
+    line_no_nl = _format_line(tag, level, message)
 
+    global _log_seq
     # Escritura protegida (mutex)
     with _lock:
+
+        _log_seq += 1
+        _log_ram_tail.append({
+            "seq": _log_seq,
+            "line": line_no_nl,
+        })
+
+        # al escribir a archivos (agregamos '\n')
+        line = line_no_nl + "\n"
+        
         # Nivel 1: siempre
         with open(log_1, "a", encoding="utf-8") as f:
             f.write(line)

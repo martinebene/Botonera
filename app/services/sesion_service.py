@@ -1,5 +1,9 @@
+import json
+
 from typing import List, Optional, TYPE_CHECKING
 
+from app.config import settings
+from app.utils import logging
 from app.models.sesion import Sesion
 from app.models.concejal import Concejal
 from app.services.concejal_service import cargar_concejales_desde_archivo
@@ -8,8 +12,7 @@ if TYPE_CHECKING:
     from app.models.votacion import Votacion, EstadosVotacion
 from app.models.votacion import EstadosVotacion
 
-from app.config import settings
-from app.utils import logging
+
 
 
 
@@ -38,30 +41,31 @@ class SesionService:
 
         # Ya hay sesión abierta
         if self.sesion_actual is not None and self.sesion_actual.abierta:
-            logging.log_internal("SESION",1, "Rechazo de apertura de sesion porque ya hay sesion abierta")
-            raise ValueError("Ya hay una sesión abierta. Debe cerrarla antes de abrir otra.")
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesion porque ya hay sesion abierta")
+            raise ValueError("ya_hay_sesión_abierta")
 
         # Cargamos concejales ANTES de crear la sesión
         try:
             concejales: List[Concejal] = cargar_concejales_desde_archivo(settings.concejales_file)
         except FileNotFoundError:
-            logging.log_internal("SESION",1, "Rechazo de apertura de sesion porque no hay archivo de concejales")
-            raise ValueError("No se encontró el archivo de concejales. No se puede abrir la sesión.")
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesion porque no hay archivo de concejales")
+            raise ValueError("no_hay_archivo_concejales")
 
         if not concejales:
-            logging.log_internal("SESION",1, "Rechazo de apertura de sesion porque no hay concejales en el archivo")
-            raise ValueError("La lista de concejales está vacía. No se puede abrir la sesión.")
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesion porque no hay concejales en el archivo")
+            raise ValueError("lista_concejales_vacía")
 
         # Si todo está bien, creamos la sesión
         sesion = Sesion(numero_sesion=numero_sesion)
         sesion.concejales = concejales
         sesion.quorum = settings.quorum
+        sesion.disposicion_bancas = json.dumps(settings.disposicion_bancas, indent=2)
         
 
         self.sesion_actual = sesion
 
         # Log de apertura exitosa
-        logging.log_internal("SESION",1, "Apertura de sesion")
+        logging.log_internal("SESION",3, "Apertura de sesion Nº" + str(self.sesion_actual.numero_sesion))
         return sesion
 
     def cerrar_sesion(self) -> Sesion:
@@ -77,14 +81,14 @@ class SesionService:
         from app.services.votacion_service import votacion_service
 
         if self.sesion_actual is None:
-            logging.log_internal("SESION",1, "Cierre de sesion fallido porque no hay sesion abierta")
-            raise ValueError("No hay ninguna sesión abierta.")
+            logging.log_internal("SESION",2, "Cierre de sesion fallido porque no hay sesion abierta")
+            raise ValueError("ya_hay_sesión_abierta")
 
         sesion = self.sesion_actual
 
         if not sesion.abierta:
-            logging.log_internal("SESION",1, "Cierre de sesion fallido porque no hay sesion abierta")
-            raise ValueError("La sesión ya está cerrada.")
+            logging.log_internal("SESION",2, "Cierre de sesion fallido porque no hay sesion abierta")
+            raise ValueError("ya_hay_sesión_abierta")
 
         
         votacion: Votacion = votacion_service.obtener_votacion_actual()
@@ -95,12 +99,13 @@ class SesionService:
         sesion.cerrar() 
  
         # Log de cierre exitoso
-        logging.log_internal("SESION",1, "Cierre de sesion")
+        logging.log_internal("SESION",3, "Cierre de sesion Nº" + str(self.sesion_actual.numero_sesion))
 
         # Dejamos la referencia en None (o podríamos solo dejar la Sesion cerrada)
         self.sesion_actual = None
 
         return sesion
+
 
     def obtener_sesion_actual(self) -> Optional[Sesion]:
         """Devuelve la sesión actual (o None si no hay)."""
@@ -112,15 +117,15 @@ class SesionService:
         """Encola o Desencola un concejal"""
         if concejal not in self.sesion_actual.pedidos_uso_de_palabra:
             self.sesion_actual.pedidos_uso_de_palabra.append(concejal)
-            logging.log_internal("PALABRA",1, concejal.print_corto() + " pidio la palabra")
+            logging.log_internal("PALABRA",3, concejal.print_corto() + " pidio la palabra")
         else:
             self.sesion_actual.pedidos_uso_de_palabra.remove(concejal)
-            logging.log_internal("PALABRA",1, concejal.print_corto() + " retiro el pedido la palabra")
+            logging.log_internal("PALABRA",3, concejal.print_corto() + " retiro el pedido la palabra")
 
     def otorgar_uso_palabra(self) -> None:
         if self.sesion_actual.pedidos_uso_de_palabra:
             self.sesion_actual.en_uso_de_palabra=self.sesion_actual.pedidos_uso_de_palabra.popleft()
-            logging.log_internal("PALABRA",1, "Se otorgo uso de la palabra a "+ self.sesion_actual.en_uso_de_palabra.print_corto())
+            logging.log_internal("PALABRA",3, "Se otorgo uso de la palabra a "+ self.sesion_actual.en_uso_de_palabra.print_corto())
         else:
             self.sesion_actual.en_uso_de_palabra=None
             logging.log_internal("PALABRA",2, "Fallo dar uso de la palabra, porque no hay solicitudes en cola")

@@ -28,10 +28,10 @@ class Sesion:
         self.hora_fin: Optional[datetime] = None
         self.presentes: Optional[int]=None
         self.quorum: Optional[int]=None
+        self.disposicion_bancas:Optional[str]=None
         self.concejales: List[Concejal] = []
         self.votaciones: List[Votacion] = []
         self.pedidos_uso_de_palabra = deque()   # deque[Concejal]
-
         self.en_uso_de_palabra: Optional[Concejal] = None 
 
 
@@ -42,6 +42,7 @@ class Sesion:
         self.abierta = False
         self.hora_fin = datetime.now()
 
+
     def to_dict(self) -> dict:
         return {
             "numero_sesion": self.numero_sesion,
@@ -51,6 +52,7 @@ class Sesion:
             "cantidad_concejales": len(self.concejales),
             "cantidad_presentes": self.presentes,
             "quorum":self.quorum,
+            "disposicion_bancas":self.disposicion_bancas,
             "concejales": [c.to_dict() for c in self.concejales],
             "votaciones": [v.to_dict() for v in self.votaciones],
             "pedidos_uso_de_palabra":[p.to_dict() for p in self.pedidos_uso_de_palabra],

@@ -6,46 +6,47 @@ from app.services.votacion_service import votacion_service
 from app.models.votacion import EstadosVotacion
 from app.models.voto import Voto, ValorVoto
 from app.config import settings
+from app.utils import logging
 
 
-def _log_pulsacion_raw(dispositivo: str, tecla: str) -> None:
-    """
-    Log básico, se escribe APENAS llega la pulsación,
-    antes de cualquier validación de sesión o concejal.
-    """
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    linea = (
-        f"[{timestamp}] PULSACION_RAW; "
-        f"dispositivo={dispositivo}; "
-        f"tecla={tecla}"
-    )
-    with open(settings.log_file, "a", encoding="utf-8") as f:
-        f.write(linea + "\n")
+# def _log_pulsacion_raw(dispositivo: str, tecla: str) -> None:
+#     """
+#     Log básico, se escribe APENAS llega la pulsación,
+#     antes de cualquier validación de sesión o concejal.
+#     """
+#     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#     linea = (
+#         f"[{timestamp}] PULSACION_RAW; "
+#         f"dispositivo={dispositivo}; "
+#         f"tecla={tecla}"
+#     )
+#     with open(settings.log_file, "a", encoding="utf-8") as f:
+#         f.write(linea + "\n")
 
 
-def _log_pulsacion_procesada(
-    aceptada: bool,
-    motivo: str,
-    dispositivo: str,
-    tecla: str,
-    concejal_info: str,
-) -> None:
-    """
-    Log detallado de la pulsación luego de procesar la lógica.
-    """
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    estado_str = "aceptada" if aceptada else "rechazada"
+# def _log_pulsacion_procesada(
+#     aceptada: bool,
+#     motivo: str,
+#     dispositivo: str,
+#     tecla: str,
+#     concejal_info: str,
+# ) -> None:
+#     """
+#     Log detallado de la pulsación luego de procesar la lógica.
+#     """
+#     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#     estado_str = "aceptada" if aceptada else "rechazada"
 
-    linea = (
-        f"[{timestamp}] PULSACION {estado_str}; "
-        f"dispositivo={dispositivo}; "
-        f"tecla={tecla}; "
-        f"concejal={concejal_info}; "
-        f"motivo={motivo}"
-    )
+#     linea = (
+#         f"[{timestamp}] PULSACION {estado_str}; "
+#         f"dispositivo={dispositivo}; "
+#         f"tecla={tecla}; "
+#         f"concejal={concejal_info}; "
+#         f"motivo={motivo}"
+#     )
 
-    with open(settings.log_file, "a", encoding="utf-8") as f:
-        f.write(linea + "\n")
+#     with open(settings.log_file, "a", encoding="utf-8") as f:
+#         f.write(linea + "\n")
 
 
 def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
@@ -69,28 +70,21 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
     """
 
     # 1) Log crudo inmediato
-    _log_pulsacion_raw(dispositivo=dispositivo, tecla=tecla)
+    logging.log_internal("INPUT",2,"Pulsacion registrada: Tecla [" + tecla + "] del dispositivo [" + dispositivo +"]")
 
     # 2) Verificar sesión
     sesion = sesion_service.obtener_sesion_actual()
 
     if sesion is None or not sesion.abierta:
-        motivo = "no_hay_sesion_abierta"
-        _log_pulsacion_procesada(
-            aceptada=False,
-            motivo=motivo,
-            dispositivo=dispositivo,
-            tecla=tecla,
-            concejal_info="N/A",
-        )
+        logging.log_internal("INPUT",2,"Pulsacion ignorada: No hay sesion abierta")
         return {
             "aceptada": False,
-            "motivo": motivo,
+            "motivo": "no_hay_sesion_abierta",
             "dispositivo": dispositivo,
             "tecla": tecla,
         }
 
-    # 3) Buscar concejal por dispositivo
+    # 3) Buscar concejal asociado a dispositivo
     concejal = None
     for c in sesion.concejales:
         if c.dispositivo_votacion == dispositivo:
@@ -98,69 +92,55 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
             break
 
     if concejal is None:
-        motivo = "dispositivo_no_asignado"
-        _log_pulsacion_procesada(
-            aceptada=False,
-            motivo=motivo,
-            dispositivo=dispositivo,
-            tecla=tecla,
-            concejal_info="N/A",
-        )
+        logging.log_internal("INPUT",2,"Pulsacion ignorada: No hay concejal asociado")
         return {
             "aceptada": False,
-            "motivo": motivo,
+            "motivo": "dispositivo_no_asignado",
             "dispositivo": dispositivo,
             "tecla": tecla,
         }
-
-    concejal_info = f"{concejal.apellido}, {concejal.nombre} (dni={concejal.dni})"
 
     # 4) Tecla 7: toggle presente/ausente
     if tecla == "7":
         concejal.presente = not concejal.presente
         sesion.presentes = sesion_service.cantidad_concejales_presentes()
-
-        motivo = "toggle_presente"
-
-        # Log de la pulsación de toggle
-        _log_pulsacion_procesada(
-            aceptada=True,
-            motivo=motivo,
-            dispositivo=dispositivo,
-            tecla=tecla,
-            concejal_info=concejal_info,
-        )
+        if concejal.presente:
+            logging.log_internal("INPUT",3,concejal.print_corto() + " se PRESENTO")
+        else:
+            logging.log_internal("INPUT",3,concejal.print_corto() + " se AUSENTO")
 
         votacion_service.recalcular_cierre_por_cambio_en_presencia()
-
-        return 
-
-
-    # 5) Tecla 9: pedido de palabra
-    if tecla == "9":
-        
-        # Concejal debe estar presente
-        if concejal.presente:
-            sesion_service.encolar_uso_palabra(concejal) #encoola y desencola
-            return
-        else:
-            motivo = "concejal_ausente"
-            _log_pulsacion_procesada(
-                aceptada=False,
-                motivo=motivo,
-                dispositivo=dispositivo,
-                tecla=tecla,
-                concejal_info=concejal_info,
-            )
-            return {
-                "aceptada": False,
-                "motivo": motivo,
+        return {
+                "aceptada": True,
+                "motivo": "cambio_presencia",
                 "dispositivo": dispositivo,
                 "tecla": tecla,
                 "concejal": concejal.to_dict(),
             }
 
 
+    # 5) Tecla 9: pedido de palabra
+    if tecla == "9":
+        # Concejal debe estar presente
+        if concejal.presente:
+            sesion_service.encolar_uso_palabra(concejal) #encoola y desencola
+            logging.log_internal("INPUT",2,concejal.print_corto() + " pidio la PALABRA")
+            return{
+                "aceptada": True,
+                "motivo": "pedido_palabra",
+                "dispositivo": dispositivo,
+                "tecla": tecla,
+                "concejal": concejal.to_dict(),
+            }
+        else:
+            logging.log_internal("INPUT",2,concejal.print_corto() + " interactua sin dar presente")
+            return {
+                "aceptada": False,
+                "motivo": "concejal_ausente",
+                "dispositivo": dispositivo,
+                "tecla": tecla,
+                "concejal": concejal.to_dict(),
+            }
 
 
     # 6) Teclas de votación: 1 (SI), 2 (ABSTENCION), 3 (NO)
@@ -168,17 +148,10 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
         # Debe haber votación abierta
         votacion = votacion_service.obtener_votacion_actual()
         if votacion is None or (votacion.estado != EstadosVotacion.EN_CURSO):
-            motivo = "no_hay_votacion_abierta"
-            _log_pulsacion_procesada(
-                aceptada=False,
-                motivo=motivo,
-                dispositivo=dispositivo,
-                tecla=tecla,
-                concejal_info=concejal_info,
-            )
+            logging.log_internal("INPUT",2,concejal.print_corto() + " voto sin votacion en curso")
             return {
                 "aceptada": False,
-                "motivo": motivo,
+                "motivo": "no_hay_votacion_abierta",
                 "dispositivo": dispositivo,
                 "tecla": tecla,
                 "concejal": concejal.to_dict(),
@@ -186,17 +159,10 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
 
         # Concejal debe estar presente
         if not concejal.presente:
-            motivo = "concejal_ausente"
-            _log_pulsacion_procesada(
-                aceptada=False,
-                motivo=motivo,
-                dispositivo=dispositivo,
-                tecla=tecla,
-                concejal_info=concejal_info,
-            )
+            logging.log_internal("INPUT",2,concejal.print_corto() + " interactua sin dar presente")
             return {
                 "aceptada": False,
-                "motivo": motivo,
+                "motivo": "concejal_ausente",
                 "dispositivo": dispositivo,
                 "tecla": tecla,
                 "concejal": concejal.to_dict(),
@@ -214,54 +180,33 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
         try:
             votacion_service.registrar_voto(voto)
         except ValueError as e:
-            motivo = str(e)
-            _log_pulsacion_procesada(
-                aceptada=False,
-                motivo=motivo,
-                dispositivo=dispositivo,
-                tecla=tecla,
-                concejal_info=concejal_info,
-            )
+            logging.log_internal("INPUT",2,concejal.print_corto() + " ERROR en registro voto: " + str(e))
             return {
                 "aceptada": False,
-                "motivo": motivo,
+                "motivo": str(e),
                 "dispositivo": dispositivo,
                 "tecla": tecla,
                 "concejal": concejal.to_dict(),
             }
 
         # Si llegó hasta acá, el voto se registró correctamente
-        motivo = "voto_registrado"
-        _log_pulsacion_procesada(
-            aceptada=True,
-            motivo=motivo,
-            dispositivo=dispositivo,
-            tecla=tecla,
-            concejal_info=concejal_info,
-        )
+        
+        logging.log_internal("INPUT",2,concejal.print_corto() + " voto: " + voto.valor_voto.value)
 
         return {
             "aceptada": True,
-            "motivo": "",
-            "accion": "voto_registrado",
+            "motivo": "voto_registrado",
             "dispositivo": dispositivo,
             "tecla": tecla,
             "concejal": concejal.to_dict(),
-            "valor_voto": valor_voto,
+            "valor_voto": valor_voto.value,
         }
 
     # 6) Cualquier otra tecla: de momento la ignoramos a nivel de negocio
-    motivo = "tecla_no_soportada"
-    _log_pulsacion_procesada(
-        aceptada=False,
-        motivo=motivo,
-        dispositivo=dispositivo,
-        tecla=tecla,
-        concejal_info=concejal_info,
-    )
+    logging.log_internal("INPUT",2,concejal.print_corto() + " presiono tecla: " + tecla + " y no tiene funcion asignada")
     return {
         "aceptada": False,
-        "motivo": motivo,
+        "motivo": "tecla_no_soportada",
         "dispositivo": dispositivo,
         "tecla": tecla,
         "concejal": concejal.to_dict(),

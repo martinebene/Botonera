@@ -1,0 +1,9 @@
+15:40:38 | L3 | SESION | Apertura de sesion Nº93
+15:41:52 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: caca
+15:42:09 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+15:42:09 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+15:42:10 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+15:42:11 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+15:42:12 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+15:42:14 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+15:42:15 | L3 | INPUT | Meryl Streep (banca Nro:6) se AUSENTO

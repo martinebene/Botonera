@@ -119,3 +119,33 @@
 14:03:52 | L1 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
 14:03:54 | L1 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
 14:03:54 | L1 | VOTACION | Votacion Nº97 completada
+14:53:06 | L1 | SESION | Apertura de sesion
+14:53:11 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: hnvb
+14:54:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:54:09 | L1 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:54:45 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+14:54:45 | L1 | PALABRA | Tom Hanks (banca Nro:5) pidio la palabra
+14:54:50 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+14:55:37 | L1 | SESION | Apertura de sesion
+14:55:45 | L1 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: hnvb
+14:55:56 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:55:56 | L1 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:56:00 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:00 | L1 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+14:56:06 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+14:56:06 | L1 | INPUT | Scarlett Johansson (banca Nro:2) se AUSENTO
+14:56:12 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:21 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:23 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:28 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+14:56:28 | L1 | INPUT | Scarlett Johansson (banca Nro:2) se PRESENTO
+14:56:31 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:31 | L1 | PALABRA | Scarlett Johansson (banca Nro:2) retiro el pedido la palabra
+14:58:26 | L1 | SESION | Apertura de sesion
+14:58:28 | L1 | SESION | Cierre de sesion
+14:58:32 | L1 | SESION | Apertura de sesion
+15:01:18 | L1 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:01:23 | L1 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:08:06 | L1 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:08:07 | L1 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:08:10 | L1 | SESION | Cierre de sesion fallido porque no hay sesion abierta

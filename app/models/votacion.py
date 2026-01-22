@@ -50,7 +50,7 @@ class Votacion:
         self.factor_mayoria_especial = factor_mayoria_especial
         self.hora_inicio: datetime = datetime.now()
         self.hora_fin: Optional[datetime] = None
-
+        # self.presentes_al_cierre: Optional[int] = None
         self.votos: List[Voto] = []
 
     def registrar_voto(self, voto: Voto) -> None:
@@ -77,6 +77,7 @@ class Votacion:
         dnis_presentes = {c.dni for c in presentes}
         dnis_que_votaron = {v.concejal.dni for v in self.votos}
         if dnis_presentes.issubset(dnis_que_votaron):
+            # self.presentes_al_cierre=
             self.cerrar()
 
     def cerrar(self) -> None:

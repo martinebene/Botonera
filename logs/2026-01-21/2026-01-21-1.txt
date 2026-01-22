@@ -1,0 +1,22 @@
+15:40:38 | L3 | SESION | Apertura de sesion Nº93
+15:41:52 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: caca
+15:42:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+15:42:09 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+15:42:09 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+15:42:09 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev10]
+15:42:09 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+15:42:09 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Abstencion
+15:42:10 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+15:42:10 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+15:42:10 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Abstencion
+15:42:11 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+15:42:11 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+15:42:11 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Negativo
+15:42:12 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev08]
+15:42:12 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+15:42:12 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Abstencion
+15:42:14 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+15:42:14 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+15:42:14 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+15:42:15 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+15:42:15 | L3 | INPUT | Meryl Streep (banca Nro:6) se AUSENTO

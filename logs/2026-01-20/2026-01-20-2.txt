@@ -1,0 +1,192 @@
+13:34:47 | L2 | VOTACION | Fallo apertura de votacion al ya haber una votacion activa
+13:34:57 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+13:35:02 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+13:35:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+13:35:07 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+13:35:57 | L2 | VOTACION | Fallo apertura de votacion al ya haber una votacion activa
+13:36:46 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:36:47 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+13:37:03 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:37:04 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+13:37:05 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+13:37:06 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+13:37:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+13:37:10 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+13:37:11 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+13:37:11 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+13:37:13 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+13:37:14 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+13:37:15 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev11]
+13:37:16 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+13:37:32 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+13:37:33 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev11]
+13:37:33 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+13:37:34 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+13:37:35 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+13:37:36 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+13:37:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+13:37:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+13:37:39 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+13:37:39 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+13:37:40 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+13:37:41 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:38:31 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:38:31 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+13:38:32 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+13:38:32 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+13:38:34 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+13:38:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+13:38:35 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev07]
+13:38:36 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+13:38:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+13:38:39 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+13:38:41 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+13:38:42 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+14:02:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:03:31 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:03:36 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:03:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:03:40 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+14:03:41 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+14:03:42 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:03:44 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:03:47 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+14:03:48 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+14:03:50 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev11]
+14:03:52 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+14:04:15 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+14:04:16 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev11]
+14:04:17 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+14:04:18 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+14:04:20 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:04:20 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:04:21 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:04:22 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:04:23 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+14:04:23 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+14:04:24 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+14:04:25 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:12:07 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:12:08 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:12:10 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:12:11 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:12:13 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:12:13 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:12:14 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:12:15 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:12:16 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+14:12:16 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+14:12:17 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:12:18 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+14:14:13 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:14:13 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:15:21 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:15:21 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+14:15:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:15:27 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+14:15:28 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:15:28 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:15:30 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:15:30 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+14:15:31 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:15:31 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+14:15:32 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:15:32 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Negativo
+14:15:33 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:15:33 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Negativo
+14:15:33 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+14:15:33 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Negativo
+14:15:34 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+14:15:34 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+14:15:34 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:15:34 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:15:38 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+14:15:38 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Negativo
+14:17:48 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+14:17:48 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Negativo
+14:17:49 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:17:49 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:17:50 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+14:17:50 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+14:17:50 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+14:17:50 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Negativo
+14:17:53 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev05]
+14:17:53 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Negativo
+14:17:54 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev06]
+14:17:54 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Negativo
+14:17:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+14:17:57 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Positivo
+14:17:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+14:17:58 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Positivo
+14:17:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:17:59 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:18:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:18:00 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+14:18:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:18:00 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+14:18:04 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:18:04 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:18:35 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:19:40 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:19:41 | L2 | VOTO | Desempate fallo registro de voto al no haber votacion a desempatar
+14:19:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:19:57 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:19:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:19:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:19:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:20:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:20:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:22:24 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:22:24 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:22:24 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:22:24 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto sin votacion en curso
+14:22:25 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:22:25 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto sin votacion en curso
+14:22:26 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:22:26 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto sin votacion en curso
+14:22:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:22:27 | L2 | INPUT | Tom Hanks (banca Nro:5) voto sin votacion en curso
+14:22:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:22:27 | L2 | INPUT | Meryl Streep (banca Nro:6) voto sin votacion en curso
+14:23:32 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:23:32 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto sin votacion en curso
+14:23:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:23:37 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto sin votacion en curso
+14:25:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:25:00 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:25:02 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:25:02 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto sin votacion en curso
+14:25:12 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:25:12 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto sin votacion en curso
+14:25:15 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:25:15 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto sin votacion en curso
+14:25:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:25:17 | L2 | INPUT | Tom Hanks (banca Nro:5) voto sin votacion en curso
+14:25:19 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:25:19 | L2 | INPUT | Meryl Streep (banca Nro:6) voto sin votacion en curso
+14:25:20 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+14:25:20 | L2 | INPUT | Denzel Washington (banca Nro:7) voto sin votacion en curso
+14:26:05 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:26:05 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:26:06 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:26:06 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+14:26:08 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:26:08 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+14:26:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:26:09 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:26:10 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:26:10 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+14:26:11 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:26:11 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+14:26:12 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:26:12 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Negativo
+14:26:13 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:26:13 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Negativo
+14:26:13 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+14:26:13 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Negativo
+14:26:14 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+14:26:14 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+14:26:15 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:26:15 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:26:15 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+14:26:15 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Negativo

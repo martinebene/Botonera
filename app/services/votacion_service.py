@@ -5,7 +5,7 @@ from typing import Optional, TYPE_CHECKING
 
 from app.services.sesion_service import sesion_service
 from app.models.votacion import Votacion, EstadosVotacion
-from app.models.voto import Voto
+from app.models.voto import Voto, ValorVoto
 
 from app.utils import logging
 
@@ -44,15 +44,15 @@ class VotacionService:
     #     - loguea cierre automático
     #     - borra votacion_actual
     #     """
-    #     logging.log_internal("VOTACION",1,"Votacion completada")
+    #     logging.log_internal("VOTACION",3,"Votacion completada")
     #     votacion.cerrar()
 
     #     if self.votacion_actual.estado != EstadosVotacion.EMPATADA:
-    #         logging.log_internal("VOTACION",1,"Resultado: "+ self.votacion_actual.estado.value+" - VOTOS: " + self.votacion_actual.to_linea_votos())
+    #         logging.log_internal("VOTACION",3,"Resultado: "+ self.votacion_actual.estado.value+" - VOTOS: " + self.votacion_actual.to_linea_votos())
     #         logging.log_internal("VOTACION",2,"Cierre automatico por completar voto de los presentes")
     #         self.votacion_actual = None
     #     else:
-    #         logging.log_internal("VOTACION",1,"Resultado: "+ self.votacion_actual.estado.value+" - Se espera voto de desempate")
+    #         logging.log_internal("VOTACION",3,"Resultado: "+ self.votacion_actual.estado.value+" - Se espera voto de desempate")
 
     # ------------------------------------------------------------------
     # API pública del servicio
@@ -81,7 +81,7 @@ class VotacionService:
         sesion.votaciones.append(votacion)
         self.votacion_actual = votacion
 
-        logging.log_internal("VOTACION",1,"Apertura de votacion de tipo " + votacion.tipo + " Nº" + str(votacion.numero) +" con tema: " + votacion.tema)
+        logging.log_internal("VOTACION",3,"Apertura de votacion de tipo " + votacion.tipo + " Nº" + str(votacion.numero) +" con tema: " + votacion.tema)
 
         return votacion
 
@@ -113,12 +113,13 @@ class VotacionService:
 
         # Puede levantar ValueError("votacion_cerrada" o "concejal_ya_voto")
         votacion.registrar_voto(voto)
-        logging.log_internal("VOTO",1,voto.concejal.print_corto() + " voto: "+voto.valor_voto.value)
+        logging.log_internal("VOTO",3,voto.concejal.print_corto() + " voto: "+voto.valor_voto.value)
 
         # Si corresponde, cerrar y loguear el cierre automático
-        if (votacion.estado is not EstadosVotacion.EN_CURSO) and (votacion.estado is not EstadosVotacion.EMPATADA) :
-            self.votacion_actual=None
-            logging.log_internal("VOTACION",1, "Votacion Nº"+str(votacion.numero)+" completada")
+        if (votacion.estado is not EstadosVotacion.EN_CURSO):
+            logging.log_internal("VOTACION",3, "Votacion Nº"+str(votacion.numero)+" completada. Resultado: "+votacion.estado.value+" - Votos: "+str(len(votacion.votos))+" de "+str(len(sesion.concejales))+" - "+str(votacion.contar_votos_por_tipo(ValorVoto.POSITIVO))+" Positivos, "+str(votacion.contar_votos_por_tipo(ValorVoto.NEGATIVO))+" Negativos y "+str(votacion.contar_votos_por_tipo(ValorVoto.ABSTENCION))+ " Abstenciones")
+            if (votacion.estado is not EstadosVotacion.EMPATADA):
+                self.votacion_actual=None
 
         return
 
@@ -153,7 +154,7 @@ class VotacionService:
         concejales_sin_voto = [c for c in presentes if c.dni not in dnis_que_votaron]
 
         votacion.cerrar()
-        logging.log_internal("VOTACION",1, "Cierre forzado "+str(concejales_sin_voto)+" sin votar")
+        logging.log_internal("VOTACION",3, "Cierre forzado - sin votar: "+str(concejales_sin_voto))
 
         self.votacion_actual = None
 
@@ -188,6 +189,7 @@ class VotacionService:
         votacion = self.votacion_actual
 
         votacion.desempatar_y_cerrar(voto)
+        logging.log_internal("VOTACION",3, "Votacion Nº"+str(votacion.numero)+" DESEMPATADA. Resultado: "+votacion.estado.value+" - Votos: "+str(len(votacion.votos))+" de "+str(len(sesion.concejales))+" - "+str(votacion.contar_votos_por_tipo(ValorVoto.POSITIVO))+" Positivos, "+str(votacion.contar_votos_por_tipo(ValorVoto.NEGATIVO))+" Negativos y "+str(votacion.contar_votos_por_tipo(ValorVoto.ABSTENCION))+ " Abstenciones")
         self.votacion_actual = None
 
         return votacion

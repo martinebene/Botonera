@@ -1,7 +1,8 @@
-from fastapi import APIRouter, HTTPException, Body
+from fastapi import APIRouter
 
 from app.services.sesion_service import sesion_service
-from app.models.sesion import Sesion
+from app.utils.logging import get_log_tail
+
 
 router = APIRouter(
     prefix="/estados",
@@ -22,9 +23,11 @@ def estado_sesion():
         return {
             "hay_sesion": False,
             "sesion": None,
+            "eventos":get_log_tail(),
         }
 
     return {
         "hay_sesion": True,
         "sesion": sesion.to_dict(),
+        "eventos":get_log_tail(),
     }

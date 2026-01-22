@@ -38,7 +38,6 @@ def cerrar_sesion():
     """
     Endpoint para CERRAR la sesión actual.
     """
-
     try:
         sesion: Sesion = sesion_service.cerrar_sesion()
     except ValueError as e:

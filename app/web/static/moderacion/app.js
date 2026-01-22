@@ -1,56 +1,52 @@
 /*
   app.js
   ======
+  OBJETIVO DE ESTA VERSION (modo TESTING):
+  ---------------------------------------
+  - El frontend NO valida datos.
+  - El frontend NO “frena” el envío por campos vacíos o mal tipeados.
+  - El frontend SIEMPRE envía lo que haya en pantalla.
+  - El backend es el único responsable de validar y responder errores 422/400/etc.
 
-  Cambios solicitados:
-  1) En la fila de sesión:
-     - Mostrar "x de y presentes" usando datos de la API:
-         sesion.cantidad_presentes
-         sesion.cantidad_concejales
-     - Mostrar delta de quorum:
-         delta = cantidad_presentes - quorum
-       y pintar:
-         verde si delta >= 0
-         rojo  si delta < 0
+  ¿Qué cambia respecto a la versión anterior?
+  - Antes: si Sesión Nº estaba vacío => el front mostraba error local y NO enviaba.
+  - Ahora: si Sesión Nº está vacío => el front envía igual, y el backend devolverá el error.
 
-  2) Revisar si con el nuevo to_dict hay estados que antes calculábamos en frontend,
-     y ahora los entrega la API.
-     => Sí:
-        - Antes "cantidad_presentes" se infería contando concejales en frontend.
-        - Ahora viene directo en sesion.cantidad_presentes, así que se usa ese dato.
-        - Antes "cantidad_concejales" se infería por len(concejales).
-        - Ahora viene directo en sesion.cantidad_concejales.
+  Lo mismo para:
+  - Votación Nº vacío
+  - Tema vacío
+  - Factor no numérico
+  etc.
 
-  3) Para el texto "votos x de y":
-     - y ahora se calcula usando:
-        - si computa_sobre_los_presentes == true  => y = sesion.cantidad_presentes
-        - si computa_sobre_los_presentes == false => y = sesion.cantidad_concejales
-     (y si por compatibilidad no viene alguno, hacemos fallback al conteo anterior)
+  Nota:
+  - Seguimos “normalizando” la coma en el factor (0,66 -> 0.66).
+    Esto NO es una validación, solo una conveniencia para que el backend pueda parsear.
+    Si querés testear también el caso coma (que falle), lo saco.
 */
 
 ///////////////////////////////
-// 1) CONFIG
+// 1) CONFIG BASICA
 ///////////////////////////////
 
-const API_BASE_URL = "";
+const API_BASE_URL = "";                 // mismo host del FastAPI
 const STATE_ENDPOINT = "/estados/estado_global";
 const POLL_MS = 250;
 const TIMEOUT_MS = 1500;
 
 ///////////////////////////////
-// 2) DOM refs
+// 2) REFERENCIAS A ELEMENTOS DEL DOM
 ///////////////////////////////
 
 // Topbar
 const connText = document.getElementById("connText");
 const clockEl  = document.getElementById("clock");
 
-// Sesión (editable)
+// Sesión (input y botones)
 const inSesionNumero = document.getElementById("inSesionNumero");
 const btnAbrirSesion = document.getElementById("btnAbrirSesion");
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 
-// Sesión (solo lectura - NUEVOS)
+// Sesión (solo lectura)
 const txtConcejales = document.getElementById("txtConcejales");
 const txtQuorumDelta = document.getElementById("txtQuorumDelta");
 
@@ -66,17 +62,17 @@ const btnAbrirVotacion = document.getElementById("btnAbrirVotacion");
 const btnCerrarVotacion = document.getElementById("btnCerrarVotacion");
 const votacionEstado = document.getElementById("votacionEstado");
 
-// Voto desempate (modo empate)
+// Votación (modo empate)
 const votacionEmpate = document.getElementById("votacionEmpate");
 const btnDesempatePositivo = document.getElementById("btnDesempatePositivo");
 const btnDesempateNegativo = document.getElementById("btnDesempateNegativo");
 const votacionEstadoEmpate = document.getElementById("votacionEstadoEmpate");
 
-// Toast
+// Toast (texto de estado del frontend)
 const toastEl = document.getElementById("toast");
 
 ///////////////////////////////
-// 3) Reloj local
+// 3) RELOJ LOCAL (NO depende del backend)
 ///////////////////////////////
 
 function updateClock(){
@@ -86,32 +82,37 @@ updateClock();
 setInterval(updateClock, 250);
 
 ///////////////////////////////
-// 4) Helpers UI
+// 4) UI helpers: conexión y “toast”
 ///////////////////////////////
 
 function setConn(kind, text){
   connText.classList.remove("conn-ok","conn-err","conn-warn");
+
   if (kind === "ok") connText.classList.add("conn-ok");
   else if (kind === "err") connText.classList.add("conn-err");
   else connText.classList.add("conn-warn");
+
   connText.textContent = text;
 }
 
 function toast(kind, msg){
   toastEl.classList.remove("toast--ok","toast--err","toast--warn");
+
   if (kind === "ok") toastEl.classList.add("toast--ok");
   else if (kind === "err") toastEl.classList.add("toast--err");
   else toastEl.classList.add("toast--warn");
+
   toastEl.textContent = msg;
 }
 
 ///////////////////////////////
-// 5) Fetch con timeout
+// 5) FETCH con timeout
 ///////////////////////////////
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = TIMEOUT_MS){
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
+
   try{
     return await fetch(url, { ...options, signal: controller.signal });
   } finally {
@@ -124,10 +125,21 @@ async function getJson(url){
     method: "GET",
     headers: { "Accept":"application/json" },
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+  if (!res.ok){
+    throw new Error(`HTTP ${res.status}`);
+  }
+
   return await res.json();
 }
 
+/*
+  postJson:
+  - Hace POST con JSON.
+  - Si el backend responde error, tiramos un Error con:
+      "HTTP <status> - <cuerpo>"
+  Esto es ideal para ver validaciones del backend (422, 400, etc.).
+*/
 async function postJson(url, body){
   const res = await fetchWithTimeout(url, {
     method: "POST",
@@ -139,23 +151,30 @@ async function postJson(url, body){
   });
 
   const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} - ${text}`);
 
+  if (!res.ok){
+    // Importante: mostramos lo que devuelve el backend
+    // (por ejemplo el detalle del 422).
+    throw new Error(`HTTP ${res.status} - ${text}`);
+  }
+
+  // Si devuelve JSON, lo parseamos; si no, devolvemos crudo.
   try { return JSON.parse(text); }
   catch { return { ok:true, raw:text }; }
 }
 
 ///////////////////////////////
-// 6) UI Model (para abrir votación)
+// 6) UI Model mínimo (solo para el toggle "Respecto")
 ///////////////////////////////
 
+/*
+  El toggle "Respecto" afecta SOLO el body que enviamos al ABRIR VOTACION:
+    computa_sobre_los_presentes = true  si Respecto: Presentes
+                               = false si Respecto: Cuerpo
+*/
 const uiModel = {
   respectoPresentes: true
 };
-
-///////////////////////////////
-// 7) Toggle "Respecto" (solo influye al ABRIR votación)
-///////////////////////////////
 
 function paintToggleRespecto(){
   const pres = uiModel.respectoPresentes === true;
@@ -176,74 +195,103 @@ togRespectoCuerpo.addEventListener("click", () => {
 paintToggleRespecto();
 
 ///////////////////////////////
-// 8) Comandos sesión
+// 7) COMANDOS - SESION (sin validación frontend)
 ///////////////////////////////
 
 btnAbrirSesion.addEventListener("click", async () => {
   toast("warn", "Enviando: abrir sesión…");
+
   try{
-    const raw = String(inSesionNumero.value || "").trim();
-    const numero = parseInt(raw, 10);
-    if (!Number.isInteger(numero)){
-      throw new Error("Sesión Nº inválido (ingresá un entero).");
-    }
-    await postJson(API_BASE_URL + "/moderacion/abrir_sesion", { numero_sesion: numero });
-    toast("ok", `OK: Abrir sesión ${numero} enviado.`);
+    /*
+      IMPORTANTE (modo testing):
+      - NO parseamos a int.
+      - NO comprobamos vacío.
+      - Mandamos lo que el usuario escribió.
+
+      Si el backend espera int y llega "", "abc", etc. => backend devolverá 422.
+    */
+    const raw = String(inSesionNumero.value ?? "");
+
+    // Construimos body de la forma que exige el endpoint:
+    // { "numero_sesion": ... }
+    // Pero el valor puede ser "" u otra cosa: lo validará el backend.
+    const body = { numero_sesion: raw };
+
+    await postJson(API_BASE_URL + "/moderacion/abrir_sesion", body);
+    toast("ok", "OK: Abrir sesión enviado (validación en backend).");
+
   } catch (e){
+    // Mostramos el error del backend tal cual
     toast("err", `ERROR abrir sesión: ${e?.message || String(e)}`);
   }
 });
 
 btnCerrarSesion.addEventListener("click", async () => {
   toast("warn", "Enviando: cerrar sesión…");
+
   try{
     await postJson(API_BASE_URL + "/moderacion/cerrar_sesion", undefined);
     toast("ok", "OK: Cerrar sesión enviado.");
+
   } catch (e){
     toast("err", `ERROR cerrar sesión: ${e?.message || String(e)}`);
   }
 });
 
 ///////////////////////////////
-// 9) Comandos votación (modo normal)
+// 8) COMANDOS - VOTACION (sin validación frontend)
 ///////////////////////////////
 
 btnAbrirVotacion.addEventListener("click", async () => {
   toast("warn", "Enviando: abrir votación…");
+
   try{
-    const rawNum = String(inVotNumero.value || "").trim();
-    const numero = parseInt(rawNum, 10);
-    if (!Number.isInteger(numero)){
-      throw new Error("Votación Nº inválido (ingresá un entero).");
-    }
+    /*
+      Modo testing:
+      - NO parseamos numero a int.
+      - NO exigimos tema.
+      - NO exigimos factor numérico.
+      - Mandamos “lo que hay”.
+      - El backend decide si es válido.
+    */
 
-    const tipo = String(selVotTipo.value || "").trim();
-    const tema = String(inVotTema.value || "").trim();
-    if (!tema){
-      throw new Error("Tema requerido (no puede estar vacío).");
-    }
+    // Votación Nº: mandamos string
+    const rawNum = String(inVotNumero.value ?? "");
 
+    // Tipo: viene del select (siempre algo)
+    const tipo = String(selVotTipo.value ?? "");
+
+    // Tema: string (puede venir vacío)
+    const tema = String(inVotTema.value ?? "");
+
+    // Respecto => boolean real
     const computa_sobre_los_presentes = (uiModel.respectoPresentes === true);
 
-    const rawFactor = String(inVotFactor.value ?? "").trim();
-    let factor_mayoria_especial = 0;
-    if (rawFactor !== ""){
-      factor_mayoria_especial = parseFloat(rawFactor.replace(",", "."));
-      if (!Number.isFinite(factor_mayoria_especial)){
-        throw new Error("Factor de mayoría inválido (número, 0 o vacío).");
-      }
-    }
+    /*
+      Factor:
+      - puede venir vacío ""
+      - puede venir "abc"
+      - puede venir "0,66"
+      Para ayudar un poco:
+      - reemplazamos coma por punto (0,66 -> 0.66)
+      Esto NO valida. Si queda "abc", el backend fallará.
+    */
+    const rawFactorOriginal = String(inVotFactor.value ?? "");
+    const rawFactor = rawFactorOriginal.replace(",", ".");
 
+    // Armamos el body con exactamente los campos del endpoint.
+    // OJO: los “types” pueden no coincidir => backend valida.
     const body = {
-      numero,
-      tipo,
-      tema,
-      computa_sobre_los_presentes,
-      factor_mayoria_especial
+      numero: rawNum,
+      tipo: tipo,
+      tema: tema,
+      computa_sobre_los_presentes: computa_sobre_los_presentes,
+      factor_mayoria_especial: rawFactor
     };
 
     await postJson(API_BASE_URL + "/moderacion/abrir_votacion", body);
-    toast("ok", `OK: Abrir votación ${numero} enviado.`);
+    toast("ok", "OK: Abrir votación enviado (validación en backend).");
+
   } catch (e){
     toast("err", `ERROR abrir votación: ${e?.message || String(e)}`);
   }
@@ -251,23 +299,27 @@ btnAbrirVotacion.addEventListener("click", async () => {
 
 btnCerrarVotacion.addEventListener("click", async () => {
   toast("warn", "Enviando: cerrar votación…");
+
   try{
     await postJson(API_BASE_URL + "/moderacion/cerrar_votacion", undefined);
     toast("ok", "OK: Cerrar votación enviado.");
+
   } catch (e){
     toast("err", `ERROR cerrar votación: ${e?.message || String(e)}`);
   }
 });
 
 ///////////////////////////////
-// 10) Desempate
+// 9) DESEMPATE (sin validación)
 ///////////////////////////////
 
 btnDesempatePositivo.addEventListener("click", async () => {
   toast("warn", "Enviando: voto desempate POSITIVO…");
+
   try{
     await postJson(API_BASE_URL + "/moderacion/voto_desempate", true);
     toast("ok", "OK: Desempate positivo enviado.");
+
   } catch (e){
     toast("err", `ERROR desempate positivo: ${e?.message || String(e)}`);
   }
@@ -275,22 +327,24 @@ btnDesempatePositivo.addEventListener("click", async () => {
 
 btnDesempateNegativo.addEventListener("click", async () => {
   toast("warn", "Enviando: voto desempate NEGATIVO…");
+
   try{
     await postJson(API_BASE_URL + "/moderacion/voto_desempate", false);
     toast("ok", "OK: Desempate negativo enviado.");
+
   } catch (e){
     toast("err", `ERROR desempate negativo: ${e?.message || String(e)}`);
   }
 });
 
 ///////////////////////////////
-// 11) Normalización del estado
+// 10) ESTADO - Normalización del JSON de /estados/estado_global
 ///////////////////////////////
 
 function normalizeState(raw){
   if (!raw) return { sesion: null };
-  if (raw.sesion !== undefined) return raw;   // si ya viene {sesion: ...}
-  return { sesion: raw };                      // si viene directo la sesión
+  if (raw.sesion !== undefined) return raw;
+  return { sesion: raw };
 }
 
 function getSesion(state){
@@ -309,22 +363,12 @@ function getUltimaVotacion(state){
 }
 
 ///////////////////////////////
-// 12) Render fila sesión (NUEVO)
+// 11) RENDER FILA SESION (presentes/totales y delta quorum)
 ///////////////////////////////
 
-/*
-  Esta función actualiza:
-  - "x de y presentes" usando sesion.cantidad_presentes y sesion.cantidad_concejales
-  - "delta quorum" = presentes - quorum
-
-  Si por compatibilidad faltan esos campos, hacemos fallback a:
-  - cantidad_concejales = concejales.length
-  - cantidad_presentes = contar concejales con presente=true
-*/
 function renderFilaSesion(state){
   const ses = getSesion(state);
 
-  // Si no hay sesión (o es null), mostramos placeholders “bonitos”
   if (!ses){
     txtConcejales.textContent = "-- de -- presentes";
     txtQuorumDelta.textContent = "--";
@@ -333,33 +377,26 @@ function renderFilaSesion(state){
     return;
   }
 
-  // 1) Total concejales (preferimos API)
+  // Preferimos los campos ya calculados por el backend
   let total = ses.cantidad_concejales;
+  let presentes = ses.cantidad_presentes;
 
-  // fallback: si no vino, usamos lista concejales
+  // Fallbacks por si falta (compatibilidad)
   if (!Number.isInteger(total)){
     const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
     total = concejales.length;
   }
 
-  // 2) Presentes (preferimos API)
-  let presentes = ses.cantidad_presentes;
-
-  // fallback: si no vino, contamos
   if (!Number.isInteger(presentes)){
     const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
     presentes = concejales.filter(c => c?.presente === true).length;
   }
 
-  // 3) Texto "x de y presentes"
   txtConcejales.textContent = `${presentes} de ${total} presentes`;
 
-  // 4) Delta de quorum
-  // quorum viene en ses.quorum según tu to_dict
   const quorum = Number.isInteger(ses.quorum) ? ses.quorum : null;
 
   if (quorum === null){
-    // si no viene quorum, mostramos "--" neutral
     txtQuorumDelta.textContent = "--";
     txtQuorumDelta.classList.remove("num-good","num-bad","num-neutral");
     txtQuorumDelta.classList.add("num-neutral");
@@ -367,21 +404,16 @@ function renderFilaSesion(state){
   }
 
   const delta = presentes - quorum;
-
-  // Formato: +2, -1, 0
   const textDelta = delta > 0 ? `+${delta}` : `${delta}`;
   txtQuorumDelta.textContent = textDelta;
 
-  // Color:
-  // - verde si delta >= 0
-  // - rojo si delta < 0
   txtQuorumDelta.classList.remove("num-good","num-bad","num-neutral");
   if (delta >= 0) txtQuorumDelta.classList.add("num-good");
   else txtQuorumDelta.classList.add("num-bad");
 }
 
 ///////////////////////////////
-// 13) Conteo de votos
+// 12) CONTEO DE VOTOS (para texto x/n/m/z)
 ///////////////////////////////
 
 function contarVotos(votacion){
@@ -398,65 +430,45 @@ function contarVotos(votacion){
     else if (val === "Abstencion") abstenciones++;
   }
 
-  const x = votos.length;
-  return { x, positivos, negativos, abstenciones };
+  return { x: votos.length, positivos, negativos, abstenciones };
 }
 
 ///////////////////////////////
-// 14) Total esperado "y" (actualizado: ahora usa API de sesión)
+// 13) TOTAL ESPERADO "y" (desde sesión + votación)
 ///////////////////////////////
 
-/*
-  y depende de la votación:
-  - si ultima.computa_sobre_los_presentes == true:
-      y = sesion.cantidad_presentes  (API)
-  - si == false:
-      y = sesion.cantidad_concejales (API)
-
-  Fallbacks:
-  - si faltan esos campos, caemos a conteos por lista.
-*/
 function totalEsperadoY(state, ultimaVotacion){
   const ses = getSesion(state);
+  if (!ses) return 0;
 
-  // Si no hay sesión, devolvemos 0 (para que no reviente el texto)
-  if (!ses){
-    return 0;
-  }
-
-  // Determinamos “computa”:
-  // 1) Preferimos lo que diga la votación (API)
-  // 2) Si no viene, usamos toggle local (solo por compatibilidad)
+  // Preferimos lo que diga la votación
   let computa = undefined;
-
   if (ultimaVotacion && typeof ultimaVotacion.computa_sobre_los_presentes === "boolean"){
     computa = ultimaVotacion.computa_sobre_los_presentes;
   } else {
+    // fallback: toggle local (solo compatibilidad)
     computa = (uiModel.respectoPresentes === true);
   }
 
-  // Total y presentes (preferimos API)
+  // Usamos los conteos ya calculados por el backend
   let total = ses.cantidad_concejales;
   let presentes = ses.cantidad_presentes;
 
-  // fallback total
+  // fallback si faltan
   if (!Number.isInteger(total)){
     const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
     total = concejales.length;
   }
-
-  // fallback presentes
   if (!Number.isInteger(presentes)){
     const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
     presentes = concejales.filter(c => c?.presente === true).length;
   }
 
-  // Elegimos según computa
   return (computa === true) ? presentes : total;
 }
 
 ///////////////////////////////
-// 15) Modo empate + texto estado votación
+// 14) MODO EMPATE + TEXTO “Estado de votación”
 ///////////////////////////////
 
 let lastStateRaw = null;
@@ -531,7 +543,7 @@ function renderVotacionEstadoFromLastState(){
 }
 
 ///////////////////////////////
-// 16) Polling (actualiza solo lo necesario)
+// 15) POLLING (sin reconstruir DOM)
 ///////////////////////////////
 
 let pollingRunning = false;
@@ -545,10 +557,9 @@ async function pollOnce(){
 
     setConn("ok", "Conectado");
 
-    // 1) Actualizar fila sesión (concejales + quorum delta)
-    renderFilaSesion(normalizeState(data));
-
-    // 2) Actualizar estado de votación + modo empate
+    // Actualizamos SOLO lo necesario
+    const norm = normalizeState(data);
+    renderFilaSesion(norm);
     renderVotacionEstadoFromLastState();
 
     // Evento para paneles futuros
@@ -571,22 +582,19 @@ function startPollLoop(){
 
   const tick = async () => {
     await pollOnce();
-    setTimeout(tick, POLL_MS);
+    setTimeout(tick, POLL_MS); // evita requests solapadas
   };
 
   tick();
 }
 
 ///////////////////////////////
-// 17) Inicio
+// 16) INICIO
 ///////////////////////////////
 
 setConn("warn", "Conectando…");
 toast("ok", "Listo.");
 
-// Estado inicial
 renderFilaSesion(normalizeState(null));
 renderVotacionEstadoFromLastState();
-
-// Arrancar polling
 startPollLoop();

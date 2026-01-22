@@ -1,1 +1,12 @@
 13:56:05 | L2 | VOTACION | Fallo apertura de votacion al no haber sesion activa
+14:54:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:54:45 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+14:54:50 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+14:55:56 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:56:00 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:06 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+14:56:12 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:21 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:23 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:56:28 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+14:56:31 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]

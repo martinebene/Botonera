@@ -159,25 +159,11 @@
 
     <!-- Q2 -->
     <section class="panel" id="q2" data-quadrant="q2">
-      <!-- ✅ Cambio pedido: título del panel -->
       <div class="panel__title">Orden del dia</div>
 
       <div class="panel__body" id="q2Body">
-        <!--
-          Q2 - Orden del día
-          ------------------
-          Objetivo:
-          - Cargar un CSV con columnas:
-            nro_votacion,tipo,tema,factor_de_mayoria, respecto
-          - Mostrar todas las filas en tabla scrolleable.
-          - Click en una fila => copiar valores a Q1 (Comandos).
-          - Botón "Cargar CSV" abre selector.
-          - Botón "Limpiar" limpia la tabla.
-        -->
-
         <div class="od">
 
-          <!-- Barra superior con botones -->
           <div class="od__top">
             <button id="btnOdCargar" class="btn btn--tight btn--primary" type="button">
               Cargar CSV
@@ -191,10 +177,6 @@
               Sin archivo cargado.
             </div>
 
-            <!--
-              Input oculto: lo abrimos desde el botón.
-              accept: sugerencia al navegador (no “garantiza”, pero ayuda)
-            -->
             <input
               id="fileOdCsv"
               type="file"
@@ -203,7 +185,6 @@
             />
           </div>
 
-          <!-- Contenedor scrolleable SOLO de la tabla -->
           <div class="od__tableWrap" aria-label="Tabla del orden del día (scrolleable)">
             <table class="od__table" id="odTable">
               <thead>
@@ -228,7 +209,56 @@
     <!-- Q3 -->
     <section class="panel" id="q3" data-quadrant="q3">
       <div class="panel__title">Estado recinto</div>
-      <div class="panel__body"><div class="hint">Vacío (por ahora).</div></div>
+
+      <!--
+        IMPORTANTE (premisa de arquitectura):
+        - El scroll NO debe ser del panel completo (eso cambia alturas y “empuja” el grid).
+        - Por eso le damos un id al body y adentro usamos un contenedor flex con min-height:0.
+        - Luego, los únicos scrolleables serán sub-áreas puntuales (ej: la lista "Uso de la Palabra").
+      -->
+      <div class="panel__body" id="q3Body">
+
+        <!-- Contenedor raíz del cuadrante (ocupa todo el alto del panel) -->
+        <div class="recinto" aria-label="Recinto del Concejo Deliberante">
+
+          <!-- Zona izquierda: acá va el “recinto” (bancas con imágenes) -->
+          <div class="recinto__left" aria-label="Plano del recinto (bancas)">
+            <!--
+              En el próximo paso, este div se llenará por JS en base a:
+              - sesion.disposicion_bancas (JSON)
+              - sesion.concejales (banca, presente, etc.)
+              - imágenes en /static/bancas/<banca>.png
+            -->
+            <div id="recintoCanvas" class="recinto__canvas">
+              <div class="hint">
+                Recinto: pendiente de implementar (paso siguiente).
+              </div>
+            </div>
+          </div>
+
+          <!-- Zona derecha: lista “Uso de la Palabra” -->
+          <div class="recinto__right" aria-label="Uso de la Palabra">
+            <div class="recinto__rightTitle">Uso de la Palabra</div>
+
+            <!--
+              Este contenedor ES el que debe scrollear (si hay muchos pedidos).
+              El título y el marco NO deben moverse.
+            -->
+            <div class="recinto__rightBody" id="usoPalabraWrap">
+              <!-- Lista vacía por ahora: el JS la llenará luego -->
+              <ul class="recinto__lista" id="ulUsoPalabra">
+                <!-- <li>Apellido Nombre</li> -->
+              </ul>
+
+              <!-- Área para error de render (si el JSON no coincide con concejales o imágenes) -->
+              <div class="hint recinto__error" id="recintoError" style="display:none;">
+                Error en la renderización del recinto.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <!-- Q4 -->

@@ -46,6 +46,32 @@ def cerrar_sesion():
     return sesion.to_dict()
 
 
+@router.post("/otorgar_uso_palabra")
+def otorgar_uso_palabra():
+    """
+    Endpoint para otorgar el uso de la palabra.
+    """
+    try:
+        sesion: Sesion = sesion_service.otorgar_uso_palabra()
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return sesion_service.sesion_actual.en_uso_de_palabra.to_dict()
+
+
+@router.post("/quitar_uso_palabra")
+def quitar_uso_palabra():
+    """
+    Endpoint para quitar el uso de la palabra.
+    """
+    try:
+        sesion: Sesion = sesion_service.quitar_uso_palabra()
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return sesion_service.sesion_actual.en_uso_de_palabra.to_dict()
+
+
 @router.post("/abrir_votacion")
 def abrir_votacion(
     numero: int = Body(...),

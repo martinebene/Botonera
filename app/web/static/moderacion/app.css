@@ -416,3 +416,102 @@ body{
   font-size: 11px;
   line-height: 1.25;
 }
+
+/* ============================================================
+   Q3 - RECINTO + "USO DE LA PALABRA"
+   ------------------------------------------------------------
+   IMPORTANTE (premisas):
+   - El recinto NO debe scrollear ni cambiar el tamaño del panel.
+   - El scroll debe vivir SOLO dentro de la lista "Uso de la Palabra".
+   - El "título" de Uso de la Palabra NO debe verse como un input,
+     sino como un encabezado estilo panel__title (como Q1).
+   ------------------------------------------------------------
+   Nota:
+   Estas reglas son "opt-in": solo aplican si tu HTML usa estas
+   clases/ids. Si no existen, NO afectan a otros cuadrantes.
+   ============================================================ */
+
+/* Si tu panel Q3 tiene un body con id="q3Body", lo dejamos sin scroll
+   y hacemos layout interno con flex. */
+#q3Body{
+  overflow: hidden;      /* evita que el panel entero scrollee */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Contenedor principal del recinto (izquierda) + uso de palabra (derecha) */
+.recinto{
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Zona izquierda: “recinto” (bancas). NO SCROLL. */
+.recinto__left{
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;      /* clave: nunca empuja ni scrollea */
+  display: flex;         /* si adentro usás grids, ayuda a encoger */
+}
+
+/* Zona derecha: “Uso de la Palabra”. */
+.recinto__right{
+  flex: 0 0 32%;
+  min-width: 220px;
+  max-width: 420px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;      /* para que el scroll quede adentro del body */
+  background: rgba(0,0,0,.18);
+}
+
+/* Título: lo forzamos a verse como un “panel__title” (no input). */
+.recinto__rightTitle{
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+
+  /* importante: que NO parezca un campo */
+  background: transparent;
+}
+
+/* Cuerpo scrolleable: acá vive el scroll de la lista. */
+.recinto__rightBody{
+  padding: 10px;
+  flex: 1 1 auto;
+
+  overflow: auto;  /* ✅ SOLO esta zona scrollea */
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Lista simple dentro de Uso de la Palabra */
+.recinto__ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recinto__li{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(0,0,0,.18);
+  font-size: 12px;
+}

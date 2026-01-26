@@ -50,10 +50,11 @@ class Sesion:
             "hora_inicio": self.hora_inicio.isoformat(),
             "hora_fin": self.hora_fin.isoformat() if self.hora_fin else None,
             "cantidad_concejales": len(self.concejales),
-            "cantidad_presentes": self.presentes,
+            "cantidad_presentes": sum(1 for c in self.concejales if c.presente),
             "quorum":self.quorum,
             "disposicion_bancas":self.disposicion_bancas,
             "concejales": [c.to_dict() for c in self.concejales],
             "votaciones": [v.to_dict() for v in self.votaciones],
             "pedidos_uso_de_palabra":[p.to_dict() for p in self.pedidos_uso_de_palabra],
+            "en_uso_de_palabra":self.en_uso_de_palabra
         }

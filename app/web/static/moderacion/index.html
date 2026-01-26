@@ -20,7 +20,8 @@
 
   <main class="grid2x2">
 
-    <section class="panel" id="panel-comandos">
+    <!-- Q1 -->
+    <section class="panel" id="q1" data-quadrant="q1">
       <div class="panel__title">Comandos</div>
 
       <div class="panel__body">
@@ -96,12 +97,10 @@
             <div class="field field--tight">
               <div class="label">Respecto</div>
               <div class="toggle">
-                <button id="togRespectoPresentes" type="button"
-                        class="toggle__btn toggle__btn--on">
+                <button id="togRespectoPresentes" type="button" class="toggle__btn">
                   Presentes
                 </button>
-                <button id="togRespectoCuerpo" type="button"
-                        class="toggle__btn toggle__btn--off">
+                <button id="togRespectoCuerpo" type="button" class="toggle__btn">
                   Cuerpo
                 </button>
               </div>
@@ -155,27 +154,116 @@
           </div>
         </div>
 
-        <div id="toast" class="toast">Listo.</div>
-
       </div>
     </section>
 
-    <section class="panel">
-      <div class="panel__title">Complementos de comando</div>
-      <div class="panel__body"><div class="hint">Vacío (por ahora).</div></div>
+    <!-- Q2 -->
+    <section class="panel" id="q2" data-quadrant="q2">
+      <!-- ✅ Cambio pedido: título del panel -->
+      <div class="panel__title">Orden del dia</div>
+
+      <div class="panel__body" id="q2Body">
+        <!--
+          Q2 - Orden del día
+          ------------------
+          Objetivo:
+          - Cargar un CSV con columnas:
+            nro_votacion,tipo,tema,factor_de_mayoria, respecto
+          - Mostrar todas las filas en tabla scrolleable.
+          - Click en una fila => copiar valores a Q1 (Comandos).
+          - Botón "Cargar CSV" abre selector.
+          - Botón "Limpiar" limpia la tabla.
+        -->
+
+        <div class="od">
+
+          <!-- Barra superior con botones -->
+          <div class="od__top">
+            <button id="btnOdCargar" class="btn btn--tight btn--primary" type="button">
+              Cargar CSV
+            </button>
+
+            <button id="btnOdLimpiar" class="btn btn--tight" type="button">
+              Limpiar
+            </button>
+
+            <div id="odInfo" class="hint od__info">
+              Sin archivo cargado.
+            </div>
+
+            <!--
+              Input oculto: lo abrimos desde el botón.
+              accept: sugerencia al navegador (no “garantiza”, pero ayuda)
+            -->
+            <input
+              id="fileOdCsv"
+              type="file"
+              accept=".csv,text/csv"
+              style="display:none;"
+            />
+          </div>
+
+          <!-- Contenedor scrolleable SOLO de la tabla -->
+          <div class="od__tableWrap" aria-label="Tabla del orden del día (scrolleable)">
+            <table class="od__table" id="odTable">
+              <thead>
+                <tr>
+                  <th>Nº</th>
+                  <th>Tipo</th>
+                  <th>Tema</th>
+                  <th>Factor</th>
+                  <th>Respecto</th>
+                </tr>
+              </thead>
+              <tbody id="odTbody">
+                <!-- filas por JS -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <section class="panel">
+    <!-- Q3 -->
+    <section class="panel" id="q3" data-quadrant="q3">
       <div class="panel__title">Estado recinto</div>
       <div class="panel__body"><div class="hint">Vacío (por ahora).</div></div>
     </section>
 
-    <section class="panel">
-      <div class="panel__title">Complementos de estado</div>
-      <div class="panel__body"><div class="hint">Vacío (por ahora).</div></div>
+    <!-- Q4 -->
+    <section class="panel" id="q4" data-quadrant="q4">
+      <div class="panel__title">Eventos</div>
+
+      <div class="panel__body" id="q4Body">
+
+        <div class="events">
+
+          <div class="events__top">
+            <div class="field field--tight">
+              <div class="label">Nivel</div>
+
+              <select id="selEventosNivel" class="input input--tight">
+                <option value="L1">L1 (todo)</option>
+                <option value="L2">L2 + L3</option>
+                <option value="L3">Solo L3</option>
+              </select>
+            </div>
+
+            <div class="hint events__hint">
+              Historial completo (filtrado por nivel).
+            </div>
+          </div>
+
+          <pre id="preEventos" class="events__console" aria-label="Consola de eventos"></pre>
+
+        </div>
+      </div>
     </section>
 
   </main>
+
+  <div id="toast" class="toast" aria-live="polite">Listo.</div>
 
   <script src="./app.js"></script>
 </body>

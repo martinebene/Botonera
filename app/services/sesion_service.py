@@ -58,6 +58,7 @@ class SesionService:
         # Si todo está bien, creamos la sesión
         sesion = Sesion(numero_sesion=numero_sesion)
         sesion.concejales = concejales
+        sesion.presentes
         sesion.quorum = settings.quorum
         sesion.disposicion_bancas = json.dumps(settings.disposicion_bancas, indent=2)
         

@@ -25,3 +25,10 @@ app.mount(
     StaticFiles(directory="app/web/static/moderacion", html=True),
     name="moderacion",
 )
+
+# Monta SOLO las imágenes de bancas
+app.mount(
+    "/bancas",
+    StaticFiles(directory="app/web/static/bancas"),
+    name="bancas",
+)

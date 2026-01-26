@@ -13,6 +13,13 @@
 
 *{ box-sizing: border-box; }
 
+/* ============================================================
+   BASE / ALTURAS
+   ============================================================ */
+html, body{
+  height: 100%;
+}
+
 body{
   margin: 0;
   background: var(--bg);
@@ -34,6 +41,14 @@ body{
 .brand{ font-weight: 700; }
 .muted{ color: var(--muted); font-size: 12px; }
 
+/* Estados de conexión (los usa app.js con setConn()) */
+.conn-ok{ color: var(--ok); }
+.conn-err{ color: var(--bad); }
+.conn-warn{ color: var(--warn); }
+
+/* ============================================================
+   GRID 2x2 (usa grid2x2 tu HTML)
+   ============================================================ */
 .grid4{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -43,13 +58,35 @@ body{
   min-height: calc(100vh - 52px);
 }
 
+.grid2x2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+
+  /* alto fijo => los cuadrantes NO crecen por contenido */
+  height: calc(100vh - 52px);
+
+  /* permite encogimiento interno (clave en layouts grid) */
+  min-height: 0;
+}
+
+/* ============================================================
+   PANEL
+   ============================================================ */
 .panel{
   border: 1px solid var(--border);
   background: var(--card);
   border-radius: 14px;
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
+
+  /* importantísimo: permite que el panel no “crezca por contenido” */
+  min-height: 0;
+  min-width: 0;
 }
 
 .panel__title{
@@ -62,7 +99,16 @@ body{
 .panel__body{
   padding: 10px;
   flex: 1;
+
+  /*
+    Por defecto, los paneles pueden scrollear internamente.
+    (En Q2 y Q4 apagamos el overflow del body para que
+     scrollee solo el área interna, no el panel completo.)
+  */
   overflow: auto;
+
+  min-height: 0;
+  min-width: 0;
 }
 
 .hint{
@@ -71,13 +117,32 @@ body{
   opacity: .8;
 }
 
-/* Helpers */
-.row{ display:flex; gap: 8px; align-items: end; }
+/* ============================================================
+   Helpers
+   ============================================================ */
+.row{ display:flex; gap: 8px; align-items: end; flex-wrap: wrap; }
 .row--tight{ gap: 6px; }
+.row--big{ gap: 10px; align-items: stretch; }
+
 .stack{ display:flex; flex-direction: column; gap: 4px; }
 .label{ font-size: 11px; color: var(--muted); }
+.label--big{ font-size: 12px; font-weight: 600; }
+
 .grow{ flex: 1; }
 .mt{ margin-top: 8px; }
+
+.field{
+  display:flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field--tight{ min-width: 110px; }
+
+.field--grow{
+  flex: 1;
+  min-width: 0;
+}
 
 .input, .select{
   width: 100%;
@@ -89,6 +154,11 @@ body{
   font-size: 12px;
 }
 
+.input--tight{
+  padding: 5px 8px;
+  border-radius: 10px;
+}
+
 .btn{
   border: 1px solid var(--border);
   background: rgba(255,255,255,.06);
@@ -98,6 +168,11 @@ body{
   cursor: pointer;
   font-size: 12px;
   white-space: nowrap;
+}
+
+.btn--tight{
+  padding: 6px 10px;
+  border-radius: 12px;
 }
 
 .btn--primary{ border-color: rgba(147,197,253,.5); }
@@ -115,24 +190,45 @@ body{
   margin: 10px 0;
 }
 
-.pill{
-  padding: 6px 8px;
+/* ============================================================
+   STATBOX / NUMS (Concejales / Quorum)
+   ============================================================ */
+.statbox{
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 12px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,.18);
   font-size: 12px;
-  background: rgba(0,0,0,.2);
+  line-height: 1.2;
+  min-height: 32px;
+  display:flex;
+  align-items:center;
 }
 
-.box{
+.num-good{ color: var(--ok); }
+.num-bad{ color: var(--bad); }
+.num-neutral{ color: var(--muted); }
+
+/* ============================================================
+   STATUSBOX (Estado de votación)
+   ============================================================ */
+.statusbox{
+  margin-top: 10px;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 8px;
   background: rgba(0,0,0,.18);
-  font-size: 12px;
-  min-height: 36px;
 }
 
-/* Toggle */
+.statusbox__text{
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+/* ============================================================
+   Toggle
+   ============================================================ */
 .toggle{
   display: flex;
   border: 1px solid var(--border);
@@ -149,16 +245,14 @@ body{
   cursor: pointer;
 }
 
-.toggle__btn--on{
+/* Tu JS usa toggle__btn--active */
+.toggle__btn--active{
   background: rgba(147,197,253,.25);
 }
 
-/* Desempate */
-.desempate{
-  margin-top: 10px;
-}
-
-/* Toast simple */
+/* ============================================================
+   TOAST (cartelito)
+   ============================================================ */
 .toast{
   position: fixed;
   left: 12px;
@@ -171,58 +265,152 @@ body{
   display: none;
 }
 
+/* el JS agrega/borra esta clase */
+.toast--show{
+  display: block;
+}
+
+.toast--ok{ border-color: rgba(34,197,94,.6); }
+.toast--err{ border-color: rgba(239,68,68,.6); }
+.toast--warn{ border-color: rgba(245,158,11,.6); }
+
 /* ============================================================
-   LOGBOX (visor de logs / eventos en vivo)
+   Q2 - ORDEN DEL DÍA (tabla CSV)
+   ------------------------------------------------------------
+   Requisito:
+   - La tabla debe ser scrolleable
+   - NO debe empujar el panel ni afectar cuadrantes
    ============================================================ */
 
-/* Contenedor general del visor */
-.logbox{
+/* Apagamos el scroll del body SOLO en Q2:
+   el scroll vive en .od__tableWrap */
+#q2Body{
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  height: 100%;
+  min-height: 0;
+  min-width: 0;
 }
 
-/* Barra superior con controles */
-.logbox__controls{
+.od{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+.od__top{
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap; /* si la ventana es angosta, baja de línea */
+  gap: 10px;
+  flex-wrap: wrap;      /* si achica la ventana, baja de línea */
+  flex: 0 0 auto;       /* no se estira */
 }
 
-.logbox__label{
-  font-size: 12px;
-  opacity: .85;
+.od__info{
+  /* se “acomoda” a la derecha cuando hay lugar */
+  flex: 1;
+  min-width: 180px;
 }
 
-.logbox__select{
-  font-size: 12px;
-  padding: 4px 6px;
+/* Este contenedor es el ÚNICO scrolleable en Q2 */
+.od__tableWrap{
+  margin-top: 10px;
+
+  flex: 1 1 auto;
+  min-height: 0;    /* CLAVE para que scrollee en flex */
+  min-width: 0;
+
+  overflow: auto;   /* ✅ scroll vertical y horizontal si hace falta */
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0,0,0,.18);
 }
 
-.logbox__btn{
+/* Tabla */
+.od__table{
+  width: 100%;
+  border-collapse: collapse;
   font-size: 12px;
-  padding: 4px 8px;
+}
+
+/* Encabezado fijo visualmente (no sticky para no complicar cross-browser) */
+.od__table thead th{
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  background: rgba(0,0,0,.15);
+}
+
+/* Celdas */
+.od__table tbody td{
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  vertical-align: top;
+}
+
+/* Hover para indicar que es clickeable */
+.od__table tbody tr{
   cursor: pointer;
 }
 
-/* Caja scrolleable donde se ve el texto */
-.logbox__viewport{
-  flex: 1;
-  min-height: 180px;
-  overflow: auto;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 8px;
-  background: rgba(0,0,0,.25);
+.od__table tbody tr:hover{
+  background: rgba(147,197,253,.08);
 }
 
-/* Texto monoespaciado, ideal para logs */
-.logbox__pre{
-  margin: 0;
-  white-space: pre-wrap;   /* respeta saltos de línea, pero ajusta líneas largas */
-  word-break: break-word;  /* evita que se salga del contenedor */
+/* Fila seleccionada (cuando el usuario hace click) */
+.od__row--selected{
+  background: rgba(147,197,253,.18);
+}
+
+/* ============================================================
+   Q4 - EVENTOS (ya funcionaba)
+   ============================================================ */
+#q4Body{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+.events{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+.events__top{
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 0 0 auto;
+}
+
+.events__hint{
+  align-self: flex-end;
+}
+
+.events__console{
+  flex: 1 1 auto;
+  overflow: auto;
+  min-height: 0;
+  min-width: 0;
+
+  margin: 10px 0 0 0;
+  padding: 8px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0,0,0,.25);
+
+  white-space: pre-wrap;
+  word-break: break-word;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
                "Liberation Mono", "Courier New", monospace;
   font-size: 11px;

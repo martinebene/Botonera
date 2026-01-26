@@ -1,0 +1,577 @@
+13:26:58 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+13:27:01 | L3 | SESION | Cierre de sesion Nº93
+13:27:03 | L3 | SESION | Apertura de sesion Nº98
+13:32:56 | L3 | SESION | Apertura de sesion Nº83
+13:33:21 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: hnvb
+13:33:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:33:35 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+13:33:35 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+13:33:37 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev02]
+13:33:37 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Abstencion
+13:33:37 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Abstencion
+13:33:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+13:33:38 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+13:33:38 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+13:33:39 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+13:33:39 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+13:33:39 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+13:33:47 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+13:33:47 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Abstencion
+13:33:47 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Abstencion
+13:33:48 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+13:33:48 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+13:33:48 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+13:33:49 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+13:33:49 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+13:33:49 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Positivo
+13:33:50 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+13:33:50 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+13:33:50 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Positivo
+13:33:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+13:33:57 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+13:33:57 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+13:33:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+13:33:57 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+13:33:57 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+13:33:58 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+13:33:58 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+13:33:58 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Abstencion
+13:34:00 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+13:34:00 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+13:34:00 | L3 | VOTACION | Votacion Nº9 completada. Resultado: APROBADA - Votos: 12 de 12 - 8 Positivos, 1 Negativos y 3 Abstenciones
+13:34:00 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Negativo
+13:35:18 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: hnvb
+14:01:22 | L3 | SESION | Apertura de sesion Nº93
+14:01:30 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: hnvb
+14:01:45 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:01:45 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+14:01:45 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+14:01:47 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev10]
+14:01:47 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+14:01:47 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Abstencion
+14:01:48 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+14:01:48 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+14:01:48 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Negativo
+14:01:49 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+14:01:49 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+14:01:49 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Negativo
+14:01:50 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:01:50 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:01:50 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+14:01:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:01:51 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:01:51 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+14:01:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+14:01:51 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+14:01:51 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Positivo
+14:01:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+14:01:52 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+14:01:52 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Positivo
+14:01:53 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+14:01:53 | L3 | INPUT | Emma Stone (banca Nro:8) se AUSENTO
+14:01:54 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+14:01:54 | L3 | INPUT | Emma Stone (banca Nro:8) se PRESENTO
+14:01:56 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev08]
+14:01:56 | L3 | PALABRA | Emma Stone (banca Nro:8) pidio la palabra
+14:01:56 | L2 | INPUT | Emma Stone (banca Nro:8) pidio la PALABRA
+14:01:57 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev08]
+14:01:57 | L3 | PALABRA | Emma Stone (banca Nro:8) retiro el pedido la palabra
+14:01:57 | L2 | INPUT | Emma Stone (banca Nro:8) pidio la PALABRA
+14:02:00 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev04]
+14:02:00 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Abstencion
+14:02:00 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Abstencion
+14:02:00 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+14:02:00 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+14:02:00 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+14:02:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:02:01 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:02:01 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:02:05 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+14:02:05 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Negativo
+14:02:05 | L3 | VOTACION | Votacion Nº97 completada. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 4 Negativos y 2 Abstenciones
+14:02:05 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Negativo
+14:02:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:02:58 | L2 | INPUT | Natalie Portman (banca Nro:4) voto sin votacion en curso
+14:02:59 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+14:02:59 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto sin votacion en curso
+14:03:01 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:03:01 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto sin votacion en curso
+14:03:02 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev01]
+14:03:02 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto sin votacion en curso
+14:03:03 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:03:03 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+14:03:03 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+14:03:04 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:04 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:04 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:04 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:04 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+14:03:04 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:05 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:05 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:05 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+14:03:05 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:05 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:05 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:05 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+14:03:05 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:05 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:05 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:06 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+14:03:06 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:06 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:06 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:06 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+14:03:06 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:06 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:06 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:06 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+14:03:06 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:06 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:06 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:07 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:07 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+14:03:07 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:03:07 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:03:07 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:03:07 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:15:09 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+14:15:15 | L3 | SESION | Cierre de sesion Nº93
+14:15:18 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+14:15:19 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+14:20:53 | L3 | SESION | Apertura de sesion Nº25
+14:21:32 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº9 con tema: hnvb
+14:21:51 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:21:51 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+14:21:51 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Negativo
+14:21:53 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:21:53 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:21:53 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+14:21:53 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:21:53 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:21:53 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+14:21:55 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev01]
+14:21:55 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Abstencion
+14:21:55 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Abstencion
+14:21:57 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:21:57 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+14:21:57 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+14:22:01 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+14:22:01 | L3 | INPUT | Leonardo DiCaprio (banca Nro:3) se AUSENTO
+14:22:20 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:22:20 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+14:22:20 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+14:22:26 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:22:26 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) retiro el pedido la palabra
+14:22:26 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+14:22:27 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+14:22:27 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) interactua sin dar presente
+14:22:28 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev04]
+14:22:28 | L3 | PALABRA | Natalie Portman (banca Nro:4) pidio la palabra
+14:22:28 | L2 | INPUT | Natalie Portman (banca Nro:4) pidio la PALABRA
+14:22:30 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+14:22:30 | L3 | PALABRA | Tom Hanks (banca Nro:5) pidio la palabra
+14:22:30 | L2 | INPUT | Tom Hanks (banca Nro:5) pidio la PALABRA
+14:22:32 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+14:22:32 | L3 | PALABRA | Meryl Streep (banca Nro:6) pidio la palabra
+14:22:32 | L2 | INPUT | Meryl Streep (banca Nro:6) pidio la PALABRA
+14:22:53 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+14:22:53 | L3 | PALABRA | Brad Pitt (banca Nro:9) pidio la palabra
+14:22:53 | L2 | INPUT | Brad Pitt (banca Nro:9) pidio la PALABRA
+14:23:03 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+14:23:03 | L3 | INPUT | Cate Blanchett (banca Nro:10) se AUSENTO
+14:23:04 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+14:23:04 | L3 | INPUT | Keanu Reeves (banca Nro:11) se AUSENTO
+14:23:06 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:23:06 | L3 | INPUT | Jennifer Lawrence (banca Nro:12) se AUSENTO
+14:23:07 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+14:23:07 | L3 | INPUT | Emma Stone (banca Nro:8) se AUSENTO
+14:23:07 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+14:23:07 | L3 | INPUT | Denzel Washington (banca Nro:7) se AUSENTO
+14:24:55 | L3 | VOTACION | Cierre forzado - sin votar: [Scarlett Johansson (banca Nro:2), Natalie Portman (banca Nro:4), Brad Pitt (banca Nro:9)]
+14:24:55 | L3 | SESION | Cierre de sesion Nº25
+14:25:06 | L3 | SESION | Apertura de sesion Nº127
+14:25:22 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº69 con tema: holasss
+14:25:28 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:25:28 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+14:25:28 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:25:29 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:25:29 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+14:25:29 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+14:25:30 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+14:25:30 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+14:25:30 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Abstencion
+14:25:31 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+14:25:31 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+14:25:31 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Negativo
+14:25:31 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:25:31 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+14:25:31 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Negativo
+14:25:33 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+14:25:33 | L3 | INPUT | Denzel Washington (banca Nro:7) se AUSENTO
+14:25:36 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+14:25:36 | L3 | INPUT | Meryl Streep (banca Nro:6) se AUSENTO
+14:25:40 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+14:25:40 | L3 | INPUT | Tom Hanks (banca Nro:5) se AUSENTO
+14:25:42 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev01]
+14:25:42 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Abstencion
+14:25:42 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Abstencion
+14:25:42 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:25:42 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:25:42 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:25:43 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:25:43 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:25:43 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:25:44 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:25:44 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+14:25:44 | L3 | VOTACION | Votacion Nº69 completada. Resultado: APROBADA - Votos: 9 de 12 - 4 Positivos, 3 Negativos y 2 Abstenciones
+14:25:44 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+14:26:33 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº69 con tema: holasss
+14:27:01 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+14:27:01 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se AUSENTO
+14:27:02 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+14:27:02 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se PRESENTO
+14:27:03 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+14:27:03 | L3 | INPUT | Scarlett Johansson (banca Nro:2) se AUSENTO
+14:27:04 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+14:27:04 | L3 | INPUT | Scarlett Johansson (banca Nro:2) se PRESENTO
+14:27:05 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+14:27:05 | L3 | INPUT | Leonardo DiCaprio (banca Nro:3) se AUSENTO
+14:27:06 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+14:27:06 | L3 | INPUT | Leonardo DiCaprio (banca Nro:3) se PRESENTO
+14:27:08 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev04]
+14:27:08 | L3 | INPUT | Natalie Portman (banca Nro:4) se AUSENTO
+14:27:09 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev04]
+14:27:09 | L3 | INPUT | Natalie Portman (banca Nro:4) se PRESENTO
+14:27:10 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+14:27:10 | L3 | INPUT | Tom Hanks (banca Nro:5) se PRESENTO
+14:27:12 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+14:27:12 | L3 | INPUT | Meryl Streep (banca Nro:6) se PRESENTO
+14:27:13 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+14:27:13 | L3 | INPUT | Denzel Washington (banca Nro:7) se PRESENTO
+14:27:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:27:16 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:27:16 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:27:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:27:17 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:27:17 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:27:19 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:27:19 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:27:19 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:27:20 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:27:20 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+14:27:20 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+14:27:23 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+14:27:23 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Abstencion
+14:27:23 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Abstencion
+14:27:24 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+14:27:24 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Abstencion
+14:27:24 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Abstencion
+14:27:25 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:27:25 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+14:27:25 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Negativo
+14:27:26 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:27:26 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+14:27:26 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Negativo
+14:27:28 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+14:27:28 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+14:27:28 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Negativo
+14:27:29 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+14:27:29 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+14:27:29 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Negativo
+14:27:32 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+14:27:32 | L3 | INPUT | Keanu Reeves (banca Nro:11) se AUSENTO
+14:27:34 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:27:34 | L3 | INPUT | Jennifer Lawrence (banca Nro:12) se AUSENTO
+14:27:44 | L3 | VOTACION | Votacion Nº69 DESEMPATADA. Resultado: RECHAZADA - Votos: 10 de 12 - 4 Positivos, 4 Negativos y 2 Abstenciones
+14:52:11 | L3 | SESION | Cierre de sesion Nº127
+14:52:17 | L3 | SESION | Apertura de sesion Nº17
+14:52:26 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+14:52:26 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+14:52:26 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+14:52:28 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+14:52:28 | L3 | INPUT | Scarlett Johansson (banca Nro:2) se AUSENTO
+14:52:30 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+14:52:30 | L3 | INPUT | Leonardo DiCaprio (banca Nro:3) se AUSENTO
+14:52:33 | L3 | SESION | Cierre de sesion Nº17
+14:52:38 | L3 | SESION | Apertura de sesion Nº93
+14:52:53 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: hnvb
+14:52:57 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+14:53:09 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: o
+14:53:13 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:53:13 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:53:13 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:53:13 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:53:13 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:53:13 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:53:14 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:53:14 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:53:14 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:53:14 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:53:14 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+14:53:14 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+14:53:15 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev08]
+14:53:15 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+14:53:15 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Abstencion
+14:53:16 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:53:16 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+14:53:16 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Negativo
+14:53:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:53:16 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:53:16 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+14:53:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:53:17 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:53:17 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+14:53:18 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+14:53:18 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+14:53:18 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Negativo
+14:53:19 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+14:53:19 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+14:53:19 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Negativo
+14:53:19 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+14:53:19 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+14:53:19 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Abstencion
+14:53:21 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:53:21 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:53:21 | L3 | VOTACION | Votacion Nº97 completada. Resultado: RECHAZADA - Votos: 12 de 12 - 7 Positivos, 3 Negativos y 2 Abstenciones
+14:53:21 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:53:55 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: hnvb
+14:53:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:53:57 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+14:53:57 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+14:53:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:53:57 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+14:53:57 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+14:53:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:53:58 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+14:53:58 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+14:53:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:53:59 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:53:59 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Positivo
+14:53:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+14:53:59 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+14:53:59 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Positivo
+14:54:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+14:54:00 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+14:54:00 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Positivo
+14:54:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:54:00 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:54:00 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+14:54:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:54:01 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:54:01 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+14:54:02 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+14:54:02 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Negativo
+14:54:02 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Negativo
+14:54:03 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:54:03 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:54:03 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Negativo
+14:54:03 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+14:54:03 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+14:54:03 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+14:54:04 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:54:04 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+14:54:04 | L3 | VOTACION | Votacion Nº97 completada. Resultado: APROBADA - Votos: 12 de 12 - 9 Positivos, 2 Negativos y 1 Abstenciones
+14:54:04 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+14:58:21 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+14:58:30 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: hnvb
+14:58:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:58:35 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:58:35 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+14:58:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:58:35 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:58:35 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+14:58:36 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:58:36 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:58:36 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+14:58:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:58:37 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+14:58:37 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+14:58:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:58:38 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+14:58:38 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+14:58:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:58:38 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+14:58:38 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+14:58:39 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+14:58:39 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+14:58:39 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Negativo
+14:58:40 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+14:58:40 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+14:58:40 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Negativo
+14:58:41 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev09]
+14:58:41 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Abstencion
+14:58:41 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Abstencion
+14:58:41 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:58:41 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+14:58:41 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+14:58:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:58:42 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+14:58:42 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+14:58:44 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+14:58:44 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+14:58:44 | L3 | VOTACION | Votacion Nº97 completada. Resultado: APROBADA - Votos: 12 de 12 - 8 Positivos, 3 Negativos y 1 Abstenciones
+14:58:44 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Negativo
+15:02:48 | L3 | SESION | Cierre de sesion Nº93
+15:03:04 | L3 | SESION | Apertura de sesion Nº235
+15:03:21 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº369 con tema: kiol
+15:03:29 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+15:03:29 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+15:03:29 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+15:03:29 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+15:03:29 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+15:03:29 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Positivo
+15:03:30 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+15:03:30 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+15:03:30 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+15:03:30 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+15:03:30 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+15:03:30 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Positivo
+15:03:31 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+15:03:31 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+15:03:31 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+15:03:32 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+15:03:32 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+15:03:32 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+15:03:33 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+15:03:33 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+15:03:33 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Positivo
+15:03:35 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev08]
+15:03:35 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+15:03:35 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Abstencion
+15:03:36 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+15:03:36 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Negativo
+15:03:36 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Negativo
+15:03:37 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+15:03:37 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+15:03:37 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Negativo
+15:03:38 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+15:03:38 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+15:03:38 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+15:03:41 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+15:03:41 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+15:03:41 | L3 | VOTACION | Votacion Nº369 completada. Resultado: APROBADA - Votos: 12 de 12 - 8 Positivos, 2 Negativos y 2 Abstenciones
+15:03:41 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+15:03:56 | L3 | SESION | Cierre de sesion Nº235
+15:04:04 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:04:12 | L3 | SESION | Apertura de sesion Nº5
+15:04:17 | L3 | SESION | Cierre de sesion Nº5
+15:15:58 | L3 | SESION | Apertura de sesion Nº93
+15:16:04 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: hnvb
+15:16:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+15:16:09 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+15:16:09 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Positivo
+15:16:10 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+15:16:10 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+15:16:10 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+15:16:10 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+15:16:10 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) ERROR en registro voto: concejal_ya_voto
+15:16:11 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+15:16:11 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+15:16:11 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Negativo
+15:16:13 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+15:16:13 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+15:16:13 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+15:16:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+15:16:16 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+15:16:16 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+15:16:17 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+15:16:17 | L3 | INPUT | Meryl Streep (banca Nro:6) se AUSENTO
+15:16:19 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+15:16:19 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+15:16:19 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+15:16:21 | L3 | VOTACION | Cierre forzado - sin votar: [Scarlett Johansson (banca Nro:2), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+15:16:23 | L3 | SESION | Cierre de sesion Nº93
+15:37:00 | L3 | SESION | Apertura de sesion Nº93
+15:37:06 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: lijkk
+15:37:18 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+15:37:19 | L3 | SESION | Cierre de sesion Nº93
+15:42:07 | L3 | SESION | Apertura de sesion Nº93
+15:43:39 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+15:43:39 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+15:43:40 | L3 | SESION | Cierre de sesion Nº93
+15:43:42 | L3 | SESION | Apertura de sesion Nº93
+15:43:51 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: hnvb
+15:47:14 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+15:47:17 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+15:47:18 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+15:47:18 | L3 | SESION | Cierre de sesion Nº93
+15:47:21 | L3 | SESION | Apertura de sesion Nº93
+15:47:28 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: hnvb
+15:47:32 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+15:47:35 | L3 | SESION | Cierre de sesion Nº93
+15:49:34 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:49:36 | L3 | SESION | Apertura de sesion Nº93
+15:49:37 | L3 | SESION | Cierre de sesion Nº93
+15:49:42 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:49:44 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:49:45 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:49:46 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:49:46 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+15:53:08 | L3 | SESION | Apertura de sesion Nº93
+15:53:09 | L3 | SESION | Cierre de sesion Nº93
+16:02:41 | L2 | SESION | Cierre de sesion fallido porque no hay sesion abierta
+16:03:13 | L3 | SESION | Apertura de sesion Nº93
+16:03:19 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: lijkk
+16:03:24 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+16:03:24 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+16:03:24 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Positivo
+16:03:25 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev08]
+16:03:25 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+16:03:25 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Abstencion
+16:03:26 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+16:03:26 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+16:03:26 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Negativo
+16:03:26 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+16:03:26 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+16:03:26 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+16:03:29 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev01]
+16:03:29 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Abstencion
+16:03:29 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Abstencion
+16:03:30 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+16:03:30 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+16:03:30 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+16:03:36 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+16:03:36 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+16:03:36 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+16:03:37 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+16:03:37 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+16:03:37 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Abstencion
+16:03:38 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+16:03:38 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+16:03:38 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Negativo
+16:03:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+16:03:42 | L2 | INPUT | Robert Downey Jr (banca Nro:1) ERROR en registro voto: concejal_ya_voto
+16:03:44 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+16:03:44 | L2 | INPUT | Scarlett Johansson (banca Nro:2) ERROR en registro voto: concejal_ya_voto
+16:03:46 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+16:03:46 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) ERROR en registro voto: concejal_ya_voto
+16:03:47 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+16:03:47 | L2 | INPUT | Natalie Portman (banca Nro:4) ERROR en registro voto: concejal_ya_voto
+16:03:50 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+16:03:50 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+16:03:50 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+16:03:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+16:03:51 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+16:03:51 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+16:03:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+16:03:52 | L2 | INPUT | Denzel Washington (banca Nro:7) ERROR en registro voto: concejal_ya_voto
+16:03:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+16:03:52 | L2 | INPUT | Emma Stone (banca Nro:8) ERROR en registro voto: concejal_ya_voto
+16:03:54 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+16:03:54 | L2 | INPUT | Brad Pitt (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+16:03:55 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+16:03:55 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+16:03:55 | L3 | VOTACION | Votacion Nº97 completada. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 3 Negativos y 3 Abstenciones
+16:03:55 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Negativo

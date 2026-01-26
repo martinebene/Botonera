@@ -109,14 +109,15 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
         else:
             logging.log_internal("INPUT",3,concejal.print_corto() + " se AUSENTO")
 
-        votacion_service.recalcular_cierre_por_cambio_en_presencia()
+        if votacion_service.votacion_actual is not None:
+            votacion_service.recalcular_cierre_por_cambio_en_presencia()
         return {
                 "aceptada": True,
                 "motivo": "cambio_presencia",
                 "dispositivo": dispositivo,
                 "tecla": tecla,
                 "concejal": concejal.to_dict(),
-            }
+                }
 
 
     # 5) Tecla 9: pedido de palabra

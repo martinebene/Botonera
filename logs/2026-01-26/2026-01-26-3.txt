@@ -1,0 +1,78 @@
+09:38:04 | L3 | SESION | Cierre de sesion Nº93
+09:38:07 | L3 | SESION | Apertura de sesion Nº683
+09:38:14 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº97 con tema: gr
+09:38:18 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+09:38:20 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+09:38:21 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Negativo
+09:38:25 | L3 | INPUT | Denzel Washington (banca Nro:7) se AUSENTO
+09:38:28 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+09:59:14 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Emma Stone (banca Nro:8), Cate Blanchett (banca Nro:10)]
+09:59:14 | L3 | SESION | Cierre de sesion Nº683
+09:59:18 | L3 | SESION | Apertura de sesion Nº369
+09:59:58 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº29 con tema: Exención impositiva a instituciones deportivas, requisitos y control
+10:00:05 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:00:07 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:00:07 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+10:00:08 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:00:09 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:00:10 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:00:12 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+10:00:13 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+10:00:15 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+10:00:15 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+10:00:16 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Negativo
+10:00:18 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Negativo
+10:00:18 | L3 | VOTACION | Votacion Nº29 completada. Resultado: RECHAZADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+10:00:30 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº31 con tema: Autorización de uso de espacio público, evento solidario y logística
+10:00:33 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:00:34 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+10:00:34 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+10:00:35 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Positivo
+10:00:36 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:00:37 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:00:37 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+10:00:38 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+10:00:40 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Negativo
+10:00:41 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+10:00:41 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Negativo
+10:00:42 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Negativo
+10:00:42 | L3 | VOTACION | Votacion Nº31 completada. Resultado: EMPATADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+10:01:30 | L3 | VOTACION | Votacion Nº31 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+10:02:41 | L3 | VOTACION | Apertura de votacion de tipo Ratificacion Nº35 con tema: Ratificación de convenio provincial, asistencia técnica y financiamiento
+10:02:51 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:02:52 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+10:02:53 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+10:02:54 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:02:55 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Abstencion
+10:02:56 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Abstencion
+10:02:57 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Abstencion
+10:02:57 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+10:02:59 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:03:00 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+10:03:00 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Abstencion
+10:03:02 | L3 | INPUT | Jennifer Lawrence (banca Nro:12) se AUSENTO
+10:04:16 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº47 con tema: Creación de consejo consultivo ambiental, representación y funciones
+10:04:20 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+10:04:21 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Positivo
+10:04:21 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+10:04:23 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+10:04:23 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+10:04:24 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Positivo
+10:04:24 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Abstencion
+10:04:25 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+10:04:26 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+10:04:26 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+10:04:27 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+10:04:27 | L3 | VOTACION | Votacion Nº47 completada. Resultado: APROBADA - Votos: 11 de 12 - 8 Positivos, 1 Negativos y 2 Abstenciones
+10:38:09 | L3 | SESION | Cierre de sesion Nº369
+10:44:45 | L3 | SESION | Apertura de sesion Nº93
+10:53:53 | L3 | SESION | Apertura de sesion Nº93
+10:54:13 | L3 | INPUT | Tom Hanks (banca Nro:5) se AUSENTO
+10:55:45 | L3 | INPUT | Emma Stone (banca Nro:8) se AUSENTO
+10:57:55 | L3 | SESION | Apertura de sesion Nº93
+10:58:07 | L3 | INPUT | Emma Stone (banca Nro:8) se AUSENTO
+10:58:08 | L3 | INPUT | Tom Hanks (banca Nro:5) se AUSENTO
+10:58:19 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se AUSENTO
+10:58:28 | L3 | INPUT | Natalie Portman (banca Nro:4) se AUSENTO
+10:58:40 | L3 | INPUT | Natalie Portman (banca Nro:4) se PRESENTO
+10:59:45 | L3 | INPUT | Brad Pitt (banca Nro:9) se AUSENTO

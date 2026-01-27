@@ -273,19 +273,17 @@
         <div class="events">
 
           <div class="events__top">
-            <div class="field field--tight">
+            <div class="field field--tight field--inline">
               <div class="label">Nivel</div>
 
               <select id="selEventosNivel" class="input input--tight">
-                <option value="L1">L1 (todo)</option>
-                <option value="L2">L2 + L3</option>
-                <option value="L3">Solo L3</option>
+                <option value="L3" selected>Principales</option>
+                <option value="L2">Intermedios</option>
+                <option value="L1">Sistema</option>
               </select>
             </div>
 
-            <div class="hint events__hint">
-              Historial completo (filtrado por nivel).
-            </div>
+            <div class="hint events__hint"></div>
           </div>
 
           <pre id="preEventos" class="events__console" aria-label="Consola de eventos"></pre>

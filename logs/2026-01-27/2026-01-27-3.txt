@@ -1,0 +1,73 @@
+11:16:19 | L3 | SESION | Apertura de sesion Nº93
+11:17:38 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+11:17:43 | L3 | INPUT | Hernán Pereira (banca Nro:6) se AUSENTO
+11:17:45 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+11:18:05 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+11:18:06 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+11:18:07 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+11:18:08 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+11:18:55 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+11:18:56 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+11:53:50 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+11:53:53 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+11:53:54 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Abstencion
+11:53:58 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+11:53:59 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+11:54:00 | L3 | PALABRA | Gastón Cuis Taccari (banca Nro:4) pidio la palabra
+11:54:05 | L3 | PALABRA | Nadia Garay (banca Nro:12) pidio la palabra
+11:54:07 | L3 | PALABRA | Walter Herrero (banca Nro:11) pidio la palabra
+11:54:09 | L3 | PALABRA | Se otorgo uso de la palabra a Gastón Cuis Taccari (banca Nro:4)
+11:54:48 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+11:54:50 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+11:54:51 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+11:54:55 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Negativo
+11:54:56 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Abstencion
+11:54:56 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+11:54:58 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+11:54:58 | L3 | VOTACION | Votacion Nº3 completada. Resultado: APROBADA - Votos: 9 de 12 - 5 Positivos, 2 Negativos y 2 Abstenciones
+11:55:05 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº1 con tema: Aprobación del acta de la sesión anterior, lectura y consideración
+11:55:08 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+11:55:12 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+11:55:13 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+12:28:33 | L3 | PALABRA | Se otorgo uso de la palabra a Nadia Garay (banca Nro:12)
+13:14:59 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Abstencion
+13:29:19 | L3 | PALABRA | Se quito el uso de la palabra a Nadia Garay (banca Nro:12)
+13:29:21 | L3 | PALABRA | Se otorgo uso de la palabra a Walter Herrero (banca Nro:11)
+13:29:23 | L3 | PALABRA | Se quito el uso de la palabra a Walter Herrero (banca Nro:11)
+13:29:38 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+13:29:44 | L3 | INPUT | Hernán Pereira (banca Nro:6) se PRESENTO
+13:29:53 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+13:29:56 | L3 | VOTO | Lucila González (banca Nro:8) voto: Abstencion
+13:30:00 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Abstencion
+13:30:04 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+13:30:07 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+13:30:32 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+13:30:33 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+13:30:34 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+13:30:36 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+13:30:37 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+13:30:42 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+13:30:43 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+13:30:46 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+13:30:47 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+13:30:50 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Negativo
+13:31:00 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+13:31:10 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Abstencion
+13:31:16 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Abstencion
+13:31:16 | L3 | VOTACION | Votacion Nº1 completada. Resultado: EMPATADA - Votos: 12 de 12 - 3 Positivos, 3 Negativos y 6 Abstenciones
+13:31:38 | L3 | VOTACION | Votacion Nº1 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 3 Positivos, 3 Negativos y 6 Abstenciones
+13:31:49 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+13:31:50 | L3 | INPUT | Roxana Barrera (banca Nro:10) se PRESENTO
+13:31:53 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+13:31:54 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+13:31:57 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+14:36:32 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+14:36:34 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+14:36:35 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+14:36:37 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+14:36:39 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+14:36:40 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+14:36:41 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+14:36:43 | L3 | PALABRA | Se otorgo uso de la palabra a Lorena Moreno (banca Nro:1)
+14:36:49 | L3 | PALABRA | Se otorgo uso de la palabra a Samuel Alarcón Muñoz (banca Nro:2)
+14:36:55 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Rueda (banca Nro:3)

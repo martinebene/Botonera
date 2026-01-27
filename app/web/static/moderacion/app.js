@@ -1168,7 +1168,7 @@ const Q3 = (() => {
         img.src = `/bancas/${bancaNro}.png`;
 
         const vote = document.createElement("div");
-        vote.className = "recintoBanca__apellido";
+        vote.className = "recintoBanca__estado";
         vote.textContent = ""; // reservado para voto
 
         inner.appendChild(img);
@@ -1465,7 +1465,7 @@ const Q4 = (() => {
 
   let lastSeqSeen = -1;
   const history = []; // {seq, line, level}
-  let selectedLevel = 1;
+  let selectedLevel = 3;
 
   function parseLevelFromLine(line){
     const s = String(line ?? "");
@@ -1531,16 +1531,16 @@ const Q4 = (() => {
   function init(){
     if (!selEventosNivel || !preEventos) return;
 
-    selectedLevel = 1;
-    selEventosNivel.value = "L1";
+    selectedLevel = 3;
+    selEventosNivel.value = "L3";
     preEventos.textContent = "";
 
     selEventosNivel.addEventListener("change", () => {
-      const v = String(selEventosNivel.value || "L1");
+      const v = String(selEventosNivel.value || "L3");
       if (v === "L1") selectedLevel = 1;
       else if (v === "L2") selectedLevel = 2;
       else if (v === "L3") selectedLevel = 3;
-      else selectedLevel = 1;
+      else selectedLevel = 3;
 
       renderAll();
     });

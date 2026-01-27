@@ -229,11 +229,7 @@
               - sesion.concejales (banca, presente, etc.)
               - imágenes en /static/bancas/<banca>.png
             -->
-            <div id="recintoCanvas" class="recinto__canvas">
-              <div class="hint">
-                Recinto: pendiente de implementar (paso siguiente).
-              </div>
-            </div>
+            <div id="recintoCanvas" class="recinto__canvas"></div>
           </div>
 
           <!-- Zona derecha: lista “Uso de la Palabra” -->
@@ -245,10 +241,17 @@
               El título y el marco NO deben moverse.
             -->
             <div class="recinto__rightBody" id="usoPalabraWrap">
-              <!-- Lista vacía por ahora: el JS la llenará luego -->
-              <ul class="recinto__lista" id="ulUsoPalabra">
-                <!-- <li>Apellido Nombre</li> -->
-              </ul>
+              <div class="recinto__listaWrap" id="usoPalabraListWrap">
+                <!-- Lista: el JS la llena -->
+                <ul class="recinto__lista" id="ulUsoPalabra">
+                  <!-- <li>Apellido Nombre</li> -->
+                </ul>
+              </div>
+
+              <div class="recinto__palabraBtns" aria-label="Acciones uso de la palabra">
+                <button id="btnOtorgarPalabra" class="btn btn--primary btn--tight" type="button">Otorgar P.</button>
+                <button id="btnQuitarPalabra" class="btn btn--danger btn--tight" type="button">Quitar P.</button>
+              </div>
 
               <!-- Área para error de render (si el JSON no coincide con concejales o imágenes) -->
               <div class="hint recinto__error" id="recintoError" style="display:none;">

@@ -970,9 +970,491 @@ const Q2 = (() => {
 })();
 
 ///////////////////////////////
-// 11) Q3 placeholder
+// 11) Q3 (Estado recinto)
 ///////////////////////////////
-const Q3 = (() => ({ init(){}, onState(){}, onError(){} }))();
+const Q3 = (() => {
+  const recintoCanvas = document.getElementById("recintoCanvas");
+  const recintoError  = document.getElementById("recintoError");
+
+  const ulUsoPalabra  = document.getElementById("ulUsoPalabra");
+  const btnOtorgarPalabra = document.getElementById("btnOtorgarPalabra");
+  const btnQuitarPalabra  = document.getElementById("btnQuitarPalabra");
+
+  // Cache de layout (disposición no cambia durante la sesión)
+  let cachedSesionKey = null;
+  let cachedDispoStr = null;
+  let cachedLayout = null; // { filasSorted, maxCols, sumCols }
+
+  // Bancas renderizadas: Map<bancaNro, { voteEl }>
+  let bancaEls = new Map();
+
+  // Estado de votación para lógica de “blanqueo”
+  let activeVotRef = null;
+  let clearVotesTimer = null;
+
+  function sesionKey(sesion){
+    if (!sesion) return null;
+    const n = (sesion.numero_sesion !== undefined && sesion.numero_sesion !== null) ? String(sesion.numero_sesion) : "";
+    const h = String(sesion.hora_inicio ?? "");
+    return `${n}|${h}`;
+  }
+
+  function resetCache(){
+    cachedSesionKey = null;
+    cachedDispoStr = null;
+    cachedLayout = null;
+    bancaEls = new Map();
+
+    activeVotRef = null;
+    if (clearVotesTimer) clearTimeout(clearVotesTimer);
+    clearVotesTimer = null;
+
+    clearLeft();
+    clearRight();
+    hideLeftError();
+  }
+
+  function clearLeft(){
+    if (recintoCanvas) recintoCanvas.innerHTML = "";
+    bancaEls = new Map();
+  }
+
+  function clearRight(){
+    if (ulUsoPalabra) ulUsoPalabra.innerHTML = "";
+  }
+
+  function showLeftError(msg){
+    // Error SOLO en panel izquierdo
+    if (!recintoCanvas) return;
+    recintoCanvas.innerHTML = "";
+    const div = document.createElement("div");
+    div.className = "recintoCanvasError";
+    div.textContent = msg;
+    recintoCanvas.appendChild(div);
+
+    // y mostramos el hint del panel derecho SOLO si ya existe en el DOM,
+    // pero la premisa dice que NO debemos mostrar el error en el panel derecho.
+    // Por eso lo dejamos oculto.
+    if (recintoError) recintoError.style.display = "none";
+  }
+
+  function hideLeftError(){
+    if (recintoError) recintoError.style.display = "none";
+  }
+
+  function safeJsonParse(str){
+    try{
+      return JSON.parse(String(str ?? ""));
+    } catch(_e){
+      return null;
+    }
+  }
+
+  function computeLayout(dispoStr){
+    const parsed = safeJsonParse(dispoStr);
+    const filas = Array.isArray(parsed?.filas) ? parsed.filas : null;
+    if (!filas) return null;
+
+    // Normalizamos y ordenamos por "fila" asc (fila 1 es la más baja)
+    const filasNorm = filas
+      .map(f => ({
+        fila: Number(f?.fila),
+        columnas: Number(f?.columnas),
+      }))
+      .filter(f => Number.isFinite(f.fila) && Number.isFinite(f.columnas) && f.columnas > 0);
+
+    if (!filasNorm.length) return null;
+
+    filasNorm.sort((a,b) => a.fila - b.fila);
+
+    const sumCols = filasNorm.reduce((acc, f) => acc + f.columnas, 0);
+    const maxCols = filasNorm.reduce((acc, f) => Math.max(acc, f.columnas), 0);
+
+    return { filasSorted: filasNorm, sumCols, maxCols };
+  }
+
+  function setInnerWidthPx(maxCols){
+    if (!recintoCanvas) return;
+
+    // Gap entre celdas: 8px (ver CSS .recintoRow)
+    const gap = 8;
+    const w = recintoCanvas.clientWidth || 0;
+    if (!w || !Number.isFinite(maxCols) || maxCols <= 0) return;
+
+    // Aproximación: ancho de celda en la fila más cargada (maxCols)
+    const totalGaps = (maxCols - 1) * gap;
+    const cellW = (w - totalGaps) / maxCols;
+    const innerW = Math.max(20, Math.floor(cellW * 0.92));
+
+    recintoCanvas.style.setProperty("--bancaInnerW", `${innerW}px`);
+  }
+
+  function buildLeft(sesion){
+    if (!recintoCanvas) return;
+
+    const dispoStr = String(sesion?.disposicion_bancas ?? "");
+    const layout = computeLayout(dispoStr);
+    if (!layout){
+      showLeftError("Error: disposicion_bancas inválida o sin filas.");
+      return;
+    }
+
+    const concejales = Array.isArray(sesion?.concejales) ? sesion.concejales : [];
+    if (layout.sumCols !== concejales.length){
+      showLeftError(
+        `Error: sum(columnas)=${layout.sumCols} no coincide con cantidad de concejales=${concejales.length}.`
+      );
+      return;
+    }
+
+    // Cacheamos
+    cachedDispoStr = dispoStr;
+    cachedLayout = layout;
+
+    // Render
+    recintoCanvas.innerHTML = "";
+    bancaEls = new Map();
+    hideLeftError();
+
+    // Armamos una lista ordenada de concejales según banca (1..N)
+    const concejalesByBanca = new Map();
+    for (const c of concejales){
+      const b = Number(c?.banca);
+      if (Number.isFinite(b)) concejalesByBanca.set(b, c);
+    }
+
+    const totalBancas = concejales.length;
+
+    // Numeración de bancas (REGLA): banca 1 = abajo-izquierda, luego izquierda→derecha,
+    // completa la fila y continúa en la fila de arriba, de abajo hacia arriba.
+    //
+    // layout.filasSorted está ordenado por fila asc (fila 1 = más baja).
+    const filas = layout.filasSorted;
+    const maxCols = layout.maxCols;
+
+    setInnerWidthPx(maxCols);
+
+    // Prefijos: para cada fila i (en orden asc, de abajo→arriba), prefix[i] = cantidad de bancas en filas inferiores.
+    const prefix = [];
+    let acc = 0;
+    for (let i = 0; i < filas.length; i++){
+      prefix[i] = acc;
+      acc += filas[i].columnas;
+    }
+
+    // Render visual: apilamos en DOM de arriba→abajo (recorremos de la fila más alta a la más baja),
+    // pero la numeración se calcula con prefix para respetar abajo→arriba.
+    for (let i = filas.length - 1; i >= 0; i--){
+      const f = filas[i];
+      const row = document.createElement("div");
+      row.className = "recintoRow";
+      row.style.gridTemplateColumns = `repeat(${f.columnas}, 1fr)`;
+
+      const startBanca = 1 + prefix[i]; // primera banca de esta fila (según regla)
+
+      for (let c = 0; c < f.columnas; c++){
+        const bancaNro = startBanca + c;
+        const concejal = concejalesByBanca.get(bancaNro) || null;
+
+        const cell = document.createElement("div");
+        cell.className = "recintoBanca";
+
+        const inner = document.createElement("div");
+        inner.className = "recintoBanca__inner";
+
+        const img = document.createElement("img");
+        img.className = "recintoBanca__img";
+        img.alt = `Banca ${bancaNro}`;
+        img.src = `/bancas/${bancaNro}.png`;
+
+        const vote = document.createElement("div");
+        vote.className = "recintoBanca__apellido";
+        vote.textContent = ""; // reservado para voto
+
+        inner.appendChild(img);
+        inner.appendChild(vote);
+        cell.appendChild(inner);
+        row.appendChild(cell);
+
+        bancaEls.set(Number(bancaNro), { voteEl: vote, imgEl: img, innerEl: inner });
+      }
+
+      recintoCanvas.appendChild(row);
+    }
+
+  }
+
+  function renderRight(sesion){
+    if (!ulUsoPalabra) return;
+
+    ulUsoPalabra.innerHTML = "";
+    const cola = Array.isArray(sesion?.pedidos_uso_de_palabra) ? sesion.pedidos_uso_de_palabra : [];
+
+    for (const c of cola){
+      const li = document.createElement("li");
+      const ape = String(c?.apellido ?? "").trim();
+      const nom = String(c?.nombre ?? "").trim();
+      const banca = (c?.banca !== undefined && c?.banca !== null) ? ` (B${c.banca})` : "";
+      li.textContent = `${ape} ${nom}${banca}`.trim();
+      ulUsoPalabra.appendChild(li);
+    }
+  }
+
+  function clearAllVoteTexts(){
+    for (const [_b, els] of bancaEls){
+      if (!els?.voteEl) continue;
+      els.voteEl.textContent = "";
+      els.voteEl.classList.remove("is-voto", "voto-pos", "voto-neg", "voto-abs");
+    }
+  }
+
+  function currentEnCursoVotaciones(sesion){
+    const vs = Array.isArray(sesion?.votaciones) ? sesion.votaciones : [];
+    return vs.filter(v => String(v?.estado ?? "") === "EN_CURSO");
+  }
+
+  function votacionRef(v){
+    if (!v) return null;
+    const id = (v.id !== undefined && v.id !== null) ? String(v.id) : String(v.numero ?? "");
+    const h  = String(v.hora_inicio ?? "");
+    return `${id}|${h}`;
+  }
+
+  function voteClassFor(valRaw){
+    const v = String(valRaw ?? "").trim().toLowerCase();
+    // Normalización simple (sin depender de acentos)
+    if (v.startsWith("pos") || v.includes("positivo")) return "voto-pos";
+    if (v.startsWith("neg") || v.includes("negativo")) return "voto-neg";
+    if (v.startsWith("abs") || v.includes("abst")) return "voto-abs";
+    return null;
+  }
+
+  function applyVotesFromVotacion(votacion){
+    if (!votacion){
+      clearAllVoteTexts();
+      return;
+    }
+
+    // blank first
+    clearAllVoteTexts();
+
+    const votos = Array.isArray(votacion?.votos) ? votacion.votos : [];
+    for (const v of votos){
+      const banca = Number(v?.concejal?.banca);
+      if (!Number.isFinite(banca)) continue;
+
+      const val = String(v?.valor_voto ?? "").trim();
+      const els = bancaEls.get(banca);
+      if (els?.voteEl){
+        els.voteEl.textContent = val;
+        els.voteEl.classList.add("is-voto");
+        const cls = voteClassFor(val);
+        if (cls) els.voteEl.classList.add(cls);
+      }
+    }
+  }
+
+  function applyPresenceAndSpeech(sesion){
+    // Opacar imagen si concejal no está presente (60%)
+    const concejales = Array.isArray(sesion?.concejales) ? sesion.concejales : [];
+    const byBanca = new Map();
+    for (const c of concejales){
+      const b = Number(c?.banca);
+      if (Number.isFinite(b)) byBanca.set(b, c);
+    }
+
+    const speakingBanca = Number(sesion?.en_uso_de_palabra?.banca);
+    const hasSpeaking = Number.isFinite(speakingBanca);
+
+    for (const [banca, els] of bancaEls){
+      const c = byBanca.get(banca) || null;
+
+      if (els?.imgEl){
+        const ausente = (c && c.presente === false);
+        els.imgEl.classList.toggle("is-ausente", !!ausente);
+      }
+
+      if (els?.innerEl){
+  const ausente = (c && c.presente === false);
+  els.innerEl.classList.toggle("is-ausente", !!ausente);
+
+  const hablando = hasSpeaking && banca === speakingBanca;
+  els.innerEl.classList.toggle("is-hablando", !!hablando);
+}
+    }
+  }
+
+function handleVotes(sesion){
+  // Reglas:
+  // - En blanco si no votó
+  // - Mostrar voto si votó
+  // - Volver a blanquear al abrir una nueva votación o pasados 4s desde el cierre
+  // - Si hay MÁS de una votación EN_CURSO => error en recinto (no elegir ninguna)
+  //
+  // Importante:
+  // - Una vez tomada la referencia de la votación (id/numero), durante la “ventana” de 4s
+  //   seguimos actualizando los votos desde ESA misma votación aunque ya no esté EN_CURSO,
+  //   para no perder el último voto que llega pegado al cierre.
+
+  const votaciones = Array.isArray(sesion?.votaciones) ? sesion.votaciones : [];
+  const enCurso = votaciones.filter(v => String(v?.estado ?? "") === "EN_CURSO");
+
+  if (enCurso.length > 1){
+    showLeftError("Error: hay más de una votación EN_CURSO. No se puede renderizar votos en el recinto.");
+    return;
+  }
+
+  const now = Date.now();
+
+  // Helper: encontrar la votación por la referencia activa (id|hora_inicio), o por id/numero
+  function findVotByActiveRef(){
+    if (!activeVotRef) return null;
+    const [idOrNumero, hInicio] = String(activeVotRef).split("|");
+    // 1) match por id exacto si existe
+    const byId = votaciones.find(v => String(v?.id ?? "") === idOrNumero && String(v?.hora_inicio ?? "") === String(hInicio ?? ""));
+    if (byId) return byId;
+    // 2) fallback por numero + hora_inicio
+    return votaciones.find(v => String(v?.numero ?? "") === idOrNumero && String(v?.hora_inicio ?? "") === String(hInicio ?? ""));
+  }
+
+  if (enCurso.length === 1){
+    const v = enCurso[0];
+    const ref = votacionRef(v);
+
+    // Si cambió la votación activa, blanqueamos inmediatamente y cancelamos timers
+    if (activeVotRef !== ref){
+      activeVotRef = ref;
+      if (clearVotesTimer) clearTimeout(clearVotesTimer);
+      clearVotesTimer = null;
+      clearAllVoteTexts();
+    }
+
+    // Aplicamos votos actuales (en curso)
+    applyVotesFromVotacion(v);
+    return;
+  }
+
+  // No hay votación EN_CURSO
+  if (!activeVotRef){
+    // No hay referencia activa: aseguramos blanco
+    clearAllVoteTexts();
+    return;
+  }
+
+  // Tenemos una referencia activa previa: seguimos actualizando desde esa votación (aunque ya esté cerrada)
+  const vRef = findVotByActiveRef();
+  if (vRef){
+    applyVotesFromVotacion(vRef);
+  }
+
+  // Si no existe timer, lo iniciamos al detectar que ya no está EN_CURSO
+  if (!clearVotesTimer){
+    // Ideal: usar hora_fin si viene; si no, 4s desde ahora
+    let delayMs = 4000;
+    const hf = vRef?.hora_fin ? Date.parse(String(vRef.hora_fin)) : NaN;
+    if (Number.isFinite(hf)){
+      delayMs = Math.max(0, (hf + 4000) - now);
+    }
+
+    clearVotesTimer = setTimeout(() => {
+      clearAllVoteTexts();
+      activeVotRef = null;
+      clearVotesTimer = null;
+    }, delayMs);
+  }
+}
+
+
+  function init(){
+    // Botones uso palabra
+    btnOtorgarPalabra?.addEventListener("click", async () => {
+      toast("warn", "Enviando: otorgar uso de palabra…");
+      try{
+        await postJson(API_BASE_URL + "/moderacion/otorgar_uso_palabra", undefined);
+        toast("ok", "OK: Otorgar palabra enviado.", 1400);
+      } catch (e){
+        toast("err", `ERROR otorgar palabra: ${e?.message || String(e)}`, 4500);
+      }
+    });
+
+    btnQuitarPalabra?.addEventListener("click", async () => {
+      toast("warn", "Enviando: quitar uso de palabra…");
+      try{
+        await postJson(API_BASE_URL + "/moderacion/quitar_uso_palabra", undefined);
+        toast("ok", "OK: Quitar palabra enviado.", 1400);
+      } catch (e){
+        toast("err", `ERROR quitar palabra: ${e?.message || String(e)}`, 4500);
+      }
+    });
+
+    // Resize: recalcula ancho uniforme del inner (si hay layout cacheado)
+    window.addEventListener("resize", () => {
+      if (cachedLayout?.maxCols) setInnerWidthPx(cachedLayout.maxCols);
+    });
+
+    resetCache();
+  }
+
+  function onState(raw){
+    const state = normalizeState(raw);
+    const ses = getSesion(state);
+
+    // Si no hay sesión abierta: vacío total (sin placeholder)
+    if (!ses || ses.abierta === false){
+      resetCache();
+      return;
+    }
+
+    // Si cambió de sesión: reset completo
+    const sk = sesionKey(ses);
+    if (cachedSesionKey !== sk){
+      resetCache();
+      cachedSesionKey = sk;
+    }
+
+    // Render derecho siempre (cola)
+    renderRight(ses);
+
+    // Render izquierdo: cache por disposicion_bancas
+    const dispoStr = String(ses.disposicion_bancas ?? "");
+    if (!cachedLayout || cachedDispoStr !== dispoStr){
+      // Rebuild
+      clearLeft();
+      buildLeft(ses);
+
+      // Si buildLeft falló y dejó error en canvas, no seguimos
+      // (pero el panel derecho ya está OK)
+      if (recintoCanvas && recintoCanvas.querySelector(".recintoCanvasError")){
+        return;
+      }
+    } else {
+      // Asegura que el ancho uniforme se mantenga si el canvas cambió de tamaño
+      setInnerWidthPx(cachedLayout.maxCols);
+    }
+
+    // Si el canvas quedó en estado de error (por ejemplo, múltiples EN_CURSO),
+    // y tenemos un layout válido cacheado, reconstruimos la grilla.
+    if (recintoCanvas && recintoCanvas.querySelector(".recintoCanvasError") && cachedLayout && cachedDispoStr === String(ses.disposicion_bancas ?? "")){
+      clearLeft();
+      buildLeft(ses);
+      if (recintoCanvas.querySelector(".recintoCanvasError")){
+        return;
+      }
+    }
+
+    // Presencia (opacidad) + en uso de palabra (borde)
+    applyPresenceAndSpeech(ses);
+
+    // Votos
+    handleVotes(ses);
+  }
+
+  function onError(_e){
+    // si se cae el polling, NO tocamos Q3: se mantiene la última vista
+  }
+
+  return { init, onState, onError };
+})();
 
 ///////////////////////////////
 // 12) Q4 (Eventos)

@@ -322,3 +322,982 @@
 13:13:12 | L3 | PALABRA | Leonardo DiCaprio (banca Nro:3) pidio la palabra
 13:13:12 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) pidio la PALABRA
 13:13:19 | L3 | PALABRA | Se otorgo uso de la palabra a Denzel Washington (banca Nro:7)
+15:52:32 | L3 | SESION | Apertura de sesion Nº29
+15:53:02 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº7 con tema: Designación de autoridades de comisiones, período legislativo en curso
+15:53:09 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+15:58:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+15:58:42 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto sin votacion en curso
+15:58:48 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev02]
+15:58:48 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto sin votacion en curso
+15:59:15 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev04]
+15:59:15 | L2 | INPUT | Natalie Portman (banca Nro:4) voto sin votacion en curso
+15:59:16 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+15:59:16 | L2 | INPUT | Natalie Portman (banca Nro:4) voto sin votacion en curso
+15:59:18 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+15:59:18 | L2 | INPUT | Emma Stone (banca Nro:8) voto sin votacion en curso
+15:59:20 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+15:59:20 | L3 | INPUT | Leonardo DiCaprio (banca Nro:3) se AUSENTO
+15:59:22 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+15:59:22 | L3 | INPUT | Leonardo DiCaprio (banca Nro:3) se PRESENTO
+15:59:27 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev011]
+15:59:27 | L2 | INPUT | Pulsacion ignorada: No hay concejal asociado
+15:59:31 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev011]
+15:59:31 | L2 | INPUT | Pulsacion ignorada: No hay concejal asociado
+15:59:38 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+15:59:38 | L3 | INPUT | Keanu Reeves (banca Nro:11) se AUSENTO
+15:59:39 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+15:59:39 | L3 | INPUT | Keanu Reeves (banca Nro:11) se PRESENTO
+15:59:45 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+15:59:45 | L3 | INPUT | Cate Blanchett (banca Nro:10) se AUSENTO
+15:59:46 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+15:59:46 | L3 | INPUT | Cate Blanchett (banca Nro:10) se PRESENTO
+15:59:49 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+15:59:49 | L3 | PALABRA | Brad Pitt (banca Nro:9) pidio la palabra
+15:59:49 | L2 | INPUT | Brad Pitt (banca Nro:9) pidio la PALABRA
+15:59:50 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+15:59:50 | L3 | PALABRA | Brad Pitt (banca Nro:9) retiro el pedido la palabra
+15:59:50 | L2 | INPUT | Brad Pitt (banca Nro:9) pidio la PALABRA
+15:59:51 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev08]
+15:59:51 | L3 | PALABRA | Emma Stone (banca Nro:8) pidio la palabra
+15:59:51 | L2 | INPUT | Emma Stone (banca Nro:8) pidio la PALABRA
+16:00:15 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº4 con tema: Moción para incorporar al orden del día, nota de vecinos por seguridad vial
+16:00:19 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev12]
+16:00:19 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Abstencion
+16:00:19 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Abstencion
+16:00:20 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+16:00:20 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Positivo
+16:00:20 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Positivo
+16:00:20 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+16:00:20 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Negativo
+16:00:20 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Negativo
+16:00:21 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+16:00:21 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+16:00:21 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+16:00:21 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+16:00:21 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Abstencion
+16:00:21 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Abstencion
+16:00:22 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+16:00:22 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Positivo
+16:00:22 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Positivo
+16:00:23 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev10]
+16:00:23 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Abstencion
+16:00:23 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Abstencion
+16:00:26 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+16:00:26 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se AUSENTO
+16:00:26 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+16:00:26 | L2 | INPUT | Robert Downey Jr (banca Nro:1) interactua sin dar presente
+16:00:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+16:00:27 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+16:00:27 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+16:00:28 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+16:00:28 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+16:00:28 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+16:00:29 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+16:00:29 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Positivo
+16:00:29 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Positivo
+16:00:43 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+16:00:43 | L2 | INPUT | Brad Pitt (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+16:00:46 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+16:00:46 | L2 | INPUT | Cate Blanchett (banca Nro:10) ERROR en registro voto: concejal_ya_voto
+16:00:47 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+16:00:47 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+16:00:47 | L3 | VOTACION | Votacion Nº4 completada. Resultado: APROBADA - Votos: 11 de 12 - 6 Positivos, 1 Negativos y 4 Abstenciones
+16:00:47 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+16:50:17 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+16:50:17 | L2 | INPUT | Robert Downey Jr (banca Nro:1) interactua sin dar presente
+16:50:28 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+16:50:28 | L2 | INPUT | Robert Downey Jr (banca Nro:1) interactua sin dar presente
+16:50:31 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+16:50:31 | L2 | INPUT | Robert Downey Jr (banca Nro:1) interactua sin dar presente
+16:50:43 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev07]
+16:50:43 | L2 | INPUT | Denzel Washington (banca Nro:7) voto sin votacion en curso
+16:50:49 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+16:50:49 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+16:50:49 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+16:50:53 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+16:50:53 | L3 | PALABRA | Denzel Washington (banca Nro:7) retiro el pedido la palabra
+16:50:53 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+16:50:59 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+16:50:59 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se PRESENTO
+16:51:24 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+16:51:24 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+16:51:24 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+16:51:25 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+16:51:25 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) retiro el pedido la palabra
+16:51:25 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+16:51:34 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+16:51:34 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se AUSENTO
+16:51:37 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+16:51:37 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se PRESENTO
+16:57:37 | L3 | SESION | Cierre de sesion Nº29
+16:57:39 | L3 | SESION | Apertura de sesion Nº0
+16:57:44 | L3 | SESION | Cierre de sesion Nº0
+16:57:48 | L3 | SESION | Apertura de sesion Nº0
+16:58:39 | L3 | SESION | Apertura de sesion Nº0
+17:02:30 | L3 | SESION | Apertura de sesion Nº0
+17:03:20 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+17:03:20 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se AUSENTO
+17:03:23 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+17:03:23 | L3 | INPUT | Robert Downey Jr (banca Nro:1) se PRESENTO
+17:03:27 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+17:03:27 | L3 | INPUT | Scarlett Johansson (banca Nro:2) se AUSENTO
+17:13:12 | L3 | SESION | Cierre de sesion Nº0
+17:13:13 | L3 | SESION | Apertura de sesion Nº0
+17:13:20 | L3 | SESION | Cierre de sesion Nº0
+17:13:21 | L3 | SESION | Apertura de sesion Nº0
+17:13:23 | L3 | SESION | Cierre de sesion Nº0
+17:13:34 | L3 | SESION | Apertura de sesion Nº0
+17:14:08 | L3 | SESION | Apertura de sesion Nº0
+17:15:28 | L3 | SESION | Cierre de sesion Nº0
+17:16:09 | L3 | SESION | Apertura de sesion Nº0
+17:16:46 | L3 | SESION | Cierre de sesion Nº0
+17:16:49 | L3 | SESION | Apertura de sesion Nº0
+17:21:05 | L3 | SESION | Apertura de sesion Nº0
+17:21:27 | L3 | SESION | Apertura de sesion Nº0
+17:46:02 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+17:46:05 | L3 | SESION | Cierre de sesion Nº0
+17:46:06 | L3 | SESION | Apertura de sesion Nº0
+17:46:48 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+17:46:50 | L3 | SESION | Cierre de sesion Nº0
+17:46:52 | L3 | SESION | Apertura de sesion Nº93
+17:47:10 | L3 | SESION | Cierre de sesion Nº93
+17:47:17 | L3 | SESION | Apertura de sesion Nº93
+17:55:13 | L3 | SESION | Cierre de sesion Nº93
+17:55:15 | L3 | SESION | Apertura de sesion Nº93
+17:55:16 | L3 | SESION | Cierre de sesion Nº93
+17:55:17 | L3 | SESION | Apertura de sesion Nº93
+18:03:18 | L3 | SESION | Cierre de sesion Nº93
+18:03:25 | L3 | SESION | Apertura de sesion Nº8
+18:03:45 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: a
+18:03:49 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+18:03:49 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+18:03:49 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+18:03:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+18:03:52 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+18:03:52 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+18:03:53 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+18:03:53 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+18:03:53 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+18:15:48 | L2 | SESION | Rechazo de apertura de sesion porque ya hay sesion abierta
+18:15:53 | L3 | VOTACION | Cierre forzado - sin votar: [Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+18:15:53 | L3 | SESION | Cierre de sesion Nº8
+18:15:54 | L3 | SESION | Apertura de sesion Nº6
+19:04:29 | L3 | SESION | Cierre de sesion Nº6
+19:04:35 | L3 | SESION | Apertura de sesion Nº3
+19:04:44 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº7 con tema: Designación de autoridades de comisiones, período legislativo en curso
+19:04:46 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+19:04:49 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº2 con tema: Declaración de interés municipal, jornada de salud comunitaria en barrios
+19:04:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+19:04:52 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Positivo
+19:04:52 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Positivo
+19:04:53 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+19:04:53 | L3 | VOTO | Meryl Streep (banca Nro:6) voto: Positivo
+19:04:53 | L2 | INPUT | Meryl Streep (banca Nro:6) voto: Positivo
+19:04:53 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev07]
+19:04:53 | L3 | VOTO | Denzel Washington (banca Nro:7) voto: Abstencion
+19:04:53 | L2 | INPUT | Denzel Washington (banca Nro:7) voto: Abstencion
+19:04:54 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+19:04:54 | L3 | VOTO | Emma Stone (banca Nro:8) voto: Negativo
+19:04:54 | L2 | INPUT | Emma Stone (banca Nro:8) voto: Negativo
+19:04:55 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev04]
+19:04:55 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Abstencion
+19:04:55 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Abstencion
+19:04:55 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+19:04:55 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+19:04:55 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Abstencion
+19:04:56 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+19:04:56 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Negativo
+19:04:56 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Negativo
+19:04:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+19:04:57 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+19:04:57 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+19:04:58 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+19:04:58 | L3 | VOTO | Brad Pitt (banca Nro:9) voto: Negativo
+19:04:58 | L2 | INPUT | Brad Pitt (banca Nro:9) voto: Negativo
+19:04:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev010]
+19:04:58 | L2 | INPUT | Pulsacion ignorada: No hay concejal asociado
+19:04:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+19:04:59 | L3 | VOTO | Keanu Reeves (banca Nro:11) voto: Positivo
+19:04:59 | L2 | INPUT | Keanu Reeves (banca Nro:11) voto: Positivo
+19:05:00 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev12]
+19:05:00 | L3 | VOTO | Jennifer Lawrence (banca Nro:12) voto: Abstencion
+19:05:00 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) voto: Abstencion
+19:05:10 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+19:05:10 | L2 | INPUT | Robert Downey Jr (banca Nro:1) ERROR en registro voto: concejal_ya_voto
+19:05:12 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+19:05:12 | L2 | INPUT | Scarlett Johansson (banca Nro:2) ERROR en registro voto: concejal_ya_voto
+19:05:14 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+19:05:14 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) ERROR en registro voto: concejal_ya_voto
+19:05:15 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+19:05:15 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) ERROR en registro voto: concejal_ya_voto
+19:05:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+19:05:16 | L2 | INPUT | Natalie Portman (banca Nro:4) ERROR en registro voto: concejal_ya_voto
+19:05:19 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+19:05:19 | L2 | INPUT | Tom Hanks (banca Nro:5) ERROR en registro voto: concejal_ya_voto
+19:05:22 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+19:05:22 | L2 | INPUT | Meryl Streep (banca Nro:6) ERROR en registro voto: concejal_ya_voto
+19:05:23 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+19:05:23 | L2 | INPUT | Denzel Washington (banca Nro:7) ERROR en registro voto: concejal_ya_voto
+19:05:25 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+19:05:25 | L2 | INPUT | Emma Stone (banca Nro:8) ERROR en registro voto: concejal_ya_voto
+19:05:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+19:05:27 | L2 | INPUT | Brad Pitt (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+19:05:29 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev010]
+19:05:29 | L2 | INPUT | Pulsacion ignorada: No hay concejal asociado
+19:05:38 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+19:05:38 | L3 | VOTO | Cate Blanchett (banca Nro:10) voto: Negativo
+19:05:38 | L3 | VOTACION | Votacion Nº2 completada. Resultado: EMPATADA - Votos: 12 de 12 - 4 Positivos, 4 Negativos y 4 Abstenciones
+19:05:38 | L2 | INPUT | Cate Blanchett (banca Nro:10) voto: Negativo
+19:05:48 | L3 | VOTACION | Votacion Nº2 DESEMPATADA. Resultado: RECHAZADA - Votos: 12 de 12 - 4 Positivos, 4 Negativos y 4 Abstenciones
+19:22:48 | L3 | SESION | Cierre de sesion Nº3
+19:23:04 | L3 | SESION | Apertura de sesion Nº3
+19:33:07 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+19:33:07 | L3 | INPUT | Tom Hanks (banca Nro:5) se AUSENTO
+19:33:11 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+19:33:11 | L2 | INPUT | Tom Hanks (banca Nro:5) interactua sin dar presente
+19:33:19 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+19:33:19 | L3 | INPUT | Tom Hanks (banca Nro:5) se PRESENTO
+19:33:31 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+19:33:31 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+19:33:31 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+19:33:45 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+19:33:45 | L3 | PALABRA | Jennifer Lawrence (banca Nro:12) pidio la palabra
+19:33:45 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) pidio la PALABRA
+19:33:48 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev10]
+19:33:48 | L3 | PALABRA | Cate Blanchett (banca Nro:10) pidio la palabra
+19:33:48 | L2 | INPUT | Cate Blanchett (banca Nro:10) pidio la PALABRA
+19:33:49 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+19:33:49 | L3 | PALABRA | Brad Pitt (banca Nro:9) pidio la palabra
+19:33:49 | L2 | INPUT | Brad Pitt (banca Nro:9) pidio la PALABRA
+19:34:19 | L3 | PALABRA | Se otorgo uso de la palabra a Denzel Washington (banca Nro:7)
+19:34:22 | L3 | PALABRA | Se otorgo uso de la palabra a Jennifer Lawrence (banca Nro:12)
+19:41:32 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+19:41:32 | L3 | PALABRA | Jennifer Lawrence (banca Nro:12) pidio la palabra
+19:41:32 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) pidio la PALABRA
+19:41:35 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev11]
+19:41:35 | L3 | PALABRA | Keanu Reeves (banca Nro:11) pidio la palabra
+19:41:35 | L2 | INPUT | Keanu Reeves (banca Nro:11) pidio la PALABRA
+19:41:47 | L3 | PALABRA | Se otorgo uso de la palabra a Cate Blanchett (banca Nro:10)
+19:47:47 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+19:47:47 | L3 | PALABRA | Leonardo DiCaprio (banca Nro:3) pidio la palabra
+19:47:47 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) pidio la PALABRA
+19:47:49 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+19:47:49 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+19:47:49 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+19:48:47 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+19:48:47 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+19:48:47 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+19:48:48 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+19:48:48 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) retiro el pedido la palabra
+19:48:48 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+19:48:49 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+19:48:49 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+19:48:49 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+19:48:50 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+19:48:50 | L3 | PALABRA | Leonardo DiCaprio (banca Nro:3) retiro el pedido la palabra
+19:48:50 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) pidio la PALABRA
+19:48:50 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+19:48:50 | L3 | PALABRA | Leonardo DiCaprio (banca Nro:3) pidio la palabra
+19:48:50 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) pidio la PALABRA
+19:48:52 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev04]
+19:48:52 | L3 | PALABRA | Natalie Portman (banca Nro:4) pidio la palabra
+19:48:52 | L2 | INPUT | Natalie Portman (banca Nro:4) pidio la PALABRA
+19:48:54 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+19:48:54 | L3 | PALABRA | Tom Hanks (banca Nro:5) pidio la palabra
+19:48:54 | L2 | INPUT | Tom Hanks (banca Nro:5) pidio la PALABRA
+19:48:55 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+19:48:55 | L3 | PALABRA | Meryl Streep (banca Nro:6) pidio la palabra
+19:48:55 | L2 | INPUT | Meryl Streep (banca Nro:6) pidio la PALABRA
+19:48:57 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+19:48:57 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+19:48:57 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+19:57:36 | L3 | PALABRA | Se otorgo uso de la palabra a Brad Pitt (banca Nro:9)
+19:57:37 | L3 | PALABRA | Se otorgo uso de la palabra a Jennifer Lawrence (banca Nro:12)
+19:57:38 | L3 | PALABRA | Se otorgo uso de la palabra a Keanu Reeves (banca Nro:11)
+19:57:39 | L3 | PALABRA | Se otorgo uso de la palabra a Robert Downey Jr (banca Nro:1)
+19:57:45 | L3 | PALABRA | Se otorgo uso de la palabra a Scarlett Johansson (banca Nro:2)
+20:05:09 | L3 | SESION | Apertura de sesion Nº93
+20:05:12 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+20:05:12 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+20:05:12 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+20:05:13 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+20:05:13 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+20:05:13 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+20:05:13 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+20:05:13 | L3 | PALABRA | Leonardo DiCaprio (banca Nro:3) pidio la palabra
+20:05:13 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) pidio la PALABRA
+20:05:15 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+20:05:15 | L3 | PALABRA | Tom Hanks (banca Nro:5) pidio la palabra
+20:05:15 | L2 | INPUT | Tom Hanks (banca Nro:5) pidio la PALABRA
+20:05:16 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+20:05:16 | L3 | PALABRA | Meryl Streep (banca Nro:6) pidio la palabra
+20:05:16 | L2 | INPUT | Meryl Streep (banca Nro:6) pidio la PALABRA
+20:05:16 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+20:05:16 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+20:05:16 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+20:05:17 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev08]
+20:05:17 | L3 | PALABRA | Emma Stone (banca Nro:8) pidio la palabra
+20:05:17 | L2 | INPUT | Emma Stone (banca Nro:8) pidio la PALABRA
+20:05:19 | L3 | PALABRA | Se otorgo uso de la palabra a Robert Downey Jr (banca Nro:1)
+20:05:52 | L3 | PALABRA | Se otorgo uso de la palabra a Scarlett Johansson (banca Nro:2)
+20:05:55 | L3 | PALABRA | Se otorgo uso de la palabra a Leonardo DiCaprio (banca Nro:3)
+20:05:56 | L3 | PALABRA | Se otorgo uso de la palabra a Tom Hanks (banca Nro:5)
+20:06:09 | L3 | PALABRA | Se otorgo uso de la palabra a Meryl Streep (banca Nro:6)
+20:12:50 | L3 | SESION | Apertura de sesion Nº93
+20:12:53 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+20:12:53 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+20:12:53 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+20:12:55 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+20:12:55 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+20:12:55 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+20:12:55 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+20:12:55 | L3 | PALABRA | Leonardo DiCaprio (banca Nro:3) pidio la palabra
+20:12:55 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) pidio la PALABRA
+20:12:57 | L3 | PALABRA | Se otorgo uso de la palabra a Robert Downey Jr (banca Nro:1)
+20:15:25 | L3 | SESION | Apertura de sesion Nº93
+20:16:06 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: Convenio de cooperación con Universidad, pasantías y prácticas profesionales
+20:16:14 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+20:16:14 | L3 | PALABRA | Tom Hanks (banca Nro:5) pidio la palabra
+20:16:14 | L2 | INPUT | Tom Hanks (banca Nro:5) pidio la PALABRA
+20:16:16 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+20:16:16 | L3 | PALABRA | Meryl Streep (banca Nro:6) pidio la palabra
+20:16:16 | L2 | INPUT | Meryl Streep (banca Nro:6) pidio la PALABRA
+20:16:18 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+20:16:18 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+20:16:18 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+20:16:18 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev08]
+20:16:18 | L3 | PALABRA | Emma Stone (banca Nro:8) pidio la palabra
+20:16:18 | L2 | INPUT | Emma Stone (banca Nro:8) pidio la PALABRA
+20:16:33 | L3 | PALABRA | Se otorgo uso de la palabra a Tom Hanks (banca Nro:5)
+20:16:34 | L3 | PALABRA | Se quito el uso de la palabra a Tom Hanks (banca Nro:5)
+20:17:38 | L3 | PALABRA | Se otorgo uso de la palabra a Meryl Streep (banca Nro:6)
+20:17:40 | L3 | PALABRA | Se quito el uso de la palabra a Meryl Streep (banca Nro:6)
+20:17:42 | L3 | PALABRA | Se otorgo uso de la palabra a Denzel Washington (banca Nro:7)
+20:17:44 | L3 | PALABRA | Se otorgo uso de la palabra a Emma Stone (banca Nro:8)
+20:17:51 | L3 | VOTACION | Cierre forzado - sin votar: [Robert Downey Jr (banca Nro:1), Scarlett Johansson (banca Nro:2), Leonardo DiCaprio (banca Nro:3), Natalie Portman (banca Nro:4), Tom Hanks (banca Nro:5), Meryl Streep (banca Nro:6), Denzel Washington (banca Nro:7), Emma Stone (banca Nro:8), Brad Pitt (banca Nro:9), Cate Blanchett (banca Nro:10), Keanu Reeves (banca Nro:11), Jennifer Lawrence (banca Nro:12)]
+20:18:12 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+20:18:12 | L3 | PALABRA | Tom Hanks (banca Nro:5) pidio la palabra
+20:18:12 | L2 | INPUT | Tom Hanks (banca Nro:5) pidio la PALABRA
+20:18:13 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+20:18:13 | L3 | PALABRA | Robert Downey Jr (banca Nro:1) pidio la palabra
+20:18:13 | L2 | INPUT | Robert Downey Jr (banca Nro:1) pidio la PALABRA
+20:18:14 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+20:18:14 | L3 | PALABRA | Scarlett Johansson (banca Nro:2) pidio la palabra
+20:18:14 | L2 | INPUT | Scarlett Johansson (banca Nro:2) pidio la PALABRA
+20:18:15 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+20:18:15 | L3 | PALABRA | Leonardo DiCaprio (banca Nro:3) pidio la palabra
+20:18:15 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) pidio la PALABRA
+20:18:15 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev04]
+20:18:15 | L3 | PALABRA | Natalie Portman (banca Nro:4) pidio la palabra
+20:18:15 | L2 | INPUT | Natalie Portman (banca Nro:4) pidio la PALABRA
+20:18:16 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+20:18:16 | L3 | PALABRA | Meryl Streep (banca Nro:6) pidio la palabra
+20:18:16 | L2 | INPUT | Meryl Streep (banca Nro:6) pidio la PALABRA
+20:18:17 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+20:18:17 | L3 | PALABRA | Denzel Washington (banca Nro:7) pidio la palabra
+20:18:17 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+20:18:18 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev08]
+20:18:18 | L3 | PALABRA | Emma Stone (banca Nro:8) pidio la palabra
+20:18:18 | L2 | INPUT | Emma Stone (banca Nro:8) pidio la PALABRA
+20:18:20 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+20:18:20 | L3 | PALABRA | Brad Pitt (banca Nro:9) pidio la palabra
+20:18:20 | L2 | INPUT | Brad Pitt (banca Nro:9) pidio la PALABRA
+20:18:21 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev10]
+20:18:21 | L3 | PALABRA | Cate Blanchett (banca Nro:10) pidio la palabra
+20:18:21 | L2 | INPUT | Cate Blanchett (banca Nro:10) pidio la PALABRA
+20:18:22 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev11]
+20:18:22 | L3 | PALABRA | Keanu Reeves (banca Nro:11) pidio la palabra
+20:18:22 | L2 | INPUT | Keanu Reeves (banca Nro:11) pidio la PALABRA
+20:18:23 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+20:18:23 | L3 | PALABRA | Jennifer Lawrence (banca Nro:12) pidio la palabra
+20:18:23 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) pidio la PALABRA
+20:18:24 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+20:18:24 | L3 | PALABRA | Jennifer Lawrence (banca Nro:12) retiro el pedido la palabra
+20:18:24 | L2 | INPUT | Jennifer Lawrence (banca Nro:12) pidio la PALABRA
+20:18:26 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev11]
+20:18:26 | L3 | PALABRA | Keanu Reeves (banca Nro:11) retiro el pedido la palabra
+20:18:26 | L2 | INPUT | Keanu Reeves (banca Nro:11) pidio la PALABRA
+20:18:27 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev10]
+20:18:27 | L3 | PALABRA | Cate Blanchett (banca Nro:10) retiro el pedido la palabra
+20:18:27 | L2 | INPUT | Cate Blanchett (banca Nro:10) pidio la PALABRA
+20:18:28 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+20:18:28 | L3 | PALABRA | Brad Pitt (banca Nro:9) retiro el pedido la palabra
+20:18:28 | L2 | INPUT | Brad Pitt (banca Nro:9) pidio la PALABRA
+20:18:29 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev08]
+20:18:29 | L3 | PALABRA | Emma Stone (banca Nro:8) retiro el pedido la palabra
+20:18:29 | L2 | INPUT | Emma Stone (banca Nro:8) pidio la PALABRA
+20:18:30 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+20:18:30 | L3 | PALABRA | Denzel Washington (banca Nro:7) retiro el pedido la palabra
+20:18:30 | L2 | INPUT | Denzel Washington (banca Nro:7) pidio la PALABRA
+20:18:30 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+20:18:30 | L3 | PALABRA | Meryl Streep (banca Nro:6) retiro el pedido la palabra
+20:18:30 | L2 | INPUT | Meryl Streep (banca Nro:6) pidio la PALABRA
+20:18:31 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+20:18:31 | L3 | PALABRA | Tom Hanks (banca Nro:5) retiro el pedido la palabra
+20:18:31 | L2 | INPUT | Tom Hanks (banca Nro:5) pidio la PALABRA
+20:50:39 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+20:50:46 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+20:50:46 | L3 | VOTO | Robert Downey Jr (banca Nro:1) voto: Positivo
+20:50:46 | L2 | INPUT | Robert Downey Jr (banca Nro:1) voto: Positivo
+20:50:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+20:50:58 | L3 | VOTO | Scarlett Johansson (banca Nro:2) voto: Positivo
+20:50:58 | L2 | INPUT | Scarlett Johansson (banca Nro:2) voto: Positivo
+20:51:03 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+20:51:03 | L3 | VOTO | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+20:51:03 | L2 | INPUT | Leonardo DiCaprio (banca Nro:3) voto: Positivo
+20:51:06 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev04]
+20:51:06 | L3 | VOTO | Natalie Portman (banca Nro:4) voto: Abstencion
+20:51:06 | L2 | INPUT | Natalie Portman (banca Nro:4) voto: Abstencion
+20:51:08 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev05]
+20:51:08 | L3 | VOTO | Tom Hanks (banca Nro:5) voto: Negativo
+20:51:08 | L2 | INPUT | Tom Hanks (banca Nro:5) voto: Negativo
+20:51:11 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+20:51:11 | L3 | PALABRA | Tom Hanks (banca Nro:5) pidio la palabra
+20:51:11 | L2 | INPUT | Tom Hanks (banca Nro:5) pidio la PALABRA
+20:51:14 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+20:51:14 | L3 | INPUT | Tom Hanks (banca Nro:5) se AUSENTO
+21:07:24 | L3 | SESION | Apertura de sesion Nº972
+21:07:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:07:38 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto sin votacion en curso
+21:07:50 | L3 | VOTACION | Apertura de votacion de tipo Sobre tabla Nº5 con tema: Tratamiento sobre tablas, reparación urgente de cañería de agua en Barrio Norte
+21:07:54 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:07:54 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:07:54 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+21:07:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+21:07:59 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+21:07:59 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+21:08:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+21:08:01 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+21:08:01 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+21:08:03 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+21:08:03 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+21:08:03 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+21:08:10 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+21:08:10 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+21:08:10 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+21:08:13 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+21:08:13 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+21:08:13 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+21:08:15 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+21:08:15 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+21:08:15 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Positivo
+21:08:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+21:08:17 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+21:08:17 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+21:08:20 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+21:08:20 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+21:08:20 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+21:08:22 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+21:08:22 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+21:08:22 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+21:08:24 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+21:08:24 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+21:08:24 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Positivo
+21:08:26 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev12]
+21:08:26 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Abstencion
+21:08:26 | L3 | VOTACION | Votacion Nº5 completada. Resultado: APROBADA - Votos: 12 de 12 - 11 Positivos, 0 Negativos y 1 Abstenciones
+21:08:26 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Abstencion
+21:08:51 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº7 con tema: Designación de autoridades de comisiones, período legislativo en curso
+21:08:54 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+21:08:54 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+21:08:54 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+21:08:55 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+21:08:55 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:08:55 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:09:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:09:00 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:09:00 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+21:09:01 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+21:09:01 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+21:09:01 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+21:09:02 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+21:09:02 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+21:09:02 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+21:09:03 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev04]
+21:09:03 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Abstencion
+21:09:03 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Abstencion
+21:09:05 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev07]
+21:09:05 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Abstencion
+21:09:05 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Abstencion
+21:09:07 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+21:09:07 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+21:09:07 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+21:09:10 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+21:09:10 | L3 | PALABRA | Dardo Petroli (banca Nro:9) pidio la palabra
+21:09:10 | L2 | INPUT | Dardo Petroli (banca Nro:9) pidio la PALABRA
+21:09:11 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+21:09:11 | L3 | PALABRA | Dardo Petroli (banca Nro:9) retiro el pedido la palabra
+21:09:11 | L2 | INPUT | Dardo Petroli (banca Nro:9) pidio la PALABRA
+21:09:12 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+21:09:12 | L3 | INPUT | Dardo Petroli (banca Nro:9) se AUSENTO
+21:09:15 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev10]
+21:09:15 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Abstencion
+21:09:15 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Abstencion
+21:09:18 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+21:09:18 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Abstencion
+21:09:18 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Abstencion
+21:09:22 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+21:09:22 | L3 | PALABRA | Nadia Garay (banca Nro:12) pidio la palabra
+21:09:22 | L2 | INPUT | Nadia Garay (banca Nro:12) pidio la PALABRA
+21:09:25 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+21:09:25 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+21:09:38 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº4 con tema: Moción para incorporar al orden del día, nota de vecinos por seguridad vial
+21:09:41 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+21:09:41 | L2 | INPUT | Dardo Petroli (banca Nro:9) interactua sin dar presente
+21:09:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+21:09:42 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+21:09:42 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+21:09:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+21:09:42 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+21:09:42 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Positivo
+21:09:43 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+21:09:43 | L2 | INPUT | Nadia Garay (banca Nro:12) interactua sin dar presente
+21:09:44 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+21:09:44 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+21:09:44 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+21:09:44 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+21:09:44 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+21:09:44 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Positivo
+21:09:45 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+21:09:45 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:09:45 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:09:45 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+21:09:45 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+21:09:45 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Abstencion
+21:09:47 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+21:09:47 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+21:09:47 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+21:09:47 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+21:09:47 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+21:09:47 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Negativo
+21:09:48 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+21:09:48 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+21:09:48 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+21:09:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:09:52 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:09:52 | L3 | VOTACION | Votacion Nº4 completada. Resultado: APROBADA - Votos: 10 de 12 - 6 Positivos, 2 Negativos y 2 Abstenciones
+21:09:52 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+21:13:34 | L3 | VOTACION | Apertura de votacion de tipo Ratificacion Nº8 con tema: Ratificación de decreto ad referendum, compra de insumos para servicios públicos
+21:13:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+21:13:38 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+21:13:38 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+21:13:43 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:13:43 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:13:43 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+21:13:47 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev02]
+21:13:47 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:13:47 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:14:32 | L3 | PALABRA | Se otorgo uso de la palabra a Nadia Garay (banca Nro:12)
+21:37:49 | L3 | VOTACION | Cierre forzado - sin votar: [Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Hernán Pereira (banca Nro:6), Gastón Cuis Taccari (banca Nro:4), Andrea Rueda (banca Nro:3)]
+21:38:08 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:38:08 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto sin votacion en curso
+21:38:19 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+21:38:19 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto sin votacion en curso
+21:38:24 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+21:38:24 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+21:38:29 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev04]
+21:38:29 | L3 | PALABRA | Gastón Cuis Taccari (banca Nro:4) pidio la palabra
+21:38:29 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) pidio la PALABRA
+21:38:33 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+21:38:33 | L3 | PALABRA | Andrea Garachico (banca Nro:5) pidio la palabra
+21:38:33 | L2 | INPUT | Andrea Garachico (banca Nro:5) pidio la PALABRA
+21:39:02 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: Convenio de cooperación con Universidad, pasantías y prácticas profesionales
+21:39:05 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+21:39:05 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+21:39:05 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+21:39:07 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+21:39:07 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+21:39:07 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+21:39:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:39:09 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:39:09 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+21:39:12 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev02]
+21:39:12 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:39:12 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:39:13 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+21:39:13 | L2 | INPUT | Andrea Rueda (banca Nro:3) interactua sin dar presente
+21:39:19 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+21:39:19 | L2 | INPUT | Andrea Rueda (banca Nro:3) interactua sin dar presente
+21:39:21 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+21:39:21 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+21:39:22 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+21:39:22 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+21:39:22 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Negativo
+21:39:39 | L3 | PALABRA | Se otorgo uso de la palabra a Gastón Cuis Taccari (banca Nro:4)
+21:39:40 | L3 | PALABRA | Se quito el uso de la palabra a Gastón Cuis Taccari (banca Nro:4)
+21:39:42 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Garachico (banca Nro:5)
+21:39:43 | L3 | PALABRA | Se quito el uso de la palabra a Andrea Garachico (banca Nro:5)
+21:39:45 | L3 | VOTACION | Cierre forzado - sin votar: [Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Gastón Cuis Taccari (banca Nro:4)]
+21:50:51 | L3 | SESION | Cierre de sesion Nº972
+21:51:01 | L3 | SESION | Apertura de sesion Nº369
+21:51:14 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+21:51:14 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+21:51:14 | L2 | INPUT | Lorena Moreno (banca Nro:1) pidio la PALABRA
+21:51:17 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+21:51:17 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+21:51:17 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) pidio la PALABRA
+21:51:20 | L3 | PALABRA | Se otorgo uso de la palabra a Lorena Moreno (banca Nro:1)
+21:51:29 | L3 | PALABRA | Se otorgo uso de la palabra a Samuel Alarcón Muñoz (banca Nro:2)
+21:51:33 | L3 | PALABRA | Se quito el uso de la palabra a Samuel Alarcón Muñoz (banca Nro:2)
+21:51:39 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+21:51:39 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+21:51:43 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+21:51:43 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+21:53:06 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+21:53:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:53:09 | L2 | INPUT | Lorena Moreno (banca Nro:1) interactua sin dar presente
+21:53:15 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+21:53:15 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+21:53:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:53:16 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:53:16 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+21:53:19 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev02]
+21:53:19 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:53:19 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:53:21 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+21:53:21 | L2 | INPUT | Andrea Rueda (banca Nro:3) interactua sin dar presente
+21:53:23 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+21:53:23 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+21:53:23 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+21:53:26 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+21:53:26 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+21:53:26 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Abstencion
+21:53:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+21:53:27 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+21:53:27 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+21:53:29 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+21:53:29 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+21:53:29 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Positivo
+21:53:31 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+21:53:31 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+21:53:31 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+21:53:34 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+21:53:34 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+21:53:34 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+21:53:37 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev10]
+21:53:37 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Abstencion
+21:53:37 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Abstencion
+21:53:40 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev11]
+21:53:40 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+21:53:40 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Negativo
+21:53:45 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+21:53:45 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+21:53:45 | L3 | VOTACION | Votacion Nº3 completada. Resultado: APROBADA - Votos: 11 de 12 - 6 Positivos, 2 Negativos y 3 Abstenciones
+21:53:45 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Positivo
+21:54:14 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: Convenio de cooperación con Universidad, pasantías y prácticas profesionales
+21:54:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:54:17 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:54:17 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+21:54:18 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+21:54:18 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+21:54:18 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+21:54:19 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+21:54:19 | L2 | INPUT | Andrea Rueda (banca Nro:3) interactua sin dar presente
+21:54:20 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+21:54:20 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+21:54:20 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+21:54:21 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev05]
+21:54:21 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Negativo
+21:54:21 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Negativo
+21:54:21 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+21:54:21 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:54:21 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:54:22 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+21:54:22 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+21:54:22 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Negativo
+21:54:23 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+21:54:23 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+21:54:23 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+21:54:25 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev09]
+21:54:25 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Abstencion
+21:54:25 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Abstencion
+21:54:26 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+21:54:26 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+21:54:26 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+21:54:27 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev11]
+21:54:27 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+21:54:27 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Negativo
+21:54:28 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+21:54:28 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+21:54:28 | L3 | VOTACION | Votacion Nº6 completada. Resultado: APROBADA - Votos: 11 de 12 - 6 Positivos, 3 Negativos y 2 Abstenciones
+21:54:28 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Positivo
+21:54:48 | L3 | VOTACION | Apertura de votacion de tipo Ratificacion Nº8 con tema: Ratificación de decreto ad referendum, compra de insumos para servicios públicos
+21:54:53 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+21:54:53 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+21:54:53 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+21:54:56 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+21:54:56 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+21:54:56 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Negativo
+21:54:57 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+21:54:57 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Abstencion
+21:54:57 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Abstencion
+21:55:00 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev10]
+21:55:00 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Abstencion
+21:55:00 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Abstencion
+21:55:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+21:55:01 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+21:55:01 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+21:55:03 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+21:55:03 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+21:55:03 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+21:55:05 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+21:55:05 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:55:05 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Abstencion
+21:55:06 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+21:55:06 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+21:55:06 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Negativo
+21:55:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+21:55:09 | L2 | INPUT | Dardo Petroli (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+21:55:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+21:55:16 | L2 | INPUT | Roxana Barrera (banca Nro:10) ERROR en registro voto: concejal_ya_voto
+21:55:24 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+21:55:24 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+21:55:24 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+21:55:30 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+21:55:30 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) ERROR en registro voto: concejal_ya_voto
+21:55:35 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+21:55:35 | L2 | INPUT | Andrea Rueda (banca Nro:3) interactua sin dar presente
+21:55:38 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev02]
+21:55:38 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:55:38 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+21:55:39 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+21:55:39 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+21:55:39 | L3 | VOTACION | Votacion Nº8 completada. Resultado: RECHAZADA - Votos: 11 de 12 - 4 Positivos, 3 Negativos y 4 Abstenciones
+21:55:39 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+22:17:37 | L3 | SESION | Cierre de sesion Nº369
+22:17:43 | L3 | SESION | Apertura de sesion Nº5
+22:17:47 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+22:17:47 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+22:17:50 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+22:17:50 | L3 | INPUT | Hernán Pereira (banca Nro:6) se AUSENTO
+22:17:52 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+22:17:52 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+22:17:56 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+22:17:56 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+22:17:58 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+22:17:58 | L3 | INPUT | Hernán Pereira (banca Nro:6) se PRESENTO
+22:18:01 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+22:18:01 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+22:18:04 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+22:18:04 | L3 | PALABRA | Hernán Pereira (banca Nro:6) pidio la palabra
+22:18:04 | L2 | INPUT | Hernán Pereira (banca Nro:6) pidio la PALABRA
+22:18:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+22:18:05 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+22:18:05 | L2 | INPUT | Federico Garitano (banca Nro:7) pidio la PALABRA
+22:18:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+22:18:06 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+22:18:06 | L2 | INPUT | Andrea Rueda (banca Nro:3) pidio la PALABRA
+22:18:08 | L3 | PALABRA | Se otorgo uso de la palabra a Hernán Pereira (banca Nro:6)
+22:18:12 | L3 | PALABRA | Se otorgo uso de la palabra a Federico Garitano (banca Nro:7)
+22:18:17 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Rueda (banca Nro:3)
+22:18:20 | L2 | PALABRA | Fallo dar uso de la palabra, porque no hay solicitudes en cola
+22:22:15 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: Convenio de cooperación con Universidad, pasantías y prácticas profesionales
+22:23:23 | L3 | SESION | Apertura de sesion Nº683
+22:23:27 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº7 con tema: Designación de autoridades de comisiones, período legislativo en curso
+22:23:32 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+22:23:32 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+22:23:33 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+22:23:33 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+22:23:34 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+22:23:34 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+22:23:34 | L2 | INPUT | Lorena Moreno (banca Nro:1) pidio la PALABRA
+22:23:35 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+22:23:35 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+22:23:35 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) pidio la PALABRA
+22:23:36 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+22:23:36 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+22:23:36 | L2 | INPUT | Andrea Rueda (banca Nro:3) pidio la PALABRA
+22:23:38 | L3 | PALABRA | Se otorgo uso de la palabra a Lorena Moreno (banca Nro:1)
+22:23:39 | L3 | PALABRA | Se otorgo uso de la palabra a Samuel Alarcón Muñoz (banca Nro:2)
+22:23:42 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Rueda (banca Nro:3)
+22:23:44 | L2 | PALABRA | Fallo dar uso de la palabra, porque no hay solicitudes en cola
+22:23:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+22:23:58 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+22:23:58 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+22:23:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+22:23:59 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+22:23:59 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+22:24:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+22:24:01 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+22:24:01 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+22:24:03 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+22:24:03 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:24:03 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:24:05 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+22:24:05 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+22:24:05 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Abstencion
+22:24:06 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev06]
+22:24:06 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Negativo
+22:24:06 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Negativo
+22:24:07 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+22:24:07 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+22:24:07 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Positivo
+22:24:08 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+22:24:08 | L2 | INPUT | Federico Garitano (banca Nro:7) ERROR en registro voto: concejal_ya_voto
+22:24:10 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev08]
+22:24:10 | L3 | VOTO | Lucila González (banca Nro:8) voto: Abstencion
+22:24:10 | L2 | INPUT | Lucila González (banca Nro:8) voto: Abstencion
+22:24:12 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+22:24:12 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+22:24:12 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+22:24:14 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev10]
+22:24:14 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Abstencion
+22:24:14 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Abstencion
+22:24:16 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev11]
+22:24:16 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Abstencion
+22:24:16 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Abstencion
+22:24:18 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+22:24:18 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+22:24:18 | L3 | VOTACION | Votacion Nº7 completada. Resultado: APROBADA - Votos: 12 de 12 - 7 Positivos, 1 Negativos y 4 Abstenciones
+22:24:18 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Positivo
+22:24:41 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº2 con tema: Declaración de interés municipal, jornada de salud comunitaria en barrios
+22:24:50 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+22:24:50 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+22:24:50 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+22:24:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+22:24:51 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+22:24:51 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+22:24:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+22:24:51 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+22:24:51 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Positivo
+22:24:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+22:24:52 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+22:24:52 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Positivo
+22:24:53 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+22:24:53 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+22:24:53 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+22:24:54 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+22:24:54 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+22:24:54 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+22:24:54 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+22:24:54 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+22:24:54 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Positivo
+22:24:55 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+22:24:55 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+22:24:55 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+22:24:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+22:24:57 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:24:57 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:24:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+22:24:58 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+22:24:58 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+22:24:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+22:24:58 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+22:24:58 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+22:25:00 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+22:25:00 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Negativo
+22:25:00 | L3 | VOTACION | Votacion Nº2 completada. Resultado: APROBADA - Votos: 12 de 12 - 11 Positivos, 1 Negativos y 0 Abstenciones
+22:25:00 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Negativo
+22:25:01 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+22:25:12 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+22:25:12 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+22:25:12 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+22:25:12 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+22:25:12 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+22:25:12 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+22:25:14 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+22:25:14 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+22:25:14 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+22:25:15 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+22:25:15 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:25:15 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:25:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+22:25:16 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+22:25:16 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+22:25:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+22:25:17 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+22:25:17 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+22:25:19 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+22:25:19 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+22:25:19 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Negativo
+22:25:19 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+22:25:19 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+22:25:19 | L2 | INPUT | Lucila González (banca Nro:8) voto: Negativo
+22:25:21 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev09]
+22:25:21 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Negativo
+22:25:21 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Negativo
+22:25:22 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev10]
+22:25:22 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Negativo
+22:25:22 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Negativo
+22:25:23 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev11]
+22:25:23 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+22:25:23 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Negativo
+22:25:24 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+22:25:24 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+22:25:24 | L3 | VOTACION | Votacion Nº3 completada. Resultado: EMPATADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+22:25:24 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Negativo
+22:25:31 | L3 | VOTACION | Votacion Nº3 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+22:26:02 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+22:26:02 | L3 | INPUT | Andrea Garachico (banca Nro:5) se AUSENTO
+22:26:03 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+22:26:03 | L3 | INPUT | Andrea Garachico (banca Nro:5) se PRESENTO
+22:26:04 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+22:26:04 | L3 | PALABRA | Hernán Pereira (banca Nro:6) pidio la palabra
+22:26:04 | L2 | INPUT | Hernán Pereira (banca Nro:6) pidio la PALABRA
+22:26:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+22:26:05 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+22:26:05 | L2 | INPUT | Federico Garitano (banca Nro:7) pidio la PALABRA
+22:26:07 | L3 | PALABRA | Se otorgo uso de la palabra a Hernán Pereira (banca Nro:6)
+22:27:11 | L3 | PALABRA | Se otorgo uso de la palabra a Federico Garitano (banca Nro:7)
+22:27:17 | L3 | PALABRA | Se quito el uso de la palabra a Federico Garitano (banca Nro:7)
+22:27:28 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+22:27:28 | L3 | PALABRA | Andrea Garachico (banca Nro:5) pidio la palabra
+22:27:28 | L2 | INPUT | Andrea Garachico (banca Nro:5) pidio la PALABRA
+22:27:30 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+22:27:30 | L3 | PALABRA | Hernán Pereira (banca Nro:6) pidio la palabra
+22:27:30 | L2 | INPUT | Hernán Pereira (banca Nro:6) pidio la PALABRA
+22:27:31 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+22:27:31 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+22:27:31 | L2 | INPUT | Federico Garitano (banca Nro:7) pidio la PALABRA
+22:27:33 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Garachico (banca Nro:5)
+22:27:43 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev05]
+22:27:43 | L3 | PALABRA | Andrea Garachico (banca Nro:5) pidio la palabra
+22:27:43 | L2 | INPUT | Andrea Garachico (banca Nro:5) pidio la PALABRA
+22:35:01 | L3 | SESION | Cierre de sesion Nº683
+22:35:07 | L3 | SESION | Apertura de sesion Nº369
+22:35:31 | L3 | VOTACION | Apertura de votacion de tipo Ratificacion Nº8 con tema: Ratificación de decreto ad referendum, compra de insumos para servicios públicos
+22:35:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+22:35:35 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+22:35:35 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+22:35:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+22:35:35 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+22:35:35 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+22:35:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+22:35:37 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+22:35:37 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Positivo
+22:35:39 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+22:35:39 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+22:35:39 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Positivo
+22:35:48 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+22:35:48 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+22:35:48 | L2 | INPUT | Lucila González (banca Nro:8) voto: Negativo
+22:35:52 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev07]
+22:35:52 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+22:35:52 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Negativo
+22:35:57 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+22:35:57 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+22:35:57 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+22:35:59 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+22:35:59 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+22:35:59 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+22:36:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+22:36:01 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:36:01 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+22:36:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+22:36:01 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+22:36:01 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+22:36:05 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+22:36:05 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+22:36:05 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+22:36:09 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev01]
+22:36:09 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Negativo
+22:36:09 | L3 | VOTACION | Votacion Nº8 completada. Resultado: APROBADA - Votos: 12 de 12 - 8 Positivos, 4 Negativos y 0 Abstenciones
+22:36:09 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Negativo
+22:36:33 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+22:36:33 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+22:36:44 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+22:36:44 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+22:36:51 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+22:36:51 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+22:36:52 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+22:36:52 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO

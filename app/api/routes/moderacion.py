@@ -56,7 +56,12 @@ def otorgar_uso_palabra():
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-    return sesion_service.sesion_actual.en_uso_de_palabra.to_dict()
+    if sesion_service.sesion_actual.en_uso_de_palabra is not None:
+        return sesion_service.sesion_actual.en_uso_de_palabra.to_dict()
+    else:
+        return {
+        "ven_uso_palabra": None
+    }
 
 
 @router.post("/quitar_uso_palabra")
@@ -69,7 +74,7 @@ def quitar_uso_palabra():
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-    return sesion_service.sesion_actual.en_uso_de_palabra.to_dict()
+    return [d.to_dict() for d in sesion_service.sesion_actual.pedidos_uso_de_palabra]
 
 
 @router.post("/abrir_votacion")

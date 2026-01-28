@@ -109,7 +109,7 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
         else:
             logging.log_internal("INPUT",3,concejal.print_corto() + " se AUSENTO")
 
-        if votacion_service.votacion_actual is not None:
+        if (votacion_service.votacion_actual is not None) and (votacion_service.votacion_actual.estado is EstadosVotacion.EN_CURSO):
             votacion_service.recalcular_cierre_por_cambio_en_presencia()
         return {
                 "aceptada": True,
@@ -122,17 +122,27 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
 
     # 5) Tecla 9: pedido de palabra
     if tecla == "9":
+        logging.log_internal("INPUT",2,concejal.print_corto() + "Oprimio tecla de PALABRA")
         # Concejal debe estar presente
         if concejal.presente:
-            sesion_service.encolar_uso_palabra(concejal) #encoola y desencola
-            logging.log_internal("INPUT",2,concejal.print_corto() + " pidio la PALABRA")
-            return{
-                "aceptada": True,
-                "motivo": "pedido_palabra",
-                "dispositivo": dispositivo,
-                "tecla": tecla,
-                "concejal": concejal.to_dict(),
-            }
+            if concejal is sesion_service.sesion_actual.en_uso_de_palabra:
+                sesion_service.quitar_uso_palabra()
+                return{
+                        "aceptada": True,
+                        "motivo": "fin_uso_palabra",
+                        "dispositivo": dispositivo,
+                        "tecla": tecla,
+                        "concejal": concejal.to_dict(),
+                        }
+            else:    
+                sesion_service.encolar_uso_palabra(concejal) #encoola y desencola
+                return{
+                    "aceptada": True,
+                    "motivo": "tecla_uso_palabra",
+                    "dispositivo": dispositivo,
+                    "tecla": tecla,
+                    "concejal": concejal.to_dict(),
+                    }
         else:
             logging.log_internal("INPUT",2,concejal.print_corto() + " interactua sin dar presente")
             return {

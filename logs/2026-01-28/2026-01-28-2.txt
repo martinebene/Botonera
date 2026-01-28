@@ -1,0 +1,556 @@
+09:20:15 | L3 | SESION | Apertura de sesion Nº93
+09:20:34 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+09:20:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+09:20:38 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+09:20:38 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+09:20:39 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+09:20:39 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+09:20:39 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+09:20:41 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+09:20:41 | L2 | INPUT | Andrea Rueda (banca Nro:3)Oprimio tecla de PALABRA
+09:20:41 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+09:20:44 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev04]
+09:20:44 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4)Oprimio tecla de PALABRA
+09:20:44 | L3 | PALABRA | Gastón Cuis Taccari (banca Nro:4) pidio la palabra
+09:20:45 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+09:20:45 | L2 | INPUT | Federico Garitano (banca Nro:7)Oprimio tecla de PALABRA
+09:20:45 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+09:20:46 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+09:20:46 | L2 | INPUT | Hernán Pereira (banca Nro:6)Oprimio tecla de PALABRA
+09:20:46 | L3 | PALABRA | Hernán Pereira (banca Nro:6) pidio la palabra
+09:20:51 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Rueda (banca Nro:3)
+09:20:58 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+09:20:58 | L2 | INPUT | Andrea Rueda (banca Nro:3)Oprimio tecla de PALABRA
+09:20:58 | L3 | PALABRA | Se quito el uso de la palabra a Andrea Rueda (banca Nro:3)
+09:21:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+09:21:05 | L2 | INPUT | Andrea Rueda (banca Nro:3)Oprimio tecla de PALABRA
+09:21:05 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+09:21:08 | L3 | PALABRA | Se otorgo uso de la palabra a Gastón Cuis Taccari (banca Nro:4)
+09:21:11 | L3 | PALABRA | Se otorgo uso de la palabra a Federico Garitano (banca Nro:7)
+09:21:14 | L3 | PALABRA | Se otorgo uso de la palabra a Hernán Pereira (banca Nro:6)
+09:21:18 | L3 | PALABRA | Se quito el uso de la palabra a Hernán Pereira (banca Nro:6)
+09:21:21 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Rueda (banca Nro:3)
+09:21:24 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+09:21:24 | L2 | INPUT | Andrea Rueda (banca Nro:3)Oprimio tecla de PALABRA
+09:21:24 | L3 | PALABRA | Se quito el uso de la palabra a Andrea Rueda (banca Nro:3)
+09:21:39 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+09:21:39 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) ERROR en registro voto: concejal_ya_voto
+09:21:44 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+09:21:44 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) ERROR en registro voto: concejal_ya_voto
+09:21:45 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+09:21:45 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) ERROR en registro voto: concejal_ya_voto
+09:21:46 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev03]
+09:21:46 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+09:21:46 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Negativo
+09:21:50 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev04]
+09:21:50 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+09:21:50 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+09:21:52 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+09:21:52 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+09:21:52 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Abstencion
+09:21:54 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev06]
+09:21:54 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+09:21:54 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Abstencion
+09:21:55 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+09:21:55 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+09:21:55 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Positivo
+09:21:55 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+09:21:55 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+09:21:55 | L2 | INPUT | Lucila González (banca Nro:8) voto: Negativo
+09:21:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+09:21:58 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+09:21:58 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+09:21:58 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+09:21:58 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+09:21:58 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+09:22:00 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+09:22:00 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+09:22:00 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Positivo
+09:22:01 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+09:22:01 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+09:22:01 | L3 | VOTACION | Votacion Nº3 completada. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 4 Negativos y 2 Abstenciones
+09:22:01 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Negativo
+09:22:23 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:23 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+09:22:27 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:27 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+09:22:28 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:28 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+09:22:31 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:31 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+09:22:32 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:32 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+09:22:33 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:33 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+09:22:35 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:35 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+09:22:36 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+09:22:36 | L3 | INPUT | Walter Herrero (banca Nro:11) se AUSENTO
+09:22:38 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+09:22:38 | L3 | INPUT | Walter Herrero (banca Nro:11) se PRESENTO
+09:22:40 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+09:22:40 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+13:11:22 | L3 | SESION | Apertura de sesion Nº93
+13:12:02 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+13:12:02 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+13:12:05 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+13:12:05 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+13:12:08 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+13:12:08 | L2 | INPUT | Andrea Rueda (banca Nro:3)Oprimio tecla de PALABRA
+13:12:08 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+13:14:02 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+13:14:02 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+13:14:02 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+13:14:02 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+13:14:04 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:14:04 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+13:14:04 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:14:05 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+13:14:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+13:14:06 | L2 | INPUT | Hernán Pereira (banca Nro:6)Oprimio tecla de PALABRA
+13:14:06 | L3 | PALABRA | Hernán Pereira (banca Nro:6) pidio la palabra
+13:14:08 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev09]
+13:14:08 | L2 | INPUT | Dardo Petroli (banca Nro:9)Oprimio tecla de PALABRA
+13:14:08 | L3 | PALABRA | Dardo Petroli (banca Nro:9) pidio la palabra
+13:14:09 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Rueda (banca Nro:3)
+13:14:11 | L3 | PALABRA | Se otorgo uso de la palabra a Hernán Pereira (banca Nro:6)
+13:14:17 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev06]
+13:14:17 | L2 | INPUT | Hernán Pereira (banca Nro:6)Oprimio tecla de PALABRA
+13:14:17 | L3 | PALABRA | Se quito el uso de la palabra a Hernán Pereira (banca Nro:6)
+13:17:42 | L3 | SESION | Apertura de sesion Nº598
+13:17:49 | L2 | PALABRA | Nadie a quien quitarle la palabra
+13:17:53 | L2 | PALABRA | Nadie a quien quitarle la palabra
+13:17:54 | L2 | PALABRA | Fallo dar uso de la palabra, porque no hay solicitudes en cola
+13:17:58 | L2 | PALABRA | Fallo dar uso de la palabra, porque no hay solicitudes en cola
+13:18:30 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº2 con tema: Declaración de interés municipal, jornada de salud comunitaria en barrios
+13:18:40 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev01]
+13:18:40 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Abstencion
+13:18:40 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Abstencion
+13:18:41 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+13:18:41 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+13:18:41 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+13:18:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+13:18:42 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+13:18:42 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+13:18:44 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev010]
+13:18:44 | L2 | INPUT | Pulsacion ignorada: No hay concejal asociado
+13:18:52 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+13:18:52 | L2 | INPUT | Nadia Garay (banca Nro:12)Oprimio tecla de PALABRA
+13:18:52 | L3 | PALABRA | Nadia Garay (banca Nro:12) pidio la palabra
+13:18:54 | L3 | PALABRA | Se otorgo uso de la palabra a Nadia Garay (banca Nro:12)
+13:18:56 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+13:18:56 | L2 | INPUT | Nadia Garay (banca Nro:12)Oprimio tecla de PALABRA
+13:18:56 | L3 | PALABRA | Se quito el uso de la palabra a Nadia Garay (banca Nro:12)
+13:21:27 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Hernán Pereira (banca Nro:6), Andrea Garachico (banca Nro:5), Gastón Cuis Taccari (banca Nro:4), Andrea Rueda (banca Nro:3)]
+13:21:36 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+13:21:36 | L2 | INPUT | Federico Garitano (banca Nro:7)Oprimio tecla de PALABRA
+13:21:36 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+13:21:37 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev07]
+13:21:37 | L2 | INPUT | Federico Garitano (banca Nro:7)Oprimio tecla de PALABRA
+13:21:37 | L3 | PALABRA | Federico Garitano (banca Nro:7) retiro el pedido la palabra
+13:21:39 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:21:39 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+13:21:42 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+13:21:42 | L3 | INPUT | Hernán Pereira (banca Nro:6) se AUSENTO
+13:21:45 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+13:21:45 | L3 | INPUT | Hernán Pereira (banca Nro:6) se PRESENTO
+13:21:47 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:21:47 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+13:33:54 | L2 | VOTACION | Fallo apertura de votacion al no haber sesion activa
+13:33:58 | L3 | SESION | Apertura de sesion Nº598
+13:34:00 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+13:42:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+13:42:27 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+13:42:27 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+13:42:36 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev07]
+13:42:36 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Abstencion
+13:42:36 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Abstencion
+13:42:38 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev08]
+13:42:38 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+13:42:38 | L2 | INPUT | Lucila González (banca Nro:8) voto: Negativo
+13:42:39 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+13:42:39 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Abstencion
+13:42:39 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Abstencion
+13:42:42 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev12]
+13:42:42 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+13:42:42 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Negativo
+13:42:44 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+13:42:44 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+13:42:46 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+13:42:46 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+13:42:47 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+13:42:47 | L3 | INPUT | Walter Herrero (banca Nro:11) se AUSENTO
+13:42:49 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev010]
+13:42:49 | L2 | INPUT | Pulsacion ignorada: No hay concejal asociado
+13:42:50 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+13:42:50 | L3 | INPUT | Dardo Petroli (banca Nro:9) se AUSENTO
+13:42:52 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+13:42:52 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+13:42:53 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:42:53 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+13:42:54 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:42:54 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+13:42:55 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+13:42:55 | L3 | INPUT | Hernán Pereira (banca Nro:6) se AUSENTO
+13:42:57 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+13:42:57 | L3 | INPUT | Andrea Garachico (banca Nro:5) se AUSENTO
+13:42:58 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+13:42:58 | L3 | INPUT | Andrea Garachico (banca Nro:5) se PRESENTO
+13:43:00 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev04]
+13:43:00 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+13:43:03 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+13:43:03 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+13:43:04 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+13:43:04 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+13:43:06 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+13:43:06 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+13:43:16 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:43:16 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+13:43:16 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+13:43:28 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+13:43:28 | L2 | INPUT | Nadia Garay (banca Nro:12) ERROR en registro voto: concejal_ya_voto
+13:43:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+13:43:35 | L2 | INPUT | Nadia Garay (banca Nro:12) ERROR en registro voto: concejal_ya_voto
+13:43:44 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev010]
+13:43:44 | L2 | INPUT | Pulsacion ignorada: No hay concejal asociado
+13:43:53 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+13:43:53 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+13:43:53 | L3 | VOTACION | Votacion Nº3 completada. Resultado: APROBADA - Votos: 7 de 12 - 3 Positivos, 2 Negativos y 2 Abstenciones
+13:43:53 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+13:44:12 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº2 con tema: Declaración de interés municipal, jornada de salud comunitaria en barrios
+13:44:17 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+13:44:17 | L3 | INPUT | Walter Herrero (banca Nro:11) se PRESENTO
+13:44:19 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+13:44:19 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+13:44:20 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+13:44:20 | L3 | INPUT | Roxana Barrera (banca Nro:10) se PRESENTO
+13:44:22 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+13:44:22 | L3 | INPUT | Dardo Petroli (banca Nro:9) se PRESENTO
+13:44:23 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+13:44:23 | L3 | INPUT | Andrea Garachico (banca Nro:5) se AUSENTO
+13:44:24 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev05]
+13:44:24 | L3 | INPUT | Andrea Garachico (banca Nro:5) se PRESENTO
+13:44:25 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+13:44:25 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+13:44:27 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev04]
+13:44:27 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+13:44:29 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+13:44:29 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+13:44:30 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+13:44:30 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+13:44:31 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+13:44:31 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+13:44:33 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+13:44:33 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+13:44:34 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+13:44:34 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+13:44:36 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:44:36 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+13:44:36 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:44:36 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+13:44:37 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+13:44:37 | L3 | INPUT | Hernán Pereira (banca Nro:6) se PRESENTO
+13:44:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:44:42 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+13:44:42 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+13:44:44 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev03]
+13:44:44 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Abstencion
+13:44:44 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Abstencion
+13:44:46 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+13:44:46 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+13:44:46 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+13:44:48 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+13:44:48 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+13:44:48 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+13:44:50 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+13:44:50 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+13:44:50 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+13:44:52 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:44:52 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+13:44:55 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+13:44:55 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+13:44:57 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+13:44:57 | L3 | INPUT | Dardo Petroli (banca Nro:9) se AUSENTO
+13:44:58 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+13:44:58 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+13:44:58 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+13:44:58 | L3 | INPUT | Walter Herrero (banca Nro:11) se AUSENTO
+13:45:00 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+13:45:00 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+13:45:08 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+13:45:08 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2)Oprimio tecla de PALABRA
+13:45:08 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+13:45:08 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+13:45:08 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2)Oprimio tecla de PALABRA
+13:45:08 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) retiro el pedido la palabra
+13:45:10 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+13:45:10 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+13:45:38 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+13:45:38 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+13:45:41 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev04]
+13:45:41 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+13:45:41 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev04]
+13:45:41 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+13:45:43 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+13:45:43 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+13:45:49 | L2 | VOTACION | Falta quorum para abruir votacion
+13:46:08 | L2 | VOTACION | Falta quorum para abruir votacion
+13:49:33 | L2 | VOTACION | Falta quorum para abruir votacion
+13:49:40 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+13:49:40 | L2 | INPUT | Nadia Garay (banca Nro:12)Oprimio tecla de PALABRA
+13:49:40 | L2 | INPUT | Nadia Garay (banca Nro:12) interactua sin dar presente
+13:49:43 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+13:49:43 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+13:49:58 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº4 con tema: Moción para incorporar al orden del día, nota de vecinos por seguridad vial
+13:50:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+13:50:17 | L2 | INPUT | Federico Garitano (banca Nro:7) interactua sin dar presente
+13:50:19 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+13:50:19 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+13:50:19 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+13:50:21 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+13:50:21 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+13:50:21 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+13:50:22 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+13:50:22 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+13:50:22 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+13:50:24 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+13:50:24 | L2 | INPUT | Andrea Rueda (banca Nro:3) interactua sin dar presente
+13:50:26 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+13:50:26 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+13:50:26 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+13:50:28 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+13:50:28 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+13:50:28 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+13:50:37 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+13:50:37 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+13:58:17 | L3 | SESION | Apertura de sesion Nº93
+13:58:22 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº2 con tema: Declaración de interés municipal, jornada de salud comunitaria en barrios
+13:58:26 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+13:58:26 | L2 | INPUT | Nadia Garay (banca Nro:12)Oprimio tecla de PALABRA
+13:58:26 | L3 | PALABRA | Nadia Garay (banca Nro:12) pidio la palabra
+13:58:28 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+13:58:28 | L2 | INPUT | Nadia Garay (banca Nro:12)Oprimio tecla de PALABRA
+13:58:28 | L3 | PALABRA | Nadia Garay (banca Nro:12) retiro el pedido la palabra
+13:58:28 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+13:58:28 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+13:58:29 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+13:58:29 | L3 | INPUT | Walter Herrero (banca Nro:11) se AUSENTO
+13:58:30 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+13:58:30 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+13:58:30 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+13:58:30 | L3 | INPUT | Dardo Petroli (banca Nro:9) se AUSENTO
+13:58:31 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+13:58:31 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+13:58:33 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+13:58:33 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+13:58:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+13:58:35 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+13:58:35 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+13:58:36 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+13:58:36 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+13:58:36 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+13:58:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+13:58:37 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+13:58:37 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+13:58:37 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+13:58:37 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+13:58:37 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+13:58:38 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+13:58:38 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+13:58:38 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+13:58:45 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+13:58:45 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+13:58:47 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+13:58:47 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+13:58:47 | L2 | INPUT | Lorena Moreno (banca Nro:1) interactua sin dar presente
+14:00:06 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:00:06 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+14:00:06 | L2 | INPUT | Lorena Moreno (banca Nro:1) interactua sin dar presente
+14:00:10 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+14:00:10 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+14:00:11 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+14:00:11 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+14:00:16 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:00:16 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+14:00:17 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:00:17 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+14:00:23 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+14:00:23 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+14:00:29 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº4 con tema: Moción para incorporar al orden del día, nota de vecinos por seguridad vial
+14:00:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:00:35 | L2 | INPUT | Dardo Petroli (banca Nro:9) interactua sin dar presente
+14:00:44 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+14:00:44 | L2 | INPUT | Federico Garitano (banca Nro:7) interactua sin dar presente
+14:00:45 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+14:00:45 | L2 | INPUT | Lucila González (banca Nro:8) interactua sin dar presente
+14:00:47 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:00:47 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+14:00:47 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+14:00:49 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:00:49 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+14:00:49 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+14:00:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:00:51 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:00:51 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:00:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:00:51 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+14:00:51 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+14:00:53 | L2 | INPUT | Pulsacion registrada: Tecla [3] del dispositivo [dev02]
+14:00:53 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+14:00:53 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+14:00:58 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:00:58 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+14:00:58 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+14:00:59 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:00:59 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+14:00:59 | L3 | PALABRA | Lorena Moreno (banca Nro:1) retiro el pedido la palabra
+14:01:37 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+14:01:37 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+14:06:55 | L2 | VOTACION | Falta quorum para abruir votacion
+14:07:03 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:07:03 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+14:07:03 | L2 | INPUT | Lorena Moreno (banca Nro:1) interactua sin dar presente
+14:07:04 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+14:07:04 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+14:07:04 | L2 | INPUT | Lorena Moreno (banca Nro:1) interactua sin dar presente
+14:07:06 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+14:07:06 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+14:10:54 | L3 | SESION | Apertura de sesion Nº93
+14:11:00 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: Convenio de cooperación con Universidad, pasantías y prácticas profesionales
+14:11:10 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+14:11:10 | L2 | INPUT | Nadia Garay (banca Nro:12)Oprimio tecla de PALABRA
+14:11:10 | L3 | PALABRA | Nadia Garay (banca Nro:12) pidio la palabra
+14:11:11 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev12]
+14:11:11 | L2 | INPUT | Nadia Garay (banca Nro:12)Oprimio tecla de PALABRA
+14:11:11 | L3 | PALABRA | Nadia Garay (banca Nro:12) retiro el pedido la palabra
+14:11:12 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:11:12 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+14:11:13 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+14:11:13 | L3 | INPUT | Walter Herrero (banca Nro:11) se AUSENTO
+14:11:13 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+14:11:13 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+14:11:14 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+14:11:14 | L3 | INPUT | Dardo Petroli (banca Nro:9) se AUSENTO
+14:11:15 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev08]
+14:11:15 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+14:11:18 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev07]
+14:11:18 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+14:11:21 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev06]
+14:11:21 | L3 | INPUT | Hernán Pereira (banca Nro:6) se AUSENTO
+14:11:25 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:11:25 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+14:11:25 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+14:11:25 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:11:25 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:11:25 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:11:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:11:27 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+14:11:27 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+14:11:27 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:11:27 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+14:11:27 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+14:11:28 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:11:28 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+14:11:28 | L3 | VOTACION | Votacion Nº6 completada. Resultado: INCONCLUSA - Votos: 5 de 12 - 5 Positivos, 0 Negativos y 0 Abstenciones
+14:11:28 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+14:11:37 | L2 | VOTACION | Falta quorum para abruir votacion
+14:11:46 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:11:46 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+14:11:58 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº22 con tema: Moción para sesión especial, conflicto de transporte y medidas urgentes
+14:12:05 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:12:05 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+14:12:05 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+14:12:08 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:12:08 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+14:12:08 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+14:12:09 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:12:09 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+14:12:09 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+14:12:11 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:12:11 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:12:11 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:12:12 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev05]
+14:12:12 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+14:12:12 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Positivo
+14:12:15 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+14:12:15 | L3 | INPUT | Dardo Petroli (banca Nro:9) se PRESENTO
+14:12:19 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev09]
+14:12:19 | L3 | INPUT | Dardo Petroli (banca Nro:9) se AUSENTO
+14:12:23 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:12:23 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+14:12:29 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:12:29 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+14:14:19 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:14:19 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+14:14:25 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev12]
+14:14:25 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+14:14:26 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev11]
+14:14:26 | L3 | INPUT | Walter Herrero (banca Nro:11) se PRESENTO
+14:14:26 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+14:14:26 | L3 | INPUT | Roxana Barrera (banca Nro:10) se PRESENTO
+14:14:27 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+14:14:27 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+14:14:27 | L2 | INPUT | Pulsacion registrada: Tecla [8] del dispositivo [dev10]
+14:14:27 | L2 | INPUT | Roxana Barrera (banca Nro:10) presiono tecla: 8 y no tiene funcion asignada
+14:14:29 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev10]
+14:14:29 | L3 | INPUT | Roxana Barrera (banca Nro:10) se PRESENTO
+14:40:24 | L3 | SESION | Cierre de sesion Nº93
+14:40:28 | L3 | SESION | Apertura de sesion Nº69
+14:40:33 | L3 | SESION | Cierre de sesion Nº69
+14:40:42 | L3 | SESION | Apertura de sesion Nº69
+14:49:41 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+14:49:50 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Hernán Pereira (banca Nro:6), Lorena Moreno (banca Nro:1), Andrea Garachico (banca Nro:5), Gastón Cuis Taccari (banca Nro:4), Samuel Alarcón Muñoz (banca Nro:2), Andrea Rueda (banca Nro:3)]
+14:49:56 | L3 | VOTACION | Apertura de votacion de tipo Ratificacion Nº8 con tema: Ratificación de decreto ad referendum, compra de insumos para servicios públicos
+14:50:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:50:01 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+14:50:01 | L2 | INPUT | Dardo Petroli (banca Nro:9) voto: Positivo
+14:50:02 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev11]
+14:50:02 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+14:50:02 | L2 | INPUT | Walter Herrero (banca Nro:11) voto: Positivo
+14:50:04 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev10]
+14:50:04 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+14:50:04 | L2 | INPUT | Roxana Barrera (banca Nro:10) voto: Positivo
+14:50:08 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:50:08 | L2 | INPUT | Dardo Petroli (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+14:50:14 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:50:14 | L2 | INPUT | Dardo Petroli (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+14:50:17 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:50:17 | L2 | INPUT | Dardo Petroli (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+14:50:32 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:50:32 | L2 | INPUT | Dardo Petroli (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+14:50:34 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:50:34 | L2 | INPUT | Dardo Petroli (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+14:50:35 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev09]
+14:50:35 | L2 | INPUT | Dardo Petroli (banca Nro:9) ERROR en registro voto: concejal_ya_voto
+14:50:42 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev12]
+14:50:42 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+14:50:42 | L2 | INPUT | Nadia Garay (banca Nro:12) voto: Positivo
+14:50:44 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev08]
+14:50:44 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+14:50:44 | L2 | INPUT | Lucila González (banca Nro:8) voto: Positivo
+14:50:46 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev06]
+14:50:46 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+14:50:46 | L2 | INPUT | Hernán Pereira (banca Nro:6) voto: Positivo
+14:50:47 | L2 | INPUT | Pulsacion registrada: Tecla [2] del dispositivo [dev05]
+14:50:47 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+14:50:47 | L2 | INPUT | Andrea Garachico (banca Nro:5) voto: Abstencion
+14:50:49 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev04]
+14:50:49 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:50:49 | L2 | INPUT | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+14:50:49 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev03]
+14:50:49 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+14:50:49 | L2 | INPUT | Andrea Rueda (banca Nro:3) voto: Positivo
+14:50:51 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev02]
+14:50:51 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+14:50:51 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+14:50:52 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev01]
+14:50:52 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+14:50:52 | L2 | INPUT | Lorena Moreno (banca Nro:1) voto: Positivo
+14:51:01 | L2 | INPUT | Pulsacion registrada: Tecla [1] del dispositivo [dev07]
+14:51:01 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+14:51:01 | L3 | VOTACION | Votacion Nº8 completada. Resultado: RECHAZADA - Votos: 12 de 12 - 11 Positivos, 0 Negativos y 1 Abstenciones
+14:51:01 | L2 | INPUT | Federico Garitano (banca Nro:7) voto: Positivo
+14:51:16 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº11 con tema: Autorización de obra, bacheo y repavimentación de avenida principal
+14:51:21 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Hernán Pereira (banca Nro:6), Lorena Moreno (banca Nro:1), Andrea Garachico (banca Nro:5), Gastón Cuis Taccari (banca Nro:4), Samuel Alarcón Muñoz (banca Nro:2), Andrea Rueda (banca Nro:3)]
+14:51:24 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº16 con tema: Programa municipal de reciclaje, puntos verdes y recolección diferenciada
+14:51:28 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Hernán Pereira (banca Nro:6), Lorena Moreno (banca Nro:1), Andrea Garachico (banca Nro:5), Gastón Cuis Taccari (banca Nro:4), Samuel Alarcón Muñoz (banca Nro:2), Andrea Rueda (banca Nro:3)]

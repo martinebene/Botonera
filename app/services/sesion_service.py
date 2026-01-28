@@ -132,9 +132,12 @@ class SesionService:
             logging.log_internal("PALABRA",2, "Fallo dar uso de la palabra, porque no hay solicitudes en cola")
 
     def quitar_uso_palabra(self) -> None:
-            s = self.sesion_actual.en_uso_de_palabra.print_corto()
-            self.sesion_actual.en_uso_de_palabra=None
-            logging.log_internal("PALABRA",3, "Se quito el uso de la palabra a "+ s)
+            if self.sesion_actual.en_uso_de_palabra is not None:
+                s = self.sesion_actual.en_uso_de_palabra.print_corto()
+                self.sesion_actual.en_uso_de_palabra=None
+                logging.log_internal("PALABRA",3, "Dejo el uso de la palabra "+ s)
+            else:
+                logging.log_internal("PALABRA",2, "Nadie a quien quitarle la palabra") 
 
 # metodos de concejales:
 

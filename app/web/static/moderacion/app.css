@@ -35,14 +35,36 @@ body {
 
 
 /* Barra superior */
+/* Barra superior: centrado REAL independientemente del ancho de los lados */
 .topbar{
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
   padding: 10px 14px;
   border-bottom: 1px solid var(--border);
   background: rgba(0,0,0,.25);
 }
+
+.topbar__left{
+  justify-self: start;
+  min-width: 0;                 /* clave: permite que se achique */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topbar__center{
+  justify-self: center;
+}
+
+.topbar__right{
+  justify-self: end;
+  min-width: 0;                 /* clave: permite que se achique */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 
 .brand{ font-weight: 700; }
 .muted{ color: var(--muted); font-size: 12px; }
@@ -196,6 +218,36 @@ select.input option{
   padding: 5px 8px;
   border-radius: 10px;
 }
+
+/* Q1: Sesión Nº bloqueado cuando hay sesión abierta */
+#inSesionNumero:disabled{
+  background: rgba(147,197,253,0.10);   /* leve azul/gris */
+  border-color: rgba(147,197,253,0.35);
+  color: rgba(255,255,255,0.80);
+  cursor: not-allowed;
+}
+
+/* Q1: campos bloqueados cuando hay votación abierta */
+#inVotNumero:disabled,
+#selVotTipo:disabled,
+#inVotFactor:disabled,
+#inVotTema:disabled{
+  background: rgba(147,197,253,0.10);
+  border-color: rgba(147,197,253,0.35);
+  color: rgba(255,255,255,0.80);
+  cursor: not-allowed;
+}
+
+/* Toggle "Respecto" bloqueado (no existe :disabled en button, lo hacemos por clase) */
+.toggle--locked{
+  opacity: 0.75;
+}
+
+.toggle--locked .toggle__btn{
+  cursor: not-allowed;
+  pointer-events: none; /* ✅ bloquea clicks */
+}
+
 
 .btn{
   border: 1px solid var(--border);

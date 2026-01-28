@@ -128,8 +128,8 @@ class VotacionService:
         Se llama cuando cambia el estado presente/ausente de algún concejal
         (por ejemplo, con la tecla 7).
         """
-        if self.votacion_actual is None or (self.votacion_actual.estado != EstadosVotacion.EN_CURSO):
-            raise ValueError("No hay votación abierta.")
+        if (self.votacion_actual is None) or (self.votacion_actual.estado != EstadosVotacion.EN_CURSO):
+             raise ValueError("No hay votación abierta.")
 
         votacion = self.votacion_actual
         votacion.recalcular_estado_por_cambio_ausencias()

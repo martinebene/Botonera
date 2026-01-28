@@ -269,31 +269,6 @@ const Q1 = (() => {
     return { x: votos.length, positivos, negativos, abstenciones };
   }
 
-  function totalEsperadoY(state, ultimaVotacion){
-    const ses = getSesion(state);
-    if (!ses) return 0;
-
-    let computa;
-    if (ultimaVotacion && typeof ultimaVotacion.computa_sobre_los_presentes === "boolean"){
-      computa = ultimaVotacion.computa_sobre_los_presentes;
-    } else {
-      computa = (uiModel.respectoPresentes === true);
-    }
-
-    let total = ses.cantidad_concejales;
-    let presentes = ses.cantidad_presentes;
-
-    if (!Number.isInteger(total)){
-      const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
-      total = concejales.length;
-    }
-    if (!Number.isInteger(presentes)){
-      const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
-      presentes = concejales.filter(c => c?.presente === true).length;
-    }
-
-    return (computa === true) ? presentes : total;
-  }
 
   function construirTextoEstadoVotacion(state){
     const ultima = getUltimaVotacion(state);
@@ -303,35 +278,48 @@ const Q1 = (() => {
     }
 
     const { x, positivos, negativos, abstenciones } = contarVotos(ultima);
-    const y = totalEsperadoY(state, ultima);
 
     const numero = ultima?.numero ?? "?";
     const estado = ultima?.estado;
 
     if (estado === "EN_CURSO"){
       const texto =
-        `Votacion ${numero} en curso: votos ${x} de ${y} - ` +
+        `Votacion ${numero} en curso: ${x} votos - ` +
         `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
       return { modoEmpate: false, textoNormal: texto, textoEmpate: texto };
     }
 
     if (estado === "EMPATADA"){
       const texto =
-        `Votacion ${numero}: Empatada - votos ${x} de ${y} - ` +
+        `Votacion ${numero} empatada: ${x} votos - ` +
         `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
       return { modoEmpate: true, textoNormal: texto, textoEmpate: texto };
     }
 
     const estadoHumano = textoResultadoHumano(estado);
     const texto =
-      `El resultado de la anterior: Votacion ${numero}: ${estadoHumano} - ` +
-      `votos ${x} de ${y} - ${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
+      `Votacion ${numero}: ${estadoHumano} ( ` +
+      `${x} votos ) ${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
 
     return { modoEmpate: false, textoNormal: texto, textoEmpate: texto };
   }
 
   function renderFilaSesion(state){
     const ses = getSesion(state);
+
+    // Q1: Si hay sesión abierta, fijar el número y bloquear el input
+    if (inSesionNumero){
+      const abierta = (ses?.abierta === true);
+
+      if (abierta){
+        // Fijamos el número real que manda el backend
+        inSesionNumero.value = String(ses?.numero_sesion ?? "");
+        inSesionNumero.disabled = true;
+      } else {
+        // Si no hay sesión abierta, permitir edición
+        inSesionNumero.disabled = false;
+      }
+    }
 
     if (!ses){
       if (txtConcejales) txtConcejales.textContent = "-- de -- presentes";
@@ -379,6 +367,51 @@ const Q1 = (() => {
 
   function renderVotacionEstado(raw){
     const state = normalizeState(raw);
+    
+    // Q1: Si hay votación abierta (EN_CURSO o EMPATADA), fijar y bloquear campos
+    const ultima = getUltimaVotacion(state);
+    const estadoUlt = String(ultima?.estado ?? "");
+    const votAbierta = isEstadoAbiertoOVivo(estadoUlt);
+
+    if (votAbierta && ultima){
+      // 1) Fijar valores desde backend
+      if (inVotNumero) inVotNumero.value = String(ultima?.numero ?? "");
+      if (selVotTipo)  selVotTipo.value  = String(ultima?.tipo ?? "");
+      if (inVotTema)   inVotTema.value   = String(ultima?.tema ?? "");
+
+      // Factor: puede venir 0; lo mostramos tal cual (si querés vacío cuando 0, lo ajustamos)
+      if (inVotFactor){
+        const f = (ultima?.factor_mayoria_especial ?? "");
+        inVotFactor.value = String(f);
+      }
+
+      // Respecto: sincronizamos uiModel y pintamos el toggle
+      if (typeof ultima?.computa_sobre_los_presentes === "boolean"){
+        uiModel.respectoPresentes = (ultima.computa_sobre_los_presentes === true);
+        paintToggleRespecto();
+      }
+
+      // 2) Bloquear inputs/select
+      if (inVotNumero) inVotNumero.disabled = true;
+      if (selVotTipo)  selVotTipo.disabled  = true;
+      if (inVotFactor) inVotFactor.disabled = true;
+      if (inVotTema)   inVotTema.disabled   = true;
+
+      // 3) Bloquear toggle por clase
+      const toggleWrap = togRespectoPresentes?.closest(".toggle");
+      toggleWrap?.classList.add("toggle--locked");
+
+    } else {
+      // Si NO hay votación abierta, habilitar todo
+      if (inVotNumero) inVotNumero.disabled = false;
+      if (selVotTipo)  selVotTipo.disabled  = false;
+      if (inVotFactor) inVotFactor.disabled = false;
+      if (inVotTema)   inVotTema.disabled   = false;
+
+      const toggleWrap = togRespectoPresentes?.closest(".toggle");
+      toggleWrap?.classList.remove("toggle--locked");
+    }
+
     const out = construirTextoEstadoVotacion(state);
     setModoEmpate(out.modoEmpate);
     if (votacionEstado) votacionEstado.textContent = out.textoNormal;

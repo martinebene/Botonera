@@ -1,0 +1,801 @@
+:root{
+  --bg: #0b1020;
+  --card: rgba(255,255,255,.04);
+  --border: rgba(255,255,255,.12);
+  --text: #eef2ff;
+  --muted: #9fb0ff;
+
+  --ok: #22c55e;
+  --bad: #ef4444;
+  --warn:#f59e0b;
+  --accent:#93c5fd;
+}
+
+*{ box-sizing: border-box; }
+
+/* ============================================================
+   BASE / ALTURAS
+   ============================================================ */
+html, body{
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+
+  /* NUEVO: layout sin scroll global */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+/* Barra superior */
+/* Barra superior: centrado REAL independientemente del ancho de los lados */
+.topbar{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0,0,0,.25);
+}
+
+.topbar__left{
+  justify-self: start;
+  min-width: 0;                 /* clave: permite que se achique */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topbar__center{
+  justify-self: center;
+}
+
+.topbar__session{
+  margin-left: 12px;
+  font-weight: 400;
+  font-size: 0.9em;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+
+.topbar__right{
+  justify-self: end;
+  min-width: 0;                 /* clave: permite que se achique */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.brand{ font-weight: 700; }
+.muted{ color: var(--muted); font-size: 12px; }
+
+/* Estados de conexión (los usa app.js con setConn()) */
+.conn-ok{ color: var(--ok); }
+.conn-err{ color: var(--bad); }
+.conn-warn{ color: var(--warn); }
+
+/* ============================================================
+   GRID 2x2 (usa grid2x2 tu HTML)
+   ============================================================ */
+.grid4{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  min-height: calc(100vh - 52px);
+}
+
+.grid2x2{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 0.5fr;
+  gap: 10px;
+  padding: 10px;
+
+  /* alto fijo => los cuadrantes NO crecen por contenido */
+  flex: 1;
+  min-height: 0;
+  height: auto;
+
+
+  /* permite encogimiento interno (clave en layouts grid) */
+  min-height: 0;
+}
+
+/* ============================================================
+   PANEL
+   ============================================================ */
+.panel{
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  /* importantísimo: permite que el panel no “crezca por contenido” */
+  min-height: 0;
+  min-width: 0;
+}
+
+.panel__title{
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.panel__body{
+  padding: 10px;
+  flex: 1;
+
+  /*
+    Por defecto, los paneles pueden scrollear internamente.
+    (En Q2 y Q4 apagamos el overflow del body para que
+     scrollee solo el área interna, no el panel completo.)
+  */
+  overflow: auto;
+
+  min-height: 0;
+  min-width: 0;
+}
+
+.hint{
+  font-size: 12px;
+  color: var(--muted);
+  opacity: .8;
+}
+
+/* ============================================================
+   Helpers
+   ============================================================ */
+.row{ display:flex; gap: 8px; align-items: end; flex-wrap: wrap; }
+.row--tight{ gap: 6px; }
+.row--big{ gap: 10px; align-items: stretch; }
+
+.stack{ display:flex; flex-direction: column; gap: 4px; }
+.label{ font-size: 11px; color: var(--muted); }
+.label--big{ font-size: 12px; font-weight: 600; }
+
+.grow{ flex: 1; }
+.mt{ margin-top: 8px; }
+
+.field{
+  display:flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field--inline{
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.field--inline .label{
+  margin: 0;
+  white-space: nowrap;
+}
+
+.field--inline .input,
+.field--inline .select{
+  width: auto;
+}
+
+
+.field--tight{ min-width: 110px; }
+
+.field--grow{
+  flex: 1;
+  min-width: 0;
+}
+
+.input, .select{
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.25);
+  color: var(--text);
+  font-size: 12px;
+}
+
+/* Selects: mayor contraste que inputs de texto */
+select.input{
+  background: #2b2f36;   /* gris más oscuro */
+  color: #ffffff;        /* texto blanco bien legible */
+}
+
+select.input option{
+  background: #2b2f36;
+  color: #ffffff;
+}
+
+
+.input--tight{
+  padding: 5px 8px;
+  border-radius: 10px;
+}
+
+/* Q1: Sesión Nº bloqueado cuando hay sesión abierta */
+#inSesionNumero:disabled{
+  background: rgba(147,197,253,0.10);   /* leve azul/gris */
+  border-color: rgba(147,197,253,0.35);
+  color: rgba(255,255,255,0.80);
+  cursor: not-allowed;
+}
+
+/* Q1: campos bloqueados cuando hay votación abierta */
+#inVotNumero:disabled,
+#selVotTipo:disabled,
+#inVotFactor:disabled,
+#inVotTema:disabled{
+  background: rgba(147,197,253,0.10);
+  border-color: rgba(147,197,253,0.35);
+  color: rgba(255,255,255,0.80);
+  cursor: not-allowed;
+}
+
+/* Toggle "Respecto" bloqueado (no existe :disabled en button, lo hacemos por clase) */
+.toggle--locked{
+  opacity: 0.75;
+}
+
+.toggle--locked .toggle__btn{
+  cursor: not-allowed;
+  pointer-events: none; /* ✅ bloquea clicks */
+}
+
+
+.btn{
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  padding: 7px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.btn--tight{
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.btn--primary{ border-color: rgba(147,197,253,.5); }
+.btn--danger{ border-color: rgba(239,68,68,.5); }
+
+.btn--big{
+  padding: 14px 12px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.divider{
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 10px 0;
+}
+
+/* ============================================================
+   STATBOX / NUMS (Concejales / Quorum)
+   ============================================================ */
+.statbox{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,.18);
+  font-size: 12px;
+  line-height: 1.2;
+  min-height: 32px;
+  display:flex;
+  align-items:center;
+}
+
+.num-good{ color: var(--ok); }
+.num-bad{ color: var(--bad); }
+.num-neutral{ color: var(--muted); }
+
+/* ============================================================
+   STATUSBOX (Estado de votación)
+   ============================================================ */
+.statusbox{
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  background: rgba(0,0,0,.18);
+}
+
+.statusbox__text{
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+/* ============================================================
+   Toggle
+   ============================================================ */
+.toggle{
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.toggle__btn{
+  border: none;
+  background: rgba(0,0,0,.18);
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Tu JS usa toggle__btn--active */
+.toggle__btn--active{
+  background: rgba(147,197,253,.25);
+}
+
+/* ============================================================
+   TOAST (cartelito)
+   ============================================================ */
+.toast{
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  background: rgba(0,0,0,.55);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 12px;
+  display: none;
+}
+
+/* el JS agrega/borra esta clase */
+.toast--show{
+  display: block;
+}
+
+.toast--ok{ border-color: rgba(34,197,94,.6); }
+.toast--err{ border-color: rgba(239,68,68,.6); }
+.toast--warn{ border-color: rgba(245,158,11,.6); }
+
+/* ============================================================
+   Q1 - COMANDOS
+   ------------------------------------------------------------
+   Requisito:
+   - Q1 NO debe scrollear (ni mostrar scrollbar)
+   - El contenido debe adaptarse "hacia adentro" del panel
+   ============================================================ */
+
+/* Q1: apagamos scroll del body del panel y hacemos layout en columna */
+#q1 .panel__body{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Compactación suave para que el contenido entre sin empujar */
+#q1 .divider{
+  margin: 6px 0;
+}
+
+#q1 .statusbox{
+  margin-top: 6px;
+  padding: 6px;
+}
+
+/* Si el texto del estado es largo, que no dispare scroll:
+   lo recortamos a 2 líneas. */
+#q1 .statusbox__text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* Permite que los campos en filas ajusten mejor en pantallas chicas */
+#q1 .field--tight{
+  min-width: 96px;
+}
+
+
+
+/* ============================================================
+   Q4 - EVENTOS (ya funcionaba)
+   ============================================================ */
+#q4Body{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+.events{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+.events__top{
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: nowrap;          /* una sola línea */
+  flex: 0 0 auto;
+}
+
+.events__hint{
+  flex: 1 1 auto;             /* ocupa el espacio libre */
+  min-width: 0;
+  align-self: flex-end;
+}
+
+/* este bloque queda pegado a la derecha */
+.events__level{
+  flex: 0 0 auto;
+}
+
+/* Q4: fila principal (console + panel derecho) */
+#q4 .events__row{
+  display: grid;
+  grid-template-columns: 1fr auto; /* eventos | selector */
+  gap: 10px;
+  height: 100%;
+  min-height: 0;
+}
+
+/* consola de eventos */
+#q4 .events__console{
+  min-height: 0;
+  overflow: auto;
+}
+
+/* columna derecha */
+#q4 .events__side{
+  align-items: center;
+  display: flex;
+  height: 100%; 
+}
+
+.events__console{
+  flex: 1 1 auto;
+  overflow: auto;
+  min-height: 0;
+  min-width: 0;
+
+  margin: 0 0 0 0;
+  padding: 4px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(0,0,0,.25);
+
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 11px;
+  line-height: 1.25;
+
+}
+
+/* ============================================================
+   Q3 - RECINTO + "USO DE LA PALABRA"
+   ------------------------------------------------------------
+   IMPORTANTE (premisas):
+   - El recinto NO debe scrollear ni cambiar el tamaño del panel.
+   - El scroll debe vivir SOLO dentro de la lista "Uso de la Palabra".
+   - El "título" de Uso de la Palabra NO debe verse como un input,
+     sino como un encabezado estilo panel__title (como Q1).
+   ------------------------------------------------------------
+   Nota:
+   Estas reglas son "opt-in": solo aplican si tu HTML usa estas
+   clases/ids. Si no existen, NO afectan a otros cuadrantes.
+   ============================================================ */
+
+/* Si tu panel Q3 tiene un body con id="q3Body", lo dejamos sin scroll
+   y hacemos layout interno con flex. */
+#q3Body{
+  overflow: hidden;      /* evita que el panel entero scrollee */
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Contenedor principal del recinto (izquierda) + uso de palabra (derecha) */
+.recinto{
+  display: flex;
+  gap: 10px;
+  flex: 1 1 auto;       /* asegura que ocupe todo el alto disponible */
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Zona izquierda: “recinto” (bancas). NO SCROLL. */
+.recinto__left{
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;      /* clave: nunca empuja ni scrollea */
+  display: flex;         /* si adentro usás grids, ayuda a encoger */
+}
+
+/* Zona derecha: “Uso de la Palabra”. */
+.recinto__right{
+  flex: 0 0 32%;
+  min-width: 220px;
+  max-width: 420px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;      /* para que el scroll quede adentro del body */
+  background: rgba(0,0,0,.18);
+}
+
+/* Título: lo forzamos a verse como un “panel__title” (no input). */
+.recinto__rightTitle{
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+
+  /* importante: que NO parezca un campo */
+  background: transparent;
+}
+
+/* Cuerpo: layout en columna.
+   El scroll vive SOLO en .recinto__listaWrap (así los botones quedan fijos abajo). */
+.recinto__rightBody{
+  padding: 10px;
+  flex: 1 1 auto;
+
+  overflow: hidden;
+  min-height: 0;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Lista scrolleable */
+.recinto__listaWrap{
+  flex: 1 1 auto;
+  overflow: auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+/* Botones (1/2 + 1/2) debajo de la lista */
+.recinto__palabraBtns{
+  display: flex;
+  gap: 8px;
+}
+
+.recinto__palabraBtns > button{
+  flex: 1 1 0;
+  white-space: nowrap;
+}
+
+/* Lista simple dentro de Uso de la Palabra */
+.recinto__ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Compatibilidad: en el HTML actual la clase es recinto__lista */
+.recinto__lista{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recinto__lista > li{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(0,0,0,.18);
+  font-size: 12px;
+}
+
+.recinto__li{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(0,0,0,.18);
+  font-size: 12px;
+}
+
+
+/* ===== Q3 (agregado) - Grilla de bancas ===== */
+.recinto__canvas{
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Contenedor grilla: filas (de arriba hacia abajo) */
+.recintoGrid{
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Fila: ocupa su porción del alto total */
+.recintoRow{
+  flex: 1 1 0;
+  min-height: 0;
+
+  display: grid;
+  gap: 8px;
+}
+
+/* Celda/banca */
+.recintoBanca{
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+
+  /* La “celda” se mantiene, pero el contenido real vive en un inner blanco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Contenedor intermedio (uniforme en ancho, ocupa alto completo de la fila) */
+.recintoBanca__inner{
+  width: var(--bancaInnerW, 100%);
+  max-width: 100%;
+  height: 100%;
+
+  background: #fff;
+  color: #111;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 2px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden; /* no scroll / no growth */
+}
+
+.recintoBanca__nro{
+  font-size: 11px;
+  color: rgba(0,0,0,.55);
+  margin-bottom: 6px;
+}
+
+.recintoBanca__img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+.recintoBanca__estado{
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  flex: 0 0 auto;
+  min-height: 10px;
+}
+
+.recintoCanvasError{
+  border: 1px solid rgba(255,120,120,.25);
+  background: rgba(255,0,0,.08);
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+/* Ajustes a la lista existente del HTML */
+.recinto__lista{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recinto__lista > li{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 8px;
+  background: rgba(0,0,0,.18);
+  font-size: 12px;
+}
+
+
+/* ===== Q3 (agregado) - Estado (voto / presencia / uso de palabra) ===== */
+
+/* Área de voto (usa el mismo elemento .recintoBanca__estado) */
+.recintoBanca__estado.is-voto{
+  color: #fff;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Colores “oscuros” con buen contraste */
+.recintoBanca__estado.voto-pos{ background: #0b4d2a; }   /* verde oscuro */
+.recintoBanca__estado.voto-abs{ background: #6a5a0a; }   /* amarillo oscuro */
+.recintoBanca__estado.voto-neg{ background: #6b0f15; }   /* rojo oscuro */
+
+/* Concejal ausente: opaca la imagen al 60% */
+.recintoBanca__img.is-ausente{
+  opacity: 0.6;
+}
+
+/* Concejal ausente: fondo del recuadro blanco en gris al 50% */
+.recintoBanca__inner.is-ausente{
+  background: rgba(160,160,160,.5);
+}
+
+/* Concejal en uso de la palabra: borde verde claro notorio en el recuadro blanco */
+.recintoBanca__inner.is-hablando{
+  background: #7CFC98;
+}

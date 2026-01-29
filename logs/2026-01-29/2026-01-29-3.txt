@@ -1,0 +1,30 @@
+11:54:20 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+11:54:23 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+11:54:24 | L3 | PALABRA | Se otorgo uso de la palabra a Samuel Alarcón Muñoz (banca Nro:2)
+11:54:26 | L3 | PALABRA | Lucila González (banca Nro:8) pidio la palabra
+11:54:28 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+11:54:32 | L3 | INPUT | Dardo Petroli (banca Nro:9) se AUSENTO
+11:54:33 | L3 | INPUT | Walter Herrero (banca Nro:11) se AUSENTO
+13:18:11 | L3 | SESION | Apertura de sesion Nº4
+13:18:58 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº4 con tema: Moción para incorporar al orden del día, nota de vecinos por seguridad vial
+13:19:04 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+13:19:08 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+13:19:10 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+13:19:10 | L3 | PALABRA | Gastón Cuis Taccari (banca Nro:4) pidio la palabra
+13:21:23 | L3 | PALABRA | Se otorgo uso de la palabra a Federico Garitano (banca Nro:7)
+13:35:08 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+13:35:09 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+13:35:10 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Abstencion
+14:58:44 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+14:58:46 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+14:58:48 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+14:58:49 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+14:58:50 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+14:58:54 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+14:58:56 | L3 | INPUT | Andrea Garachico (banca Nro:5) se AUSENTO
+14:58:57 | L3 | INPUT | Hernán Pereira (banca Nro:6) se AUSENTO
+14:58:59 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+14:59:02 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+15:02:56 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+15:02:59 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+15:03:01 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO

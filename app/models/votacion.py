@@ -31,7 +31,7 @@ class Votacion:
         tipo: str,
         tema: str,
         computa_sobre_los_presentes: bool,
-        factor_mayoria_especial: int,
+        factor_mayoria_especial: float,
         id: Optional[int] = None,
     ) -> None:
         # ID interno en memoria, auto-incremental

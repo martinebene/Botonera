@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Moderación - Panel de Control</title>
+  <title>Pantalla Recinto</title>
   <link rel="stylesheet" href="./app.css" />
 </head>
 
@@ -39,110 +39,30 @@
 
       <div class="panel__body">
 
-        <!-- FILA SESION -->
-        <div class="row row--tight">
-
-          <div class="field field--tight">
-            <div class="label">Sesión Nº</div>
-            <input id="inSesionNumero"
-                   class="input input--tight"
-                   type="text"
-                   inputmode="numeric"
-                   pattern="[0-9]*" />
-          </div>
-
-          <button id="btnAbrirSesion" class="btn btn--tight btn--primary" type="button">
-            Abrir sesión
-          </button>
-
-          <button id="btnCerrarSesion" class="btn btn--tight" type="button">
-            Cerrar sesión
-          </button>
-
-          <div class="field field--tight">
-            <div class="label">Concejales</div>
-            <div id="txtConcejales" class="statbox">
-              -- de -- presentes
-            </div>
-          </div>
-
-          <div class="field field--tight">
-            <div class="label">Quorum</div>
-            <div id="txtQuorumDelta" class="statbox num-neutral">
-              --
-            </div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
+        
 
         <!-- VOTACION NORMAL -->
         <div id="votacionNormal">
-
-          <div class="row row--tight">
-            <div class="field field--tight">
-              <div class="label">Votación Nº</div>
-              <input id="inVotNumero"
-                     class="input input--tight"
-                     type="text"
-                     inputmode="numeric"
-                     pattern="[0-9]*" />
-            </div>
-
-            <div class="field field--tight">
-              <div class="label">Tipo</div>
-              <select id="selVotTipo" class="input input--tight">
-                <option value="Despacho">Despacho</option>
-                <option value="Mocion">Mocion</option>
-                <option value="Sobre tabla">Sobre tabla</option>
-                <option value="Ratificacion">Ratificacion</option>
-              </select>
-            </div>
-
-            <div class="field field--tight">
-              <div class="label">Factor de mayoría</div>
-              <input id="inVotFactor"
-                     class="input input--tight"
-                     type="text"
-                     inputmode="decimal" />
-            </div>
-
-            <div class="field field--tight">
-              <div class="label">Respecto</div>
-              <div class="toggle">
-                <button id="togRespectoPresentes" type="button" class="toggle__btn">
-                  Presentes
-                </button>
-                <button id="togRespectoCuerpo" type="button" class="toggle__btn">
-                  Cuerpo
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="row row--tight">
-            <div class="field field--tight field--grow">
-              <div class="label">Tema</div>
-              <input id="inVotTema"
-                     class="input input--tight"
-                     type="text" />
-            </div>
-
-            <button id="btnAbrirVotacion" class="btn btn--tight btn--primary" type="button">
-              Abrir votación
-            </button>
-
-            <button id="btnCerrarVotacion" class="btn btn--tight" type="button">
-              Cerrar votación
-            </button>
-          </div>
-
-          <div class="statusbox">
-            <div class="label">Estado de votación</div>
-            <div id="votacionEstado" class="statusbox__text">
+          
+          <div class="row row--tight row--inline">
+            <div class="label label--inline">Votación: </div>
+            <div id="q1VotacionResumen" class="statusbox__text">
               No hay votación en curso.
             </div>
           </div>
+
+          
+          <div class="row row--tight row--inline">
+              <div class="label label--inline">Tema: </div>
+              <div id="inVotTema" class="statusbox__text"></div>
+          </div>
+
+
+          <div class="row row--tight row--inline">
+            <div class="label label--inline">Estado:</div>
+            <div id="votacionEstado" class="statusbox__text"></div>
+          </div>
+
 
         </div>
 
@@ -197,7 +117,7 @@
 
           <!-- Zona derecha: lista “Uso de la Palabra” -->
           <div class="recinto__right" aria-label="Uso de la Palabra">
-            <div class="recinto__rightTitle">Uso de la Palabra</div>
+            <div class="recinto__rightTitle">Pedidos de uso de la palabra</div>
 
             <!--
               Este contenedor ES el que debe scrollear (si hay muchos pedidos).
@@ -209,11 +129,6 @@
                 <ul class="recinto__lista" id="ulUsoPalabra">
                   <!-- <li>Apellido Nombre</li> -->
                 </ul>
-              </div>
-
-              <div class="recinto__palabraBtns" aria-label="Acciones uso de la palabra">
-                <button id="btnOtorgarPalabra" class="btn btn--primary btn--tight" type="button">Otorgar P.</button>
-                <button id="btnQuitarPalabra" class="btn btn--danger btn--tight" type="button">Quitar P.</button>
               </div>
 
               <!-- Área para error de render (si el JSON no coincide con concejales o imágenes) -->

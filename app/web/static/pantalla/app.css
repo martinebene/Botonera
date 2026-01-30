@@ -98,7 +98,7 @@ body {
 .grid2x2{
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr 0.5fr;
+  grid-template-rows: auto 1fr 0.2fr;
   gap: 10px;
   padding: 10px;
 
@@ -228,34 +228,6 @@ select.input option{
   border-radius: 10px;
 }
 
-/* Q1: Sesión Nº bloqueado cuando hay sesión abierta */
-#inSesionNumero:disabled{
-  background: rgba(147,197,253,0.10);   /* leve azul/gris */
-  border-color: rgba(147,197,253,0.35);
-  color: rgba(255,255,255,0.80);
-  cursor: not-allowed;
-}
-
-/* Q1: campos bloqueados cuando hay votación abierta */
-#inVotNumero:disabled,
-#selVotTipo:disabled,
-#inVotFactor:disabled,
-#inVotTema:disabled{
-  background: rgba(147,197,253,0.10);
-  border-color: rgba(147,197,253,0.35);
-  color: rgba(255,255,255,0.80);
-  cursor: not-allowed;
-}
-
-/* Toggle "Respecto" bloqueado (no existe :disabled en button, lo hacemos por clase) */
-.toggle--locked{
-  opacity: 0.75;
-}
-
-.toggle--locked .toggle__btn{
-  cursor: not-allowed;
-  pointer-events: none; /* ✅ bloquea clicks */
-}
 
 
 .btn{
@@ -454,6 +426,7 @@ select.input option{
   flex: 0 0 auto;
 }
 
+
 /* Q4: fila principal (console + panel derecho) */
 #q4 .events__row{
   display: grid;
@@ -545,8 +518,8 @@ select.input option{
 /* Zona derecha: “Uso de la Palabra”. */
 .recinto__right{
   flex: 0 0 32%;
-  min-width: 220px;
-  max-width: 420px;
+  min-width: 200px;
+  max-width: 250px;
 
   display: flex;
   flex-direction: column;
@@ -593,16 +566,7 @@ select.input option{
   min-width: 0;
 }
 
-/* Botones (1/2 + 1/2) debajo de la lista */
-.recinto__palabraBtns{
-  display: flex;
-  gap: 8px;
-}
 
-.recinto__palabraBtns > button{
-  flex: 1 1 0;
-  white-space: nowrap;
-}
 
 /* Lista simple dentro de Uso de la Palabra */
 .recinto__ul{
@@ -701,45 +665,76 @@ select.input option{
   color: #111;
   border-radius: 10px;
   box-sizing: border-box;
-  padding: 2px;
+  padding: 0px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* evita el re-centrado cuando cambia el voto */
   align-items: center;
 
   overflow: hidden; /* no scroll / no growth */
 }
 
-.recintoBanca__nro{
-  font-size: 11px;
-  color: rgba(0,0,0,.55);
-  margin-bottom: 6px;
-}
-
 .recintoBanca__img{
+  flex: 1 1 auto;
+  min-height: 0; 
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 70%;
+  height: 100%;
+  max-height: none;
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
 }
 
 
+/* --- VOTO: contenedor estable, y la "pastilla" se pinta con ::before --- */
 .recintoBanca__estado{
+  position: relative;
+  width: 100%;
+  flex: 0 0 18px;
+  height: 18px;
+
+  /* centrado real del texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* texto */
   text-align: center;
   font-size: 10px;
   font-weight: 700;
-  line-height: 1.1;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%;
-  flex: 0 0 auto;
-  min-height: 10px;
+
+  /* IMPORTANTE: el contenedor NO lleva padding “de separación a bordes” */
+  padding: 0;
+  margin: 0;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+
+  /* por defecto, sin pastilla visible */
+  background: transparent;
+  z-index: 0;
+
 }
+
+/* La pastilla (fondo) */
+.recintoBanca__estado::before{
+  content: "";
+  position: absolute;
+
+  /* separación a bordes: laterales 26px + inferior 3px */
+  inset: 0 36px;
+
+  background: transparent; /* se setea cuando hay voto */
+  border-radius: 10px;
+
+  /* detrás del texto */
+  z-index: -1;
+}
+
 
 .recintoCanvasError{
   border: 1px solid rgba(255,120,120,.25);
@@ -774,16 +769,19 @@ select.input option{
 .recintoBanca__estado.is-voto{
   color: #fff;
   font-weight: 600;
-  padding: 2px 4px;
-  border-radius: 10px;
-  width: 100%;
-  box-sizing: border-box;
 }
 
+/* cuando hay voto, la pastilla toma color */
+.recintoBanca__estado.is-voto::before{
+  background: var(--pill-bg, #111);
+}
+
+
 /* Colores “oscuros” con buen contraste */
-.recintoBanca__estado.voto-pos{ background: #0b4d2a; }   /* verde oscuro */
-.recintoBanca__estado.voto-abs{ background: #6a5a0a; }   /* amarillo oscuro */
-.recintoBanca__estado.voto-neg{ background: #6b0f15; }   /* rojo oscuro */
+.recintoBanca__estado.voto-pos{ --pill-bg: #0b4d2a; }
+.recintoBanca__estado.voto-abs{ --pill-bg: #6a5a0a; }
+.recintoBanca__estado.voto-neg{ --pill-bg: #6b0f15; }
+
 
 /* Concejal ausente: opaca la imagen al 60% */
 .recintoBanca__img.is-ausente{
@@ -798,4 +796,22 @@ select.input option{
 /* Concejal en uso de la palabra: borde verde claro notorio en el recuadro blanco */
 .recintoBanca__inner.is-hablando{
   background: #7CFC98;
+}
+
+/* Fila inline: label a la izquierda + contenido alineado */
+.row--inline{
+  align-items: center;
+}
+
+/* Label lateral (mismo look que label normal, pero horizontal) */
+ .label--inline{
+  min-width: 50px;     
+  margin-right: 8px;
+  text-align: right;
+} 
+
+#q1 #inVotTema,
+#q1 #q1VotacionResumen,
+#q1 #votacionEstado{
+  padding: 0; /* o 2px 0 si querés un poquito de aire */
 }

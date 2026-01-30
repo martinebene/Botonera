@@ -1,0 +1,101 @@
+12:49:58 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lorena Moreno (banca Nro:1), Samuel Alarcón Muñoz (banca Nro:2), Andrea Rueda (banca Nro:3)]
+12:50:26 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº39 con tema: varios
+14:11:50 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lorena Moreno (banca Nro:1), Samuel Alarcón Muñoz (banca Nro:2), Andrea Rueda (banca Nro:3)]
+14:11:56 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº9 con tema: Votacion
+14:33:07 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+14:33:20 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Abstencion
+14:33:22 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+14:33:24 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+14:40:39 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+14:40:40 | L3 | INPUT | Roxana Barrera (banca Nro:10) se PRESENTO
+14:40:43 | L3 | INPUT | Hernán Pereira (banca Nro:6) se PRESENTO
+14:40:45 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+14:40:46 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+14:40:47 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+14:40:50 | L3 | INPUT | Andrea Garachico (banca Nro:5) se PRESENTO
+14:40:55 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+15:09:28 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+15:09:33 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+15:10:11 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+15:10:12 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+15:10:17 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+15:10:17 | L3 | PALABRA | Lucila González (banca Nro:8) pidio la palabra
+15:10:19 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+15:10:27 | L3 | PALABRA | Se otorgo uso de la palabra a Gastón Cuis Taccari (banca Nro:4)
+15:10:29 | L3 | PALABRA | Se otorgo uso de la palabra a Lucila González (banca Nro:8)
+15:10:34 | L3 | PALABRA | Dejo el uso de la palabra Lucila González (banca Nro:8)
+15:10:41 | L3 | PALABRA | Nadia Garay (banca Nro:12) pidio la palabra
+15:10:45 | L3 | PALABRA | Walter Herrero (banca Nro:11) pidio la palabra
+15:10:47 | L3 | PALABRA | Se otorgo uso de la palabra a Nadia Garay (banca Nro:12)
+15:10:49 | L3 | PALABRA | Dardo Petroli (banca Nro:9) pidio la palabra
+15:36:51 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+15:37:05 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Abstencion
+15:37:20 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Abstencion
+15:37:20 | L3 | VOTACION | Votacion Nº9 completada. Resultado: APROBADA - Votos: 10 de 12 - 4 Positivos, 2 Negativos y 4 Abstenciones
+15:37:39 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº21 con tema: Plan de arbolado urbano, reposición de especies y riego programado
+15:37:49 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+15:37:51 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Abstencion
+15:37:54 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Abstencion
+15:37:56 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Abstencion
+15:38:02 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+15:38:07 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+15:38:35 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+15:38:37 | L3 | INPUT | Federico Garitano (banca Nro:7) se AUSENTO
+15:38:58 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+15:39:01 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+15:39:04 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Abstencion
+15:39:04 | L3 | VOTACION | Votacion Nº21 completada. Resultado: APROBADA - Votos: 10 de 12 - 2 Positivos, 1 Negativos y 7 Abstenciones
+15:39:38 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº32 con tema: Moción para crear mesa de seguridad vial, participación ciudadana
+15:39:44 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+15:39:45 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+15:39:46 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+15:39:50 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+15:39:50 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+15:39:56 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+15:39:57 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+15:39:58 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+15:40:00 | L3 | INPUT | Nadia Garay (banca Nro:12) se AUSENTO
+15:40:23 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº41 con tema: Moción para conformar comisión investigadora, servicio tercerizado
+15:40:30 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Negativo
+15:40:31 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Negativo
+15:40:32 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+15:47:06 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+15:47:07 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+15:47:07 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+15:47:09 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+15:47:14 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+15:47:14 | L3 | VOTACION | Votacion Nº41 completada. Resultado: APROBADA - Votos: 8 de 12 - 6 Positivos, 2 Negativos y 0 Abstenciones
+15:47:37 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº19 con tema: Ordenanza de tenencia responsable de mascotas, registro y sanciones
+15:47:49 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+15:47:50 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+15:47:53 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+15:47:57 | L3 | INPUT | Federico Garitano (banca Nro:7) se PRESENTO
+15:48:02 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+15:48:05 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+15:48:06 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+15:48:07 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+15:48:08 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+15:48:09 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+15:48:10 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+15:48:11 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+15:48:13 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Negativo
+15:48:14 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+15:48:15 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+15:48:18 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+15:48:18 | L3 | VOTACION | Votacion Nº19 completada. Resultado: RECHAZADA - Votos: 11 de 12 - 5 Positivos, 6 Negativos y 0 Abstenciones
+15:49:11 | L3 | INPUT | Nadia Garay (banca Nro:12) se PRESENTO
+15:49:24 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº54 con tema: Permiso de uso, instalación de garitas y paradas de colectivos
+15:49:29 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+15:49:30 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+15:49:31 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+15:49:32 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+15:49:33 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+15:49:33 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+15:49:35 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+15:49:36 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+15:49:38 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Negativo
+15:49:40 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+15:49:42 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+15:49:46 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+15:49:46 | L3 | VOTACION | Votacion Nº54 completada. Resultado: EMPATADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+15:50:04 | L3 | VOTACION | Votacion Nº54 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones

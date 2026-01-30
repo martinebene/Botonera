@@ -253,27 +253,16 @@ function updateHeaderSesionInfo(raw){
 
 
 
-
 ///////////////////////////////
 // 9) Q1 (Comandos)
 ///////////////////////////////
 const Q1 = (() => {
-  const inSesionNumero = document.getElementById("inSesionNumero");
-  const btnAbrirSesion = document.getElementById("btnAbrirSesion");
-  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
-
-  const txtConcejales = document.getElementById("txtConcejales");
-  const txtQuorumDelta = document.getElementById("txtQuorumDelta");
-
+  
   const votacionNormal = document.getElementById("votacionNormal");
-  const inVotNumero = document.getElementById("inVotNumero");
-  const selVotTipo = document.getElementById("selVotTipo");
-  const inVotFactor = document.getElementById("inVotFactor");
-  const togRespectoPresentes = document.getElementById("togRespectoPresentes");
-  const togRespectoCuerpo = document.getElementById("togRespectoCuerpo");
+  
+  const q1VotacionResumen = document.getElementById("q1VotacionResumen");
+
   const inVotTema = document.getElementById("inVotTema");
-  const btnAbrirVotacion = document.getElementById("btnAbrirVotacion");
-  const btnCerrarVotacion = document.getElementById("btnCerrarVotacion");
   const votacionEstado = document.getElementById("votacionEstado");
 
   const votacionEmpate = document.getElementById("votacionEmpate");
@@ -283,27 +272,10 @@ const Q1 = (() => {
 
   let lastVotRef = null;
 
-  function paintToggleRespecto(){
-    const pres = uiModel.respectoPresentes === true;
-    togRespectoPresentes?.classList.toggle("toggle__btn--active", pres);
-    togRespectoCuerpo?.classList.toggle("toggle__btn--active", !pres);
-  }
-
-  function setRespectoDefault(){
-    uiModel.respectoPresentes = true;
-    paintToggleRespecto();
-  }
-
   function clearVotacionFields(){
-    if (inVotNumero) inVotNumero.value = "";
-    if (inVotTema) inVotTema.value = "";
-    if (inVotFactor) inVotFactor.value = "";
-    setRespectoDefault();
+    if (inVotTema) inVotTema.textContent = "";
   }
 
-  function clearSesionFields(){
-    if (inSesionNumero) inSesionNumero.value = "";
-  }
 
   function setModoEmpate(isEmpate){
     if (votacionNormal) votacionNormal.style.display = isEmpate ? "none" : "";
@@ -333,6 +305,42 @@ const Q1 = (() => {
     return { x: votos.length, positivos, negativos, abstenciones };
   }
 
+  function isMayoríaEspecialCeroOVacia(f){
+    const s = String(f ?? "").trim();
+    if (s === "") return true;
+    // permitimos que venga número o string
+    const n = Number(String(s).replace(",", "."));
+    if (!Number.isFinite(n)) return true;
+    return n <= 0;
+  }
+
+  function buildTextoResumenVotacion(raw){
+    const state = normalizeState(raw);
+    const ultima = getUltimaVotacion(state);
+
+    if (!ultima) return "No hay votación en curso.";
+
+    const tipo = String(ultima?.tipo ?? "–");
+    const numero = String(ultima?.numero ?? "–");
+
+    const respecto = (ultima?.computa_sobre_los_presentes === true) ? "Presentes" : "Cuerpo";
+
+    const fRaw = (ultima?.factor_mayoria_especial ?? "");
+    const sinMayoriaEspecial = isMayoríaEspecialCeroOVacia(fRaw);
+
+    if (sinMayoriaEspecial){
+      return `Tipo "${tipo}" Nº${numero} sin mayoria especial, computando sobre "${respecto}".`;
+    }
+
+    const factorTxt = String(fRaw).trim();
+    return `Tipo "${tipo}" Nº${numero} con mayoria especial de ${factorTxt}, computando sobre "${respecto}".`;
+  }
+
+  function renderResumenVotacion(raw){
+    if (!q1VotacionResumen) return;
+    q1VotacionResumen.textContent = buildTextoResumenVotacion(raw);
+  }
+
 
   function construirTextoEstadoVotacion(state){
     const ultima = getUltimaVotacion(state);
@@ -348,86 +356,26 @@ const Q1 = (() => {
 
     if (estado === "EN_CURSO"){
       const texto =
-        `Votacion ${numero} en curso: ${x} votos - ` +
-        `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
+        `Votacion Nº${numero} en curso: ${x} votos (` +
+        `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.)`;
       return { modoEmpate: false, textoNormal: texto, textoEmpate: texto };
     }
 
     if (estado === "EMPATADA"){
       const texto =
-        `Votacion ${numero} empatada: ${x} votos - ` +
-        `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
+        `Votacion Nº${numero} empatada: ${x} votos (` +
+        `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.)`;
       return { modoEmpate: true, textoNormal: texto, textoEmpate: texto };
     }
 
     const estadoHumano = textoResultadoHumano(estado);
     const texto =
-      `Votacion ${numero}: ${estadoHumano} ( ` +
-      `${x} votos ) ${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
+      `Votacion Nº${numero} "${estadoHumano}": ` +
+      `${x} votos (${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.)`;
 
     return { modoEmpate: false, textoNormal: texto, textoEmpate: texto };
   }
 
-  function renderFilaSesion(state){
-    const ses = getSesion(state);
-
-    // Q1: Si hay sesión abierta, fijar el número y bloquear el input
-    if (inSesionNumero){
-      const abierta = (ses?.abierta === true);
-
-      if (abierta){
-        // Fijamos el número real que manda el backend
-        inSesionNumero.value = String(ses?.numero_sesion ?? "");
-        inSesionNumero.disabled = true;
-      } else {
-        // Si no hay sesión abierta, permitir edición
-        inSesionNumero.disabled = false;
-      }
-    }
-
-    if (!ses){
-      if (txtConcejales) txtConcejales.textContent = "-- de -- presentes";
-      if (txtQuorumDelta){
-        txtQuorumDelta.textContent = "--";
-        txtQuorumDelta.classList.remove("num-good","num-bad","num-neutral");
-        txtQuorumDelta.classList.add("num-neutral");
-      }
-      return;
-    }
-
-    let total = ses.cantidad_concejales;
-    let presentes = ses.cantidad_presentes;
-
-    if (!Number.isInteger(total)){
-      const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
-      total = concejales.length;
-    }
-    if (!Number.isInteger(presentes)){
-      const concejales = Array.isArray(ses.concejales) ? ses.concejales : [];
-      presentes = concejales.filter(c => c?.presente === true).length;
-    }
-
-    if (txtConcejales) txtConcejales.textContent = `${presentes} de ${total} presentes`;
-
-    const quorum = Number.isInteger(ses.quorum) ? ses.quorum : null;
-    if (quorum === null){
-      if (txtQuorumDelta){
-        txtQuorumDelta.textContent = "--";
-        txtQuorumDelta.classList.remove("num-good","num-bad","num-neutral");
-        txtQuorumDelta.classList.add("num-neutral");
-      }
-      return;
-    }
-
-    const delta = presentes - quorum;
-
-    if (txtQuorumDelta){
-      txtQuorumDelta.textContent = delta > 0 ? `+${delta}` : `${delta}`;
-      txtQuorumDelta.classList.remove("num-good","num-bad","num-neutral");
-      if (delta >= 0) txtQuorumDelta.classList.add("num-good");
-      else txtQuorumDelta.classList.add("num-bad");
-    }
-  }
 
   function renderVotacionEstado(raw){
     const state = normalizeState(raw);
@@ -437,43 +385,9 @@ const Q1 = (() => {
     const estadoUlt = String(ultima?.estado ?? "");
     const votAbierta = isEstadoAbiertoOVivo(estadoUlt);
 
-    if (votAbierta && ultima){
-      // 1) Fijar valores desde backend
-      if (inVotNumero) inVotNumero.value = String(ultima?.numero ?? "");
-      if (selVotTipo)  selVotTipo.value  = String(ultima?.tipo ?? "");
-      if (inVotTema)   inVotTema.value   = String(ultima?.tema ?? "");
-
-      // Factor: puede venir 0; lo mostramos tal cual (si querés vacío cuando 0, lo ajustamos)
-      if (inVotFactor){
-        const f = (ultima?.factor_mayoria_especial ?? "");
-        inVotFactor.value = String(f);
-      }
-
-      // Respecto: sincronizamos uiModel y pintamos el toggle
-      if (typeof ultima?.computa_sobre_los_presentes === "boolean"){
-        uiModel.respectoPresentes = (ultima.computa_sobre_los_presentes === true);
-        paintToggleRespecto();
-      }
-
-      // 2) Bloquear inputs/select
-      if (inVotNumero) inVotNumero.disabled = true;
-      if (selVotTipo)  selVotTipo.disabled  = true;
-      if (inVotFactor) inVotFactor.disabled = true;
-      if (inVotTema)   inVotTema.disabled   = true;
-
-      // 3) Bloquear toggle por clase
-      const toggleWrap = togRespectoPresentes?.closest(".toggle");
-      toggleWrap?.classList.add("toggle--locked");
-
-    } else {
-      // Si NO hay votación abierta, habilitar todo
-      if (inVotNumero) inVotNumero.disabled = false;
-      if (selVotTipo)  selVotTipo.disabled  = false;
-      if (inVotFactor) inVotFactor.disabled = false;
-      if (inVotTema)   inVotTema.disabled   = false;
-
-      const toggleWrap = togRespectoPresentes?.closest(".toggle");
-      toggleWrap?.classList.remove("toggle--locked");
+      // Tema (solo display)
+    if (inVotTema){
+      inVotTema.textContent = String(ultima?.tema ?? "");
     }
 
     const out = construirTextoEstadoVotacion(state);
@@ -516,81 +430,7 @@ const Q1 = (() => {
 
 
   function init(){
-    // Toggle respecto: mantiene lógica previa
-    togRespectoPresentes?.addEventListener("click", () => {
-      uiModel.respectoPresentes = true;
-      paintToggleRespecto();
-    });
 
-    togRespectoCuerpo?.addEventListener("click", () => {
-      uiModel.respectoPresentes = false;
-      paintToggleRespecto();
-    });
-
-    setRespectoDefault();
-
-    // ---- Botones de sesión ----
-    btnAbrirSesion?.addEventListener("click", async () => {
-      toast("warn", "Enviando: abrir sesión…");
-      try{
-        const raw = String(inSesionNumero?.value ?? "");
-        await postJson(API_BASE_URL + "/moderacion/abrir_sesion", { numero_sesion: raw });
-        toast("ok", "OK: Abrir sesión enviado.");
-      } catch (e){
-        toast("err", `ERROR abrir sesión: ${e?.message || String(e)}`, 4000);
-      }
-    });
-
-    btnCerrarSesion?.addEventListener("click", async () => {
-      toast("warn", "Enviando: cerrar sesión…");
-      try{
-        await postJson(API_BASE_URL + "/moderacion/cerrar_sesion", undefined);
-        clearSesionFields();
-        clearVotacionFields();
-        toast("ok", "OK: Cerrar sesión enviado.");
-      } catch (e){
-        toast("err", `ERROR cerrar sesión: ${e?.message || String(e)}`, 4000);
-      }
-    });
-
-    // ---- Botones de votación ----
-    btnAbrirVotacion?.addEventListener("click", async () => {
-      toast("warn", "Enviando: abrir votación…");
-      try{
-        const rawNum = String(inVotNumero?.value ?? "");
-        const tipo = String(selVotTipo?.value ?? "");
-        const tema = String(inVotTema?.value ?? "");
-        const computa_sobre_los_presentes = (uiModel.respectoPresentes === true);
-
-        const rawFactorOriginal = String(inVotFactor?.value ?? "").trim();
-        const rawFactor = rawFactorOriginal.replace(",", ".");
-        const factorFinal = (rawFactor === "") ? 0 : rawFactor;
-
-        const body = {
-          numero: rawNum,
-          tipo,
-          tema,
-          computa_sobre_los_presentes,
-          factor_mayoria_especial: factorFinal,
-        };
-
-        await postJson(API_BASE_URL + "/moderacion/abrir_votacion", body);
-        toast("ok", "OK: Abrir votación enviado.");
-      } catch (e){
-        toast("err", `ERROR abrir votación: ${e?.message || String(e)}`, 4500);
-      }
-    });
-
-    btnCerrarVotacion?.addEventListener("click", async () => {
-      toast("warn", "Enviando: cerrar votación…");
-      try{
-        await postJson(API_BASE_URL + "/moderacion/cerrar_votacion", undefined);
-        clearVotacionFields();
-        toast("ok", "OK: Cerrar votación enviado.");
-      } catch (e){
-        toast("err", `ERROR cerrar votación: ${e?.message || String(e)}`, 4000);
-      }
-    });
 
     // ---- Desempate ----
     btnDesempatePositivo?.addEventListener("click", async () => {
@@ -616,16 +456,16 @@ const Q1 = (() => {
     });
 
     // Render inicial
-    renderFilaSesion(normalizeState(null));
     renderVotacionEstado(null);
+    renderResumenVotacion(null);
     lastVotRef = null;
   }
 
   function onState(raw){
     const norm = normalizeState(raw);
     detectAndHandleVotacionFinalizada(raw);
-    renderFilaSesion(norm);
     renderVotacionEstado(raw);
+    renderResumenVotacion(raw);
   }
 
   function onError(_e){}
@@ -642,8 +482,6 @@ const Q3 = (() => {
   const recintoError  = document.getElementById("recintoError");
 
   const ulUsoPalabra  = document.getElementById("ulUsoPalabra");
-  const btnOtorgarPalabra = document.getElementById("btnOtorgarPalabra");
-  const btnQuitarPalabra  = document.getElementById("btnQuitarPalabra");
 
   // Cache de layout (disposición no cambia durante la sesión)
   let cachedSesionKey = null;
@@ -859,7 +697,7 @@ const Q3 = (() => {
       const li = document.createElement("li");
       const ape = String(c?.apellido ?? "").trim();
       const nom = String(c?.nombre ?? "").trim();
-      const banca = (c?.banca !== undefined && c?.banca !== null) ? ` (B${c.banca})` : "";
+      const banca = (c?.banca !== undefined && c?.banca !== null) ? ` (Banca Nº${c.banca})` : "";
       li.textContent = `${ape} ${nom}${banca}`.trim();
       ulUsoPalabra.appendChild(li);
     }
@@ -1031,26 +869,6 @@ function handleVotes(sesion){
 
 
   function init(){
-    // Botones uso palabra
-    btnOtorgarPalabra?.addEventListener("click", async () => {
-      toast("warn", "Enviando: otorgar uso de palabra…");
-      try{
-        await postJson(API_BASE_URL + "/moderacion/otorgar_uso_palabra", undefined);
-        toast("ok", "OK: Otorgar palabra enviado.", 1400);
-      } catch (e){
-        toast("err", `ERROR otorgar palabra: ${e?.message || String(e)}`, 4500);
-      }
-    });
-
-    btnQuitarPalabra?.addEventListener("click", async () => {
-      toast("warn", "Enviando: quitar uso de palabra…");
-      try{
-        await postJson(API_BASE_URL + "/moderacion/quitar_uso_palabra", undefined);
-        toast("ok", "OK: Quitar palabra enviado.", 1400);
-      } catch (e){
-        toast("err", `ERROR quitar palabra: ${e?.message || String(e)}`, 4500);
-      }
-    });
 
     // Resize: recalcula ancho uniforme del inner (si hay layout cacheado)
     window.addEventListener("resize", () => {

@@ -1,0 +1,69 @@
+09:50:36 | L3 | SESION | Apertura de sesion Nº4
+09:50:40 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+09:50:40 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+09:50:42 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+09:50:42 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+09:50:44 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+09:50:44 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+09:50:49 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+09:50:49 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+09:50:50 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+09:50:50 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+09:50:51 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev03]
+09:50:51 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+10:02:49 | L3 | SESION | Apertura de sesion Nº4
+10:02:51 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+10:02:51 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+10:02:52 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+10:02:52 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+10:02:54 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+10:02:54 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+10:02:54 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+10:02:54 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+10:02:56 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+10:02:56 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+10:02:58 | L2 | INPUT | Pulsacion registrada: Tecla [8] del dispositivo [dev03]
+10:02:58 | L2 | INPUT | Andrea Rueda (banca Nro:3) presiono tecla: 8 y no tiene funcion asignada
+10:02:59 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+10:02:59 | L2 | INPUT | Andrea Rueda (banca Nro:3)Oprimio tecla de PALABRA
+10:02:59 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+10:03:02 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+10:03:02 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+10:03:02 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+10:03:03 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+10:03:03 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+10:03:03 | L3 | PALABRA | Lorena Moreno (banca Nro:1) retiro el pedido la palabra
+10:03:04 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+10:03:04 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+10:03:04 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+10:03:05 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev03]
+10:03:05 | L2 | INPUT | Andrea Rueda (banca Nro:3)Oprimio tecla de PALABRA
+10:03:05 | L3 | PALABRA | Andrea Rueda (banca Nro:3) retiro el pedido la palabra
+10:03:08 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+10:03:08 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2)Oprimio tecla de PALABRA
+10:03:08 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) interactua sin dar presente
+10:03:10 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+10:03:10 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2)Oprimio tecla de PALABRA
+10:03:10 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) interactua sin dar presente
+10:03:10 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+10:03:10 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2)Oprimio tecla de PALABRA
+10:03:10 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) interactua sin dar presente
+10:03:11 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+10:03:11 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2)Oprimio tecla de PALABRA
+10:03:11 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) interactua sin dar presente
+10:03:12 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+10:03:12 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+10:03:12 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+10:03:12 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+10:03:13 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+10:03:13 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+10:03:14 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev02]
+10:03:14 | L2 | INPUT | Samuel Alarcón Muñoz (banca Nro:2)Oprimio tecla de PALABRA
+10:03:14 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+10:03:15 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev02]
+10:03:15 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+10:03:17 | L2 | INPUT | Pulsacion registrada: Tecla [9] del dispositivo [dev01]
+10:03:17 | L2 | INPUT | Lorena Moreno (banca Nro:1)Oprimio tecla de PALABRA
+10:03:17 | L3 | PALABRA | Lorena Moreno (banca Nro:1) retiro el pedido la palabra
+10:03:17 | L2 | INPUT | Pulsacion registrada: Tecla [7] del dispositivo [dev01]
+10:03:17 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO

@@ -1,0 +1,197 @@
+09:28:11 | L3 | SESION | Cierre de sesion Nº4
+09:28:49 | L3 | SESION | Apertura de sesion Nº39
+09:29:13 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº1 con tema: Aprobación del acta de la sesión anterior, lectura y consideración
+09:29:20 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Hernán Pereira (banca Nro:6), Lorena Moreno (banca Nro:1), Andrea Garachico (banca Nro:5), Gastón Cuis Taccari (banca Nro:4), Samuel Alarcón Muñoz (banca Nro:2), Andrea Rueda (banca Nro:3)]
+09:29:24 | L3 | SESION | Cierre de sesion Nº39
+09:29:29 | L3 | SESION | Apertura de sesion Nº98
+09:29:34 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº2 con tema: Declaración de interés municipal, jornada de salud comunitaria en barrios
+09:33:05 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Hernán Pereira (banca Nro:6), Lorena Moreno (banca Nro:1), Andrea Garachico (banca Nro:5), Gastón Cuis Taccari (banca Nro:4), Samuel Alarcón Muñoz (banca Nro:2), Andrea Rueda (banca Nro:3)]
+09:33:08 | L3 | SESION | Cierre de sesion Nº98
+09:33:15 | L3 | SESION | Apertura de sesion Nº39
+09:46:56 | L3 | SESION | Cierre de sesion Nº39
+09:47:01 | L3 | SESION | Apertura de sesion Nº39
+09:47:04 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+09:47:12 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+09:47:13 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+09:47:13 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+09:47:14 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+09:47:15 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+09:47:16 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+09:47:42 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+09:47:43 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+09:47:46 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Negativo
+09:47:47 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Negativo
+09:47:49 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+09:47:53 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
+09:47:53 | L3 | VOTACION | Votacion Nº3 completada. Resultado: EMPATADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+09:48:08 | L3 | VOTACION | Votacion Nº3 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+09:49:56 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº10 con tema: Declaración de interés cultural, festival local de música y danza
+09:50:07 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+09:50:08 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+09:50:09 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+09:50:11 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+09:50:14 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+09:50:16 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+09:50:18 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Abstencion
+09:50:20 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+09:50:22 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Negativo
+09:50:24 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Negativo
+09:50:25 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+09:50:40 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+09:50:40 | L3 | VOTACION | Votacion Nº10 completada. Resultado: EMPATADA - Votos: 12 de 12 - 5 Positivos, 5 Negativos y 2 Abstenciones
+09:50:49 | L3 | VOTACION | Votacion Nº10 DESEMPATADA. Resultado: RECHAZADA - Votos: 12 de 12 - 5 Positivos, 5 Negativos y 2 Abstenciones
+09:51:49 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº11 con tema: Autorización de obra, bacheo y repavimentación de avenida principal
+09:51:56 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+09:51:57 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+09:51:57 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Negativo
+09:51:58 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Negativo
+09:51:59 | L3 | VOTO | Lucila González (banca Nro:8) voto: Negativo
+09:52:00 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+09:52:01 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Positivo
+09:52:01 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+09:52:04 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+09:52:06 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+09:52:06 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+09:52:08 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+09:52:08 | L3 | VOTACION | Votacion Nº11 completada. Resultado: EMPATADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+09:52:16 | L3 | VOTACION | Votacion Nº11 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+09:52:40 | L3 | INPUT | Andrea Garachico (banca Nro:5) se AUSENTO
+09:52:42 | L3 | INPUT | Andrea Garachico (banca Nro:5) se PRESENTO
+09:52:43 | L3 | PALABRA | Hernán Pereira (banca Nro:6) pidio la palabra
+09:52:44 | L3 | PALABRA | Federico Garitano (banca Nro:7) pidio la palabra
+09:52:45 | L3 | PALABRA | Andrea Garachico (banca Nro:5) pidio la palabra
+09:52:50 | L3 | PALABRA | Se otorgo uso de la palabra a Hernán Pereira (banca Nro:6)
+09:52:55 | L3 | PALABRA | Se otorgo uso de la palabra a Federico Garitano (banca Nro:7)
+09:53:01 | L3 | PALABRA | Se otorgo uso de la palabra a Andrea Garachico (banca Nro:5)
+09:53:07 | L3 | PALABRA | Dejo el uso de la palabra Andrea Garachico (banca Nro:5)
+10:45:40 | L3 | SESION | Cierre de sesion Nº39
+10:45:45 | L3 | SESION | Apertura de sesion Nº69
+10:46:19 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+10:46:26 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+10:46:27 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+10:46:27 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+10:46:28 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+10:46:31 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+10:46:31 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+10:46:33 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Abstencion
+10:46:34 | L3 | VOTO | Lucila González (banca Nro:8) voto: Abstencion
+10:46:36 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Negativo
+10:46:37 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Negativo
+10:46:39 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Negativo
+10:46:42 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Negativo
+10:46:42 | L3 | VOTACION | Votacion Nº3 completada. Resultado: EMPATADA - Votos: 12 de 12 - 4 Positivos, 4 Negativos y 4 Abstenciones
+10:46:45 | L3 | VOTACION | Votacion Nº3 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 4 Positivos, 4 Negativos y 4 Abstenciones
+10:47:08 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº2 con tema: Declaración de interés municipal, jornada de salud comunitaria en barrios
+10:47:13 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+10:47:14 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+10:47:15 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+10:47:16 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+10:47:16 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Negativo
+10:47:17 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+10:47:17 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+10:47:18 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+10:47:20 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+10:47:20 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+10:47:21 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+10:47:25 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+10:47:25 | L3 | VOTACION | Votacion Nº2 completada. Resultado: APROBADA - Votos: 11 de 12 - 9 Positivos, 1 Negativos y 1 Abstenciones
+10:55:24 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº3 con tema: Pedido de informes, estado del alumbrado público en Barrio Sur
+10:55:39 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+10:55:40 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+10:55:42 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+10:55:44 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+10:55:44 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+10:55:44 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+10:55:46 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+10:55:47 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+10:55:48 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Negativo
+10:55:48 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Positivo
+10:55:49 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+10:55:50 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Negativo
+10:55:51 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+10:55:51 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+10:55:53 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+10:55:53 | L3 | VOTACION | Votacion Nº3 completada. Resultado: APROBADA - Votos: 12 de 12 - 9 Positivos, 2 Negativos y 1 Abstenciones
+10:59:57 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº6 con tema: Convenio de cooperación con Universidad, pasantías y prácticas profesionales
+11:00:02 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+11:00:03 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+11:00:03 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+11:00:04 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+11:00:05 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+11:00:05 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Abstencion
+11:00:05 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Negativo
+11:00:06 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Positivo
+11:00:08 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Abstencion
+11:00:08 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+11:00:09 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+11:00:11 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+11:00:11 | L3 | VOTACION | Votacion Nº6 completada. Resultado: APROBADA - Votos: 12 de 12 - 9 Positivos, 1 Negativos y 2 Abstenciones
+11:03:45 | L3 | VOTACION | Apertura de votacion de tipo Mocion Nº13 con tema: Moción para solicitar audiencia pública, proyecto costero y uso de suelo
+11:03:54 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+11:03:55 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Positivo
+11:03:56 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Positivo
+11:03:56 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Positivo
+11:03:57 | L3 | VOTO | Andrea Garachico (banca Nro:5) voto: Abstencion
+11:03:58 | L3 | VOTO | Hernán Pereira (banca Nro:6) voto: Abstencion
+11:03:58 | L3 | VOTO | Federico Garitano (banca Nro:7) voto: Negativo
+11:04:00 | L3 | VOTO | Lucila González (banca Nro:8) voto: Positivo
+11:04:01 | L3 | VOTO | Dardo Petroli (banca Nro:9) voto: Positivo
+11:04:01 | L3 | VOTO | Roxana Barrera (banca Nro:10) voto: Positivo
+11:04:02 | L3 | VOTO | Walter Herrero (banca Nro:11) voto: Positivo
+11:04:04 | L3 | VOTO | Nadia Garay (banca Nro:12) voto: Positivo
+11:04:04 | L3 | VOTACION | Votacion Nº13 completada. Resultado: APROBADA - Votos: 12 de 12 - 9 Positivos, 1 Negativos y 2 Abstenciones
+11:04:47 | L3 | SESION | Cierre de sesion Nº69
+11:27:08 | L3 | SESION | Apertura de sesion Nº4
+11:27:12 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+11:27:13 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se AUSENTO
+11:27:15 | L3 | PALABRA | Lucila González (banca Nro:8) pidio la palabra
+11:27:20 | L3 | INPUT | Gastón Cuis Taccari (banca Nro:4) se PRESENTO
+11:27:21 | L3 | PALABRA | Gastón Cuis Taccari (banca Nro:4) pidio la palabra
+11:27:23 | L3 | PALABRA | Se otorgo uso de la palabra a Lucila González (banca Nro:8)
+11:27:29 | L3 | INPUT | Andrea Garachico (banca Nro:5) se AUSENTO
+11:27:31 | L3 | INPUT | Andrea Garachico (banca Nro:5) se PRESENTO
+11:27:34 | L3 | INPUT | Lucila González (banca Nro:8) se AUSENTO
+11:27:36 | L3 | INPUT | Lucila González (banca Nro:8) se PRESENTO
+11:27:38 | L3 | PALABRA | Dejo el uso de la palabra Lucila González (banca Nro:8)
+11:27:44 | L3 | PALABRA | Se otorgo uso de la palabra a Gastón Cuis Taccari (banca Nro:4)
+11:27:45 | L3 | PALABRA | Dejo el uso de la palabra Gastón Cuis Taccari (banca Nro:4)
+11:27:48 | L3 | SESION | Cierre de sesion Nº4
+11:28:53 | L3 | SESION | Apertura de sesion Nº69
+11:28:56 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+11:28:58 | L3 | PALABRA | Gastón Cuis Taccari (banca Nro:4) pidio la palabra
+11:29:06 | L3 | INPUT | Roxana Barrera (banca Nro:10) se AUSENTO
+11:29:09 | L3 | SESION | Cierre de sesion Nº69
+15:40:08 | L3 | SESION | Apertura de sesion Nº4
+15:40:19 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+15:40:20 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+15:40:21 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+15:40:22 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+15:40:23 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+15:40:26 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+15:40:29 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+15:40:30 | L3 | PALABRA | Andrea Rueda (banca Nro:3) retiro el pedido la palabra
+15:40:32 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+15:40:33 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+15:40:34 | L3 | PALABRA | Lorena Moreno (banca Nro:1) retiro el pedido la palabra
+15:40:38 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) retiro el pedido la palabra
+15:40:48 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+15:40:49 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+15:40:51 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+15:40:53 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+15:40:55 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+15:40:55 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+15:40:57 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+15:40:57 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+15:41:00 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+15:41:11 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) retiro el pedido la palabra
+15:41:16 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+15:41:20 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) retiro el pedido la palabra
+15:41:23 | L3 | PALABRA | Andrea Rueda (banca Nro:3) retiro el pedido la palabra
+15:41:25 | L3 | PALABRA | Lorena Moreno (banca Nro:1) retiro el pedido la palabra
+15:41:27 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+15:41:28 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+15:41:32 | L3 | VOTACION | Apertura de votacion de tipo Despacho Nº11 con tema: Autorización de obra, bacheo y repavimentación de avenida principal
+15:41:35 | L3 | VOTO | Lorena Moreno (banca Nro:1) voto: Positivo
+15:41:37 | L3 | VOTO | Samuel Alarcón Muñoz (banca Nro:2) voto: Abstencion
+15:41:39 | L3 | VOTO | Andrea Rueda (banca Nro:3) voto: Negativo
+15:41:47 | L3 | VOTACION | Cierre forzado - sin votar: [Dardo Petroli (banca Nro:9), Roxana Barrera (banca Nro:10), Federico Garitano (banca Nro:7), Nadia Garay (banca Nro:12), Walter Herrero (banca Nro:11), Lucila González (banca Nro:8), Hernán Pereira (banca Nro:6), Andrea Garachico (banca Nro:5), Gastón Cuis Taccari (banca Nro:4)]

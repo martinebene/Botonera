@@ -30,7 +30,7 @@
 ///////////////////////////////
 const API_BASE_URL = "";
 const STATE_ENDPOINT = "/estados/estado_global";
-const POLL_MS = 250;
+const POLL_MS = 300;
 const TIMEOUT_MS = 1500;
 
 ///////////////////////////////
@@ -265,22 +265,21 @@ const Q1 = (() => {
   const inVotTema = document.getElementById("inVotTema");
   const votacionEstado = document.getElementById("votacionEstado");
 
-  const votacionEmpate = document.getElementById("votacionEmpate");
-  const btnDesempatePositivo = document.getElementById("btnDesempatePositivo");
-  const btnDesempateNegativo = document.getElementById("btnDesempateNegativo");
-  const votacionEstadoEmpate = document.getElementById("votacionEstadoEmpate");
-
   let lastVotRef = null;
+  let clearStatusTimer = null;    // timer de blanqueo diferido
+  let blankedVotId = null;        // idLike de la última votación que ya “permitimos blanquear”
 
-  function clearVotacionFields(){
-    if (inVotTema) inVotTema.textContent = "";
+  function clearQ1StatusTexts(){
+    // Estos son los .statusbox__text de Q1 que hoy repinta renderVotacionEstado()
+    const resumen = document.getElementById("q1VotacionResumen");
+    if (resumen) resumen.textContent = "-";
+    if (inVotTema) inVotTema.textContent = "-";
+    if (votacionEstado) votacionEstado.textContent = "-";
   }
 
-
-  function setModoEmpate(isEmpate){
-    if (votacionNormal) votacionNormal.style.display = isEmpate ? "none" : "";
-    if (votacionEmpate) votacionEmpate.style.display = isEmpate ? "" : "none";
-  }
+  // function setModoEmpate(isEmpate){
+  //   if (votacionNormal) votacionNormal.style.display = isEmpate ? "none" : "";
+  // }
 
   function textoResultadoHumano(estado){
     if (estado === "APROBADA") return "Aprobada";
@@ -346,7 +345,7 @@ const Q1 = (() => {
     const ultima = getUltimaVotacion(state);
 
     if (!ultima){
-      return { modoEmpate: false, textoNormal: "No hay votación en curso.", textoEmpate: "No hay votación en curso." };
+      return { modoEmpate: false, textoNormal: "-", textoEmpate: "-" };
     }
 
     const { x, positivos, negativos, abstenciones } = contarVotos(ultima);
@@ -382,18 +381,46 @@ const Q1 = (() => {
     
     // Q1: Si hay votación abierta (EN_CURSO o EMPATADA), fijar y bloquear campos
     const ultima = getUltimaVotacion(state);
-    const estadoUlt = String(ultima?.estado ?? "");
-    const votAbierta = isEstadoAbiertoOVivo(estadoUlt);
+    // const estadoUlt = String(ultima?.estado ?? "");
+    // const votAbierta = isEstadoAbiertoOVivo(estadoUlt);
 
       // Tema (solo display)
     if (inVotTema){
-      inVotTema.textContent = String(ultima?.tema ?? "");
+      inVotTema.textContent = String(ultima?.tema ?? "-");
     }
 
+    // Si ya blanqueamos la última votación cerrada, NO repintar sus textos
+    //const ultima = getUltimaVotacion(state);
+    if (ultima){
+      const idLike = (ultima.id !== undefined && ultima.id !== null)
+        ? String(ultima.id)
+        : String(ultima.numero ?? "");
+
+      const est = String(ultima.estado ?? "");
+
+      // Si es la misma votación que blanqueamos y ya NO está en curso/empatada -> mantener en blanco
+      if (blankedVotId && blankedVotId === idLike && !isEstadoAbiertoOVivo(est)){
+        if (votacionEstado) votacionEstado.textContent = "-";
+        const resumen = document.getElementById("q1VotacionResumen");
+        if (resumen) resumen.textContent = "-";
+        if (inVotTema) inVotTema.textContent = "-";
+
+        return; // MUY importante: corta acá para que no repinte con construirTextoEstadoVotacion()
+      }
+
+      // Si aparece una votación nueva o vuelve a “viva”, destrabamos
+      if (blankedVotId && blankedVotId !== idLike){
+        blankedVotId = null;
+      }
+      if (blankedVotId && isEstadoAbiertoOVivo(est)){
+        blankedVotId = null;
+      }
+    }
+
+
     const out = construirTextoEstadoVotacion(state);
-    setModoEmpate(out.modoEmpate);
+    // setModoEmpate(out.modoEmpate);
     if (votacionEstado) votacionEstado.textContent = out.textoNormal;
-    if (votacionEstadoEmpate) votacionEstadoEmpate.textContent = out.textoEmpate;
   }
 
   function isEstadoAbiertoOVivo(estado){
@@ -406,8 +433,12 @@ const Q1 = (() => {
 
     if (!ultima){
       lastVotRef = null;
+      if (clearStatusTimer) clearTimeout(clearStatusTimer);
+      clearStatusTimer = null;
+      blankedVotId = null;
       return;
     }
+
 
     const idLike = (ultima.id !== undefined && ultima.id !== null)
       ? String(ultima.id)
@@ -421,8 +452,18 @@ const Q1 = (() => {
       const after  = String(current.estado ?? "");
 
       if (isEstadoAbiertoOVivo(before) && !isEstadoAbiertoOVivo(after)){
-        clearVotacionFields();
+
+        // Cancelamos un blanqueo previo si lo hubiera
+        if (clearStatusTimer) clearTimeout(clearStatusTimer);
+
+        // Programamos blanqueo a los 5s del cierre
+        clearStatusTimer = setTimeout(() => {
+          blankedVotId = current.id;     // “marcamos” esta votación como ya blanqueada
+          clearQ1StatusTexts();          // limpiamos textos
+          clearStatusTimer = null;
+        }, 4000);
       }
+
     }
 
     lastVotRef = current;
@@ -430,30 +471,6 @@ const Q1 = (() => {
 
 
   function init(){
-
-
-    // ---- Desempate ----
-    btnDesempatePositivo?.addEventListener("click", async () => {
-      toast("warn", "Enviando: desempate POSITIVO…");
-      try{
-        await postJson(API_BASE_URL + "/moderacion/voto_desempate", true);
-        clearVotacionFields();
-        toast("ok", "OK: Desempate positivo enviado.");
-      } catch (e){
-        toast("err", `ERROR desempate positivo: ${e?.message || String(e)}`, 4000);
-      }
-    });
-
-    btnDesempateNegativo?.addEventListener("click", async () => {
-      toast("warn", "Enviando: desempate NEGATIVO…");
-      try{
-        await postJson(API_BASE_URL + "/moderacion/voto_desempate", false);
-        clearVotacionFields();
-        toast("ok", "OK: Desempate negativo enviado.");
-      } catch (e){
-        toast("err", `ERROR desempate negativo: ${e?.message || String(e)}`, 4000);
-      }
-    });
 
     // Render inicial
     renderVotacionEstado(null);
@@ -464,8 +481,8 @@ const Q1 = (() => {
   function onState(raw){
     const norm = normalizeState(raw);
     detectAndHandleVotacionFinalizada(raw);
-    renderVotacionEstado(raw);
     renderResumenVotacion(raw);
+    renderVotacionEstado(raw);
   }
 
   function onError(_e){}

@@ -1,0 +1,25 @@
+09:50:36 | L3 | SESION | Apertura de sesion Nº4
+09:50:40 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+09:50:42 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+09:50:44 | L3 | INPUT | Andrea Rueda (banca Nro:3) se AUSENTO
+09:50:49 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+09:50:50 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+09:50:51 | L3 | INPUT | Andrea Rueda (banca Nro:3) se PRESENTO
+10:02:49 | L3 | SESION | Apertura de sesion Nº4
+10:02:51 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+10:02:52 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+10:02:54 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO
+10:02:54 | L3 | INPUT | Lorena Moreno (banca Nro:1) se PRESENTO
+10:02:56 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+10:02:59 | L3 | PALABRA | Andrea Rueda (banca Nro:3) pidio la palabra
+10:03:02 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+10:03:03 | L3 | PALABRA | Lorena Moreno (banca Nro:1) retiro el pedido la palabra
+10:03:04 | L3 | PALABRA | Lorena Moreno (banca Nro:1) pidio la palabra
+10:03:05 | L3 | PALABRA | Andrea Rueda (banca Nro:3) retiro el pedido la palabra
+10:03:12 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+10:03:12 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+10:03:13 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se PRESENTO
+10:03:14 | L3 | PALABRA | Samuel Alarcón Muñoz (banca Nro:2) pidio la palabra
+10:03:15 | L3 | INPUT | Samuel Alarcón Muñoz (banca Nro:2) se AUSENTO
+10:03:17 | L3 | PALABRA | Lorena Moreno (banca Nro:1) retiro el pedido la palabra
+10:03:17 | L3 | INPUT | Lorena Moreno (banca Nro:1) se AUSENTO

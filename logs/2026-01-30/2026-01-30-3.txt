@@ -99,3 +99,5 @@
 15:49:46 | L3 | VOTO | Gastón Cuis Taccari (banca Nro:4) voto: Negativo
 15:49:46 | L3 | VOTACION | Votacion Nº54 completada. Resultado: EMPATADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
 15:50:04 | L3 | VOTACION | Votacion Nº54 DESEMPATADA. Resultado: APROBADA - Votos: 12 de 12 - 6 Positivos, 6 Negativos y 0 Abstenciones
+15:57:56 | L3 | PALABRA | Se otorgo uso de la palabra a Walter Herrero (banca Nro:11)
+15:57:58 | L3 | PALABRA | Se otorgo uso de la palabra a Dardo Petroli (banca Nro:9)

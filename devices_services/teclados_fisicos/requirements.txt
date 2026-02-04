@@ -1,0 +1,2 @@
+requests
+evdev; platform_system=="Linux"

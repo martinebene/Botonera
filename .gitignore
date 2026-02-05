@@ -14,3 +14,7 @@ logs/
 .DS_Store
 .vscode/
 .idea/
+
+# Runtime data (producción)
+devices_services/teclados_fisicos/data/mapeo_teclados.json
+

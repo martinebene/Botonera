@@ -68,7 +68,7 @@ DEFAULT_MAPPING_FILE = os.path.join(os.path.dirname(__file__), "data", "mapeo_te
 # - NO limpiamos consola
 # - NO auto-inicio
 # - logs detallados
-DEBUG = False
+DEBUG = True
 
 
 def dprint(*args, **kwargs):
@@ -93,6 +93,26 @@ def clear_console():
     else:                    # Linux / macOS
         os.system("clear")
 
+def flush_stdin():
+    """
+    Vacía el buffer de entrada de la consola.
+    Útil antes de pedir input() luego de capturar teclas físicas.
+    """
+    try:
+        # Windows
+        if os.name == "nt":
+            import msvcrt
+            while msvcrt.kbhit():
+                msvcrt.getwch()
+            return
+
+        # Linux / Unix
+        if sys.stdin.isatty():
+            import termios
+            termios.tcflush(sys.stdin.fileno(), termios.TCIFLUSH)
+
+    except Exception:
+        pass
 
 
 def print_header():
@@ -257,7 +277,7 @@ class LinuxKeyboardListener:
     def run(self):
         from evdev import ecodes
         from evdev.events import KeyEvent
-        from evdev import util as evutil
+        import select
 
         self._open_devices()
         if not self._devices:
@@ -267,7 +287,7 @@ class LinuxKeyboardListener:
 
         while not self._stop.is_set():
             try:
-                r, _, _ = evutil.select(self._devices, [], [], 0.25)
+                r, _, _ = select.select(self._devices, [], [], 0.25)
                 for dev in r:
                     for event in dev.read():
                         if event.type != ecodes.EV_KEY:
@@ -329,15 +349,6 @@ class WindowsRawInputKeyboardListener:
 
     def stop(self):
         self._stop.set()
-
-    def _flush_stdin_buffer(self):
-        """Evita que teclas presionadas queden en el buffer del input() del menú."""
-        try:
-            import msvcrt
-            while msvcrt.kbhit():
-                msvcrt.getwch()
-        except Exception:
-            pass
 
     def run(self):
         import ctypes
@@ -600,7 +611,7 @@ class WindowsRawInputKeyboardListener:
             print("⚠ Windows: RegisterRawInputDevices falló.")
             return
 
-        self._flush_stdin_buffer()
+        flush_stdin()
         dprint("\n[WIN][RAW] ✅ Listener activo (Raw Input). Presioná teclas...\n")
 
         msg = wintypes.MSG()
@@ -804,22 +815,6 @@ def modo_iniciar(mapping: Dict[str, str]):
         except Exception:
             pass
 
-
-
-def flush_stdin():
-    """
-    Vacía el buffer de entrada de la consola (Windows).
-    Evita que teclas capturadas por Raw Input aparezcan luego en input().
-    """
-    if os.name != "nt":
-        return
-
-    try:
-        import msvcrt
-        while msvcrt.kbhit():
-            msvcrt.getwch()
-    except Exception:
-        pass
 
 
 

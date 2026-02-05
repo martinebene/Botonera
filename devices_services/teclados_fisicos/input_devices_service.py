@@ -825,6 +825,30 @@ def modo_iniciar(mapping: Dict[str, str]):
 def menu_loop(mapping_path: str):
     mapping = load_mapping(mapping_path)
 
+    # -----------------------------------------------------------
+    # MODO SERVICIO (systemd): no hay stdin interactivo => input() da EOF
+    # Si no hay TTY:
+    #   - con mapeo: iniciar servicio directo
+    #   - sin mapeo: salir con mensaje (el mapeo se hace manual en consola)
+    # -----------------------------------------------------------
+    try:
+        if not sys.stdin.isatty():
+            if mapping:
+                modo_iniciar(mapping)
+                return
+            print("⚠ No hay TTY (ejecutando como servicio). No puedo mostrar menú interactivo.")
+            print(f"   Falta mapeo: {mapping_path}")
+            print("   Solución: ejecutar manualmente en una terminal para mapear y luego reiniciar el servicio.")
+            return
+    except Exception:
+        # Si algo raro pasa con stdin, evitamos caer a input() igual
+        if mapping:
+            modo_iniciar(mapping)
+            return
+        print("⚠ stdin no interactivo. No puedo mostrar menú (evito EOFError).")
+        print(f"   Falta mapeo: {mapping_path}")
+        return
+
     if not mapping:
         clear_console()
         print_header()

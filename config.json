@@ -2,7 +2,7 @@
   "concejales_file": "data/concejales.csv",
   "log_file": "sesiones_log.txt",
   "log_dir": "logs/",
-  "quorum": 6,
+  "quorum": 7,
   "disposicion_bancas": {
     "filas": [
       { "fila": 3, "columnas": 5 },

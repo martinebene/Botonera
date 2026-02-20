@@ -714,8 +714,8 @@ const Q3 = (() => {
       const li = document.createElement("li");
       const ape = String(c?.apellido ?? "").trim();
       const nom = String(c?.nombre ?? "").trim();
-      const banca = (c?.banca !== undefined && c?.banca !== null) ? ` (Banca Nº${c.banca})` : "";
-      li.textContent = `${ape} ${nom}${banca}`.trim();
+      const inicial = nom ? nom.charAt(0) + "." : "";
+      li.textContent = `${ape} ${inicial}`.trim();
       ulUsoPalabra.appendChild(li);
     }
   }

@@ -32,6 +32,7 @@ const API_BASE_URL = "";
 const STATE_ENDPOINT = "/estados/estado_global";
 const POLL_MS = 300;
 const TIMEOUT_MS = 1500;
+const VOTACION_RESULT_MS = 6000; // tiempo visible del resultado tras cierre
 
 ///////////////////////////////
 // 2) BUS SIMPLE (desacople)
@@ -269,12 +270,30 @@ const Q1 = (() => {
   let clearStatusTimer = null;    // timer de blanqueo diferido
   let blankedVotId = null;        // idLike de la última votación que ya “permitimos blanquear”
 
+  function clearQ1EstadoBg(){
+    if (!votacionEstado) return;
+    votacionEstado.classList.remove("q1-res-pos","q1-res-neg","q1-res-abs");
+  }
+
+  function setQ1EstadoBgByEstado(estado){
+    if (!votacionEstado) return;
+
+    // Siempre arrancamos limpio
+    clearQ1EstadoBg();
+
+    // Mapeo estado -> color (mismos colores que los fondos de concejales)
+    if (estado === "APROBADA") votacionEstado.classList.add("q1-res-pos");
+    else if (estado === "RECHAZADA") votacionEstado.classList.add("q1-res-neg");
+    else if (estado === "EMPATADA") votacionEstado.classList.add("q1-res-abs");
+  }
+
   function clearQ1StatusTexts(){
     // Estos son los .statusbox__text de Q1 que hoy repinta renderVotacionEstado()
     const resumen = document.getElementById("q1VotacionResumen");
     if (resumen) resumen.textContent = "-";
     if (inVotTema) inVotTema.textContent = "-";
     if (votacionEstado) votacionEstado.textContent = "-";
+    clearQ1EstadoBg();
   }
 
   // function setModoEmpate(isEmpate){
@@ -436,6 +455,7 @@ const Q1 = (() => {
       if (clearStatusTimer) clearTimeout(clearStatusTimer);
       clearStatusTimer = null;
       blankedVotId = null;
+      clearQ1EstadoBg();
       return;
     }
 
@@ -452,16 +472,18 @@ const Q1 = (() => {
       const after  = String(current.estado ?? "");
 
       if (isEstadoAbiertoOVivo(before) && !isEstadoAbiertoOVivo(after)){
-
+      
         // Cancelamos un blanqueo previo si lo hubiera
         if (clearStatusTimer) clearTimeout(clearStatusTimer);
 
-        // Programamos blanqueo a los 5s del cierre
+        setQ1EstadoBgByEstado(after);
+
+        // Programamos blanqueo a los x seg del cierre
         clearStatusTimer = setTimeout(() => {
           blankedVotId = current.id;     // “marcamos” esta votación como ya blanqueada
           clearQ1StatusTexts();          // limpiamos textos
           clearStatusTimer = null;
-        }, 4000);
+        }, VOTACION_RESULT_MS);
       }
 
     }
@@ -725,6 +747,10 @@ const Q3 = (() => {
       if (!els?.voteEl) continue;
       els.voteEl.textContent = "";
       els.voteEl.classList.remove("is-voto", "voto-pos", "voto-neg", "voto-abs");
+
+      if (els.innerEl){
+      els.innerEl.classList.remove("voto-pos-bg","voto-neg-bg","voto-abs-bg");
+      }
     }
   }
 
@@ -768,12 +794,24 @@ const Q3 = (() => {
       if (els?.voteEl){
         els.voteEl.textContent = val;
         els.voteEl.classList.add("is-voto");
+
         const cls = voteClassFor(val);
-        if (cls) els.voteEl.classList.add(cls);
+        if (cls) {
+          els.voteEl.classList.add(cls);
+
+          // NUEVO: fondo claro en el inner
+          if (els.innerEl){
+            els.innerEl.classList.remove("voto-pos-bg","voto-neg-bg","voto-abs-bg");
+
+            if (cls === "voto-pos") els.innerEl.classList.add("voto-pos-bg");
+            if (cls === "voto-neg") els.innerEl.classList.add("voto-neg-bg");
+            if (cls === "voto-abs") els.innerEl.classList.add("voto-abs-bg");
+          }
+        }
       }
     }
   }
-
+  
   function applyPresenceAndSpeech(sesion){
     // Opacar imagen si concejal no está presente (60%)
     const concejales = Array.isArray(sesion?.concejales) ? sesion.concejales : [];
@@ -795,12 +833,12 @@ const Q3 = (() => {
       }
 
       if (els?.innerEl){
-  const ausente = (c && c.presente === false);
-  els.innerEl.classList.toggle("is-ausente", !!ausente);
+        const ausente = (c && c.presente === false);
+        els.innerEl.classList.toggle("is-ausente", !!ausente);
 
-  const hablando = hasSpeaking && banca === speakingBanca;
-  els.innerEl.classList.toggle("is-hablando", !!hablando);
-}
+        const hablando = hasSpeaking && banca === speakingBanca;
+        els.innerEl.classList.toggle("is-hablando", !!hablando);
+      }
     }
   }
 
@@ -870,10 +908,10 @@ function handleVotes(sesion){
   // Si no existe timer, lo iniciamos al detectar que ya no está EN_CURSO
   if (!clearVotesTimer){
     // Ideal: usar hora_fin si viene; si no, 4s desde ahora
-    let delayMs = 4000;
+    let delayMs = VOTACION_RESULT_MS;
     const hf = vRef?.hora_fin ? Date.parse(String(vRef.hora_fin)) : NaN;
     if (Number.isFinite(hf)){
-      delayMs = Math.max(0, (hf + 4000) - now);
+      delayMs = Math.max(0, (hf + VOTACION_RESULT_MS) - now);
     }
 
     clearVotesTimer = setTimeout(() => {

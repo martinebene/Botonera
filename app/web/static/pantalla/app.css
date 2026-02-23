@@ -166,7 +166,7 @@ body {
 
 .stack{ display:flex; flex-direction: column; gap: 4px; }
 .label{
-  font-size: 24px;
+  font-size: 28px;
   color: var(--muted);
 }
 
@@ -298,7 +298,7 @@ select.input option{
 
 .statusbox__text{
   margin-top: 4px;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 /* ============================================================
@@ -357,6 +357,12 @@ select.input option{
    - El contenido debe adaptarse "hacia adentro" del panel
    ============================================================ */
 
+
+/* Q1: filas inline en una sola línea (no wrap) */
+#q1 .row.row--inline{
+  flex-wrap: nowrap;
+}
+
 /* Q1: apagamos scroll del body del panel y hacemos layout en columna */
 #q1 .panel__body{
   overflow: hidden;
@@ -390,7 +396,22 @@ select.input option{
   min-width: 96px;
 }
 
+/* ===== Q1 Estado votación: default blanco/negro + colores en ventana de resultado ===== */
 
+#q1 #votacionEstado{
+  flex: 1 1 auto;          /* ocupa el espacio libre del renglón */
+  min-width: 0;            /* permite que no empuje y se recorte bien */
+  box-sizing: border-box;    /* padding no rompe layout */
+  
+  background: #fff;
+  color: #000;
+  padding: 10px 18px;           /* 👈 más aire vertical y horizontal */
+  border-radius: 14px;          /* un poco más suave */
+}
+
+#q1 #votacionEstado.q1-res-pos{ background: #1b7246; } /* mismo que voto-pos-bg */
+#q1 #votacionEstado.q1-res-neg{ background: #882329; } /* mismo que voto-neg-bg */
+#q1 #votacionEstado.q1-res-abs{ background: #8c781e; } /* mismo que voto-abs-bg */
 
 /* ============================================================
    Q4 - EVENTOS (ya funcionaba)
@@ -597,7 +618,7 @@ select.input option{
   border-radius: 10px;
   padding: 8px;
   background: rgba(0,0,0,.18);
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
 }
 
@@ -749,7 +770,19 @@ select.input option{
   font-size: 12px;
 }
 
+/* ===== Fondo claro del recuadro según voto ===== */
 
+.recintoBanca__inner.voto-pos-bg{
+  background: #1b7246  /* verde muy claro */
+}
+
+.recintoBanca__inner.voto-neg-bg{
+  background: #882329;  /* rojo muy claro */
+}
+
+.recintoBanca__inner.voto-abs-bg{
+  background: #8c781e;  /* amarillo muy claro */
+}
 
 /* ===== Q3 (agregado) - Estado (voto / presencia / uso de palabra) ===== */
 
@@ -783,7 +816,7 @@ select.input option{
 
 /* Concejal en uso de la palabra: borde verde claro notorio en el recuadro blanco */
 .recintoBanca__inner.is-hablando{
-  background: #7CFC98;
+  background: #c65a00;
 }
 
 /* Fila inline: label a la izquierda + contenido alineado */
@@ -799,7 +832,6 @@ select.input option{
 } 
 
 #q1 #inVotTema,
-#q1 #q1VotacionResumen,
-#q1 #votacionEstado{
+#q1 #q1VotacionResumen{
   padding: 0; /* o 2px 0 si querés un poquito de aire */
 }

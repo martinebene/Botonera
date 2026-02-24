@@ -100,8 +100,8 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
             "tecla": tecla,
         }
 
-    # 4) Tecla 7: toggle presente/ausente
-    if tecla == "7":
+    # 4) Tecla 9: toggle presente/ausente
+    if tecla == "9":
         concejal.presente = not concejal.presente
         sesion.presentes = sesion_service.cantidad_concejales_presentes()
         if concejal.presente:
@@ -120,8 +120,8 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
                 }
 
 
-    # 5) Tecla 9: pedido de palabra
-    if tecla == "9":
+    # 5) Tecla 7: pedido de palabra
+    if tecla == "7":
         logging.log_internal("INPUT",2,concejal.print_corto() + "Oprimio tecla de PALABRA")
         # Concejal debe estar presente
         if concejal.presente:

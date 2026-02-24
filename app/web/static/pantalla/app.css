@@ -819,6 +819,11 @@ select.input option{
   background: #c65a00;
 }
 
+/* Concejal en modo test: fondo celeste claro */
+.recintoBanca__inner.is-test{
+  background: #cfe9ff; /* celeste claro */
+}
+
 /* Fila inline: label a la izquierda + contenido alineado */
 .row--inline{
   align-items: center;

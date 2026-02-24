@@ -1,13 +1,13 @@
 dni,nombre,apellido,bloque,presente,banca,dispositivo_votacion
-10000001,Dardo,Petroli,Arriba Chubut,true,9,dev09
-10000002,Roxana,Barrera,Arriba Chubut,true,10,dev10
-10000003,Federico,Garitano,Arriba Chubut,true,7,dev07
-10000004,Nadia,Garay,Arriba Chubut,true,12,dev12
-10000005,Walter,Herrero,Arriba Chubut,true,11,dev11
-10000006,Lucila,González,Arriba Chubut,true,8,dev08
-10000007,Hernán,Pereira,Despierta Madryn,true,6,dev06
-10000008,Lorena,Moreno,Despierta Madryn,true,1,dev01
-10000009,Andrea,Garachico,Despierta Madryn,true,5,dev05
-10000010,Gastón,Cuis Taccari,Despierta Madryn,true,4,dev04
-10000011,Samuel,Alarcón Muñoz,Partido Independiente de Chubut (PICH),true,2,dev02
-10000012,Andrea,Rueda,Unidos y Organizados,true,3,dev03
+10000001,Dardo,Petroli,Arriba Chubut,false,9,dev09
+10000002,Roxana,Barrera,Arriba Chubut,false,10,dev10
+10000003,Federico,Garitano,Arriba Chubut,false,7,dev07
+10000004,Nadia,Garay,Arriba Chubut,false,12,dev12
+10000005,Walter,Herrero,Arriba Chubut,false,11,dev11
+10000006,Lucila,González,Arriba Chubut,false,8,dev08
+10000007,Hernán,Pereira,Despierta Madryn,false,6,dev06
+10000008,Lorena,Moreno,Despierta Madryn,false,1,dev01
+10000009,Andrea,Garachico,Despierta Madryn,false,5,dev05
+10000010,Gastón,Cuis Taccari,Despierta Madryn,false,4,dev04
+10000011,Samuel,Alarcón,Partido Independiente de Chubut (PICH),false,2,dev02
+10000012,Andrea,Rueda,Unidos y Organizados,false,3,dev03

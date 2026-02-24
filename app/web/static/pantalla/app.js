@@ -838,6 +838,9 @@ const Q3 = (() => {
 
         const hablando = hasSpeaking && banca === speakingBanca;
         els.innerEl.classList.toggle("is-hablando", !!hablando);
+
+        const test = (c && c.mostrar_test === true);
+        els.innerEl.classList.toggle("is-test", !!test);
       }
     }
   }

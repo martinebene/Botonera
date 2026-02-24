@@ -10,7 +10,7 @@ from app.models.concejal import Concejal
 class ValorVoto(Enum):
     POSITIVO = "Positivo"
     NEGATIVO = "Negativo"
-    ABSTENCION = "Abstencion"
+    ABSTENCION = "Abstención"
 
 class Voto:
     """

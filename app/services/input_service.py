@@ -120,7 +120,20 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
                 }
 
 
-    # 5) Tecla 7: pedido de palabra
+
+    #5) Tecla 8: mostrar_test por x segundos
+    if tecla == "8":
+        concejal.activar_test_temporal(0.6)
+        return {
+            "aceptada": True,
+            "motivo": "mostrar_test_1s",
+            "dispositivo": dispositivo,
+            "tecla": tecla,
+            "concejal": concejal.to_dict(),
+        }
+
+
+    # 6) Tecla 7: pedido de palabra
     if tecla == "7":
         logging.log_internal("INPUT",2,concejal.print_corto() + "Oprimio tecla de PALABRA")
         # Concejal debe estar presente
@@ -154,7 +167,7 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
             }
 
 
-    # 6) Teclas de votación: 1 (SI), 2 (ABSTENCION), 3 (NO)
+    # 7) Teclas de votación: 1 (SI), 2 (ABSTENCION), 3 (NO)
     if tecla in ("1", "2", "3"):
         # Debe haber votación abierta
         votacion = votacion_service.obtener_votacion_actual()
@@ -213,7 +226,7 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
             "valor_voto": valor_voto.value,
         }
 
-    # 6) Cualquier otra tecla: de momento la ignoramos a nivel de negocio
+    # 8) Cualquier otra tecla: de momento la ignoramos a nivel de negocio
     logging.log_internal("INPUT",2,concejal.print_corto() + " presiono tecla: " + tecla + " y no tiene funcion asignada")
     return {
         "aceptada": False,

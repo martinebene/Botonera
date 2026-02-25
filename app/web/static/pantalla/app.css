@@ -660,9 +660,8 @@ select.input option{
 
 /* Zona derecha: “Uso de la Palabra”. */
 .recinto__right{
-  flex: 0 0 32%;
-  min-width: 200px;
-  max-width: 250px;
+  flex: 0 0 20vw;
+  width: 20vw;
 
   display: flex;
   flex-direction: column;

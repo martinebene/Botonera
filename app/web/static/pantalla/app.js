@@ -33,6 +33,7 @@ const STATE_ENDPOINT = "/estados/estado_global";
 const POLL_MS = 300;
 const TIMEOUT_MS = 1500;
 const VOTACION_RESULT_MS = 6000; // tiempo visible del resultado tras cierre
+const VOTACION_COUNTDOWN_SEC = 4; // cuenta regresiva al iniciar votación (Q3)
 
 ///////////////////////////////
 // 2) BUS SIMPLE (desacople)
@@ -71,7 +72,6 @@ const connText = document.getElementById("connText");
 const clockEl  = document.getElementById("clock");
 const toastEl  = document.getElementById("toast");
 const hdrSesionInfo = document.getElementById("hdrSesionInfo");
-const hdrQuorumDelta = document.getElementById("hdrQuorumDelta");
 
 
 
@@ -200,15 +200,13 @@ const uiModel = { respectoPresentes: true };
 // 8.5) header
 ///////////////////////////////
 function updateHeaderSesionInfo(raw){
-  if (!hdrSesionInfo || !hdrQuorumDelta) return;
+  if (!hdrSesionInfo) return;
 
   const state = normalizeState(raw);
   const ses = getSesion(state);
 
   if (!ses || ses.abierta === false){
     hdrSesionInfo.textContent = "";
-    hdrQuorumDelta.textContent = "";
-    hdrQuorumDelta.classList.remove("num-good","num-bad","num-neutral");
     return;
   }
 
@@ -230,25 +228,7 @@ function updateHeaderSesionInfo(raw){
 
   // Texto base (MISMO estilo que el título)
   hdrSesionInfo.textContent =
-    ` · Sesión Nº ${nro} - Concejales ${presentes} de ${total} totales - Quorum:`;
-
-  // Delta
-  hdrQuorumDelta.classList.remove("num-good","num-bad","num-neutral");
-
-  const quorum = Number.isInteger(ses.quorum) ? ses.quorum : null;
-  if (quorum === null){
-    hdrQuorumDelta.textContent = "–";
-    hdrQuorumDelta.classList.add("num-neutral");
-    return;
-  }
-
-  const delta = presentes - quorum;
-  const deltaTxt = (delta > 0) ? `+${delta}` : `${delta}`;
-
-  hdrQuorumDelta.textContent = deltaTxt;
-
-  if (delta >= 0) hdrQuorumDelta.classList.add("num-good");
-  else hdrQuorumDelta.classList.add("num-bad");
+    ` · Sesión Nº ${nro} - Concejales ${presentes} de ${total} totales`;
 }
 
 
@@ -262,7 +242,7 @@ const Q1 = (() => {
   const votacionNormal = document.getElementById("votacionNormal");
   
   const q1VotacionResumen = document.getElementById("q1VotacionResumen");
-
+  const q1QuorumValue = document.getElementById("q1QuorumValue");
   const inVotTema = document.getElementById("inVotTema");
   const votacionEstado = document.getElementById("votacionEstado");
 
@@ -314,10 +294,16 @@ const Q1 = (() => {
     let positivos = 0, negativos = 0, abstenciones = 0;
 
     for (const v of votos){
-      const val = v?.valor_voto;
-      if (val === "Positivo") positivos++;
-      else if (val === "Negativo") negativos++;
-      else if (val === "Abstencion") abstenciones++;
+      const valRaw = String(v?.valor_voto ?? "").trim();
+      // normaliza: baja a minúsculas y quita acentos
+      const key = valRaw
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+
+      if (key === "positivo") positivos++;
+      else if (key === "negativo") negativos++;
+      else if (key === "abstencion") abstenciones++;
     }
 
     return { x: votos.length, positivos, negativos, abstenciones };
@@ -359,6 +345,36 @@ const Q1 = (() => {
     q1VotacionResumen.textContent = buildTextoResumenVotacion(raw);
   }
 
+  function renderQuorum(raw){
+    if (!q1QuorumValue) return;
+
+    const state = normalizeState(raw);
+    const ses = getSesion(state);
+
+    // siempre arrancar limpio
+    q1QuorumValue.classList.remove("num-good","num-bad","num-neutral");
+
+    if (!ses || ses.abierta === false){
+      q1QuorumValue.textContent = "–";
+      q1QuorumValue.classList.add("num-neutral");
+      return;
+    }
+
+    const presentes = Number.isInteger(ses.cantidad_presentes) ? ses.cantidad_presentes : 0;
+    const quorumMin = Number.isInteger(ses.quorum) ? ses.quorum : null;
+
+    if (quorumMin === null){
+      q1QuorumValue.textContent = "–";
+      q1QuorumValue.classList.add("num-neutral");
+      return;
+    }
+
+    const delta = presentes - quorumMin;
+    q1QuorumValue.textContent = (delta > 0) ? `+${delta}` : String(delta);
+
+    if (delta >= 0) q1QuorumValue.classList.add("num-good");
+    else q1QuorumValue.classList.add("num-bad");
+  }
 
   function construirTextoEstadoVotacion(state){
     const ultima = getUltimaVotacion(state);
@@ -374,8 +390,7 @@ const Q1 = (() => {
 
     if (estado === "EN_CURSO"){
       const texto =
-        `Votacion Nº${numero} en curso: ${x} votos (` +
-        `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.)`;
+        `Votacion Nº${numero} en curso: ${x} votos emitidos`;
       return { modoEmpate: false, textoNormal: texto, textoEmpate: texto };
     }
 
@@ -393,7 +408,6 @@ const Q1 = (() => {
 
     return { modoEmpate: false, textoNormal: texto, textoEmpate: texto };
   }
-
 
   function renderVotacionEstado(raw){
     const state = normalizeState(raw);
@@ -497,11 +511,13 @@ const Q1 = (() => {
     // Render inicial
     renderVotacionEstado(null);
     renderResumenVotacion(null);
+    renderQuorum(null);
     lastVotRef = null;
   }
 
   function onState(raw){
     const norm = normalizeState(raw);
+    renderQuorum(raw);
     detectAndHandleVotacionFinalizada(raw);
     renderResumenVotacion(raw);
     renderVotacionEstado(raw);
@@ -519,8 +535,11 @@ const Q1 = (() => {
 const Q3 = (() => {
   const recintoCanvas = document.getElementById("recintoCanvas");
   const recintoError  = document.getElementById("recintoError");
-
   const ulUsoPalabra  = document.getElementById("ulUsoPalabra");
+  // Contador superpuesto (Q3)
+  const q3Countdown = document.getElementById("q3Countdown");
+  let countdownTimer = null;
+  let countdownRef = null;
 
   // Cache de layout (disposición no cambia durante la sesión)
   let cachedSesionKey = null;
@@ -554,6 +573,11 @@ const Q3 = (() => {
     clearLeft();
     clearRight();
     hideLeftError();
+    
+    countdownRef = null;
+    if (countdownTimer) clearInterval(countdownTimer);
+    countdownTimer = null;
+    hideCountdown();
   }
 
   function clearLeft(){
@@ -754,6 +778,56 @@ const Q3 = (() => {
     }
   }
 
+    function hideCountdown(){
+    if (!q3Countdown) return;
+    q3Countdown.classList.remove("is-show");
+    q3Countdown.innerHTML = "";
+  }
+
+  function renderCountdownNum(n){
+    if (!q3Countdown) return;
+    q3Countdown.innerHTML = `
+      <div class="q3Countdown__pill">
+        <div class="q3Countdown__num">${n}</div>
+        <div class="q3Countdown__sub">Tiempo</div>
+      </div>
+    `;
+  }
+
+  function startCountdownFor(ref){
+    if (!q3Countdown) return;
+
+    // Si ya está corriendo para esta misma votación, no reiniciar
+    if (countdownRef === ref) return;
+
+    countdownRef = ref;
+
+    if (countdownTimer) clearInterval(countdownTimer);
+    countdownTimer = null;
+
+    let remaining = Number(VOTACION_COUNTDOWN_SEC) || 0;
+    if (remaining <= 0){
+      hideCountdown();
+      return;
+    }
+
+    q3Countdown.classList.add("is-show");
+    renderCountdownNum(remaining);
+
+    countdownTimer = setInterval(() => {
+      remaining -= 1;
+
+      if (remaining <= 0){
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+        hideCountdown();
+        return;
+      }
+
+      renderCountdownNum(remaining);
+    }, 1000);
+  }
+
   function currentEnCursoVotaciones(sesion){
     const vs = Array.isArray(sesion?.votaciones) ? sesion.votaciones : [];
     return vs.filter(v => String(v?.estado ?? "") === "EN_CURSO");
@@ -888,10 +962,12 @@ function handleVotes(sesion){
       if (clearVotesTimer) clearTimeout(clearVotesTimer);
       clearVotesTimer = null;
       clearAllVoteTexts();
+      // Al iniciar una votación nueva, mostramos el contador superpuesto
+      startCountdownFor(ref);
     }
 
-    // Aplicamos votos actuales (en curso)
-    applyVotesFromVotacion(v);
+    // EN_CURSO: voto secreto -> no mostrar nada
+    clearAllVoteTexts();
     return;
   }
 
@@ -1069,6 +1145,19 @@ const Q4 = (() => {
     if (addedAny) renderAll();
   }
 
+  function isVotacionEnCurso(raw){
+    const state = normalizeState(raw);
+    const v = getUltimaVotacion(state);
+    return String(v?.estado ?? "") === "EN_CURSO";
+  }
+
+  function applySecretMode(raw){
+    if (!preEventos) return;
+    const enCurso = isVotacionEnCurso(raw);
+    preEventos.classList.toggle("is-secret", enCurso);
+  }
+
+
   function init(){
     if (!selEventosNivel || !preEventos) return;
 
@@ -1087,7 +1176,10 @@ const Q4 = (() => {
     });
   }
 
-  function onState(raw){ ingestEventos(raw); }
+  function onState(raw){
+    applySecretMode(raw);
+    ingestEventos(raw);
+  }
   function onError(_e){}
 
   return { init, onState, onError };

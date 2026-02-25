@@ -20,7 +20,6 @@
       <div class="brand">
         Concejo Deliberante de Puerto Madryn
         <span id="hdrSesionInfo"></span>
-        <span id="hdrQuorumDelta" class="num-neutral"></span>
       </div>
     </div>
 
@@ -42,28 +41,38 @@
         
 
         <!-- VOTACION NORMAL -->
-        <div id="votacionNormal">
-          
-          <div class="row row--tight row--inline">
-            <div class="label label--inline">Votación: </div>
-            <div id="q1VotacionResumen" class="statusbox__text">
-              No hay votación en curso.
-            </div>
-          </div>
+        <div id="votacionNormal" class="q1VotLayout">
 
-          
-          <div class="row row--tight row--inline">
+          <!-- Izquierda: los 3 renglones -->
+          <div class="q1VotLeft">
+
+            <div class="row row--tight row--inline">
+              <div class="label label--inline">Votación: </div>
+              <div id="q1VotacionResumen" class="statusbox__text">
+                No hay votación en curso.
+              </div>
+            </div>
+
+            <div class="row row--tight row--inline">
               <div class="label label--inline">Tema: </div>
               <div id="inVotTema" class="statusbox__text">-</div>
+            </div>
+
+            <div class="row row--tight row--inline">
+              <div class="label label--inline">Estado:</div>
+              <div id="votacionEstado" class="statusbox__text">-</div>
+            </div>
+
           </div>
 
-
-          <div class="row row--tight row--inline">
-            <div class="label label--inline">Estado:</div>
-            <div id="votacionEstado" class="statusbox__text">-</div>
+          <!-- Derecha: Quorum -->
+          <div class="q1QuorumBox">
+            <div class="label">Quorum</div>
+            <div id="q1QuorumValue" class="q1QuorumValue">–</div>
           </div>
 
         </div>
+            
       </div>
     </section>
 
@@ -90,6 +99,7 @@
               - imágenes en /static/bancas/<banca>.png
             -->
             <div id="recintoCanvas" class="recinto__canvas"></div>
+            <div id="q3Countdown" class="q3Countdown" aria-label="Cuenta regresiva"></div>
           </div>
 
           <!-- Zona derecha: lista “Uso de la Palabra” -->

@@ -280,10 +280,16 @@ const Q1 = (() => {
     let positivos = 0, negativos = 0, abstenciones = 0;
 
     for (const v of votos){
-      const val = v?.valor_voto;
-      if (val === "Positivo") positivos++;
-      else if (val === "Negativo") negativos++;
-      else if (val === "Abstencion") abstenciones++;
+      const valRaw = String(v?.valor_voto ?? "").trim();
+      // normaliza: baja a minúsculas y quita acentos
+      const key = valRaw
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+
+      if (key === "positivo") positivos++;
+      else if (key === "negativo") negativos++;
+      else if (key === "abstencion") abstenciones++;
     }
 
     return { x: votos.length, positivos, negativos, abstenciones };

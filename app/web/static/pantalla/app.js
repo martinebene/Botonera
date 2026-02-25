@@ -333,11 +333,11 @@ const Q1 = (() => {
     const sinMayoriaEspecial = isMayoríaEspecialCeroOVacia(fRaw);
 
     if (sinMayoriaEspecial){
-      return `Tipo "${tipo}" Nº${numero} sin mayoria especial, computando sobre "${respecto}".`;
+      return `Tipo "${tipo}" Nº${numero} sin mayoria especial, sobre "${respecto}".`;
     }
 
     const factorTxt = String(fRaw).trim();
-    return `Tipo "${tipo}" Nº${numero} con mayoria especial de ${factorTxt}, computando sobre "${respecto}".`;
+    return `Tipo "${tipo}" Nº${numero} con mayoria especial de ${factorTxt}, sobre "${respecto}".`;
   }
 
   function renderResumenVotacion(raw){

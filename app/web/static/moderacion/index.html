@@ -140,7 +140,7 @@
           </div>
 
           <div class="statusbox">
-            <div class="label">Estado de votación</div>
+            <div class="label label--estadoVotacion">Estado de votación</div>
             <div id="votacionEstado" class="statusbox__text">
               No hay votación en curso.
             </div>
@@ -162,7 +162,7 @@
           </div>
 
           <div class="statusbox">
-            <div class="label">Estado de votación</div>
+            <div class="label label--estadoVotacion">Estado de votación</div>
             <div id="votacionEstadoEmpate" class="statusbox__text">
               Votación: Empatada.
             </div>
@@ -233,6 +233,13 @@
       -->
       <div class="panel__body" id="q3Body">
 
+
+        <div id="q3Countdown" class="q3Countdown" style="display:none;">
+          <div class="q3Countdown__pill">
+            Mostrando votos en <span id="q3CountdownNum">4</span>s
+          </div>
+        </div>
+        
         <!-- Contenedor raíz del cuadrante (ocupa todo el alto del panel) -->
         <div class="recinto" aria-label="Recinto del Concejo Deliberante">
 

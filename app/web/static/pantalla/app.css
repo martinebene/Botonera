@@ -169,11 +169,12 @@ body {
 .stack{ display:flex; flex-direction: column; gap: 4px; }
 .label{
   font-size: 4vh;
+  font-weight: 700;
   color: var(--muted);
 }
 
 
-  .label--big{ font-size: 12px; font-weight: 600; }
+.label--big{ font-size: 12px; font-weight: 600; }
 
 .grow{ flex: 1; }
 .mt{ margin-top: 8px; }
@@ -678,7 +679,8 @@ select.input option{
 .recinto__rightTitle{
   padding: 8px 10px;
   border-bottom: 1px solid var(--border);
-  font-size: 2vh;
+  font-size: 2.6vh;
+  font-weight: 500;
   color: var(--muted);
   text-align: center;
   /* importante: que NO parezca un campo */

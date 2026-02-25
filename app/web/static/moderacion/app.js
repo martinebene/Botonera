@@ -310,8 +310,7 @@ const Q1 = (() => {
 
     if (estado === "EN_CURSO"){
       const texto =
-        `Votacion ${numero} en curso: ${x} votos - ` +
-        `${positivos} positivos, ${negativos} negativos y ${abstenciones} abstenciones.`;
+        `Votacion ${numero} en curso: ${x} votos`;
       return { modoEmpate: false, textoNormal: texto, textoEmpate: texto };
     }
 
@@ -1078,6 +1077,10 @@ const Q3 = (() => {
   const recintoError  = document.getElementById("recintoError");
 
   const ulUsoPalabra  = document.getElementById("ulUsoPalabra");
+  const q3Countdown = document.getElementById("q3Countdown");
+  const q3CountdownNum = document.getElementById("q3CountdownNum");
+  const preEventos = document.getElementById("preEventos");
+
   const btnOtorgarPalabra = document.getElementById("btnOtorgarPalabra");
   const btnQuitarPalabra  = document.getElementById("btnQuitarPalabra");
 
@@ -1092,6 +1095,31 @@ const Q3 = (() => {
   // Estado de votación para lógica de “blanqueo”
   let activeVotRef = null;
   let clearVotesTimer = null;
+  // Durante este tiempo desde que se abre una NUEVA votación, se ocultan los votos en las bancas (sin color ni texto)
+  const VOTE_REVEAL_DELAY_MS = 4000;
+  let suppressVotesUntil = 0;
+
+  let preEventosPrevColor = null;
+
+  function setEventosHidden(hidden){
+    if (!preEventos) return;
+
+    if (hidden){
+      if (preEventosPrevColor === null){
+        preEventosPrevColor = preEventos.style.color ?? "";
+      }
+      // “Igual que el fondo” (lo tomamos del background-color computado)
+      const bg = getComputedStyle(preEventos).backgroundColor;
+      preEventos.style.color = bg;
+    } else {
+      if (preEventosPrevColor !== null){
+        preEventos.style.color = preEventosPrevColor;
+        preEventosPrevColor = null;
+      } else {
+        preEventos.style.color = "";
+      }
+    }
+  }
 
   function sesionKey(sesion){
     if (!sesion) return null;
@@ -1109,6 +1137,7 @@ const Q3 = (() => {
     activeVotRef = null;
     if (clearVotesTimer) clearTimeout(clearVotesTimer);
     clearVotesTimer = null;
+    suppressVotesUntil = 0;
 
     clearLeft();
     clearRight();
@@ -1122,6 +1151,20 @@ const Q3 = (() => {
 
   function clearRight(){
     if (ulUsoPalabra) ulUsoPalabra.innerHTML = "";
+  }
+
+  function hideCountdown(){
+    if (q3Countdown) q3Countdown.style.display = "none";
+  }
+
+  function showCountdown(msLeft){
+    if (!q3Countdown || !q3CountdownNum) return;
+
+    // redondeo hacia arriba: si quedan 3.2s => muestra 4
+    const s = Math.max(0, Math.ceil(msLeft / 1000));
+    q3CountdownNum.textContent = String(s);
+
+    q3Countdown.style.display = "";
   }
 
   function showLeftError(msg){
@@ -1425,17 +1468,31 @@ function handleVotes(sesion){
     // Si cambió la votación activa, blanqueamos inmediatamente y cancelamos timers
     if (activeVotRef !== ref){
       activeVotRef = ref;
+      suppressVotesUntil = now + VOTE_REVEAL_DELAY_MS;
       if (clearVotesTimer) clearTimeout(clearVotesTimer);
       clearVotesTimer = null;
       clearAllVoteTexts();
+      
     }
 
+    // Mientras dure la ventana, mantenemos TODO en blanco (sin pastilla ni color)
+    if (now < suppressVotesUntil){
+      showCountdown(suppressVotesUntil - now);
+      clearAllVoteTexts();
+      setEventosHidden(true);
+      return;
+    }
+    hideCountdown(); // si ya pasó la ventana y sigue en curso, ocultamos overlay
+
     // Aplicamos votos actuales (en curso)
+    setEventosHidden(false);
     applyVotesFromVotacion(v);
     return;
   }
 
   // No hay votación EN_CURSO
+  hideCountdown();
+  setEventosHidden(false);
   if (!activeVotRef){
     // No hay referencia activa: aseguramos blanco
     clearAllVoteTexts();

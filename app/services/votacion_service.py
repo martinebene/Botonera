@@ -66,22 +66,22 @@ class VotacionService:
 
         sesion = sesion_service.obtener_sesion_actual()
         if sesion is None or not sesion.abierta:
-            logging.log_internal("VOTACION",2,"Fallo apertura de votacion al no haber sesion activa")
+            logging.log_internal("VOTACION",2,"Fallo apertura de votación al no haber sesión activa")
             raise ValueError("No_hay_sesion_abierta")
 
         if sesion_service.cantidad_concejales_presentes() < sesion.quorum:
-            logging.log_internal("VOTACION",2,"Falta quorum para abruir votacion")
+            logging.log_internal("VOTACION",2,"Falta quórum para abrir votación")
             raise ValueError("No_hay_quorum")
 
         if self.votacion_actual is not None and (self.votacion_actual.estado == EstadosVotacion.EN_CURSO):
-            logging.log_internal("VOTACION",2,"Fallo apertura de votacion al ya haber una votacion activa")
+            logging.log_internal("VOTACION",2,"Fallo apertura de votación al ya haber una votación activa")
             raise ValueError("hay_una_votación_abierta")
 
         votacion = Votacion(sesion_service=sesion_service ,numero=numero, tipo=tipo, tema=tema, computa_sobre_los_presentes=computa_sobre_los_presentes, factor_mayoria_especial=factor_mayoria_especial)
         sesion.votaciones.append(votacion)
         self.votacion_actual = votacion
 
-        logging.log_internal("VOTACION",3,"Apertura de votacion de tipo " + votacion.tipo + " Nº" + str(votacion.numero) +" con tema: " + votacion.tema)
+        logging.log_internal("VOTACION",3,"Apertura de votación de tipo " + votacion.tipo + " Nº" + str(votacion.numero) +" con tema: " + votacion.tema)
 
         return votacion
 
@@ -102,11 +102,11 @@ class VotacionService:
 
         sesion = sesion_service.obtener_sesion_actual()
         if sesion is None or not sesion.abierta:
-            logging.log_internal("VOTO",2,"Fallo registro de voto al no haber sesion activa")
+            logging.log_internal("VOTO",2,"Fallo registro de voto al no haber sesión  activa")
             raise ValueError("no_hay_sesion_abierta")
 
         if self.votacion_actual is None or (self.votacion_actual.estado != EstadosVotacion.EN_CURSO):
-            logging.log_internal("VOTO",2,"Fallo registro de voto al no haber votacion activa")
+            logging.log_internal("VOTO",2,"Fallo registro de voto al no haber votación activa")
             raise ValueError("no_hay_votacion_abierta")
 
         votacion = self.votacion_actual
@@ -179,11 +179,11 @@ class VotacionService:
 
         sesion = sesion_service.obtener_sesion_actual()
         if sesion is None or not sesion.abierta:
-            logging.log_internal("VOTO",2,"Desempate fallo registro de voto al no haber sesion activa")
+            logging.log_internal("VOTO",2,"Desempate fallo registro de voto al no haber sesión activa")
             raise ValueError("no_hay_sesion_abierta")
 
         if self.votacion_actual is None or (self.votacion_actual.estado != EstadosVotacion.EMPATADA):
-            logging.log_internal("VOTO",2,"Desempate fallo registro de voto al no haber votacion a desempatar")
+            logging.log_internal("VOTO",2,"Desempate fallo registro de voto al no haber votación a desempatar")
             raise ValueError("no_hay_votacion_abierta")
 
         votacion = self.votacion_actual

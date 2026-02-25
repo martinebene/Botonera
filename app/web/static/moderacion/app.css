@@ -492,6 +492,25 @@ select.input option{
   -webkit-line-clamp: 2;
 }
 
+/* SOLO el estado de votación (Q1) */
+#q1 #votacionEstado{
+  font-size: 18px;      /* ajustá a gusto */
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+#q1 #votacionEstadoEmpate{
+  font-size: 18px;     /* mismo valor que el otro */
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/* SOLO el label "Estado de votación" (Q1) */
+#q1 .label--estadoVotacion{
+  font-size: 18px;      /* ajustá a gusto */
+  font-weight: 500;
+}
+
 /* Permite que los campos en filas ajusten mejor en pantallas chicas */
 #q1 .field--tight{
   min-width: 96px;
@@ -568,11 +587,41 @@ select.input option{
 /* Si tu panel Q3 tiene un body con id="q3Body", lo dejamos sin scroll
    y hacemos layout interno con flex. */
 #q3Body{
+  position: relative;
   overflow: hidden;      /* evita que el panel entero scrollee */
   display: flex;
   flex-direction: column;
   min-height: 0;
   min-width: 0;
+}
+
+.q3Countdown{
+  position: absolute;
+  inset: 0;                /* top/right/bottom/left:0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  pointer-events: none;
+
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(2px);
+}
+
+.q3Countdown__pill{
+  pointer-events: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+
+#q3CountdownNum{
+  font-variant-numeric: tabular-nums;
 }
 
 /* Contenedor principal del recinto (izquierda) + uso de palabra (derecha) */

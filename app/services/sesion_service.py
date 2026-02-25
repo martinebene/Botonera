@@ -41,18 +41,18 @@ class SesionService:
 
         # Ya hay sesión abierta
         if self.sesion_actual is not None and self.sesion_actual.abierta:
-            logging.log_internal("SESION",2, "Rechazo de apertura de sesion porque ya hay sesion abierta")
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque ya hay sesión abierta")
             raise ValueError("ya_hay_sesión_abierta")
 
         # Cargamos concejales ANTES de crear la sesión
         try:
             concejales: List[Concejal] = cargar_concejales_desde_archivo(settings.concejales_file)
         except FileNotFoundError:
-            logging.log_internal("SESION",2, "Rechazo de apertura de sesion porque no hay archivo de concejales")
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque no hay archivo de concejales")
             raise ValueError("no_hay_archivo_concejales")
 
         if not concejales:
-            logging.log_internal("SESION",2, "Rechazo de apertura de sesion porque no hay concejales en el archivo")
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque no hay concejales en el archivo")
             raise ValueError("lista_concejales_vacía")
 
         # Si todo está bien, creamos la sesión
@@ -66,7 +66,7 @@ class SesionService:
         self.sesion_actual = sesion
 
         # Log de apertura exitosa
-        logging.log_internal("SESION",3, "Apertura de sesion Nº" + str(self.sesion_actual.numero_sesion))
+        logging.log_internal("SESION",3, "Apertura de sesión Nº" + str(self.sesion_actual.numero_sesion))
         return sesion
 
     def cerrar_sesion(self) -> Sesion:
@@ -82,13 +82,13 @@ class SesionService:
         from app.services.votacion_service import votacion_service
 
         if self.sesion_actual is None:
-            logging.log_internal("SESION",2, "Cierre de sesion fallido porque no hay sesion abierta")
+            logging.log_internal("SESION",2, "Cierre de sesión fallido porque no hay sesión abierta")
             raise ValueError("ya_hay_sesión_abierta")
 
         sesion = self.sesion_actual
 
         if not sesion.abierta:
-            logging.log_internal("SESION",2, "Cierre de sesion fallido porque no hay sesion abierta")
+            logging.log_internal("SESION",2, "Cierre de sesión fallido porque no hay sesión abierta")
             raise ValueError("ya_hay_sesión_abierta")
 
         
@@ -100,7 +100,7 @@ class SesionService:
         sesion.cerrar() 
  
         # Log de cierre exitoso
-        logging.log_internal("SESION",3, "Cierre de sesion Nº" + str(self.sesion_actual.numero_sesion))
+        logging.log_internal("SESION",3, "Cierre de sesión Nº" + str(self.sesion_actual.numero_sesion))
 
         # Dejamos la referencia en None (o podríamos solo dejar la Sesion cerrada)
         self.sesion_actual = None
@@ -118,15 +118,15 @@ class SesionService:
         """Encola o Desencola un concejal"""
         if concejal not in self.sesion_actual.pedidos_uso_de_palabra:
             self.sesion_actual.pedidos_uso_de_palabra.append(concejal)
-            logging.log_internal("PALABRA",3, concejal.print_corto() + " pidio la palabra")
+            logging.log_internal("PALABRA",3, concejal.print_corto() + " pidió la palabra")
         else:
             self.sesion_actual.pedidos_uso_de_palabra.remove(concejal)
-            logging.log_internal("PALABRA",3, concejal.print_corto() + " retiro el pedido la palabra")
+            logging.log_internal("PALABRA",3, concejal.print_corto() + " retiró el pedido la palabra")
 
     def otorgar_uso_palabra(self) -> None:
         if self.sesion_actual.pedidos_uso_de_palabra:
             self.sesion_actual.en_uso_de_palabra=self.sesion_actual.pedidos_uso_de_palabra.popleft()
-            logging.log_internal("PALABRA",3, "Se otorgo uso de la palabra a "+ self.sesion_actual.en_uso_de_palabra.print_corto())
+            logging.log_internal("PALABRA",3, "Se otorgó uso de la palabra a "+ self.sesion_actual.en_uso_de_palabra.print_corto())
         else:
             self.sesion_actual.en_uso_de_palabra=None
             logging.log_internal("PALABRA",2, "Fallo dar uso de la palabra, porque no hay solicitudes en cola")
@@ -135,7 +135,7 @@ class SesionService:
             if self.sesion_actual.en_uso_de_palabra is not None:
                 s = self.sesion_actual.en_uso_de_palabra.print_corto()
                 self.sesion_actual.en_uso_de_palabra=None
-                logging.log_internal("PALABRA",3, "Dejo el uso de la palabra "+ s)
+                logging.log_internal("PALABRA",3, "Dejó el uso de la palabra "+ s)
             else:
                 logging.log_internal("PALABRA",2, "Nadie a quien quitarle la palabra") 
 

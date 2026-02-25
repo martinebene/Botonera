@@ -159,6 +159,26 @@ function normalizeState(raw){
   return { sesion: raw };
 }
 
+function stripDiacritics(s){
+  // elimina acentos: "Ratificación" -> "Ratificacion"
+  return String(s ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function normKey(str){
+  // ignora mayúsculas, acentos y múltiples espacios
+  return String(str ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function splitSemicolonLine(line){
+  // split simple por ';' (mantiene vacíos)
+  return String(line ?? "").split(";");
+}
+
 function getSesion(state){
   const ses = state?.sesion;
   return ses && typeof ses === "object" ? ses : null;
@@ -376,7 +396,12 @@ const Q1 = (() => {
     if (votAbierta && ultima){
       // 1) Fijar valores desde backend
       if (inVotNumero) inVotNumero.value = String(ultima?.numero ?? "");
-      if (selVotTipo)  selVotTipo.value  = String(ultima?.tipo ?? "");
+      if (selVotTipo){
+        const desiredKey = normKey(String(ultima?.tipo ?? ""));
+        const opt = Array.from(selVotTipo.options).find(o => normKey(o.value) === desiredKey);
+        if (opt) selVotTipo.value = opt.value;
+        else selVotTipo.value = String(ultima?.tipo ?? "");
+      }
       if (inVotTema)   inVotTema.value   = String(ultima?.tema ?? "");
 
       // Factor: puede venir 0; lo mostramos tal cual (si querés vacío cuando 0, lo ajustamos)
@@ -467,13 +492,27 @@ const Q1 = (() => {
       // 2) Tipo: case-insensitive, pero lo seteamos con el valor CANÓNICO del select
       //    Valores canónicos que existen en el <select>:
       //      "Despacho", "Mocion", "Sobre tabla", "Ratificacion"
+      // 2) Tipo: tolerante (espacios/mayúsculas/acentos) + default "Otro"
       if (selVotTipo){
-        const desired = String(row.tipo ?? "");
-        const desiredLower = desired.toLowerCase();
+        const normKey = (str) => String(str ?? "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .replace(/\s+/g, " ")
+          .trim();
 
-        // Buscamos una option cuyo value coincida case-insensitive
-        const opt = Array.from(selVotTipo.options).find(o => String(o.value).toLowerCase() === desiredLower);
-        if (opt) selVotTipo.value = opt.value;
+        const desired = String(row.tipo ?? "");
+        const desiredKey = normKey(desired);
+
+        const opt = Array.from(selVotTipo.options).find(o => normKey(o.value) === desiredKey);
+
+        if (opt){
+          selVotTipo.value = opt.value;
+        } else {
+          // si no se encuentra, caer a "Otro" si existe
+          const optOtro = Array.from(selVotTipo.options).find(o => normKey(o.value) === normKey("Otro"));
+          if (optOtro) selVotTipo.value = optOtro.value;
+        }
       }
 
       // 3) Respecto: case-insensitive
@@ -630,10 +669,20 @@ const Q2 = (() => {
   let selectedIndex = -1;     // Para marcar visualmente la fila seleccionada
 
   // Header exacto requerido (case-sensitive, sin espacios)
-  const REQUIRED_HEADER = "nro_votacion,tipo,tema,factor_de_mayoria,respecto";
+  const REQUIRED_HEADER = "nro_votacion;tipo;tema;factor_de_mayoria;respecto";
 
   // Valores canónicos aceptados para tipo y respecto (case-insensitive)
-  const TIPO_ALLOWED_CANON = ["Despacho", "Mocion", "Sobre tabla", "Ratificacion"];
+  const TIPO_ALLOWED_CANON = [
+    "Ratificación",
+    "Despacho OP",
+    "Despacho Gob",
+    "Despacho AS",
+    "Despacho HA",
+    "Despacho Eco",
+    "Mocion",
+    "P. Sobre Tabla",
+    "Otro",
+  ];
   const RESPECTO_ALLOWED_CANON = ["Presentes", "Cuerpo"];
 
   /*
@@ -782,13 +831,13 @@ const Q2 = (() => {
         throw new Error(`CSV inválido: tema vacío en fila ${rowIndex + 1}.`);
       }
 
-      // tipo: case-insensitive, pero debe corresponder a un valor permitido
-      const tipoCanon = TIPO_ALLOWED_CANON.find(v => v.toLowerCase() === tipoRaw.toLowerCase());
+      // tipo: tolerante (ignora mayúsculas, acentos y espacios extra)
+      // si no matchea, por defecto "Otro"
+      const tipoCanon = TIPO_ALLOWED_CANON.find(v => normKey(v) === normKey(tipoRaw)) ?? "Otro";
+
+      // Si no coincide con ninguno → usar "Otro"
       if (!tipoCanon){
-        throw new Error(
-          `CSV inválido: tipo inválido en fila ${rowIndex + 1} ("${tipoRaw}"). ` +
-          `Permitidos: ${TIPO_ALLOWED_CANON.join(", ")}`
-        );
+        tipoCanon = "Otro";
       }
 
       // respecto: case-insensitive, pero debe corresponder a un valor permitido
@@ -848,8 +897,12 @@ const Q2 = (() => {
   function parseOrdenDelDiaCsvStrict(text){
     const { firstLine, rest } = readFirstLineAndRest(text);
 
-    // Header exacto (sin trim, porque queremos estricto total)
-    if (firstLine !== REQUIRED_HEADER){
+    // 1) Header: debe ser exactamente esas 5 columnas, separadas por ';'
+    //    (toleramos espacios, mayúsculas y acentos SOLO en el header)
+    const expectedCols = splitSemicolonLine(REQUIRED_HEADER).map(normKey);
+    const gotCols = splitSemicolonLine(firstLine).map(normKey);
+
+    if (gotCols.length !== expectedCols.length || gotCols.some((c, i) => c !== expectedCols[i])){
       throw new Error(
         `CSV inválido: header incorrecto.\n` +
         `Esperado: ${REQUIRED_HEADER}\n` +
@@ -857,13 +910,22 @@ const Q2 = (() => {
       );
     }
 
-    // Parse de records con comillas
-    const records = parseQuotedCsvRecords(rest);
+    // 2) Parse filas: cada línea no vacía => 5 columnas separadas por ';'
+    const s = String(rest ?? "").replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+    const lines = s.split("\n").filter(l => normKey(l).length > 0);
 
-    // Permitimos archivo con header pero sin filas (tabla vacía)
+    const records = lines.map((line, idx) => {
+      const cols = splitSemicolonLine(line);
+      if (cols.length !== 5){
+        throw new Error(`CSV inválido: fila ${idx + 1} debe tener 5 columnas (tiene ${cols.length}).`);
+      }
+      return cols;
+    });
+
+    // 3) Permitimos archivo con header pero sin filas (tabla vacía)
     if (records.length === 0) return [];
 
-    // Validación y normalización a objetos
+    // 4) Validación y normalización a objetos
     return validateAndBuildRows(records);
   }
 

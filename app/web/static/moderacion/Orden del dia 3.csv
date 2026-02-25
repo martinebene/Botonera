@@ -1,0 +1,74 @@
+﻿nro_votacion;tipo;tema;factor_de_mayoria;respecto
+1;ratificacion;Ratificacion Resoluciones 003 a 017 P CD 26;;presentes
+2;ratificacion;Aprobacion Actas 1039 1040 1041;;presentes
+1;mocion;Hora de Preferencia;;presentes
+1;Despacho OP;Expte 072 25 Cozzi excepcion CPU Circ 1 Sec 10 Mza 121 Parc 17 rechazo;;presentes
+2;Despacho OP;Expte 185 19 Contín excepcion CPU Circ 3 Sec 5 Mza 15 Parc 2 rechazo;;presentes
+3;Despacho OP;Expte 256 25 Pavimento Fernando Beriain utilidad pública;;presentes
+4;Despacho OP;Expte 167 22 Pavimento Martinengo utilidad pública;;presentes
+5;Despacho OP;Expte 269 25 Pavimento Perito Moreno utilidad pública;;presentes
+6;Despacho OP;Expte 266 25 Pavimento Tomás Espora utilidad pública;;presentes
+7;Despacho OP;Expte 016 14 Ratificacion convenio Fiorasi Corradi SA;;presentes
+8;Despacho OP;Expte 60 25 Ratificacion contratos Fray Luis Beltrán Azcuénaga Dorrego;;presentes
+9;Despacho OP;Expte 07 22 Ratificacion contratos Pasaje Payro;;presentes
+10;Despacho OP;Expte 288 25 Pavimento Fray Luis Beltrán Azcuénaga JJ Paso utilidad pública;;presentes
+11;Despacho OP;Expte 234 25 Pavimento Azcuénaga Marcos Zar San Martín utilidad pública;;presentes
+12;Despacho OP;Expte 265 25 Pavimento Mitre Berutti JJ Paso utilidad pública;;presentes
+13;Despacho OP;Expte 024 91 Baja reserva taxis La Nueva Patagonia Circ 1 Sec 8 Mza 58 Parc 22;;presentes
+14;Despacho OP;Expte 09 26 Pereyra excepcion CPU Circ 1 Sec 8 Mza 50 Parc 13 rechazo;;presentes
+15;Despacho OP;Expte 058 88 Pavimento Buenos Aires Gales España utilidad pública;;presentes
+16;Despacho OP;Expte 058 88 Ratificacion contratos calle La Plata Gales España;;presentes
+17;Despacho OP;Expte 273 25 Pavimento Fournier Bouchard Colon utilidad pública;;presentes
+18;Despacho OP;Expte 261 25 Pavimento Fray Luis Beltrán Triunvirato Corbetto utilidad pública;;presentes
+19;Despacho OP;Expte 58 25 Curiqueo eximicion derechos construccion Circ 3 Sec 1 Mza 84 Parc 22;;presentes
+20;Despacho OP;Expte 299 25 Liñero excepcion uso fuera zona Circ 3 Sec 1 Mza 51 Parc 23;;presentes
+21;Despacho OP;Expte 51 09 Pavimento Juárez Celman Espora Pujol utilidad pública;;presentes
+22;Despacho OP;Expte 58 88 Ratificacion contrato Orlando Torrico Claure calle La Plata;;presentes
+23;Despacho OP;Expte 130 25 Ratificacion contrato adoquinado Colon Villarino Alem;;presentes
+24;Despacho OP;Expte 142 25 Ratificacion contrato adoquinado Mitre Hansen Corbetto;;presentes
+25;Despacho OP;Expte 123 25 Ratificacion contrato adoquinado La Pampa 9 de Julio Domecq García;;presentes
+26;Despacho OP;Expte 201 25 Ratificacion contrato Fray Luis Beltrán Lavalle Dorrego;;presentes
+27;Despacho OP;Expte 58 88 Ratificacion contrato Pedro Molina Arze calle La Plata;;presentes
+28;Despacho OP;Expte 22 21 Annacaratto Franco excepcion restriccion dominio Circ 3 Sec 7 Mza 172;;presentes
+29;Despacho OP;Expte 02 26 Pavimento Ramon Carrillo Independencia Héroes Malvinas utilidad pública;;presentes
+30;Despacho OP;Expte 01 26 Pavimento Gutyn Ebrill Roca Thomas utilidad pública;;presentes
+1;Despacho Gob;Expte 238 87 Comodato bicicletas adaptadas Leones del Golfo;;presentes
+2;Despacho Gob;Expte 037 13 Taxi accesible Lic 129 Arancibia rechazo excepcion;;presentes
+3;Despacho Gob;Expte 81 19 Interconexion edificios municipales Sector A;;presentes
+4;Despacho Gob;Expte 81 19 Interconexion edificios municipales Sector B;;presentes
+5;Despacho Gob;Expte 81 19 Interconexion edificios municipales Sector C;;presentes
+6;Despacho Gob;Expte 81 19 Interconexion edificios municipales Sector E;;presentes
+7;Despacho Gob;Expte 124 04 Comodato Asociacion Punta Cuevas;;presentes
+8;Despacho Gob;Expte 117 23 Locacion inmueble Usina Teatral;;presentes
+9;Despacho Gob;Expte 24 91 Modificacion Resolucion 056 25 licencias taxis;;presentes
+10;Despacho Gob;Expte 154 19 Adenda comodato ASIMRA Av Juan Muzzio Pasaje Pérez Medel;;presentes
+11;Despacho Gob;Expte 211 01 Acuerdo cooperacion Camuzzi Gas del Sur;;presentes
+12;Despacho Gob;Nota 047 26 Declaracion interés espectáculo Bravía;;presentes
+13;Despacho Gob;Trabajo en Comision Declaracion interés Cardiopatías Congénitas;;presentes
+1;Despacho AS;Nota 622 25 Cordoba Omar Condonacion Dominio HFD 585;;presentes
+2;Despacho AS;Nota 630 25 Quintana Fidela Condonacion Dominio NLD 362;;presentes
+3;Despacho AS;Nota 636 25 Muñoz Amalia Condonacion Partida 081977 000 0;;presentes
+4;Despacho AS;Nota 637 25 Antúnez Elsa Condonacion Partida 002075 000 0;;presentes
+5;Despacho AS;Nota 638 25 Cortes Martín Condonacion Partida 102903 000 0;;presentes
+6;Despacho AS;Nota 642 25 Insaurralde Norma Condonacion Partida 133355 000 0;;presentes
+7;Despacho AS;Nota 002 26 Romero Virginia Condonacion Partida 006004 000 0;;presentes
+8;Despacho AS;Nota 008 26 Srur Noemí Condonacion Partida 009043 000 0 Dominio AD 277 EB;;presentes
+9;Despacho AS;Nota 009 26 Muñiz Alejandra Condonacion Partida 015005 000 0;;presentes
+10;Despacho AS;Nota 012 26 Martínez Salinas Condonacion Partida 168753 000 0;;presentes
+11;Despacho AS;Expte 298 25 Rojas Alba Condonacion Partida 015752 000 0;;presentes
+12;Despacho AS;Expte 191 17 Benítez Rocío Condonacion Partida 083728 000 0;;presentes
+13;Despacho AS;Expte 06 11 Sandoval Coria Condonacion Partida 083055 000 0 Nicho 2803;;presentes
+14;Despacho AS;Expte 280 95 Coronel Leonardo Condonacion Partida 013730 000 0;;presentes
+15;Despacho AS;Expte 203 22 García Lidia Condonacion Partida 002503 002 0;;presentes
+16;Despacho AS;Expte 179 09 Villalba Nélida Condonacion Partida 011386 000 0;;presentes
+17;Despacho AS;Trabajo en Comision Adhesion Lengua de Señas Argentina LSA;0.66;presentes
+18;Despacho AS;Trabajo en Comision Modificacion Ordenanza 8205 Art 6;;presentes
+1;Despacho HA;Nota 639 25 Balance CD Septiembre 2025;;presentes
+2;Despacho HA;Nota 001 26 Balance CD Octubre 2025;;presentes
+3;Despacho HA;Nota 004 26 Balance CD Noviembre 2025;;presentes
+4;Despacho HA;Nota 006 26 Tiro Federal Condonacion Partida 016529 000 0;;presentes
+5;Despacho HA;Nota 037 26 Casa de Galicia Condonacion Partida 170427 000 0;;presentes
+6;Despacho HA;Expte 19 89 Bomberos Voluntarios Condonacion Partida 096466 000 0;;presentes
+7;Despacho HA;Expte 115 15 Docentes Jubilados Condonacion Partida 176394 000 0;;presentes
+8;Despacho HA;Expte 026 79 Diocesis Comodoro Rivadavia Condonacion Partidas varias;;presentes
+1;Despacho Eco;Expte 072 96 Gestion residuos industriales voluminosos no peligrosos;;presentes

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pantalla Recinto</title>
+  <link rel="stylesheet" href="./app.css" />
+</head>
+
+<body>
+  <header class="topbar">
+
+    <!-- Izquierda: fecha y hora -->
+    <div class="topbar__left">
+      <div class="muted" id="clock">--/--/---- --:--:--</div>
+    </div>
+
+    <!-- Centro: título -->
+    <div class="topbar__center">
+      <div class="brand">
+        Concejo Deliberante de Puerto Madryn
+        <span id="hdrSesionInfo"></span>
+      </div>
+    </div>
+
+    <!-- Derecha: estado de conexión -->
+    <div class="topbar__right">
+      <div class="muted" id="connText">Conectando…</div>
+    </div>
+
+  </header>
+
+
+  <main class="grid2x2">
+
+    <!-- Q1 -->
+    <section class="panel" id="q1" data-quadrant="q1">
+
+      <div class="panel__body">
+
+        
+
+        <!-- VOTACION NORMAL -->
+        <div id="votacionNormal" class="q1VotLayout">
+
+          <!-- Izquierda: los 3 renglones -->
+          <div class="q1VotLeft">
+
+            <div class="row row--tight row--inline">
+              <div class="label label--inline">Votación: </div>
+              <div id="q1VotacionResumen" class="statusbox__text">
+                No hay votación en curso.
+              </div>
+            </div>
+
+            <div class="row row--tight row--inline">
+              <div class="label label--inline">Tema: </div>
+              <div id="inVotTema" class="statusbox__text">-</div>
+            </div>
+
+            <div class="row row--tight row--inline">
+              <div class="label label--inline">Estado:</div>
+              <div id="votacionEstado" class="statusbox__text">-</div>
+            </div>
+
+          </div>
+
+          <!-- Derecha: Quorum -->
+          <div class="q1QuorumBox">
+            <div class="label">Quorum</div>
+            <div id="q1QuorumValue" class="q1QuorumValue">–</div>
+          </div>
+
+        </div>
+            
+      </div>
+    </section>
+
+    <!-- Q3 -->
+    <section class="panel" id="q3" data-quadrant="q3">
+
+      <!--
+        IMPORTANTE (premisa de arquitectura):
+        - El scroll NO debe ser del panel completo (eso cambia alturas y “empuja” el grid).
+        - Por eso le damos un id al body y adentro usamos un contenedor flex con min-height:0.
+        - Luego, los únicos scrolleables serán sub-áreas puntuales (ej: la lista "Uso de la Palabra").
+      -->
+      <div class="panel__body" id="q3Body">
+
+        <!-- Contenedor raíz del cuadrante (ocupa todo el alto del panel) -->
+        <div class="recinto" aria-label="Recinto del Concejo Deliberante">
+
+          <!-- Zona izquierda: acá va el “recinto” (bancas con imágenes) -->
+          <div class="recinto__left" aria-label="Plano del recinto (bancas)">
+            <!--
+              En el próximo paso, este div se llenará por JS en base a:
+              - sesion.disposicion_bancas (JSON)
+              - sesion.concejales (banca, presente, etc.)
+              - imágenes en /static/bancas/<banca>.png
+            -->
+            <div id="recintoCanvas" class="recinto__canvas"></div>
+            <div id="q3Countdown" class="q3Countdown" aria-label="Cuenta regresiva"></div>
+          </div>
+
+          <!-- Zona derecha: lista “Uso de la Palabra” -->
+          <div class="recinto__right" aria-label="Uso de la Palabra">
+            <div class="recinto__rightTitle">Pedidos de uso de la palabra</div>
+
+            <!--
+              Este contenedor ES el que debe scrollear (si hay muchos pedidos).
+              El título y el marco NO deben moverse.
+            -->
+            <div class="recinto__rightBody" id="usoPalabraWrap">
+              <div class="recinto__listaWrap" id="usoPalabraListWrap">
+                <!-- Lista: el JS la llena -->
+                <ul class="recinto__lista" id="ulUsoPalabra">
+                  <!-- <li>Apellido Nombre</li> -->
+                </ul>
+              </div>
+
+              <!-- Área para error de render (si el JSON no coincide con concejales o imágenes) -->
+              <div class="hint recinto__error" id="recintoError" style="display:none;">
+                Error en la renderización del recinto.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Q4 -->
+    <section class="panel" id="q4" data-quadrant="q4">
+
+      <div class="panel__body" id="q4Body">
+
+        <div class="events__row">
+          <pre id="preEventos" class="events__console" aria-label="Consola de eventos"></pre>
+
+          <div class="events__side">
+            <div class="events__top">
+              <div class="hint events__hint"></div>
+
+              <div class="field field--tight field--inline events__level">
+                <div class="label">Nivel</div>
+
+                <select id="selEventosNivel" class="input input--tight">
+                  <option value="L3" selected>Principales</option>
+                  <option value="L2">Intermedios</option>
+                  <option value="L1">Sistema</option>
+                </select>
+              </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast" aria-live="polite">Listo.</div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

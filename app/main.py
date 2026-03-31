@@ -16,6 +16,13 @@ app.mount(
     name="monitor-simple",
 )
 
+# Monta el monitor simple pantalls en /monitor-simple-pantallas
+app.mount(
+    "/monitor-simple-pantallas",
+    StaticFiles(directory="app/web/static/monitor_simple_pantallas", html=True),
+    name="monitor-simple-pantallas",
+)
+
 # Monta la pantalla de moderacion en /moderacion
 app.mount(
     "/moderacion",
@@ -28,6 +35,13 @@ app.mount(
     "/pantalla",
     StaticFiles(directory="app/web/static/pantalla", html=True),
     name="pantalla",
+)
+
+# Monta la pantalla2 de recinto en /pantalla2
+app.mount(
+    "/pantalla2",
+    StaticFiles(directory="app/web/static/pantalla2", html=True),
+    name="pantalla2",
 )
 
 # Monta SOLO las imágenes de bancas

@@ -1,11 +1,13 @@
 from fastapi import APIRouter, HTTPException, Body
 
 from app.services.sesion_service import sesion_service
+from app.services.InfoPantallasService import info_pantallas_service
 from app.models.sesion import Sesion
 
 from app.services.votacion_service import votacion_service
 from app.models.votacion import Votacion
 from app.models.voto import Voto, ValorVoto
+from app.utils import logging
 
 
 router = APIRouter(
@@ -30,6 +32,9 @@ def abrir_sesion(
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+    info_pantallas_service.add_sesion(sesion)
+
+
     return sesion.to_dict()
 
 
@@ -42,6 +47,7 @@ def cerrar_sesion():
         sesion: Sesion = sesion_service.cerrar_sesion()
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+
 
     return sesion.to_dict()
 
@@ -60,7 +66,7 @@ def otorgar_uso_palabra():
         return sesion_service.sesion_actual.en_uso_de_palabra.to_dict()
     else:
         return {
-        "ven_uso_palabra": None
+        "en_uso_palabra": None
     }
 
 
@@ -102,6 +108,7 @@ def abrir_votacion(
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+    info_pantallas_service.add_votacion(votacion)
     return votacion.to_dict()
 
 

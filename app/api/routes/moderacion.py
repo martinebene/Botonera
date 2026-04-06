@@ -1,13 +1,14 @@
 from fastapi import APIRouter, HTTPException, Body
 
+from app.config import settings
 from app.services.sesion_service import sesion_service
-from app.services.InfoPantallasService import info_pantallas_service
-from app.models.sesion import Sesion
-
 from app.services.votacion_service import votacion_service
+from app.services.InfoPantallasService import info_pantallas_service
+
+from app.models.sesion import Sesion
 from app.models.votacion import Votacion
 from app.models.voto import Voto, ValorVoto
-from app.utils import logging
+
 
 
 router = APIRouter(
@@ -15,6 +16,27 @@ router = APIRouter(
     tags=["moderacion"],
 )
 
+
+@router.post("/abrir_recinto")
+def abrir_recinto(
+    numero_sesion: int = Body(..., embed=True),
+):
+    """
+    Endpoint para ABRIR una sesión.
+
+    Body esperado:
+        { "numero_sesion": 52 }
+    """
+
+    # try:
+    #     sesion: Sesion = sesion_service.abrir_sesion(numero_sesion)
+    # except ValueError as e:
+    #     raise HTTPException(status_code=400, detail=str(e))
+
+    # info_pantallas_service.add_sesion(sesion)
+
+
+    # return sesion.to_dict()
 
 @router.post("/abrir_sesion")
 def abrir_sesion(

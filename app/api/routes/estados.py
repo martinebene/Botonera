@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 
+from app.config import settings
 from app.services.sesion_service import sesion_service
 from app.services.InfoPantallasService import info_pantallas_service
 from app.utils.logging import get_log_tail
@@ -36,7 +37,7 @@ def estado_sesion():
 @router.get("/info_pantallas")
 def info_pantallas():
     """
-    Devuelve el estado para las pantallas de la sesión actual.
+    Devuelve el estado para las pantallas de la recinto/sesión actual.
     """
     info_pantallas = info_pantallas_service.obtener_info_pantallas()
 
@@ -45,20 +46,11 @@ def info_pantallas():
 @router.get("/configuracion")
 def info_config_pantallas():
     """
-    Devuelve el estado de la sesión actual.
+    Devuelve la configuracion para frontends.
     """
-
-    sesion = sesion_service.obtener_sesion_actual()
-
-    if sesion is None:
+    if settings is None:
         return {
-            "hay_sesion": False,
-            "sesion": None,
-            "eventos":get_log_tail(),
+            "settings": None,
         }
 
-    return {
-        "hay_sesion": True,
-        "sesion": sesion.to_dict(),
-        "eventos":get_log_tail(),
-    }
+    return settings.to_dict

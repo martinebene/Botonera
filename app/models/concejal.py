@@ -33,6 +33,7 @@ class Concejal:
         self.presente = presente
         self.banca = banca
         self._mostrar_test_hasta = 0.0  # time.monotonic() hasta cuándo mostrar
+        self.test_mode = False
         self.dispositivo_votacion = dispositivo_votacion
 
     def __repr__(self)->str:

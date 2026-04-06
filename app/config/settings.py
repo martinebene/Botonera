@@ -58,6 +58,14 @@ class Settings:
                     f"ERROR en configuración: falta la clave obligatoria '{key}' en {self.config_path}"
                 )
 
+    def to_dict(self) -> dict:
+        return {
+            "concejales_file": self.concejales_file,
+            "log_file": self.log_file,
+            "log_dir": self.log_dir,
+            "quorum": self.quorum,
+            "disposicion_bancas": self.disposicion_bancas,
+        }
 
 # Instancia única, global
 settings = Settings()

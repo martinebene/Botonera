@@ -12,17 +12,17 @@ class Banca:
     nombre_concejal:str | None
     en_uso_palabra: bool
     presente: bool
-    test:bool
+    test_mode:bool
     voto: ValorVoto | None
 
 
     def __init__(self, concejal: Concejal) -> None:
 
         self.numero_banca = concejal.banca
-        self.nombre_concejal = concejal.print_corto()
+        self.nombre_concejal = concejal.nombre +" "+concejal.apellido
         self.en_uso_palabra = False
         self.presente = concejal.presente
-        self.test = False
+        self.test_mode = False
         self.voto = None  # ValorVoto | None
 
     def to_dict(self) -> dict:
@@ -31,6 +31,6 @@ class Banca:
             "nombre_concejal": self.nombre_concejal,
             "en_uso_palabra": self.en_uso_palabra,
             "presente": self.presente,
-            "test": self.test,
+            "test": self.test_mode,
             "voto": self.voto.name if self.voto else None,
         }

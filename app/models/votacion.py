@@ -105,13 +105,13 @@ class Votacion:
 
         if self.factor_mayoria_especial != 0:
             if self.computa_sobre_los_presentes:
-                if votos_positivos/votos_emitidos >= self.factor_mayoria_especial:
+                if (votos_emitidos != 0) and (votos_positivos/votos_emitidos >= self.factor_mayoria_especial):
                     self.estado = EstadosVotacion.APROBADA
                 else:
                     self.estado = EstadosVotacion.RECHAZADA
             else:
                 
-                if votos_positivos/self.sesion_service.cantidad_concejales_totales() >= self.factor_mayoria_especial:
+                if (self.sesion_service.cantidad_concejales_totales() != 0) and (votos_positivos/self.sesion_service.cantidad_concejales_totales() >= self.factor_mayoria_especial):
                     self.estado = EstadosVotacion.APROBADA
                 else:
                     self.estado = EstadosVotacion.RECHAZADA

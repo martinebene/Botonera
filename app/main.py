@@ -9,6 +9,16 @@ app.include_router(moderacion.router)
 app.include_router(estados.router)
 app.include_router(entradas.router)
 
+
+
+# Monta la pantalla de moderacion en /moderacion
+app.mount(
+    "/moderacion",
+    StaticFiles(directory="app/web/static/moderacion", html=True),
+    name="moderacion",
+)
+
+
 # Monta el monitor simple en /monitor-simple
 app.mount(
     "/monitor-simple",
@@ -21,13 +31,6 @@ app.mount(
     "/monitor-simple-pantallas",
     StaticFiles(directory="app/web/static/monitor_simple_pantallas", html=True),
     name="monitor-simple-pantallas",
-)
-
-# Monta la pantalla de moderacion en /moderacion
-app.mount(
-    "/moderacion",
-    StaticFiles(directory="app/web/static/moderacion", html=True),
-    name="moderacion",
 )
 
 # Monta la pantalla de recinto en /pantalla

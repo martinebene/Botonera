@@ -4,7 +4,7 @@
   "log_dir": "logs/",
   "quorum": 7,
   "disposicion_bancas": {
-    "filas": [
+    "filas": [  
       { "fila": 3, "columnas": 5 },
       { "fila": 2, "columnas": 4 },
       { "fila": 1, "columnas": 3 }

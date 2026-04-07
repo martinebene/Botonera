@@ -14,9 +14,6 @@ from app.models.votacion import EstadosVotacion
 
 
 
-
-
-
 class SesionService:
     """
     Servicio de dominio para manejar la sesión del Concejo.
@@ -29,7 +26,7 @@ class SesionService:
     def __init__(self) -> None:
         self.sesion_actual: Optional[Sesion] = None
 
-    def abrir_sesion(self, numero_sesion: int) -> Sesion:
+    def preparar_sesion(self) -> Sesion:
         """
         Abre una nueva sesión.
 
@@ -41,22 +38,22 @@ class SesionService:
 
         # Ya hay sesión abierta
         if self.sesion_actual is not None and self.sesion_actual.abierta:
-            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque ya hay sesión abierta")
-            raise ValueError("ya_hay_sesión_abierta")
+            logging.log_internal("SESION",2, "Rechazo de preparacion de sesión porque ya hay sesión preparada")
+            raise ValueError("ya_hay_sesión_preparada")
 
         # Cargamos concejales ANTES de crear la sesión
         try:
             concejales: List[Concejal] = cargar_concejales_desde_archivo(settings.concejales_file)
         except FileNotFoundError:
-            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque no hay archivo de concejales")
+            logging.log_internal("SESION",2, "Rechazo de preparacion de sesión porque no hay archivo de concejales")
             raise ValueError("no_hay_archivo_concejales")
 
         if not concejales:
-            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque no hay concejales en el archivo")
+            logging.log_internal("SESION",2, "Rechazo de preparacion de sesión porque no hay concejales en el archivo")
             raise ValueError("lista_concejales_vacía")
 
         # Si todo está bien, creamos la sesión
-        sesion = Sesion(numero_sesion=numero_sesion)
+        sesion = Sesion()
         self.sesion_actual = sesion
         sesion.concejales = concejales
         sesion.presentes = self.cantidad_concejales_presentes()
@@ -64,9 +61,25 @@ class SesionService:
         sesion.disposicion_bancas = json.dumps(settings.disposicion_bancas, indent=2)
 
         # Log de apertura exitosa
-        logging.log_internal("SESION",3, "Apertura de sesión Nº" + str(self.sesion_actual.numero_sesion))
+        logging.log_internal("SESION",3, "Recinto Preparado para sesiónar")
         return sesion
 
+    
+    def abrir_sesion(self, numero_sesion: int) -> None:
+        
+        if self.sesion_actual is None:
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque no hay recinto preparado")
+            raise ValueError("no_hay_recinto_preparado")        
+
+        if self.sesion_actual is not None and self.sesion_actual.abierta:
+            logging.log_internal("SESION",2, "Rechazo de apertura de sesión porque ya hay sesión abierta")
+            raise ValueError("ya_hay_sesión_abierta")
+        
+        self.sesion_actual.abrir(numero_sesion)
+         # Log de apertura exitosa
+        logging.log_internal("SESION",3, "Apertura de sesión Nº" + str(self.sesion_actual.numero_sesion))
+    
+    
     def cerrar_sesion(self) -> Sesion:
         """
         Cierra la sesión actual.
@@ -81,13 +94,13 @@ class SesionService:
 
         if self.sesion_actual is None:
             logging.log_internal("SESION",2, "Cierre de sesión fallido porque no hay sesión abierta")
-            raise ValueError("ya_hay_sesión_abierta")
+            raise ValueError("no_hay_sesión_abierta")
 
         sesion = self.sesion_actual
 
         if not sesion.abierta:
             logging.log_internal("SESION",2, "Cierre de sesión fallido porque no hay sesión abierta")
-            raise ValueError("ya_hay_sesión_abierta")
+            raise ValueError("no_hay_sesión_abierta")
 
         
         votacion: Votacion = votacion_service.obtener_votacion_actual()
@@ -101,7 +114,7 @@ class SesionService:
         logging.log_internal("SESION",3, "Cierre de sesión Nº" + str(self.sesion_actual.numero_sesion))
 
         # Dejamos la referencia en None (o podríamos solo dejar la Sesion cerrada)
-        self.sesion_actual = None
+        #self.sesion_actual = None
 
         return sesion
 
@@ -144,6 +157,22 @@ class SesionService:
     
     def cantidad_concejales_totales(self) -> int:
             return len(self.sesion_actual.concejales)
+
+
+# metodos transmision en vivo:
+
+    def encender_indicador_transmision_en_vivo(self) -> None:
+        if self.sesion_actual is None:
+            logging.log_internal("SESION",2, "Rechazo de apertura de transmision en vivo porque no hay recinto preparado")
+            raise ValueError("no_hay_recinto_preparado")  
+        self.sesion_actual.transmision_en_vivo=True
+
+    def apagar_indicador_transmision_en_vivo(self) -> None:
+        if self.sesion_actual is None:
+            logging.log_internal("SESION",2, "Rechazo de cierre de transmision en vivo porque no hay recinto preparado")
+            raise ValueError("no_hay_recinto_preparado")         
+        self.sesion_actual.transmision_en_vivo=False
+
 
 # Instancia única (singleton simple) a usar en toda la app
 sesion_service = SesionService()

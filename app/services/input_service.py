@@ -75,8 +75,8 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
     # 2) Verificar sesión
     sesion = sesion_service.obtener_sesion_actual()
 
-    if sesion is None or not sesion.abierta:
-        logging.log_internal("INPUT",2,"Pulsación ignorada: No hay sesión abierta")
+    if sesion is None :
+        logging.log_internal("INPUT",2,"Pulsación ignorada: No hay recinto preparado")
         return {
             "aceptada": False,
             "motivo": "no_hay_sesion_abierta",
@@ -126,13 +126,13 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
         concejal.activar_test_temporal(0.6)
         return {
             "aceptada": True,
-            "motivo": "mostrar_test_1s",
+            "motivo": "mostrar_test",
             "dispositivo": dispositivo,
             "tecla": tecla,
             "concejal": concejal.to_dict(),
         }
 
-
+ 
     # 6) Tecla 7: pedido de palabra
     if tecla == "7":
         logging.log_internal("INPUT",2,concejal.print_corto() + "Presiono tecla de PALABRA")
@@ -234,4 +234,4 @@ def procesar_pulsacion(dispositivo: str, tecla: str) -> Dict[str, Any]:
         "dispositivo": dispositivo,
         "tecla": tecla,
         "concejal": concejal.to_dict(),
-    }
+    } 

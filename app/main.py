@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 from app.api.routes import moderacion, estados, entradas
 
@@ -50,6 +51,10 @@ app.mount(
 # Monta SOLO las imágenes de bancas
 app.mount(
     "/bancas",
-    StaticFiles(directory="app/web/static/bancas"),
+    StaticFiles(directory="app/web/static/common/bancas"),
     name="bancas",
 )
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon():
+    return FileResponse("app/web/static/common/favicon.ico")

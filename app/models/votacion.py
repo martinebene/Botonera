@@ -177,7 +177,7 @@ class Votacion:
             "estado": self.estado.value,
             "computa_sobre_los_presentes": self.computa_sobre_los_presentes,
             "factor_mayoria_especial": self.factor_mayoria_especial,
-            "hora_inicio": self.hora_inicio.isoformat(),
+            "hora_inicio": self.hora_inicio.isoformat() if self.hora_inicio else None,
             "hora_fin": self.hora_fin.isoformat() if self.hora_fin else None,
             "votos": [v.to_dict() for v in self.votos],
         }

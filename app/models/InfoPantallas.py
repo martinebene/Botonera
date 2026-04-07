@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from typing import List
 from fractions import Fraction
+import time
 
 from app.models.sesion import Sesion
 from app.models.banca import Banca
@@ -19,6 +20,8 @@ class InfoPantallas:
 
     sesion: Sesion
 
+    hora_apertura_recinto: datetime | None
+    transmision_en_vivo: False
     sesion_abierta: bool
     numero_sesion: int | None
     hora_inicio_sesion: datetime | None
@@ -49,6 +52,8 @@ class InfoPantallas:
         self.ultimo_refresco = None
         self.hora_actual = None
 
+        self.hora_apertura_recinto = None
+        self.transmision_en_vivo = False
         self.sesion_abierta = None
         self.numero_sesion = None
         self.hora_inicio_sesion = None
@@ -83,6 +88,7 @@ class InfoPantallas:
         
         if (self.sesion):
             self.sesion_abierta = self.sesion.abierta
+            self.transmision_en_vivo = self.sesion.transmision_en_vivo
             self.numero_sesion = self.sesion.numero_sesion
             self.hora_inicio_sesion = self.sesion.hora_inicio
             self.hora_fin_sesion = self.sesion.hora_fin
@@ -99,7 +105,7 @@ class InfoPantallas:
                 c = dict_concejales.get(b.numero_banca)
                 if c:
                     b.presente = c.presente
-                    b.test_mode = c.test_mode
+                    b.test_mode = (time.monotonic() < c.mostrar_test_hasta)
                 if (self.sesion.en_uso_de_palabra is not None) and (b.numero_banca == self.sesion.en_uso_de_palabra.banca):
                     b.en_uso_palabra = True
 
@@ -158,7 +164,8 @@ class InfoPantallas:
 
     def add_sesion(self, sesion:Sesion) -> None:
         self.sesion = sesion
-    
+        self.hora_apertura_recinto = sesion.hora_apertura_recinto
+
         self.bancas = sorted(
             [Banca(c) for c in sesion.concejales],
             key=lambda b: b.numero_banca
@@ -190,7 +197,10 @@ class InfoPantallas:
     def to_dict(self) -> dict:
         return {
             "hora_actual": self.hora_actual.isoformat() if self.hora_actual else None,
+            "hora_apertura_recinto": self.hora_apertura_recinto.isoformat() if self.hora_apertura_recinto else None,
+            
             "sesion_abierta": self.sesion_abierta,
+            "transmision_en_vivo": self.transmision_en_vivo,
             "numero_sesion": self.numero_sesion,
             "hora_inicio_sesion": self.hora_inicio_sesion.isoformat() if self.hora_inicio_sesion else None,
             "hora_fin_sesion": self.hora_fin_sesion.isoformat() if self.hora_fin_sesion else None,

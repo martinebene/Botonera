@@ -17,26 +17,24 @@ router = APIRouter(
 )
 
 
-@router.post("/abrir_recinto")
-def abrir_recinto(
-    numero_sesion: int = Body(..., embed=True),
-):
+@router.post("/preparar_sesion")
+def preparar_sesion():
     """
-    Endpoint para ABRIR una sesión.
+    Endpoint para Preparar una sesión abriendo el recinto.
 
-    Body esperado:
-        { "numero_sesion": 52 }
     """
 
-    # try:
-    #     sesion: Sesion = sesion_service.abrir_sesion(numero_sesion)
-    # except ValueError as e:
-    #     raise HTTPException(status_code=400, detail=str(e))
+    try:
+        sesion: Sesion = sesion_service.preparar_sesion()
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
-    # info_pantallas_service.add_sesion(sesion)
+    info_pantallas_service.add_sesion(sesion)
 
 
-    # return sesion.to_dict()
+    return {
+        "messege": "Ok preparar sesion",
+    }
 
 @router.post("/abrir_sesion")
 def abrir_sesion(
@@ -50,15 +48,13 @@ def abrir_sesion(
     """
 
     try:
-        sesion: Sesion = sesion_service.abrir_sesion(numero_sesion)
+        sesion_service.abrir_sesion(numero_sesion)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-    info_pantallas_service.add_sesion(sesion)
-
-
-    return sesion.to_dict()
-
+    return {
+        "messege": "Ok abrir sesion",
+    }
 
 @router.post("/cerrar_sesion")
 def cerrar_sesion():
@@ -71,7 +67,9 @@ def cerrar_sesion():
         raise HTTPException(status_code=400, detail=str(e))
 
 
-    return sesion.to_dict()
+    return {
+        "messege": "Ok cerrar sesion",
+    }
 
 
 @router.post("/otorgar_uso_palabra")
@@ -80,7 +78,7 @@ def otorgar_uso_palabra():
     Endpoint para otorgar el uso de la palabra.
     """
     try:
-        sesion: Sesion = sesion_service.otorgar_uso_palabra()
+        sesion_service.otorgar_uso_palabra()
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -98,7 +96,7 @@ def quitar_uso_palabra():
     Endpoint para quitar el uso de la palabra.
     """
     try:
-        sesion: Sesion = sesion_service.quitar_uso_palabra()
+        sesion_service.quitar_uso_palabra()
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -131,7 +129,9 @@ def abrir_votacion(
         raise HTTPException(status_code=400, detail=str(e))
 
     info_pantallas_service.add_votacion(votacion)
-    return votacion.to_dict()
+    return {
+        "messege": "Ok abrir votacion",
+    }
 
 
 @router.post("/cerrar_votacion")
@@ -148,8 +148,7 @@ def cerrar_votacion_forzado():
         raise HTTPException(status_code=400, detail=str(e))
 
     return {
-        "votacion": votacion.to_dict(),
-        "cerrada_forzada": True,
+        "messege": "Ok cierre votacion",
     }
 
 @router.post("/voto_desempate")
@@ -168,6 +167,34 @@ def voto_desempate(valor_voto: bool = Body(...),):
         raise HTTPException(status_code=400, detail=str(e))
 
     return {
-        "votacion": votacion.to_dict(),
-        "cerrada_desempate": True,
+        "messege": "Ok desempate votacion",
+    }
+
+
+@router.post("/indicador_transmision_on")
+def encender_indicador_transmision_en_vivo():
+    """
+    Endpoint para encender el indicador de transmision en vivo.
+    """
+    try:
+        sesion_service.encender_indicador_transmision_en_vivo()
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return {
+        "messege": "Ok encender indicador transmision en vivo",
+    }
+
+@router.post("/indicador_transmision_off")
+def apagar_indicador_transmision_en_vivo():
+    """
+    Endpoint para encender el indicador de transmision en vivo.
+    """
+    try:
+        sesion_service.apagar_indicador_transmision_en_vivo()
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return {
+        "messege": "Ok apagar indicador transmision en vivo",
     }

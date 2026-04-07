@@ -32,8 +32,7 @@ class Concejal:
         self.bloque = bloque
         self.presente = presente
         self.banca = banca
-        self._mostrar_test_hasta = 0.0  # time.monotonic() hasta cuándo mostrar
-        self.test_mode = False
+        self.mostrar_test_hasta = 0.0  # time.monotonic() hasta cuándo mostrar
         self.dispositivo_votacion = dispositivo_votacion
 
     def __repr__(self)->str:
@@ -49,7 +48,7 @@ class Concejal:
         ahora = time.monotonic()
         duracion = max(0.0, float(duracion_s))
         # si ya estaba activo, extendemos; si no, lo activamos
-        self._mostrar_test_hasta = max(self._mostrar_test_hasta, ahora + duracion)
+        self.mostrar_test_hasta = max(self.mostrar_test_hasta, ahora + duracion)
 
     def to_dict(self) -> Dict[str, Any]:
         """
@@ -63,5 +62,5 @@ class Concejal:
             "presente": self.presente,
             "banca": self.banca,
             "dispositivo_votacion": self.dispositivo_votacion,
-            "mostrar_test": (time.monotonic() < self._mostrar_test_hasta),
+            "mostrar_test": (time.monotonic() < self.mostrar_test_hasta),
         }

@@ -21,10 +21,12 @@ class Sesion:
     - pedidos_de_uso_de_palabra: cola de concejales que pidieron la palabra
     """
 
-    def __init__(self, numero_sesion: int) -> None:
-        self.numero_sesion = numero_sesion
-        self.abierta: bool = True
-        self.hora_inicio: datetime = datetime.now()
+    def __init__(self ) -> None:
+        self.transmision_en_vivo =  False
+        self.numero_sesion = None
+        self.abierta: bool = False
+        self.hora_apertura_recinto: datetime = datetime.now()
+        self.hora_inicio: Optional[datetime] = None
         self.hora_fin: Optional[datetime] = None
         self.presentes: Optional[int]=None
         self.quorum: Optional[int]=None
@@ -42,12 +44,23 @@ class Sesion:
         self.abierta = False
         self.hora_fin = datetime.now()
 
+    def abrir(self, numero: int) -> None:
+        """Cierra la sesión y fija la hora de fin."""
+        if (self.abierta):
+            raise ValueError("ya_hay_sesión_abierta")
+
+        self.numero_sesion = numero
+        self.abierta: bool = True
+        self.hora_inicio: datetime = datetime.now()
+
 
     def to_dict(self) -> dict:
         return {
+            "transmision_en_vivo": self.transmision_en_vivo,
             "numero_sesion": self.numero_sesion,
             "abierta": self.abierta,
-            "hora_inicio": self.hora_inicio.isoformat(),
+            "hora_apertura_recinto": self.hora_apertura_recinto.isoformat() if self.hora_apertura_recinto else None,
+            "hora_inicio": self.hora_inicio.isoformat() if self.hora_inicio else None,
             "hora_fin": self.hora_fin.isoformat() if self.hora_fin else None,
             "cantidad_concejales": len(self.concejales),
             "cantidad_presentes": sum(1 for c in self.concejales if c.presente),

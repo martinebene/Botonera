@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from app.version import VERSION
 
 from app.api.routes import moderacion, estados, entradas
 
@@ -58,3 +59,11 @@ app.mount(
 @app.get("/favicon.ico", include_in_schema=False)
 def favicon():
     return FileResponse("app/web/static/common/favicon.ico")
+
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "service": "api-concejo-deliberante",
+        "version": VERSION
+    }

@@ -1,6 +1,7 @@
 import json
 import os
 from typing import Any, Dict
+from app.version import VERSION
 
 
 class Settings:
@@ -32,6 +33,7 @@ class Settings:
         self.log_dir = self._raw["log_dir"]
         self.quorum = self._raw["quorum"]
         self.disposicion_bancas = self._raw["disposicion_bancas"]
+        self.version = VERSION
 
     def load(self) -> None:
         """Carga estricta del archivo de configuración."""
@@ -60,6 +62,7 @@ class Settings:
 
     def to_dict(self) -> dict:
         return {
+            "version": VERSION,
             "concejales_file": self.concejales_file,
             "log_file": self.log_file,
             "log_dir": self.log_dir,

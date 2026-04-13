@@ -69,6 +69,10 @@ Comunicación interna por `127.0.0.1`.
     ├── config.json
     └── venv/
 
+Documentación útil:
+
+- [Diagrama de clases](docs/diagrama-clases.md)
+
 ------------------------------------------------------------------------
 # 🖥 Frontends
 

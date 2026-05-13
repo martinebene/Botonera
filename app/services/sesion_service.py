@@ -28,7 +28,7 @@ class SesionService:
 
     def preparar_sesion(self) -> Sesion:
         """
-        Abre una nueva sesión.
+        Prepara una nueva sesión.
 
         Reglas:
         - Si ya hay sesión abierta -> ValueError + log de APERTURA_FALLIDA.
@@ -37,7 +37,7 @@ class SesionService:
         """
 
         # Ya hay sesión abierta
-        if self.sesion_actual is not None and self.sesion_actual.abierta:
+        if self.sesion_actual is not None:
             logging.log_internal("SESION",2, "Rechazo de preparacion de sesión porque ya hay sesión preparada")
             raise ValueError("ya_hay_sesión_preparada")
 
@@ -54,11 +54,13 @@ class SesionService:
 
         # Si todo está bien, creamos la sesión
         sesion = Sesion()
-        self.sesion_actual = sesion
+        
         sesion.concejales = concejales
         sesion.presentes = self.cantidad_concejales_presentes()
         sesion.quorum = settings.quorum
         sesion.disposicion_bancas = json.dumps(settings.disposicion_bancas, indent=2)
+        sesion.abierta = False
+        self.sesion_actual = sesion
 
         # Log de apertura exitosa
         logging.log_internal("SESION",3, "Recinto Preparado para sesiónar")
@@ -113,8 +115,8 @@ class SesionService:
         # Log de cierre exitoso
         logging.log_internal("SESION",3, "Cierre de sesión Nº" + str(self.sesion_actual.numero_sesion))
 
-        # Dejamos la referencia en None (o podríamos solo dejar la Sesion cerrada)
-        #self.sesion_actual = None
+        # Dejamos la referencia en None (no podríamos solo dejar la Sesion cerrada, pq no permite abrir nueva)
+        self.sesion_actual = None
 
         return sesion
 

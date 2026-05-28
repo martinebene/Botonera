@@ -53,4 +53,4 @@ def info_config_pantallas():
             "settings": None,
         }
 
-    return settings.to_dict
+    return settings.to_dict()

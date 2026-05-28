@@ -55,12 +55,13 @@ class SesionService:
         # Si todo está bien, creamos la sesión
         sesion = Sesion()
         
+        self.sesion_actual = sesion
         sesion.concejales = concejales
         sesion.presentes = self.cantidad_concejales_presentes()
         sesion.quorum = settings.quorum
         sesion.disposicion_bancas = json.dumps(settings.disposicion_bancas, indent=2)
         sesion.abierta = False
-        self.sesion_actual = sesion
+        
 
         # Log de apertura exitosa
         logging.log_internal("SESION",3, "Recinto Preparado para sesiónar")

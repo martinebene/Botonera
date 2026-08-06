@@ -25,3 +25,5 @@ uvicorn==0.38.0
 watchfiles==1.1.1
 websockets==15.0.1
 gunicorn==21.2.0
+httpx==0.28.1
+pytest==9.1.1

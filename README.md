@@ -135,7 +135,7 @@ Responsabilidades:
 
 Todos los frontends:
 
--   Utilizan polling periódico al endpoint `/estados/estado_global`
+-   Utilizan polling periódico al endpoint `/estados/estado_global` (en refactorizacion)
 -   No almacenan estado persistente
 -   Son tolerantes a errores HTTP
 -   Indican estado de conexión visualmente

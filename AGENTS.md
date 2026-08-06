@@ -66,6 +66,8 @@ No reemplazar esta arquitectura, incorporar base de datos, WebSocket, framework 
 
 El servicio de teclados solo captura, identifica y transmite. La lógica de negocio pertenece al backend.
 
+La tecla `9` acredita o modifica presencia desde que el recinto fue preparado. No imponer `sesion.abierta` como requisito para procesarla: la acreditación precede a la apertura formal de la sesión.
+
 ### APIs de moderación
 
 Las acciones operativas viven bajo `/moderacion`, entre ellas:

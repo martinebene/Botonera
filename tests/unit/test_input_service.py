@@ -30,6 +30,27 @@ def test_pulsacion_sin_recinto_preparado_y_dispositivo_no_asignado():
     }
 
 
+def test_tecla_9_permite_acreditar_presencia_durante_preparacion():
+    servicio = sesion_service_module.sesion_service
+    sesion = servicio.preparar_sesion()
+    concejal = next(c for c in sesion.concejales if c.dispositivo_votacion == "dev1")
+    presencia_inicial = concejal.presente
+    presentes_iniciales = sesion.presentes
+
+    assert servicio.sesion_actual is sesion
+    assert sesion.abierta is False
+
+    resultado = procesar_pulsacion("dev1", "9")
+
+    assert resultado["aceptada"] is True
+    assert resultado["motivo"] == "cambio_presencia"
+    assert resultado["dispositivo"] == "dev1"
+    assert resultado["tecla"] == "9"
+    assert concejal.presente is not presencia_inicial
+    assert sesion.presentes == presentes_iniciales + (1 if concejal.presente else -1)
+    assert sesion.abierta is False
+
+
 def test_tecla_8_activa_y_desactiva_test_visual_sin_reloj_real(monkeypatch):
     ahora = [100.0]
     monkeypatch.setattr("app.models.concejal.time.monotonic", lambda: ahora[0])

@@ -88,6 +88,28 @@ Flujo previsto:
 3. durante la sesión se gestionan presencia, palabra y votaciones;
 4. `cerrar_sesion()` fuerza el cierre de una votación en curso y elimina la referencia activa.
 
+### Ciclo de sesión y acreditación
+
+```text
+SIN RECINTO
+    ↓ preparar_sesion
+RECINTO PREPARADO / ACREDITACIÓN
+    - sesión existente
+    - abierta = false
+    - concejales cargados
+    - tecla 9 habilitada para registrar presencia
+    - moderación puede comprobar presentes y quórum
+    ↓ abrir_sesion
+SESIÓN ABIERTA
+    - comienza formalmente la sesión
+    - presencia continúa siendo modificable
+    - se habilitan las operaciones que requieren sesión abierta
+    ↓ cerrar_sesion
+SIN RECINTO
+```
+
+Preparar y abrir son operaciones diferentes y necesarias: preparar no inicia formalmente la sesión, y abrir no es el momento inicial de acreditación. La presencia previa permite evitar iniciar una sesión sin concejales acreditados.
+
 ### Votación
 
 `VotacionService` mantiene una única `votacion_actual`, pero la sesión conserva el historial en `sesion.votaciones`.

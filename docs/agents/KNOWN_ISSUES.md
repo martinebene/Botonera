@@ -32,7 +32,7 @@ El backend separa:
 1. `preparar_sesion`;
 2. `abrir_sesion`.
 
-La interfaz de moderación revisada llama a `abrir_sesion`, pero no se observó en su flujo principal un control equivalente para preparar el recinto. Verificar el recorrido real antes de modificar cualquiera de las dos capas.
+La separación es intencional: durante la preparación se acredita presencia con la tecla `9`, antes de la apertura formal. La interfaz de moderación revisada llama a `abrir_sesion`, pero no se observó en su flujo principal un control equivalente para preparar el recinto. La duda pendiente es ese recorrido de interfaz, no el comportamiento del backend durante la acreditación.
 
 ## 5. Documentación del mapa de teclas
 

@@ -68,17 +68,24 @@ def test_cierre_automatico_y_mayoria_simple(concejales, votos, estado):
     assert votacion_service.votacion_actual is (votacion if estado is EstadosVotacion.EMPATADA else None)
 
 
-def test_mayoria_especial_se_calcula_sobre_votos_emitidos_y_total_del_cuerpo(concejales):
+def test_mayoria_especial_distingue_votos_emitidos_del_total_del_cuerpo(concejales, monkeypatch):
+    monkeypatch.setattr(
+        sesion_service_module,
+        "cargar_concejales_desde_archivo",
+        lambda _ruta: concejales(total=4),
+    )
     sesion = abrir_sesion(concejales)
+    sesion.concejales[3].presente = False
+
     votacion = abrir_votacion(sesion, factor=2 / 3, sobre_presentes=True)
-    for concejal, valor in zip(sesion.concejales, [ValorVoto.POSITIVO, ValorVoto.POSITIVO, ValorVoto.ABSTENCION]):
+    for concejal, valor in zip(sesion.concejales[:3], [ValorVoto.POSITIVO, ValorVoto.POSITIVO, ValorVoto.NEGATIVO]):
         votar(votacion, concejal, valor)
     assert votacion.estado is EstadosVotacion.APROBADA
 
     votacion = abrir_votacion(sesion, factor=2 / 3, sobre_presentes=False)
-    for concejal, valor in zip(sesion.concejales, [ValorVoto.POSITIVO, ValorVoto.POSITIVO, ValorVoto.NEGATIVO]):
+    for concejal, valor in zip(sesion.concejales[:3], [ValorVoto.POSITIVO, ValorVoto.POSITIVO, ValorVoto.NEGATIVO]):
         votar(votacion, concejal, valor)
-    assert votacion.estado is EstadosVotacion.APROBADA
+    assert votacion.estado is EstadosVotacion.RECHAZADA
 
 
 def test_cierre_forzado_sin_votos_es_inconcluso(concejales):

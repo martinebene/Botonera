@@ -30,19 +30,31 @@ def test_pulsacion_sin_recinto_preparado_y_dispositivo_no_asignado():
     }
 
 
-def test_teclas_de_presencia_test_y_palabra():
+def test_tecla_8_activa_y_desactiva_test_visual_sin_reloj_real(monkeypatch):
+    ahora = [100.0]
+    monkeypatch.setattr("app.models.concejal.time.monotonic", lambda: ahora[0])
+
+    sesion = preparar_abierta()
+    respuesta = procesar_pulsacion("dev1", "8")
+
+    assert respuesta["motivo"] == "mostrar_test"
+    assert respuesta["concejal"]["mostrar_test"] is True
+    ahora[0] = 100.59
+    assert sesion.concejales[0].to_dict()["mostrar_test"] is True
+    ahora[0] = 100.6
+    assert sesion.concejales[0].to_dict()["mostrar_test"] is False
+
+
+def test_teclas_de_presencia_y_palabra():
     sesion = preparar_abierta()
     concejal = sesion.concejales[0]
     concejal.presente = False
 
     presencia = procesar_pulsacion("dev1", "9")
-    visual = procesar_pulsacion("dev1", "8")
     pedido = procesar_pulsacion("dev1", "7")
     retiro = procesar_pulsacion("dev1", "7")
 
     assert presencia["motivo"] == "cambio_presencia"
-    assert visual["motivo"] == "mostrar_test"
-    assert visual["concejal"]["mostrar_test"] is True
     assert pedido["motivo"] == retiro["motivo"] == "tecla_uso_palabra"
     assert list(sesion.pedidos_uso_de_palabra) == []
 

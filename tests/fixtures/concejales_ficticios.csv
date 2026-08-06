@@ -1,0 +1,3 @@
+dni,nombre,apellido,bloque,presente,banca,dispositivo_votacion
+1,Ana,Prueba,Bloque A,true,1,dev1
+2,Bruno,Prueba,Bloque B,false,2,dev2

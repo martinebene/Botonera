@@ -140,6 +140,8 @@ python -m compileall app devices_services
 python -m uvicorn app.main:app --reload
 ```
 
+Toda Pull Request hacia `v2` debe pasar el workflow `Backend CI`. Un agente no debe marcar una tarea como completada si ese workflow falla, debe informar las validaciones manuales no realizadas y no debe desactivar, omitir ni modificar la CI como efecto lateral de otra tarea.
+
 Luego verificar los endpoints y recorridos afectados según `docs/agents/DEVELOPMENT.md`.
 
 Para cambios frontend:

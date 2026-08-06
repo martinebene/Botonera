@@ -162,6 +162,29 @@ python -m compileall app devices_services
 
 Cuando se agreguen herramientas de lint o pruebas, documentarlas aquí y fijarlas en dependencias. No declarar comandos inexistentes.
 
+### Backend CI
+
+El workflow `Backend CI` se ejecuta en cada Pull Request hacia `v2`, en cada `push` a `v2` y manualmente mediante `workflow_dispatch`. Instala las dependencias del backend, ejecuta `pip check`, compila `app` y `devices_services`, corre las pruebas con marcadores estrictos y muestra cobertura informativa de `app` sin umbral mínimo.
+
+Antes de hacer push, ejecutar desde la raíz:
+
+```bash
+python -m pip check
+python -m compileall app devices_services
+python -m pytest -q --strict-markers
+python -m pytest -q --strict-markers --cov=app --cov-report=term-missing --cov-report=xml
+```
+
+Consultar ejecuciones con GitHub CLI:
+
+```bash
+gh pr checks
+gh run list --workflow "Backend CI"
+gh run view <run-id>
+```
+
+Una ejecución verde no reemplaza las validaciones manuales aplicables al cambio.
+
 ## 7. Matriz mínima por tipo de cambio
 
 ### Backend de rutas o serialización

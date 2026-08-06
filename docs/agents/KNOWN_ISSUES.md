@@ -83,11 +83,11 @@ Antes de cambiar la proyección:
 
 No cambiarlo sin comprobar qué forma reciben actualmente moderación y pantalla.
 
-## 10. Ausencia de pruebas automatizadas
+## 10. Suite de caracterización y CI
 
-No se encontró una suite de `pytest`, `unittest` ni CI de validación. La seguridad de los cambios depende hoy de pruebas manuales y compilación.
+Existe una suite de caracterización de `pytest`, con 44 pruebas al incorporar CI. Cubre dominio, servicios, entradas, serialización y los contratos HTTP principales. `Backend CI` la ejecuta automáticamente para Pull Requests y cambios incorporados a `v2`.
 
-Agregar testing es deseable, pero debe hacerse incrementalmente y sin reescribir el sistema solo para facilitar pruebas.
+No equivale todavía a validación con hardware, navegador ni sesión institucional real. La cobertura debe crecer junto con cada cambio; no relajar ni eliminar pruebas para hacer pasar una Pull Request.
 
 ## 11. Archivos históricos y generados
 
